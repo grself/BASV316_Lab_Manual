@@ -1,0 +1,195 @@
+# Non-Parametric Hypothesis Testing {#lab10}
+
+```{r include = FALSE}
+
+# Load some libraries
+library(knitr)
+library(kableExtra) # For building pretty tables
+library(here)
+
+# Set the rproj home directory
+here::here()
+
+# Set some knitr options
+options(knitr.table.format = "html")
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  strip.white = TRUE,
+  comment = "#>",
+  out.width = "65%",
+  message=FALSE,
+  warnings=FALSE
+)
+
+# Turn on the DataCamp Light interactive tools
+tutorial::go_interactive()
+
+```
+
+## Introduction
+
+Researchers often begin a project with a hypothesis and then gather data to see if the hypothesis supports an underlying theory in a process commonly called the _scientific method_. Categorical data gathered as part of the research project are analyzed using nonparametric techniques and two of the most commonly-used tests are described in this lab. (Note: the concept of "hypothesis" is discussed in [Parametric Hypothesis Testing](/tutorials/0090-parametric/index.html#hypothesis).)
+
+## Kruskal-Wallis H
+
+This test is used to determine if there are any significant differences in three or more groups of data that are not normally-distributed, often categorical. Imagine that a researcher wanted to determine if there was a difference in smoking habit by age group. The subjects were interviewed and asked about how many packs they smoked per week. This data were skewed to the right since a few subjects smoked heavily but most were non-smokers or only smoked a few packs per week. The subjects were also divided into age groups: <20, 20-29, 30-39, 40-49, >49. The researcher would then use a _Kruskal-Wallis H_ test to see if there was a significant difference in smoking habit by age group since the dependent variable (packs smoked) was not normally distributed.
+
+### Demonstration: Kruskal-Wallis H
+
+The _R_ `kruskal.test` function requires the two variables being compared to be input in the form of _y ~ x_, where _y_ is the dependent variable (measured outcomes) and _x_ is the independent variable (the groups used to divide the measured outcomes). Also the data source is specified with a _data =_ parameter. In the case of the smoking example mentioned in the previous paragraph, the number of packs smoked would be the dependent variable, the measured outcome, while the age group would be the independent variable.
+
+The following one-line script generates a `kruskal.test` from the [_airquality_](/tutorials/9999-data-dict/index.html#airquality) data frame. The amount of Ozone in the air was measured every day for several months. To see if there is any significant difference between the months a _Kruskal-Wallis H_ would be calculated where the _Ozone_ is the measured outcome and the _Month_ is the grouping variable.
+
+```{r}
+
+# Kruskal-Wallis H
+kruskal.test(Ozone ~ Month, data = airquality)
+
+```
+
+The `kruskal.test` function returns a lot of information, most of which is beyond the scope of this lab: 
+
+```
+
+  Kruskal-Wallis rank sum test
+
+data: Ozone by Month
+Kruskal-Wallis chi-squared = 29.267, df = 4, p-value = 6.901e-06
+
+```
+
+While a `kruskal.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span style="background-color: #ffff99; font-style: italic;">6.901e-06</span>, which is found at the end of Line 3. Because this is less than 0.05 (5%) it would be considered a significant result. Thus, the null hypothesis would be rejected (that there was no difference in Ozone by Month). Notice that this test does not indicate which month had the greatest ozone reading or if all months had some sort of significant variance from the mean, just that there is a significant difference between the months.
+
+### Skill Check: Kruskal-Wallis H
+
+Using the [_chickweight_](/tutorials/9999-data-dict/index.html#chickweight) data frame, calculate a Kruskal-Wallis H for the _weight_ output when grouped by _Diet_.
+
+```{r ex="ex01", type="pre-exercise-code"}
+
+# No pre-exercise code for this exercise
+
+```
+
+```{r ex="ex01", type="sample-code"}
+
+# Calculate Kruskal-Wallis H for weight by Diet for the chickweight data frame.
+
+
+```
+
+```{r ex="ex01", type="solution"}
+
+kruskal.test(weight ~ Diet, data = ChickWeight)
+
+```
+
+```{r ex="ex01", type="sct"}
+
+ex11neq <- "Remember that 'weight' is the dependent variable (comes first) and 'Diet' is the independent variable (comes second). Also, 'Diet' is capitalized."
+ex12neq <- "Remember that the data frame must be specified as 'chickweight'."
+
+state1 <- ex() %>% check_function("kruskal.test")
+state1 %>%
+  check_arg("formula") %>%
+  check_equal(incorrect_msg = ex11neq)
+
+state1 %>%
+  check_arg("data") %>%
+  check_equal(incorrect_msg = ex12neq)
+
+success_msg("Good job! This is an important test for nonparametric data.")
+
+```
+
+-----
+
+
+## Mann-Whitney U
+
+This test is used to determine if there are any significant differences in two groups of data that are not normally-distributed, often categorical. Imagine that a movie producer wanted to know if there was a difference in the way the audience in two different cities responded to a movie. The null hypothesis (H~0~) is “There is no difference in movie-goers’ opinions between these two cities.” The alternate hypothesis (H~a~) is “Movie-goers’ opinions are significantly different by city.” As the audience members left the theater they would be asked to rate the movie on a scale of one to five stars. The ratings for the two cities would be collected and then a _Mann-Whitney_ test would be used to determine if the difference in ratings between the cities was significant.
+
+### Demonstration: Mann-Whitney U
+
+_R_ uses the `wilcox.test` function for several different types of nonparametric tests. It will automatically compute a _Mann-Whitney U_ test when the dependent variable is numeric and the independent variable is binary (that is, only two levels). The `wilcox.test` function requires the two variables being compared to be input in the form of _y ~ x_, where _y_ is the dependent variable (measured outcomes) and _x_ is the independent variable (the two groups used to divide the measured outcomes). Also the data source is specified with a _data =_ parameter. In the case of the movie analysis example mentioned in the previous paragraph, the number of movie rating would be the dependent variable, the measured outcome, while the city would be the independent, or grouping, variable.
+
+The following one-line script generates a _Mann-Whitney U_ from the [_CO2_](/tutorials/9999-data-dict/index.html#co2) data frame. The amount of CO2 uptake of a group of plants was measured while chilled or not chilled. To see if there is any significant difference between the cold tolerance of those plants, a _Mann-Whitney U_ test would be calculated where the _uptake_ is the measured outcome and the _Treatment_ is the grouping variable.
+
+```{r}
+
+# Mann-Whitney U
+wilcox.test(uptake ~ Treatment, data = CO2)
+
+```
+
+The `wilcox.test` function returns a lot of information, most of which is beyond the scope of this lab: 
+
+```
+Warning message: cannot compute exact p-value with ties
+
+	   Wilcoxon rank sum test with continuity correction
+
+data:  uptake by Treatment
+W = 1187.5, p-value = 0.006358
+alternative hypothesis: true location shift is not equal to 0
+
+```
+
+<div class="grsnote">The warning message can be ignored. It is indicating that some of the values in the _Treatment_ vector are repeated ("tied"), but that is expected since more than one plant in this study got the same treatment. The estimated p-value is adequate for most research projects.</div>
+
+While a `wilcox.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span style="background-color: #ffff99; font-style: italic;">0.006358</span>, which is found at the end of Line 4. Because this is less than 0.05 (5%) it would be considered a significant result. 
+
+### Skill Check: Mann-Whitney U
+
+Using the [_mtcars_](/tutorials/9999-data-dict/index.html#mtcars) data frame, calculate a _Mann-Whitney U_ for the _disp_ output when grouped by _am_.
+
+```{r ex="ex02", type="pre-exercise-code"}
+
+# No pre-exercise code for this exercise
+
+```
+
+```{r ex="ex02", type="sample-code"}
+
+# Calculate a Mann-Whitney U for disp when grouped by am in the mtcars data frame.
+
+
+```
+
+```{r ex="ex02", type="solution"}
+
+wilcox.test(disp ~ am, data = mtcars)
+
+
+```
+
+```{r ex="ex02", type="sct"}
+
+
+ex21neq <- "Remember that 'disp' is the dependent variable (comes first) and 'am' is the independent variable (comes second)."
+ex22neq <- "Remember that the data frame must be specified as 'mtcars'."
+
+
+state1 <- ex() %>% check_function("wilcox.test")
+state1 %>%
+  check_arg("formula") %>%
+  check_equal(incorrect_msg = ex21neq)
+
+state1 %>%
+  check_arg("data") %>%
+  check_equal(incorrect_msg = ex22neq)
+
+
+# ex() %>%
+#   check_function("t.test") %>%
+#   check_result() %>%
+#   check_equal(incorrect_msg = ex21neq)
+
+success_msg("Perfect! A Mann-Whitney U test is a common non-parametric test that you may want for your own research projects.")
+
+```
+
+-----
+
+## Next
+
+This tutorial explored hypothesis testing using _nonparametric_ means. Students who are interested in using _R_ for their own research should begin to explore this important software on their own. It is available as a [download](https://www.r-project.org/) without charge and can be used on _Windows_, _Mac_, or _Linux_ systems. It is also recommended that [RStudio](https://www.rstudio.com/), a free Integrated Developement Environment (IDE), be used for _R_ projects.

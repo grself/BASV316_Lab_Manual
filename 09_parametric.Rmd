@@ -1,0 +1,219 @@
+# (PART) Hypothesis Testing {-} 
+
+# Parametric Hypothesis Testing {#lab9}
+
+```{r include = FALSE}
+
+# Load some libraries
+library(knitr)
+library(kableExtra) # For building pretty tables
+library(here)
+
+# Set the rproj home directory
+here::here()
+
+# Set some knitr options
+options(knitr.table.format = "html")
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  strip.white = TRUE,
+  comment = "#>",
+  out.width = "65%",
+  message=FALSE,
+  warnings=FALSE
+)
+
+# Turn on the DataCamp Light interactive tools
+tutorial::go_interactive()
+
+```
+
+## Introduction
+
+Researchers should always begin a project with a hypothesis and then gather data to see if the hypothesis supports an underlying theory in a process commonly called the _scientific method_. Continuous data gathered as part of the research project are analyzed using parametric techniques and two of the most commonly-used tests are described in this lab. This lab starts with a discussion of "hypothesis" since that is key to both parametric and nonparametric testing.
+
+-----
+
+## Hypothesis
+
+A hypothesis is an attempted explanation for some observation and is often used as a starting point for further investigation. For example, imagine that a physician notices that babies born of women who smoke seem to weigh less than for women who do not smoke. That could lead to a hypothesis like "smoking during pregnancy is linked to lighter birth-weights." As another example, imagine that a restaurant owner notices that tipping seems to be higher on weekends than through the week. That might lead to a hypothesis that "the size of tips is higher on weekends than weekdays." After creating a hypothesis, a researcher would gather data and then statistically analyze those data to determine if the hypothesis is valid. Additional investigation may be needed to explain why that observation is true. In a research project, there are usually two related competing hypotheses: the _Null Hypothesis_ and the _Alternate Hypothesis_.
+
+* **Null Hypothesis** (abbreviated H~0~). This is sometimes described as the "skeptical" view; that is, the explanation for some observed phenomena was mistaken. For example, the null hypothesis for the smoking mother observation mentioned above would be "smoking has no effect on a baby's weight" and for the tipping observation would be "there is no difference in tipping on the weekend."
+* **Alternate Hypothesis** (abbreviated H~a~). This is the hypothesis that is being suggested as an explanation for the observed phenomenon. In the case of the smoking mothers mentioned, above the alternative hypothesis would be that smoking causes a decrease in birth weight. This is called the "alternate" because it is different from the status quo which is encapsulated in the null hypothesis.
+
+One commonly-used example of the difference between the null and alternate hypothesis comes from the trial court system. When a jury deliberates about the guilt of a defendant they start from a position of "innocent until proven guilty," which would be the null hypothesis. The prosecutor is asking the jury to accept the alternate hypothesis, or "the defendant committed the crime."
+
+For the most part, researchers will never conclude that the alternate hypothesis is true. There are always confounding variables that are not considered but could be the cause of some observation. For example, in the smoking mothers example mentioned above, even if the evidence indicates that babies born to smokers weigh less the researcher could not state conclusively that smoking caused that observation. Perhaps non-smoking mothers had better health care, perhaps they had better diets, perhaps they exercised more, or any of a number of other reasonable explanations not related to smoking. For that reason, the result of a research project is normally reported with one of two phrases:
+
+* *The null hypothesis is rejected*. If the evidence indicates that there is a significant difference between the status quo and whatever was observed then the null hypothesis would be rejected. For the "tipping" example above, if the researcher found a significant difference in the amount of money tipped on weekends compared to weekdays then the null hypothesis (that is, tipping is the same on weekdays and weekends) would be rejected.
+
+* *The null hypothesis cannot be rejected*. If the evidence indicates that there is no significant difference between the status quo and whatever was observed then the researcher would report that the null hypothesis could not be rejected. For example, if there was no significant difference in the birth weights of babies born to smokers and non-smokers then the researcher failed to reject the null hypothesis.
+
+Often, a research hypothesis is based on a prediction rather than an observation and that hypothesis can be tested. Imagine a hypothesis like "walking one mile a day for one month decreases blood pressure." A researcher could test this by measuring the blood pressure of a group of volunteers, have them walk a mile every day for a month, and then measure their blood pressure at the end of the experiment to see if there was any significant difference.
+
+-----
+
+## ANOVA
+
+An Analysis of Variance (ANOVA) is used to analyze the difference in _more than two groups of samples_ that are normally distributed. Notice that an _ANOVA_ is used when there are more than two groups being analyzed, which will distinguish between an _ANOVA_ and a _t-test_ (which is covered in the next section). For example, imagine that a professor was testing a hypothesis that tutoring improves students' grades. A class is split into three groups such that one group was not required to attend tutoring, a second group was required to attending tutoring once a week, and a third group was required to attend tutoring two or more times a week. The null hypothesis (H~0~) is "The amount of tutoring does not significantly change students' scores on the final exam." The alternate hypothesis (H~a~) is "More frequent tutoring significantly changes students' scores on the final test." After the final exam was graded, an ANOVA could be administered and if that showed the test scores for those three groups of students had a significant difference then the null hypothesis would be rejected in favor of the alternate hypothesis.
+
+### Demonstration: ANOVA
+
+The _R_ `ANOVA` function requires the two variables being compared to be input as a linear model (`lm`) formula in the form of _y ~ x_, where _y_ is the dependent variable (measured outcomes) and _x_ is the independent variable (the groups used to divide the measured outcomes). Also the data source is specified with a _data =_ parameter. In the case of the professor's _Tutoring Efficacy_ hypothesis mentioned in the previous paragraph, the students' final exam score would be the dependent variable, the measured outcome, while the amount of tutoring, the three tutoring groups, would be the independent variable.
+
+The following one-line script generates an `ANOVA` from the [_morley_](/tutorials/9999-data-dict/index.html#morley) data frame. The speed of light was measured twenty times in each of five different experiments. To see if there is any significant difference in the groups of experiments an ANOVA would be calculated where the _Speed_ is the measured outcome and the _Expt_ are the experiment groups.
+
+```{r tut=TRUE}
+
+# ANOVA
+anova(lm(Speed ~ Expt, data = morley))
+
+```
+
+The `ANOVA` function returns a lot of information, most of which is beyond the scope of this lab: 
+
+```
+  > # ANOVA
+  > anova(lm(Speed ~ Expt, data = morley))
+  Analysis of Variance Table
+
+  Response: Speed
+            Df Sum Sq Mean Sq F value    Pr(>F)
+  Expt       1  72581   72581  13.041 0.0004827 ***
+  Residuals 98 545444    5566
+  ---
+  Signif. codes: 0 *** 0.001 ** 0.01 * 0.05 . 0.1 1
+```
+
+While an `ANOVA` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span style="background-color: #ffff99; font-style: italic;">0.0004827</span>, which is labeled _Pr(>F)_ and is found near the end of Line 6. Following that p-value, _R_ helpfully prints a code to aid in determining the significance of the result, three asterisks in this case. The last line in the results then lists the meaning of the various codes used. P-values that fall between 0 and 0.001 are marked with three asterisks, as in this case, so it is significant at the 0.1% level (0.001), the greatest possible level. (Note: the importance of the _P_ value was discussed in [Correlation and Regression](/tutorials/0070-correlation/index.html#significance))
+
+### Skill Check: ANOVA
+
+Using the [_npk_](/tutorials/9999-data-dict/index.html#npk) data frame, calculate an ANOVA for the _yield_ output for when grouped by _block_.
+
+```{r ex="ex01", type="pre-exercise-code"}
+
+# No pre-exercise code for this exercise
+
+```
+
+```{r ex="ex01", type="sample-code"}
+
+# Calculate the ANOVA for yield when grouped by block in the npk data frame.
+
+
+```
+
+```{r ex="ex01", type="solution"}
+
+anova(lm(yield ~ block, data = npk))
+
+```
+
+```{r ex="ex01", type="sct"}
+
+ex11neq <- "Remember that 'yield' is the dependent variable (comes first) and 'block' is the independent variable (comes second)."
+ex12neq <- "Remember that the data frame must be specified as 'npk'."
+ex13neq <- "Check the lm function carefully, you have something out of place."
+
+state1 <- ex() %>% check_function("lm")
+state1 %>%
+  check_arg("formula") %>%
+  check_equal(incorrect_msg = ex11neq)
+
+state1 %>%
+  check_arg("data") %>%
+  check_equal(incorrect_msg = ex12neq)
+
+ex() %>%
+  check_function("anova") %>%
+  check_result() %>%
+  check_equal(incorrect_msg = ex11neq)
+
+success_msg("Perfect! An ANOVA is one of the most commonly-used parametric tests and you can now conduct one for your own research projects.")
+
+```
+
+
+-----
+
+## T-test
+
+A t-test is used to analyze the difference in _two groups_ of samples that are normally distributed. Compare this with _ANOVA_ (presented in the previous section) where more than two groups are compared. As an example, imagine that the spending habits of two similar groups of people are compared; do the residents of Tucson spend more on dining out than the residents of Phoenix? The null hypothesis (H~0~) is "People in Tucson and Phoenix spend the same amount of money when dining out." The alternate hypothesis (H~a~) is "People in Tucson and Phoenix spend different amounts of money when dining out." Imagine that the dining bills of 100 people from both cities were recorded and it was discovered that the mean bill in Phoenix is \$15.13 and in Tucson is \$12.47. If a t-test determines that there was a significant difference in those two numbers the null hypothesis would be rejected.
+
+## Demonstration: T-test
+
+A `t.test` requires the two variables being compared to be input as a formula in the form of _y ~ x_, where _y_ is the dependent variable (measured outcomes) and _x_ is the independent variable (the groups used to divide the measured outcomes). Also the data source is specified with a _data =_ parameter. In the case of the _Dining Spending_ hypothesis mentioned in the previous paragraph, the size of the dining bills would be the dependent variable, the measured outcome, while the groups of diners, the two cities, would be the independent variable.
+
+The following one-line script generates a `t-test` from the [_sleep_](/tutorials/9999-data-dict/index.html#sleep) data frame. In this experiment, two soporific drugs (increases the hours of sleep) were given in two different strengths to twenty patients. To see if there is any significant difference in the two groups of patients a t-test would be calculated where the _extra_ sleep is the measured outcome and the _group_ is the strength of the drug given.
+
+```{r}
+
+# T-Test (Independent)
+t.test(extra ~ group, data = sleep)
+
+```
+
+The `t.test` function returns a lot of information, most of which is beyond the scope of this lab: 
+
+```
+  	Welch Two Sample t-test
+
+  data:  extra by group
+  t = -1.8608, df = 17.776, p-value = 0.07939
+  alternative hypothesis: true difference in means is not equal to 0
+  95 percent confidence interval:
+   -3.3654832  0.2054832
+  sample estimates:
+  mean in group 1 mean in group 2 
+            0.75            2.33 
+```
+
+While a `t.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span style="background-color: #ffff99; font-style: italic;">0.07939</span>, which is found at the end of Line 3. 
+
+### Skill Check: T-test
+
+Using the _npk_ data frame, calculate a t-test for the _yield_ output for when grouped by _N_.
+
+```{r ex="ex02", type="pre-exercise-code"}
+
+# No pre-exercise code for this exercise
+
+```
+
+```{r ex="ex02", type="sample-code"}
+
+# Calculate a t-test for yield when grouped by N in the npk data frame.
+
+
+```
+
+```{r ex="ex02", type="solution"}
+
+t.test(yield ~ N, data = npk)
+
+```
+
+```{r ex="ex02", type="sct"}
+
+ex21neq <- "Remember that 'yield' is the dependent variable (comes first) and 'N' is the independent variable (comes second). Also, 'N' is a capital letter."
+ex22neq <- "Remember that the data frame must be specified as 'npk'."
+
+state1 <- ex() %>% check_function("t.test")
+state1 %>%
+  check_arg("formula") %>%
+  check_equal(incorrect_msg = ex21neq)
+
+state1 %>%
+  check_arg("data") %>%
+  check_equal(incorrect_msg = ex22neq)
+
+success_msg("Perfect! A t-test is a common parametric test and you can now conduct one for your own research projects.")
+
+```
+
+-----
+
+## Next
+
+This tutorial explored hypothesis testing using _parametric_ tests and the next tutorial explores hypothesis testing using [nonparametric tests](/tutorials/0100-nonparametric/).

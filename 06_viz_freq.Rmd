@@ -1,0 +1,764 @@
+# Visualizing Frequency {#lab6}
+
+```{r include = FALSE}
+
+# Load some libraries
+library(knitr)
+library(kableExtra) # For building pretty tables
+library(here)
+
+# Set the rproj home directory
+here::here()
+
+# Set some knitr options
+options(knitr.table.format = "html")
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  strip.white = TRUE,
+  comment = "#>",
+  out.width = "65%",
+  message=FALSE,
+  warnings=FALSE
+)
+
+# Turn on the DataCamp Light interactive tools
+tutorial::go_interactive()
+
+```
+
+## Introduction
+
+Categorical data items are often reported using frequency tables where the number of times a particular survey item was selected is displayed. However, there are many ways to visualize frequency data and people using the plots introduced in this tutorial often find it easier to understand the underlying data than with a table.
+
+-----
+
+## Bar Plot
+
+A bar plot is used to display the frequency count for categorical data. The following figure is a bar plot showing the number of automobiles with three, four, and five gears according to the mtcars data frame.
+
+```{r fig0601,fig.width=3.5,fig.height=4,out.width="40%", fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+
+barplot(table(mtcars$gear), 
+        main = "Count by Gears",
+        xlab = "Number of Gears",
+        ylab = "Number of Cars",
+        col = rainbow(6)
+        )
+
+```
+
+These types of visuals are more effective than a table full of numbers and they are easy to generate with R.
+
+### Demonstration: Bar Plot
+
+The following script creates a simple bar plot. _Note: this is one long R command that has been broken up over several lines to make it easier to understand._
+
+* Line 2: This creates a bar plot using the `barplot` function. The first argument sent to the function is the data source for the heights of each bar in the plot. In this case, _R_ creates a table from the _gears_ variable in [_mtcars_](/tutorials/9999-data-dict/index.html#mtcars) and then uses that table as data input for the plot. All of the other lines in this script embellish the bar plot to make it more usable.
+* Line 3: The “main” attribute sets the main title for the bar plot. In general, for any graphic in _R_ “main” is used to set the title of the graph.
+* Line 4: This creates the label for the x-axis. 
+* Line 5: This creates the label for the y-axis.
+* Line 6: This sets the color palette for the graph. In this case, the “rainbow” palette is used for the graph. Three colors were requested from that palette but specifying any number larger than three would have worked and created a slightly different palette. Experimentation is needed to find the most suitable palette for any given graph. (Note: setting colors on graphs was introduced in [Visualizing Descriptives](/tutorials/0040-boxplot/).)
+
+```{r}
+
+# Simple Bar Plot
+barplot(height = table(mtcars$gear),
+  main = "Number of Cars By Gears",
+  xlab = "Gears",
+  ylab = "Count",
+  col = cm.colors(3)
+)
+
+```
+
+<div class="grsnote">The DataCamp interface generates graphics in a _Plots_ tab but because of the size of the interface those plots are "squished" and impossible to read. Click the double-headed arrow button on the _Plots_ tab to open the graph in a larger window for evaluation and copying to a document. If the graphic does not open in a larger window then temporarily pause the browser's pop-up blocker.</div>
+
+### Skill Check: Bar Plot
+
+Using the [_stackloss_](/tutorials/9999-data-dict/index.html#stackloss) data frame, create a bar plot for _Water.Temp_. The plot should have a main title of "Water Temperature", the X-Axis should have a lable of "Number", the Y-Axis should have a lable of "Temperature", and the color palette should be "cm.colors(9)."
+
+```{r ex="ex01", type="pre-exercise-code"}
+
+# No pre-exercise code for this exercise
+
+```
+
+```{r ex="ex01", type="sample-code"}
+
+# Create a bar plot for Water.Temp using the specifications listed above.
+
+```
+
+```{r ex="ex01", type="solution"}
+
+barplot(height = table(stackloss$Water.Temp),
+  main = "Water Temperature",
+  xlab = "Number",
+  ylab = "Temperature",
+  col = cm.colors(9)
+)
+
+```
+
+```{r ex="ex01", type="sct"}
+
+ex11neq <- "Check the plot specifications."
+ex12neq <- "The main title should be Water Temperature."
+ex13neq <- "The x-axis label should be Number."
+ex14neq <- "The y-axis label should be Temperature."
+ex15neq <- "The color palette should be specified as cm.colors(9)."
+
+state11 <- ex() %>% check_function("barplot")
+
+state11 %>% 
+  check_arg("main") %>% 
+  check_equal(incorrect_msg = ex12neq)
+
+state11 %>% 
+  check_arg("xlab") %>% 
+  check_equal(incorrect_msg = ex13neq)
+
+state11 %>% 
+  check_arg("ylab") %>% 
+  check_equal(incorrect_msg = ex14neq)
+
+state11 %>% 
+  check_arg("col") %>% 
+  check_equal(incorrect_msg = ex15neq)
+
+state11 %>% 
+  check_result() %>% 
+  check_equal(incorrect_msg = ex11neq)
+
+success_msg("Perfect! A bar plot like this makes frequency analysis easier.")
+
+```
+
+-----
+
+## Clustered Bar Plot
+
+A clustered bar plot (sometimes called a "Grouped Bar plot") displays two or more categorical variables. In general, clustered bar plots are best at showing relationships between variables but not so good for determining the absolute size of each variable. The following plot shows the number of passengers on board the _Titanic_ when it sank. While it is easy to determine that there were a lot more males than females on board, it is not possible to read the exact bar height of, for example, third class males.
+
+```{r fig0602,fig.width=5.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+
+barplot(height = margin.table(Titanic,c(1,2)),
+        beside = TRUE,
+        main = "Titanic Passengers by Class and Sex",
+        xlab = "Sex",
+        ylab = "Count of Passengers",
+        col = cm.colors(4)
+        )
+legend(x = "topright",
+       y = c("First","Second","Third","Crew"),
+       title = "Class",
+       title.col = "navy",
+       fill = cm.colors(4)
+      )
+
+```
+
+### Demonstration: Clustered Bar Plot
+
+The following script creates a clustered bar plot.
+
+* Line 2: This begins the `barplot` function. It creates a table that contains the counts for _cyl_ and _gear_ in the _mtcars_ data frame and then uses that table to produce the bar plot. Note the order of the variables in the table command. The grouping variable is listed second. In this example, the cars are grouped by gears and within each group the number of cylinders are displayed. The height of each bar is determined by the count of cars in each group.
+* Lines 3-6: These lines are essentially the same as for a simple bar plot as described above.
+* Line 7: Setting legend to TRUE displays a legend in the corner of the plot. Whenever more than one variable is being plotted it is important to display a legend for the reader. In this case, the legend displays the colors used for the _cyl_ variable.
+* Line 8: A stacked bar is the default type of plot but Line 8 instructs _R_ to create a plot with the variables beside each other. "Stacked" plots are described in the next section of this tutorial.
+* Line 9: This rather odd-looking line adds a title to the legend, otherwise users would be confused about what the various colors used in the plot mean.
+
+```{r}
+
+# Clustered Bar Plot
+barplot(height = table(mtcars$cyl, mtcars$gear),
+  main = "Number of Cars by Gears and Cylinders",
+  xlab = "Gears",
+  ylab = "Count",
+  col = topo.colors(3),
+  legend = TRUE,
+  beside = TRUE,
+  args.legend = list(title = "Cylinders")
+)
+
+```
+
+### Clustered Bar Plot with Gradient Colors
+
+Designers must be careful about using multiple hues on a single visual display since that creates what is sometimes called “clown’s pants” due to the extreme patchy color scheme. Plots with that type of coloration can be distracting and unusable. Instead, it is generally a best practice to use only shades of the same color or gradients from one color to another. As a comparison, the following script produces the bar plot seen in the previous figure but using only shades of blue.
+
+* Line 2: This line creates a custom palette named `colpal` (for “color palette”), which is like a new _R_ command that creates color codes for plots. In this case, the function will create the codes for color gradients between blue and white. _Note: In order to make plots more usable for readers who are color blind, only one hue should be selected along with either white or black._
+* Lines 4-7: These are the same as found in the previous bar plot script.
+* Line 8: This line sets the color for this plot by using `colpal` which was created in Line 2 and specifying three colors.
+* Lines 9-12: These are the same as found in the previous bar plot script.
+
+```{r}
+
+# Clustered Bar Plot With Gradient Colors
+colpal <- colorRampPalette(c("blue", "white"))
+
+barplot(height = table(mtcars$cyl, mtcars$gear),
+  main = "Number of Cars by Gears and Cylinders",
+  xlab = "Gears",
+  ylab = "Count",
+  col = colpal(3),
+  legend = TRUE,
+  beside = TRUE,
+  args.legend = list(title = "Cylinders")
+)
+
+```
+
+### Skill Check: Clustered Bar Plot
+
+Using the [_infert_](/tutorials/9999-data-dict/index.html#infert) data frame, create a clustered bar plot for _spontaneous_ grouped by _education_. The plot should have a main title of "Spontaneous Cases by Education Level", the X-Axis should have a lable of "Education Level", the Y-Axis should have a lable of "Count", the colors should be from a custom palette using orange to white, and the legend should have a title of "Spontaneous."
+
+```{r ex="ex02", type="pre-exercise-code"}
+
+# No pre-exercise code for this exercise
+
+```
+
+```{r ex="ex02", type="sample-code"}
+
+# Create a clustered bar plot for infert using the specifications listed above.
+
+
+```
+
+```{r ex="ex02", type="solution"}
+
+colpal <- colorRampPalette(c("orange", "white"))
+
+barplot(height = table(infert$spontaneous, infert$education),
+  main = "Spontaneous Cases By Education Level",
+  xlab = "Education Level",
+  ylab = "Count",
+  col = colpal(3),
+  legend = TRUE,
+  beside = TRUE,
+  args.legend = list(title = "Spontaneous")
+)
+
+```
+
+```{r ex="ex02", type="sct"}
+
+ex21neq <- "The color specifications should be orange, white."
+ex22neq <- "The height should be a table of spontaneous and education."
+ex23neq <- "The main title should be Spontaneous Cases By Education Level."
+ex24neq <- "The x-axis label should be Education Level."
+ex25neq <- "The y-axis label should be Count."
+ex26neq <- "The color palette should be specified as colpal(3)."
+ex27neq <- "The legend value should be TRUE."
+ex28neq <- "The beside value should be TRUE."
+ex29neq <- "args.legend should have a title of Spontaneous."
+
+
+state21 <- ex() %>% check_function("colorRampPalette")
+
+state21 %>% 
+  check_arg("colors") %>% 
+  check_equal(incorrect_msg = ex21neq)
+
+state22 <- ex() %>% check_function("barplot")
+
+state22 %>% 
+  check_arg("height") %>% 
+  check_equal(incorrect_msg = ex22neq)
+
+state22 %>% 
+  check_arg("main") %>%
+  check_equal(incorrect_msg = ex23neq)
+
+state22 %>% 
+  check_arg("xlab") %>% 
+  check_equal(incorrect_msg = ex24neq)
+
+state22 %>% 
+  check_arg("ylab") %>% 
+  check_equal(incorrect_msg = ex25neq)
+
+state22 %>% 
+  check_arg("col") %>% 
+  check_equal(incorrect_msg = ex26neq)
+
+# This check doesn't work. TestThis seems to want to check legend as a function not an arg.
+# fun22state %>% 
+#   check_arg("legend") %>% 
+#   check_equal(incorrect_msg = ex27neq)
+
+state22 %>% 
+  check_arg("beside") %>% 
+  check_equal(incorrect_msg = ex28neq)
+
+state22 %>% 
+  check_arg("args.legend") %>% 
+  check_equal(incorrect_msg = ex29neq)
+
+success_msg("Perfect! A clustered bar plot is useful for comparing variables.")
+
+```
+
+-----
+
+## Stacked Bar Plot
+
+A stacked bar plot has one variable stacked on top of another. In general, these are very difficult to read and should only be used to make broad generalizations. Consider, for example, the following figure. This plot shows admissions for the University of California at Berkeley for six different programs. The top part of each bar (in brown) are the number admitted while the bottom part of each bar (in green) are the number rejected. Look at programs C and D. Were more students accepted in C or in D? Because these two values do not have the same baseline it is impossible to tell for certain which is larger.
+
+```{r fig0603,fig.width=3,fig.height=3,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+
+barplot(height = margin.table(UCBAdmissions,c(1,3)),
+        main = "Berkeley Admissions",
+        xlab = "Program ID",
+        ylab = "Count of Admissions",
+        col = terrain.colors(3)
+        )
+
+```
+
+### Demonstration: Stacked Bar Plot
+
+The following script is the same `barplot` function used in the clustered bar plots above, except “beside = TRUE” is missing. By default, bar plots are stacked in _R_ so if the “beside” argument is missing (or set to “FALSE”) then the result will be a stacked bar plot.
+
+```{r}
+
+# Stacked Bar Plot With Gradient Colors
+colpal <- colorRampPalette(c("Brown", "white"))
+
+barplot(height = table(mtcars$cyl, mtcars$gear),
+  main = "Number of Cars by Gears and Cylinders",
+  xlab = "Gears",
+  ylab = "Count",
+  col = colpal(3),
+  legend = TRUE,
+  args.legend = list(title = "Cylinders")
+)
+
+```
+
+It should be evident that the bar plot created in the above script is not very useful. While it is fairly easy to see that the number of 8-cylinder cars with three gears is much larger than the other categories, it is difficult to determine, for example, how many cars have five gears and eight cylinders. This difficulty is even worse when there are more than three levels for either of the two variables being plotted.
+
+### Skill Check: Stacked Bar Plot
+
+Using the _infert_ data frame, create a stacked bar plot for _induced_ grouped by _education_. The plot should have a main title of "Induced Cases by Education Level", the X-Axis should have a lable of "Education Level", the Y-Axis should have a lable of "Count", the colors should be from a custom palette using purple to white, and the legend should have a title of "Induced."
+
+```{r ex="ex03", type="pre-exercise-code"}
+
+# No pre-exercise code for this exercise
+
+```
+
+```{r ex="ex03", type="sample-code"}
+
+# Create a stacked bar plot for infert using the specifications listed above.
+
+
+```
+
+```{r ex="ex03", type="solution"}
+
+colpal <- colorRampPalette(c("purple", "white"))
+
+barplot(height = table(infert$induced, infert$education),
+  main = "Induced Cases By Education Level",
+  xlab = "Education Level",
+  ylab = "Count",
+  col = colpal(3),
+  legend = TRUE,
+  args.legend = list(title = "Induced")
+)
+
+```
+
+```{r ex="ex03", type="sct"}
+
+ex31neq <- "The color specifications should be purple, white."
+ex32neq <- "The height should be a table of induced and education."
+ex33neq <- "The main title should be Induced Cases By Education Level."
+ex34neq <- "The x-axis label should be Education Level."
+ex35neq <- "The y-axis label should be Count."
+ex36neq <- "The color palette should be specified as colpal(3)."
+ex37neq <- "The legend value should be TRUE."
+ex38neq <- "args.legend should have a title of Induced."
+
+
+state31 <- ex() %>% check_function("colorRampPalette")
+
+state31 %>% 
+  check_arg("colors") %>% 
+  check_equal(incorrect_msg = ex31neq)
+
+state32 <- ex() %>% check_function("barplot")
+
+state32 %>% 
+  check_arg("height") %>% 
+  check_equal(incorrect_msg = ex32neq)
+
+state32 %>% 
+  check_arg("main") %>%
+  check_equal(incorrect_msg = ex33neq)
+
+state32 %>% 
+  check_arg("xlab") %>% 
+  check_equal(incorrect_msg = ex34neq)
+
+state32 %>% 
+  check_arg("ylab") %>% 
+  check_equal(incorrect_msg = ex35neq)
+
+state32 %>% 
+  check_arg("col") %>% 
+  check_equal(incorrect_msg = ex36neq)
+
+# This check doesn't work. TestThis seems to want to check legend as a function not an arg.
+# fun32state %>% 
+#   check_arg("legend") %>% 
+#   check_equal(incorrect_msg = ex37neq)
+
+state32 %>% 
+  check_arg("args.legend") %>% 
+  check_equal(incorrect_msg = ex38neq)
+
+success_msg("Good Job! A stacked bar plot is useful for comparing variables.")
+
+```
+
+-----
+
+## Pie Chart
+
+A pie chart is commonly used to display categorical data; however, pie charts are notoriously difficult to interpret, especially if the writer uses some sort of 3-D effect or “exploded” slices. The human brain seems able to easily compare the heights of two or more bars, as in bar plots, but the areas of two or more slices of a pie chart are difficult to compare. For this reason, pie charts should be avoided in research reports. If they are used at all, they should only illustrate one slice's relationship to the whole, not comparing one slice to another; and no more than four or five slices should ever be presented on one chart.
+
+The following figure shows the results of an experiment to compare the effectiveness of various feed supplements on the growth rate of chickens. This figure illustrates the problem with pie charts. Notice that "casein"" seems to promote growth better than "horsebean,"" but it is impossible to determine if "casein"" is better than "sunflower"" from this chart.
+
+```{r fig0604,fig.width=4,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+
+count <- aggregate(chickwts$weight, by=list(chickwts$feed), FUN=mean)
+labels <- c(levels(chickwts$feed))
+pie(count$x,
+    labels = labels,
+    main = "Chick Weights by Type of Feed",
+    col = terrain.colors(6)
+    )
+
+```
+
+### Demonstration: Pie Chart
+
+The following script creates a pie chart.
+
+* Line 2: This starts a pie chart function. The "x" parameter is the data that needs to be charted. In this line, the _feed_ variable in the [_chickwts_](/tutorials/9999-data-dict/index.html#chickwts) data frame is extracted to a table since the pie chart function expects input in the form of a table.
+* Lines 3-4: These lines define the main title and colors used for the pie chart. These parameters are the same as was seen in other graphs in this lab.
+* Line 5: This tells _R_ to use the labels used in the _feed_ variable as the labels on the pie chart.
+
+```{r}
+
+# Count of Chicks by Feed
+pie(x = table(chickwts$feed),
+  main = "Count of Chicks by Feed",
+  col = rainbow(6),
+  labels = c(levels(chickwts$feed))
+  )
+
+```
+
+Note: The pie chart shows the number of chicks that were given a particular type of feed. Even though the pie “slices” are very nearly the same size there was a slightly different number of chicks on each type of feed.
+
+### Skill Check: Pie Chart
+
+Create a pie chart for the [_state.division_](/tutorials/9999-data-dict/index.html#state.division) data frame. NOTE: This data frame has only one vector so it is not necessary to use the "$" operator. The chart should have a main title of "States by Division", nine colors should be used from the topo.colors palette, and the lables should be the same as the "states.division" vector.
+
+```{r ex="ex04", type="pre-exercise-code"}
+
+# No pre-exercise code for this exercise
+
+```
+
+```{r ex="ex04", type="sample-code"}
+
+# Create a pie chart for states.division using the specifications listed above.
+
+
+```
+
+```{r ex="ex04", type="solution"}
+
+pie(x = table(state.division),
+  main = "States by Division",
+  col = topo.colors(9),
+  labels = c(levels(chickwts$feed))
+  )
+
+```
+
+```{r ex="ex04", type="sct"}
+
+ex41neq <- "The chart should use a table of state.division for input."
+ex42neq <- "The main title should be States by Division."
+ex43neq <- "The color palette should be topo.colors(9)."
+ex44neq <- "The labels should be the levels of chickwts$feed."
+
+state41 <- ex() %>% check_function("pie")
+
+state41 %>% 
+  check_arg("x") %>% 
+  check_equal(incorrect_msg = ex41neq)
+
+state41 %>% 
+  check_arg("main") %>%
+  check_equal(incorrect_msg = ex42neq)
+
+state41 %>% 
+  check_arg("col") %>% 
+  check_equal(incorrect_msg = ex43neq)
+
+state41 %>% 
+  check_arg("labels") %>% 
+  check_equal(incorrect_msg = ex44neq)
+
+success_msg("Perfect! Pie charts are very popular.")
+
+```
+
+-----
+
+## Heat Map
+
+Heat maps use colors to depict the counts of variables and are commonly found around election time to depict how precincts are voting, red for republican and blue for democrat. They are also routinely used on weather maps to depict areas with the greatest probability for rain or snow. While heat maps can be displayed in a geographical format where, for example, the various states are shaded to represent some factor, they are also commonly seen as a grid. The following figure shows a heat map of various socioeconomic indicators by province in Switzerland from 1888.
+
+```{r fig0605,fig.width=4,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+
+x <- as.matrix(swiss[1:15,])
+heatmap(x,
+        Rowv=NA,
+        Colv=NA,
+        scale="column",
+        margins=c(10,7),
+        main = "Swiss Stats",
+        ylab = "Province",
+        xlab = "Indicator" 
+        )
+
+```
+
+In a heat map produced by _R_, lighter colors represent larger numbers. Thus, the province with the highest fertility rate is Franches-Mnt since it has the lightest color and the province with the least agriculture is Courtelary since it has the darkest color for those variables. Interpreting the heat map can be a challenge for the researcher. In some cases a light color would be positive and in others negative. For example, the highest education level would be in Neuveville (positive) but the highest infant mortality would be in Porrentruy (negative). Also, the colors are often very similar and difficult to distinguish. For example, for “examination” Cossonay has a numeric value of 22 while Aigle has 21. These two colors are slightly different but it would be difficult to detect that from the image. Often, the best that can be done with a heat map is identifying broad generalizations.
+
+### Demonstration: Heat Map
+
+The following script creates a heat map for the [_USJudgeRating_](/tutorials/9999-data-dict/index.html#usjudgeratings) data frame.
+
+* Line 1: _R_ can store data in several different formats and many, like vector and data frame, are used by other tutorials in this series. Heat maps require data to be in a _matrix_ format and this line converts the first 20 lines, out of 43, in the data frame into a matrix named _hmap_. Notice how the first twenty lines in that data frame are specified, using _[20:1,]_. Finally, "x" is the name of the parameter in the `as.matrix` function that receives the input data.
+* Line 2: This is the start of the heat map function. This line instructs _R_ to create a heat map from the _hmap_ matrix. _R_ designates the input variable for _heatmap_ to be "x."
+* Line 3: The main title of the heatmap is “US Judge Ratings.”
+* Line 4: The x-axis is labeled “Characteristic.”
+* Line 5: This suppresses the row “dendogram” that is used to order the rows. The best way to see what this line does is to comment it out and re-run the script.
+* Line 6: This suppresses the column “dendogram.”
+* Line 7: Sets the heat map to scale the rows. In this way, the color for each row cell is calculated such that the entire row’s mean is zero and the standard deviation is one. The other option is to scale “column” and researchers would want to try both to see which provides a better heat map.
+* Line 8: This sets the right and bottom margins. The values were found by simple trial-and-error to produce the most legible heat map.
+
+```{r}
+
+hmap <- as.matrix(x = USJudgeRatings[20:1,])
+heatmap(x = hmap,
+  main = "US Judge Ratings",
+  xlab = "Characteristic",
+  Rowv=NA,
+  Colv=NA,
+  scale="row",
+  margins=c(8,3)
+)
+
+```
+
+### Skill Check: Heat Map
+
+Create a heat map for the [_attitude_](/tutorials/9999-data-dict/index.html#attitude) data frame. The heat map should have a main title of "Clerical Employees Attitude", the label for the X-axis should be "Characteristic" and for the y-Axis, "Department." Specify that the Rowv and Colv are both "NA." Scale by "row" and set the margins for "c(8,3)."
+
+```{r ex="ex05", type="pre-exercise-code"}
+
+# No pre-exercise code for this exercise
+
+```
+
+```{r ex="ex05", type="sample-code"}
+
+# Create a heat map for attitude using the specifications listed above.
+
+
+```
+
+```{r ex="ex05", type="solution"}
+
+hmap <- as.matrix(x = attitude[1:20,])
+
+heatmap(x = hmap,
+  main = "Clarical Employees Attitude",
+  xlab = "Characteristic",
+  ylab = "Department",
+  Rowv=NA,
+  Colv=NA,
+  scale="row",
+  margins=c(8,3)
+)
+
+```
+
+```{r ex="ex05", type="sct"}
+
+ex51neq <- "Check to be sure the x value is attitude[1:20,] -- don't forget the comma after 20!"
+ex52neq <- "The x value should be hmap."
+ex53neq <- "The main title should be Clarical Employees Attitude."
+ex54neq <- "The x-axis label should be Characteristic."
+ex55neq <- "The y-axis label should be Department."
+ex56neq <- "Rowv should be NA."
+ex57neq <- "Colv should be NA."
+ex58neq <- "Scale should be row."
+ex59neq <- "The margins should be set for 8, 3."
+
+ex() %>% 
+  check_object("hmap") %>%
+  check_equal(incorrect_msg = ex51neq)
+
+state51 <- ex() %>% 
+  check_function("heatmap")
+
+state51 %>% 
+  check_arg("x") %>% 
+  check_equal(incorrect_msg = ex52neq)
+
+state51 %>% 
+  check_arg("main") %>%
+  check_equal(incorrect_msg = ex53neq)
+
+state51 %>% 
+  check_arg("xlab") %>% 
+  check_equal(incorrect_msg = ex54neq)
+
+state51 %>% 
+  check_arg("ylab") %>% 
+  check_equal(incorrect_msg = ex55neq)
+
+state51 %>% 
+  check_arg("Rowv") %>% 
+  check_equal(incorrect_msg = ex56neq)
+
+state51 %>%
+  check_arg("Colv") %>%
+  check_equal(incorrect_msg = ex57neq)
+
+state51 %>% 
+  check_arg("scale") %>% 
+  check_equal(incorrect_msg = ex58neq)
+
+state51 %>% 
+  check_arg("margins") %>% 
+  check_equal(incorrect_msg = ex59neq)
+
+success_msg("Good Job! Heat maps display a lot of data in a compact way.")
+
+```
+
+-----
+
+## Mosiac Plot
+
+A mosiac plot indicates the relative counts of items in a data frame by sizing areas on a grid. The following figure is a mosiac plot that indicates the relationship between the number of gears and cylinders in several cars. Notice that 8-cylinder cars overwhelmingly have three gears while 4-cylinder cars tend to have four gears. This plot gives a quick visual representation of the relationships between categorical variables, like a pie chart shows the relationship between continuous variables. A mosiac plot would suffer the same weaknesses as a pie chart and are, generally, rather difficult to interpret.
+
+```{r fig0606,fig.width=3.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+
+colpal <- colorRampPalette(c("purple", "white")) # generate a color palette
+plot(table(mtcars$cyl,mtcars$gear),
+     main = "US Car Information",
+     xlab = "Cylinders",
+     ylab = "Gears",
+     col=colpal(4))
+
+```
+
+### Demonstration: Mosaic Plot
+
+The following script creates a mosiac plot.
+
+* Line 2: A mosiac plot requires the input to be in table format so this line creates a table from the _gear_ and _cyl_ variables. The data specification is entered as variable "x" in a plot.
+* Lines 3-6: These are similar to those used for other graphics functions and should be fairly easy to understand.
+
+```{r}
+
+# Mosiac Plots Using MTCars
+plot(x = table(mtcars$gear, mtcars$cyl),
+  main = "Gears vs Cylinders",
+  xlab = "Gears",
+  ylab = "Cylinders",
+  col = topo.colors(3)
+  )
+
+```
+
+### Skill Check: Mosaic Plot
+
+Create a mosaic plot for the _infert_ data frame. The plot should have a main title of "Compare Induced and Education", the label for the X-axis should be "Number Induced" and for the y-Axis, "Education Level." Select three "terrain.colors" for the plot.
+
+```{r ex="ex06", type="pre-exercise-code"}
+
+# No pre-exercise code for this exercise
+
+```
+
+```{r ex="ex06", type="sample-code"}
+
+# Create a mosaic plot for infert using the specifications listed above.
+
+```
+
+```{r ex="ex06", type="solution"}
+
+plot(x = table(infert$induced, infert$education),
+  main = "Compare Induced and Education",
+  xlab = "Number Induced",
+  ylab = "Education Level",
+  col = terrain.colors(3)
+  )
+
+```
+
+```{r ex="ex06", type="sct"}
+
+ex61neq <- "Check to be sure the x value is a table of induced and education."
+ex62neq <- "The main title should be Compare Induced and Education."
+ex63neq <- "The x-axis label should be Number Induced."
+ex64neq <- "The y-axis label should be Education Level."
+ex65neq <- "The color should be terrain.colors(3)."
+
+state61 <- ex() %>% 
+  check_function("plot")
+
+state61 %>% 
+  check_arg("x") %>% 
+  check_equal(incorrect_msg = ex61neq)
+
+state61 %>% 
+  check_arg("main") %>%
+  check_equal(incorrect_msg = ex62neq)
+
+state61 %>% 
+  check_arg("xlab") %>%
+  check_equal(incorrect_msg = ex63neq)
+
+state61 %>% 
+  check_arg("ylab") %>%
+  check_equal(incorrect_msg = ex64neq)
+
+state61 %>% 
+  check_arg("col") %>%
+  check_equal(incorrect_msg = ex65neq)
+
+success_msg("Perfect! Mosaic plots are not too common but may be useful in some situations.")
+
+```
+
+-----
+
+## Next
+
+The previous tutorial described and created [frequency tables](/tutorials/0050-frequency-tables) and this tutorial visualized those tables. The next tutorial explores the [correlation](/tutorials/0070-correlation) between two variables.
