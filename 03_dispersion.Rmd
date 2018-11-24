@@ -47,7 +47,6 @@ To find the range of a vector, use the `range` function as found in the _R_ scri
 <span style="background-color: #ffff99; font-style: italic;">This demonstration contains five different examples of finding the range.</span>
 
 ```{r}
-
 # Range for trees
 range(trees$Girth)
 range(trees$Height)
@@ -63,25 +62,26 @@ range(rock$perm)
 
 Using the [_faithful_](/tutorials/9999-data-dict/index.html#faithful) data frame, find the range for _eruptions_.
 
-```{r ex="ex01", type="pre-exercise-code"}
+```{r ex="ex03.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex01", type="sample-code"}
-
+```{r ex="ex03.01", type="sample-code"}
 # Range for eruptions
+
+
 
 ```
 
-```{r ex="ex01", type="solution"}
+```{r ex="ex03.01", type="solution"}
 
 range(faithful$eruptions)
 
 ```
 
-```{r ex="ex01", type="sct"}
+```{r ex="ex03.01", type="sct"}
 
 ex1neq <- "Check that the range is being generated for faithful$eruptions."
 
@@ -91,6 +91,23 @@ ex() %>%
   check_equal(incorrect_msg = ex1neq)
 
 success_msg("Perfect! You can find the range of a vector!")
+
+```
+
+### Activity 3.1: Range
+
+Using the _cafe_ data frame, find the range for _age_. Include that answer in the deliverable document for this lab.
+
+```{r ex="act03.01", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act03.01", type="sample-code"}
+# Using the cafe data frame, find the range for age.
+
+
 
 ```
 
@@ -112,7 +129,6 @@ _R_ calculates and prints the quartiles, along with several other descriptive me
 <span style="background-color: #ffff99; font-style: italic;">This demonstration contains seven different examples of finding quartiles.</span>
 
 ```{r}
-
 # Summary for trees
 summary(trees$Girth)
 summary(trees$Height)
@@ -131,25 +147,26 @@ summary(rock$perm)
 
 Using the [_USJudgeRatings_](/tutorials/9999-data-dict/index.html#usjudgeratings) data frame, find the summary for _WRIT_.
 
-```{r ex="ex02", type="pre-exercise-code"}
+```{r ex="ex03.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex02", type="sample-code"}
-
+```{r ex="ex03.02", type="sample-code"}
 # Find the summary for WRIT
+
+
 
 ```
 
-```{r ex="ex02", type="solution"}
+```{r ex="ex03.02", type="solution"}
 
 summary(USJudgeRatings$WRIT)
 
 ```
 
-```{r ex="ex02", type="sct"}
+```{r ex="ex03.02", type="sct"}
 
 ex2neq <- "Check that the summary is being generated for USJudgeRatings$WRIT."
 
@@ -159,6 +176,22 @@ ex() %>%
   check_equal(incorrect_msg = ex2neq)
 
 success_msg("Good Job! You found a summary with all of those quartiles!")
+
+```
+
+### Activity 3.2: Quartiles Using Summary
+
+Using the _cafe_ data frame, find the summary for _age_. Include the values for Q1 and Q3 in the deliverable document for this lab.
+
+```{r ex="act03.02", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act03.02", type="sample-code"}
+# Using the cafe data frame, find the summary for age.
+
 
 ```
 
@@ -178,7 +211,6 @@ To find the inter-quartile range of a vector, use the `IQR` function found in th
 <span style="background-color: #ffff99; font-style: italic;">This demonstration contains seven different examples of find the inter-quartile range (IQR).</span>
 
 ```{r}
-
 # IQR for trees
 IQR(trees$Girth)
 IQR(trees$Height)
@@ -196,25 +228,26 @@ IQR(rock$perm)
 
 Using the [_swiss_](/tutorials/9999-data-dict/index.html#swiss) data frame, find the IQR for _Agriculture_.
 
-```{r ex="ex03", type="pre-exercise-code"}
+```{r ex="ex03.03", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex03", type="sample-code"}
-
+```{r ex="ex03.03", type="sample-code"}
 # Find the IQR for Agriculture
+
+
 
 ```
 
-```{r ex="ex03", type="solution"}
+```{r ex="ex03.03", type="solution"}
 
 IQR(swiss$Agriculture)
 
 ```
 
-```{r ex="ex03", type="sct"}
+```{r ex="ex03.03", type="sct"}
 
 ex3neq <- "Check that the IQR is being generated for swiss$Agriculture."
 
@@ -224,6 +257,23 @@ ex() %>%
   check_equal(incorrect_msg = ex3neq)
 
 success_msg("Good Job! The Inter-Quartile Range you found is correct!")
+
+```
+
+### Activity 3.3: Inter-Quartile Range (IQR)
+
+Using the _cafe_ data frame, find the inter-quartile-range (IQR) for _age_. Include that answer in the deliverable document for this lab.
+
+```{r ex="act3.3", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act3.3", type="sample-code"}
+# Using the cafe data frame, find the iner-quartile range (IQR) for age.
+
+
 
 ```
 
@@ -332,7 +382,6 @@ To find the standard deviation of a vector, use the `sd` function as found in th
 <span style="background-color: #ffff99; font-style: italic;">This demonstration contains seven different examples of finding the standard deviation.</span>
 
 ```{r}
-
 # Summary for trees
 sd(trees$Girth)
 sd(trees$Height)
@@ -352,25 +401,25 @@ In the results, notice that the tree girth has a standard deviation of about 3.1
 
 Using the [_stackloss_](/tutorials/9999-data-dict/index.html#stackloss) data frame, find the standard deviation for _Air.Flow_.
 
-```{r ex="ex04", type="pre-exercise-code"}
+```{r ex="ex03.04", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex04", type="sample-code"}
-
+```{r ex="ex03.04", type="sample-code"}
 # Find the standard deviation for Air.Flow
+
 
 ```
 
-```{r ex="ex04", type="solution"}
+```{r ex="ex03.04", type="solution"}
 
 sd(stackloss$Air.Flow)
 
 ```
 
-```{r ex="ex04", type="sct"}
+```{r ex="ex03.04", type="sct"}
 
 ex4neq <- "Check that the standard deviation is being generated for stackloss$Air.Flow."
 
@@ -380,6 +429,23 @@ ex() %>%
   check_equal(incorrect_msg = ex4neq)
 
 success_msg("Perfect! You calculated a standard deviation!")
+
+```
+
+### Activity 3.4: Standard Deviation
+
+Using the _cafe_ data frame, find the standard deviation for _age_. Include the answer in the deliverable document for this lab.
+
+```{r ex="act03.04", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act03.04", type="sample-code"}
+# Using the cafe data frame, find the standard deviation for age.
+
+
 
 ```
 

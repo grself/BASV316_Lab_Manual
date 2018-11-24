@@ -125,7 +125,6 @@ The following script demonstrates how to calculate Pearson's _r_.
 * Line 3: This is a continuation of the `cor.test` function call and specifies the method to be Pearson's _r_. Since Pearson's _r_ is the default method for the `cor.test` function this line did not need to be included but it is used in this example since the specification will be important in later examples in this lab.
 
 ```{r}
-
 # Pearson's r
 cor.test(airquality$Wind, airquality$Ozone,
   method = "pearson")
@@ -150,27 +149,26 @@ The `cor.test` function returns a lot of information that will be important in l
 
 Using the [_CO2_](/tutorials/9999-data-dict/index.html#CO2) data frame, calculate Pearson's _r_ for the variables _conc_ and _uptake_.
 
-```{r ex="ex01", type="pre-exercise-code"}
+```{r ex="ex07.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex01", type="sample-code"}
-
+```{r ex="ex07.01", type="sample-code"}
 # Calculate Pearson's r for conc and uptake in the CO2 data frame.
 
 
 ```
 
-```{r ex="ex01", type="solution"}
+```{r ex="ex07.01", type="solution"}
 
 cor.test(CO2$conc, CO2$uptake,
   method = "pearson")
 
 ```
 
-```{r ex="ex01", type="sct"}
+```{r ex="ex07.01", type="sct"}
 
 ex11neq <- "You should specify CO2$conc and CO2$uptake as the variables. Note: CO2 are capital letters. Be sure the method specified is pearson."
 
@@ -180,6 +178,24 @@ ex() %>%
   check_equal(incorrect_msg = ex11neq)
 
 success_msg("Perfect! Correlations are one of the most important tools available to researchers.")
+
+```
+
+
+### Activity 7.1: Pearson's R
+
+Using the _cafe_ data frame, determine the correlation between the _length_ of the meal and the _bill_ to see if longer meals tend to cost more. Because these are both ratio variables, use Pearson's _r_ as the correlation method. Record the correlation in the deliverable document for this lab.
+
+```{r ex="act07.01", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act07.01", type="sample-code"}
+# Using the cafe data frame, determine the correlation between the length of the meal and the bill.
+
+
 
 ```
 
@@ -249,27 +265,26 @@ The interpretation of the results of Spearman's _rho_ is similar to that for Pea
 
 Using the [_CO2_](/tutorials/9999-data-dict/index.html#CO2) data frame, calculate Spearmans's _rho_ for the variables _Plant_ (which is ordered) and _uptake_.
 
-```{r ex="ex02", type="pre-exercise-code"}
+```{r ex="ex07.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex02", type="sample-code"}
-
+```{r ex="ex07.02", type="sample-code"}
 # Calculate Spearman's rho for Plant and uptake in the CO2 data frame.
 
 
 ```
 
-```{r ex="ex02", type="solution"}
+```{r ex="ex07.02", type="solution"}
 
 cor.test(as.numeric(CO2$Plant), CO2$uptake,
   method = "spearman")
 
 ```
 
-```{r ex="ex02", type="sct"}
+```{r ex="ex07.02", type="sct"}
 
 ex21neq <- "You should specify the as.numeric function changes the CO2$Plant variable. Notice the capital letters: CO and P."
 ex22neq <- "You should specify as.numeric(CO2$Plant) and CO2$uptake as the variables. Note: CO and P are capital letters."
@@ -299,6 +314,23 @@ success_msg("Perfect! Correlations are one of the most important tools available
 
 ```
 
+### Activity 7.2: Spearman's Rho
+
+Using the _cafe_ data frame, determine the correlation between _age_ and service (_svc_) to see if there is a relationship between a customer's age and their rating for the service. Because service contains ordered data, use Spearman's _rho_ as the correlation method. Record the correlation in the deliverable document for this lab.
+
+```{r ex="act07.02", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act07.02", type="sample-code"}
+# Using the cafe data frame, determine the correlation between age and service (svc).
+
+
+
+```
+
 -----
 
 ## Demonstration: Kendall's Tau
@@ -318,27 +350,26 @@ Interpreting Kendall's _tau_ is similar to Pearson's _r_ and will not be further
 
 Using the [_CO2_](/tutorials/9999-data-dict/index.html#CO2) data frame, calculate Kendall's _tau_ for the variables _Type_ and _uptake_.
 
-```{r ex="ex03", type="pre-exercise-code"}
+```{r ex="ex07.03", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex03", type="sample-code"}
-
+```{r ex="ex07.03", type="sample-code"}
 # Calculate Kendall's tau for Type and uptake in the CO2 data frame.
 
 
 ```
 
-```{r ex="ex03", type="solution"}
+```{r ex="ex07.03", type="solution"}
 
 cor.test(as.numeric(CO2$Type), CO2$uptake,
   method = "kendall")
 
 ```
 
-```{r ex="ex03", type="sct"}
+```{r ex="ex07.03", type="sct"}
 
 ex31neq <- "You should specify the as.numeric function changes the CO2$Type variable. Notice the capital letters: CO and T."
 ex32neq <- "You should specify as.numeric(CO2$Type) and CO2$uptake as the variables. Note: CO and T are capital letters."
@@ -364,6 +395,24 @@ ex() %>%
   check_equal(incorrect_msg = ex34neq)
 
 success_msg("Perfect! Correlations are one of the most important tools available to researchers.")
+
+```
+
+
+### Activity 7.3: Kendall's Tau
+
+Using the _cafe_ data frame, determine the correlation between the distance driven (_miles_) and the _meal_ eaten. Because meal is categorical but not ordered, use Kendall's _tau_ as the correlation method. Record the correlation in the deliverable document for this lab.
+
+```{r ex="act07.03", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act07.03", type="sample-code"}
+# Using the cafe data frame, determine the correlation between miles and meal. 
+
+
 
 ```
 
@@ -455,7 +504,6 @@ If a 5% significance level were specified for this data then any p-value smaller
 One of the statistics calculated by `cor.test` is the p-value, so that test can be used to find significance along with a correlation. The following script demonstrates using `cor.test` to find the significance in the correlation between _Wind_ and _Temp_ in the _airquality_ data frame.
 
 ```{r}
-
 # Significance
 cor.test(airquality$Wind, airquality$Temp,
   method = "pearson")
@@ -468,27 +516,26 @@ At the end of line two of the results (not counting the title line), the _p-valu
 
 Using the _CO2_ data frame, calculate the p-value for the variables _conc_ and _uptake_. Since these are both continuous data, "pearson" should be selected for the method.
 
-```{r ex="ex04", type="pre-exercise-code"}
+```{r ex="ex07.04", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex04", type="sample-code"}
-
+```{r ex="ex07.04", type="sample-code"}
 # Calculate the p-value for conc and uptake in the CO2 data frame.
 
 
 ```
 
-```{r ex="ex04", type="solution"}
+```{r ex="ex07.04", type="solution"}
 
 cor.test(CO2$conc, CO2$uptake,
   method = "pearson")
 
 ```
 
-```{r ex="ex04", type="sct"}
+```{r ex="ex07.04", type="sct"}
 
 ex41neq <- "You should specify CO2$conc and CO2$uptake as the variables. Note: CO2 are capital letters. Be sure the method specified is pearson."
 
@@ -501,6 +548,24 @@ success_msg("Good job! With a p-value of less than 0.05, this correlation is sig
 
 ```
 
+
+### Activity 7.4: Significance
+
+Using the _cafe_ data frame, calculate the p-value for the variables _age_ and _bill_. Since these are both continuous data, _pearson_ should be selected for the method. Record the p-value in the deliverable document for this lab.
+
+```{r ex="act07.04", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act07.04", type="sample-code"}
+# Using the cafe data frame, determine the p-value for age and bill.
+
+
+
+```
+
 -----
 
 ## Regression
@@ -509,7 +574,7 @@ A regression line can be drawn on a scatter plot to graphically show the relatio
 
 As an example, in the _mtcars_ dataset the calculated Pearson's _r_ for Quarter-mile Time and Horsepower is -0.708. These two variables have a strong negative correlation and are plotted below.
 
-```{r fig0701,fig.width=4,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE}
+```{r fig.width=4,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE}
 
 plot(mtcars$hp, mtcars$qsec, 
      type="p", 
@@ -603,20 +668,19 @@ abline(lmod,
 
 Using the _airquality_ data frame, predict the _Wind_ (y-axis) when the _Temp_ (x-axis) is 80 degrees.
 
-```{r ex="ex05", type="pre-exercise-code"}
+```{r ex="ex07.05", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex05", type="sample-code"}
-
+```{r ex="ex07.05", type="sample-code"}
 # Predict the wind for a temp of 80 degrees in the airquality data frame.
 
 
 ```
 
-```{r ex="ex05", type="solution"}
+```{r ex="ex07.05", type="solution"}
 
 lmod <- lm(airquality$Wind ~ airquality$Temp)
 b <- coef(lmod)[[1]] # slope
@@ -626,7 +690,7 @@ x <- 80.0
 
 ```
 
-```{r ex="ex05", type="sct"}
+```{r ex="ex07.05", type="sct"}
 
 # These are numbered by the exercise number and a sequence within the exercise.
 # The sequence number is not necessary if there is only one check.
@@ -642,6 +706,23 @@ ex() %>%
   check_equal(incorrect_msg = ex52neq)
 
 success_msg("Perfect! So the predicted wind on an 80 degree day is 9.596533.")
+
+```
+
+### Activity 7.5: Regression
+
+Using the _cafe_ data frame, predict the tip from a customer who is 48 years old. Round the tip to the nearest penny. Record the prediction in the deliverable document for this lab.
+
+```{r ex="act07.05", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act07.05", type="sample-code"}
+# Using the cafe dataset, predict the tip from a 48 year-old customer.
+
+
 
 ```
 

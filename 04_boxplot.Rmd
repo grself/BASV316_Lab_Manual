@@ -45,7 +45,7 @@ print(trees$Volume)
 
 The above table shows the measured volume for 31 Black Cherry Trees. Researchers looking at these numbers would not be able to detect very much. However, a simple box plot reveals a few interesting details, such as the presence of one upper outlier and that the data are positively skewed (the dark "median" line is low in the box).
 
-```{r fig01, fig.dim=c(2.5,4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r fig04.01, fig.dim=c(2.5,4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 boxplot(trees$Volume,
         main="Trees",
@@ -63,7 +63,7 @@ Visualizations like this make it easy to detect a patterns that are not obvious 
 
 Following is the summary data for _hp_ from the [_mtcars_](/tutorials/9999-data-dict/index.html#mtcars) data frame along with the boxplot for that same data.
 
-```{r fig02, fig.dim=c(2.5,4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r fig04.02, fig.dim=c(2.5,4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 summary(mtcars$hp)
 
@@ -107,10 +107,9 @@ The following script generates four different boxplots for four different variab
 * Line 3: Create the boxplot for _area_. Note that the boxplot includes a `main` attribute which adds a title above the boxplot.
 * Lines 5-15 These are repetitions of Lines 1-3 for three other vectors in the _rock_ data frame.
 
-<span style="background-color: #ffff99; font-style: italic;">This demonstration contains four different examples of generating a boxplot.</span>
+<span style="background-color: #ffff99; font-style: italic;">This demonstration contains four different examples of generating a summary and a boxplot.</span>
 
-```{r demo01}
-
+```{r}
 # Summary for area
 print(summary(rock$area))
 boxplot(rock$area, main="Rock Area")
@@ -138,26 +137,25 @@ Given these four boxplots, _rock\$peri_ has the most symmetrical data since the 
 
 Using the [_iris_](/tutorials/9999-data-dict/index.html#iris) data frame, create a boxplot for _Sepal.Length_.
 
-```{r ex="ex01", type="pre-exercise-code"}
+```{r ex="ex04.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex01", type="sample-code"}
-
+```{r ex="ex04.01", type="sample-code"}
 # Create a boxplot for Sepal.Length
 
 
 ```
 
-```{r ex="ex01", type="solution"}
+```{r ex="ex04.01", type="solution"}
 
 boxplot(iris$Sepal.Length)
 
 ```
 
-```{r ex="ex01", type="sct"}
+```{r ex="ex04.01", type="sct"}
 
 ex1neq <- "Check that the boxplot is being generated for iris$Sepal.Length (the capital letters and period are important)."
 
@@ -170,6 +168,23 @@ success_msg("Good work! A boxplot is a foundational visualization!")
 
 ```
 
+### Activity 4.1: Boxplot
+
+Using the _cafe_ data frame, generate a boxplot for both _age_. Copy/paste the boxplot in the deliverable document for this lab.
+
+```{r ex="act04.01", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act04.01", type="sample-code"}
+# Using the cafe data frame, generate a boxplot for age.
+
+
+
+```
+
 -----
 
 ## Outliers
@@ -178,7 +193,7 @@ It is useful to consider data observations that are far outside the “normal”
 
 Statistically, outliers are defined as values that lie outside boundaries that are 1.5 times the Inter-Quartile Range (IQR) below the first quartile or above the third quartile. _R_ includes a function that displays the values used to create a boxplot, including outliers, so the values of any outliers can be easily determined. As an example, consider the boxplot for _rock$shape_ that was created above.
 
-```{r fig03, fig.dim=c(2.5,4.0), fig.align="center", fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r fig04.03, fig.dim=c(2.5,4.0), fig.align="center", fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 # Summary for shape
 boxplot(rock$shape, main="Rock Shape")
@@ -187,11 +202,10 @@ boxplot(rock$shape, main="Rock Shape")
 
 ### Demonstration: Outliers
 
-To determine what values _R_ used to generate a boxplot plot, the command `boxplot.stats(rock$shape)` is executed.
+To determine what values _R_ used to generate a boxplot plot, the command `boxplot.stats(rock$shape)` is executed and produces this output.
 
 
-```{r demo02, echo=FALSE, message=FALSE, warnings=FALSE, results='asis', tut=FALSE}
-
+```{r tut=TRUE}
 # Stats for shape
 boxplot.stats(rock$shape)
 
@@ -211,25 +225,24 @@ This output has four different lines:
 
 Using the _iris_ data frame, use boxplot.stats to see if _Sepal.Width_ has any outliers.
 
-```{r ex="ex02", type="pre-exercise-code"}
+```{r ex="ex04.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex02", type="sample-code"}
-
+```{r ex="ex04.02", type="sample-code"}
 # Use boxplot.stats to see if Sepal.Width has any outliers
 
 ```
 
-```{r ex="ex02", type="solution"}
+```{r ex="ex04.02", type="solution"}
 
 boxplot.stats(iris$Sepal.Width)
 
 ```
 
-```{r ex="ex02", type="sct"}
+```{r ex="ex04.02", type="sct"}
 
 ex2neq <- "Check that the boxplot is being generated for iris$Sepal.Width (the capital letters and period are important)."
 
@@ -242,13 +255,32 @@ success_msg("Perfect! Did you notice the four outlier values?")
 
 ```
 
+### Activity 4.2: Outliers
+
+Using the _cafe_ data frame, find the outliers for _miles_. Record those outliers in the deliverable document for this lab.
+
+```{r ex="act04.02", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act04.02", type="sample-code"}
+# Using the cafe data frame, find the outliers for miles.
+
+
+
+```
+
+<!-- # Note: for my solution file, use this: boxplot.stats(miles)[[4]] -->
+
 -----
 
 ## Grouped Boxplots
 
 Boxplots become much more useful when more than one data item is plotted side-by-side for comparison. For example, the following boxplots are helpful in determining if there is a difference in automobile weight by the number of cylinders in the engine.
 
-```{r fig04, fig.dim=c(4.0, 4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r fig04.04, fig.dim=c(4.0, 4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 boxplot(wt ~ cyl, data = mtcars,
         ylab = "Weight (x1000 lbs)",
@@ -265,7 +297,7 @@ By comparing the three boxplots it is easy to see that the more cylinders an eng
 
 _R_ permits designers to use a number of different color palettes to make a graph easier to understand. Here are the palettes available in base _R_, as used in this tutorial. _Note: R can use any of the millions of colors available on a computer screen, but the five fundamental palettes shown below are easy to use and will serve analysts well in many projects._
 
-```{r fig05, fig.dim=c(2.5,4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r fig04.05, fig.dim=c(2.5,4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 d <- as.table(c(1,1,1,1,1,1,1,1,1,1))
 par(mfrow = c(5,1), mai = c(0.35,0.35,0.35,0.35), cex.main = 1.5)
 barplot(d, col = cm.colors(10), axisnames = FALSE, axes = FALSE, main = "cm (cyan-magenta)")
@@ -276,9 +308,9 @@ barplot(d, col = topo.colors(10), axisnames = FALSE, axes = FALSE, main = "topo"
 
 ```
 
-Adding the “heat” color palette to the grouped boxplot generated earlier in this tutorial makes it easier to read.
+Adding the _heat_ color palette to the grouped boxplot generated earlier in this tutorial makes it easier to read.
 
-```{r fig06, fig.dim=c(4.0, 4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r fig04.06, fig.dim=c(4.0, 4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 boxplot(wt ~ cyl, data = mtcars,
         ylab = "Weight (x1000 lbs)",
@@ -311,8 +343,7 @@ Grouped boxplots are easy to create with _R_ and the following script generates 
 
 <span style="background-color: #ffff99; font-style: italic;">This demonstration contains three different examples of generating grouped boxplots with color.</span>
 
-```{r demo03}
-
+```{r}
 # Boxplot of airquality data
 boxplot(Temp ~ Month, 
         data = airquality,
@@ -338,34 +369,34 @@ boxplot(weight ~ feed,
 
 Using the [_morley_](/tutorials/9999-data-dict/index.html#morley) data frame, generate a grouped boxplot where _Speed_ is grouped by _Expt_. Set the _main_ title to "Morley Experiment" and the color to _rainbow(5)_.
 
-```{r ex="ex03", type="pre-exercise-code"}
+```{r ex="ex04.03", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex03", type="sample-code"}
+```{r ex="ex04.03", type="sample-code"}
+# Create a boxplot of the morley data where Speed is grouped by Expt. Specify five colors from the terrain color palette.
 
-# Create a boxplot of the morley data where Speed is grouped by Expt.
 
 
 ```
 
-```{r ex="ex03", type="solution"}
+```{r ex="ex04.03", type="solution"}
 
 boxplot(Speed ~ Expt, 
         data = morley, 
         main = "Morley Experiment", 
-        col = rainbow(5))
+        col = terrain.colors(5))
 
 ```
 
-```{r ex="ex03", type="sct"}
+```{r ex="ex04.03", type="sct"}
 
 ex31neq <- "Remember that the data variable comes first and the grouping variable comes second."
 ex32neq <- "Check that the morley data frame is specified."
 ex33neq <- "Check that the title for the boxplot is correct."
-ex34neq <- "Check that the rainbow color palette is chosen and 5 colors are specified."
+ex34neq <- "Check that the terrain color palette is chosen and 5 colors are specified."
 
 ex() %>% check_function("boxplot") %>% {
   check_arg(., "formula") %>% check_equal(incorrect_msg = ex31neq)
@@ -377,6 +408,24 @@ ex() %>% check_function("boxplot") %>% {
 success_msg("Great Job! Colorful boxplots are very useful!")
 
 ```
+
+### Activity 4.3: Grouped Boxplot With Color
+
+Using the _cafe_ data frame, generate a boxplot of _length_ when grouped by _meal_ to see if there is any difference in the length of the meal by the type of meal eaten (breakfast, lunch, dinner, other). Apply the _topo_ color palette to this boxplot. Copy/paste the boxplot in the deliverable document for this lab.
+
+```{r ex="act04.03", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act04.03", type="sample-code"}
+# Using the cafe data frame, generate a boxplot of length when grouped by meal using four colors from the topo color palette.
+
+
+
+```
+
 
 -----
 

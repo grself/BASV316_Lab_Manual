@@ -31,7 +31,7 @@ The labs use tutorials written with *DataCamp Light* and must be served as HTML 
 
 * 190101: Released v2.0
   * Added _Skill Check_ exercises for all activities. These use DataCamp's _Submission Correction Testing_ to provide student feedback.
-  * Todo: Add deliverable activities. (Lab 01 done)
+  * Todo: Add deliverable activities. (Las 1-7 done)
   * Todo: Add a "Deliverable" paragraph at the bottom of each lab.
   * Todo: Separate the background material from the tutorial material.
   * Todo: Update links, including link all mentions of data frames to the appendix

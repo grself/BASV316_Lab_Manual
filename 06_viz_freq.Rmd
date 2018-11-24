@@ -60,7 +60,6 @@ The following script creates a simple bar plot. _Note: this is one long R comman
 * Line 6: This sets the color palette for the graph. In this case, the “rainbow” palette is used for the graph. Three colors were requested from that palette but specifying any number larger than three would have worked and created a slightly different palette. Experimentation is needed to find the most suitable palette for any given graph. (Note: setting colors on graphs was introduced in [Visualizing Descriptives](/tutorials/0040-boxplot/).)
 
 ```{r}
-
 # Simple Bar Plot
 barplot(height = table(mtcars$gear),
   main = "Number of Cars By Gears",
@@ -77,19 +76,19 @@ barplot(height = table(mtcars$gear),
 
 Using the [_stackloss_](/tutorials/9999-data-dict/index.html#stackloss) data frame, create a bar plot for _Water.Temp_. The plot should have a main title of "Water Temperature", the X-Axis should have a lable of "Number", the Y-Axis should have a lable of "Temperature", and the color palette should be "cm.colors(9)."
 
-```{r ex="ex01", type="pre-exercise-code"}
+```{r ex="ex06.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex01", type="sample-code"}
-
+```{r ex="ex06.01", type="sample-code"}
 # Create a bar plot for Water.Temp using the specifications listed above.
+
 
 ```
 
-```{r ex="ex01", type="solution"}
+```{r ex="ex06.01", type="solution"}
 
 barplot(height = table(stackloss$Water.Temp),
   main = "Water Temperature",
@@ -100,7 +99,7 @@ barplot(height = table(stackloss$Water.Temp),
 
 ```
 
-```{r ex="ex01", type="sct"}
+```{r ex="ex06.01", type="sct"}
 
 ex11neq <- "Check the plot specifications."
 ex12neq <- "The main title should be Water Temperature."
@@ -134,13 +133,37 @@ success_msg("Perfect! A bar plot like this makes frequency analysis easier.")
 
 ```
 
+### Activity 6.1: Bar Plot
+
+Using the _cafe_ data frame, create a bar plot for _meal_.  The plot should:
+
+1. Have a title of “Activity 6.1: Bar Plot”
+2. The x-axis should have this label: “Meal”
+3. The y-axis should have this label: “Count”
+4. Use four colors from the topo color palette
+
+Copy/paste the bar chart in the deliverable document for this lab.
+
+```{r ex="act06.01", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act06.01", type="sample-code"}
+# Using the cafe data frame, create a bar plot for meal that matches the listed specifications.
+
+
+
+```
+
 -----
 
 ## Clustered Bar Plot
 
 A clustered bar plot (sometimes called a "Grouped Bar plot") displays two or more categorical variables. In general, clustered bar plots are best at showing relationships between variables but not so good for determining the absolute size of each variable. The following plot shows the number of passengers on board the _Titanic_ when it sank. While it is easy to determine that there were a lot more males than females on board, it is not possible to read the exact bar height of, for example, third class males.
 
-```{r fig0602,fig.width=5.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r fig.width=5.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 barplot(height = margin.table(Titanic,c(1,2)),
         beside = TRUE,
@@ -169,7 +192,6 @@ The following script creates a clustered bar plot.
 * Line 9: This rather odd-looking line adds a title to the legend, otherwise users would be confused about what the various colors used in the plot mean.
 
 ```{r}
-
 # Clustered Bar Plot
 barplot(height = table(mtcars$cyl, mtcars$gear),
   main = "Number of Cars by Gears and Cylinders",
@@ -213,20 +235,19 @@ barplot(height = table(mtcars$cyl, mtcars$gear),
 
 Using the [_infert_](/tutorials/9999-data-dict/index.html#infert) data frame, create a clustered bar plot for _spontaneous_ grouped by _education_. The plot should have a main title of "Spontaneous Cases by Education Level", the X-Axis should have a lable of "Education Level", the Y-Axis should have a lable of "Count", the colors should be from a custom palette using orange to white, and the legend should have a title of "Spontaneous."
 
-```{r ex="ex02", type="pre-exercise-code"}
+```{r ex="ex06.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex02", type="sample-code"}
-
+```{r ex="ex06.02", type="sample-code"}
 # Create a clustered bar plot for infert using the specifications listed above.
 
 
 ```
 
-```{r ex="ex02", type="solution"}
+```{r ex="ex06.02", type="solution"}
 
 colpal <- colorRampPalette(c("orange", "white"))
 
@@ -242,7 +263,7 @@ barplot(height = table(infert$spontaneous, infert$education),
 
 ```
 
-```{r ex="ex02", type="sct"}
+```{r ex="ex06.02", type="sct"}
 
 ex21neq <- "The color specifications should be orange, white."
 ex22neq <- "The height should be a table of spontaneous and education."
@@ -300,13 +321,40 @@ success_msg("Perfect! A clustered bar plot is useful for comparing variables.")
 
 ```
 
+
+### Activity 6.2: Clustered Bar Plot
+
+Using the _cafe_ data frame, create a clustered bar plot that shows the number of people who ate a given _meal_ by _sex_. The plot should have three clusters (male, female, other) and each of those three clusters should have four meals (breakfast, lunch, dinner, other). The plot should: 
+
+1. Have a title of “Activity 6.2: Clustered Bar Plot”
+2. The x-axis should have this label: “Sex 
+3. The y-axis should have this label: “Count”
+4. The colors should be from a custom palette using dark green to white
+5. There should be a legend that lists “breakfast, dinner, lunch,
+other”
+6. The bars should be beside each other rather than stacked.
+
+Copy/paste the bar chart in the deliverable document for this lab.
+
+```{r ex="act06.02", type="pre-exercise-code"}
+cafe <- read.csv('http://georgeself.com/maincafe.csv')
+```
+
+```{r ex="act06.02", type="sample-code"}
+# Using the cafe data frame, create a clustered bar chart that shows the number of people who ate a given meal by sex that matches the listed specifications.
+
+
+
+```
+
+
 -----
 
 ## Stacked Bar Plot
 
 A stacked bar plot has one variable stacked on top of another. In general, these are very difficult to read and should only be used to make broad generalizations. Consider, for example, the following figure. This plot shows admissions for the University of California at Berkeley for six different programs. The top part of each bar (in brown) are the number admitted while the bottom part of each bar (in green) are the number rejected. Look at programs C and D. Were more students accepted in C or in D? Because these two values do not have the same baseline it is impossible to tell for certain which is larger.
 
-```{r fig0603,fig.width=3,fig.height=3,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r fig.width=3,fig.height=3,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 barplot(height = margin.table(UCBAdmissions,c(1,3)),
         main = "Berkeley Admissions",
@@ -322,7 +370,6 @@ barplot(height = margin.table(UCBAdmissions,c(1,3)),
 The following script is the same `barplot` function used in the clustered bar plots above, except “beside = TRUE” is missing. By default, bar plots are stacked in _R_ so if the “beside” argument is missing (or set to “FALSE”) then the result will be a stacked bar plot.
 
 ```{r}
-
 # Stacked Bar Plot With Gradient Colors
 colpal <- colorRampPalette(c("Brown", "white"))
 
@@ -343,20 +390,19 @@ It should be evident that the bar plot created in the above script is not very u
 
 Using the _infert_ data frame, create a stacked bar plot for _induced_ grouped by _education_. The plot should have a main title of "Induced Cases by Education Level", the X-Axis should have a lable of "Education Level", the Y-Axis should have a lable of "Count", the colors should be from a custom palette using purple to white, and the legend should have a title of "Induced."
 
-```{r ex="ex03", type="pre-exercise-code"}
+```{r ex="ex06.03", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex03", type="sample-code"}
-
+```{r ex="ex06.03", type="sample-code"}
 # Create a stacked bar plot for infert using the specifications listed above.
 
 
 ```
 
-```{r ex="ex03", type="solution"}
+```{r ex="ex06.03", type="solution"}
 
 colpal <- colorRampPalette(c("purple", "white"))
 
@@ -371,7 +417,7 @@ barplot(height = table(infert$induced, infert$education),
 
 ```
 
-```{r ex="ex03", type="sct"}
+```{r ex="ex06.03", type="sct"}
 
 ex31neq <- "The color specifications should be purple, white."
 ex32neq <- "The height should be a table of induced and education."
@@ -424,6 +470,31 @@ success_msg("Good Job! A stacked bar plot is useful for comparing variables.")
 
 ```
 
+### Activity 6.3: Stacked Bar Plot
+
+Using the _cafe_ data frame, create a stacked bar chart that shows the number of people who ate a given _meal_ by _sex_. The chart should have three columns (male, female, other) and each of those three columns should have four meals (breakfast, lunch, dinner, other). The chart should:
+
+1. Have a title of “Activity 6.3: Stacked Bar Plot”
+2. The x-axis should have this label: “Sex”
+3. The y-axis should have this label: “Count”
+4. The colors should be from a custom palette using goldenrod to white
+5. There should be a legend that lists “breakfast, dinner, lunch, other”
+6. The bars should be stacked rather than beside each other.
+
+Copy/paste the bar chart in the deliverable document for this lab.
+
+```{r ex="act06.03", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act06.03", type="sample-code"}
+# Using the cafe data frame, create a stacked bar plot that shows the number of people who ate a given meal by sex that matches the listed specifications.
+
+```
+
+
 -----
 
 ## Pie Chart
@@ -432,7 +503,7 @@ A pie chart is commonly used to display categorical data; however, pie charts ar
 
 The following figure shows the results of an experiment to compare the effectiveness of various feed supplements on the growth rate of chickens. This figure illustrates the problem with pie charts. Notice that "casein"" seems to promote growth better than "horsebean,"" but it is impossible to determine if "casein"" is better than "sunflower"" from this chart.
 
-```{r fig0604,fig.width=4,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r fig.width=4,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 count <- aggregate(chickwts$weight, by=list(chickwts$feed), FUN=mean)
 labels <- c(levels(chickwts$feed))
@@ -453,7 +524,6 @@ The following script creates a pie chart.
 * Line 5: This tells _R_ to use the labels used in the _feed_ variable as the labels on the pie chart.
 
 ```{r}
-
 # Count of Chicks by Feed
 pie(x = table(chickwts$feed),
   main = "Count of Chicks by Feed",
@@ -469,20 +539,19 @@ Note: The pie chart shows the number of chicks that were given a particular type
 
 Create a pie chart for the [_state.division_](/tutorials/9999-data-dict/index.html#state.division) data frame. NOTE: This data frame has only one vector so it is not necessary to use the "$" operator. The chart should have a main title of "States by Division", nine colors should be used from the topo.colors palette, and the lables should be the same as the "states.division" vector.
 
-```{r ex="ex04", type="pre-exercise-code"}
+```{r ex="ex06.04", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex04", type="sample-code"}
-
+```{r ex="ex06.04", type="sample-code"}
 # Create a pie chart for states.division using the specifications listed above.
 
 
 ```
 
-```{r ex="ex04", type="solution"}
+```{r ex="ex06.04", type="solution"}
 
 pie(x = table(state.division),
   main = "States by Division",
@@ -492,7 +561,7 @@ pie(x = table(state.division),
 
 ```
 
-```{r ex="ex04", type="sct"}
+```{r ex="ex06.04", type="sct"}
 
 ex41neq <- "The chart should use a table of state.division for input."
 ex42neq <- "The main title should be States by Division."
@@ -521,6 +590,29 @@ success_msg("Perfect! Pie charts are very popular.")
 
 ```
 
+### Activity 6.4: Pie Chart
+
+Using the _cafe_ data frame, create a pie chart that shows the number of people who ate a given _meal_ (breakfast, lunch, dinner, other). The chart should:
+
+1. Have a title of “Activity 6.4: Pie Chart”
+2. Use six colors from the terrain color palette
+3. Include labels for each of the pie slices
+
+Copy/paste the pie chart in the deliverable document for this lab.
+
+```{r ex="act06.04", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act06.04", type="sample-code"}
+# Using the cafe data frame, create a pie chart that shows the number of people who ate a given meal  that matches the listed specifications.
+
+
+
+```
+
 -----
 
 ## Heat Map
@@ -544,6 +636,43 @@ heatmap(x,
 
 In a heat map produced by _R_, lighter colors represent larger numbers. Thus, the province with the highest fertility rate is Franches-Mnt since it has the lightest color and the province with the least agriculture is Courtelary since it has the darkest color for those variables. Interpreting the heat map can be a challenge for the researcher. In some cases a light color would be positive and in others negative. For example, the highest education level would be in Neuveville (positive) but the highest infant mortality would be in Porrentruy (negative). Also, the colors are often very similar and difficult to distinguish. For example, for “examination” Cossonay has a numeric value of 22 while Aigle has 21. These two colors are slightly different but it would be difficult to detect that from the image. Often, the best that can be done with a heat map is identifying broad generalizations.
 
+The following script creates a heat map for _Party Size_ by _Meal_ in the _cafe_ data frame.
+
+* Line 4: This line creates a contingency table from columns 4 and 8 of the _cafe_ data frame and store that table in a variable named _htbl_. 
+* Line 5: R can store data in several different formats and many, like vector and data frame, are used by other labs in this manual. Heat maps require data to be in a matrix format and this line converts the *htbl* contingency table into a matrix named *hmap*.
+* Line 6: This is the start of the heat map function. This line instructs _R_ to create a heat map from the _hmap_ matrix created in Line 5.
+* Line 7: The main title of the heatmap is “Cafe Ptysize by Meal.”
+* Line 8: The x-axis is labeled “Meal.”
+* Line 9: The y-axis is labeled “Ptysize.”
+* Line 10: This suppresses the row “dendogram” that is used to order the rows. The best way to see what this line does is to comment it out and re-run the script.
+* Line 11: This suppresses the column “dendogram.”
+* Line 12: Sets the heat map to scale the columns. In this way, the color for each column cell is calculated such that the entire column’s mean is zero and the standard deviation is one. The other option is to scale “row” and researchers would want to try both to see which provides a better heat map.
+* Line 13: This sets the right and bottom margins. The values were found by simple trial-and-error to produce the most legible heat map.
+
+```{r ex="heatmap", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+
+```{r ex="heatmap", type="sample-code"}
+
+# Cafe Party Size by Meal
+htbl <- table(cafe[,c(8,4)])
+hmap <- as.matrix(htbl)
+heatmap(hmap,
+  main = "Cafe Ptysize by Meal",
+  xlab = "Meal",
+  ylab = "Ptysize",
+  Rowv=NA,
+  Colv=NA,
+  scale="column",
+  margins=c(8,3)
+)
+
+```
+
 ### Demonstration: Heat Map
 
 The following script creates a heat map for the [_USJudgeRating_](/tutorials/9999-data-dict/index.html#usjudgeratings) data frame.
@@ -558,7 +687,6 @@ The following script creates a heat map for the [_USJudgeRating_](/tutorials/999
 * Line 8: This sets the right and bottom margins. The values were found by simple trial-and-error to produce the most legible heat map.
 
 ```{r}
-
 hmap <- as.matrix(x = USJudgeRatings[20:1,])
 heatmap(x = hmap,
   main = "US Judge Ratings",
@@ -575,20 +703,19 @@ heatmap(x = hmap,
 
 Create a heat map for the [_attitude_](/tutorials/9999-data-dict/index.html#attitude) data frame. The heat map should have a main title of "Clerical Employees Attitude", the label for the X-axis should be "Characteristic" and for the y-Axis, "Department." Specify that the Rowv and Colv are both "NA." Scale by "row" and set the margins for "c(8,3)."
 
-```{r ex="ex05", type="pre-exercise-code"}
+```{r ex="ex06.05", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex05", type="sample-code"}
-
+```{r ex="ex06.05", type="sample-code"}
 # Create a heat map for attitude using the specifications listed above.
 
 
 ```
 
-```{r ex="ex05", type="solution"}
+```{r ex="ex06.05", type="solution"}
 
 hmap <- as.matrix(x = attitude[1:20,])
 
@@ -604,7 +731,7 @@ heatmap(x = hmap,
 
 ```
 
-```{r ex="ex05", type="sct"}
+```{r ex="ex06.05", type="sct"}
 
 ex51neq <- "Check to be sure the x value is attitude[1:20,] -- don't forget the comma after 20!"
 ex52neq <- "The x value should be hmap."
@@ -659,13 +786,39 @@ success_msg("Good Job! Heat maps display a lot of data in a compact way.")
 
 ```
 
+### Activity 6.5: Heat Map
+
+Using the _cafe_ dataset, create a heat map that compares the number of people dining at each _meal_ (breakfast, lunch, dinner, other) for each _day_ (Monday, Tuesday, etc.). The goal is to find the most/least popular meal for each day of the week. (Tip: _meal_ is column 4 and _day_ is column 3 in the data frame.) The chart should:
+
+1. Have a title of “Activity 6.5: Heat Map”
+2. Have an xlab of “Meal”
+3. Have a ylab of “Day”
+4. Not include the Rowv/Colv symbols
+5. Scale by column
+6. Have margins=c(8,7)
+
+Copy/paste the heat map in the deliverable document for this lab.
+
+```{r ex="act06.05", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act06.05", type="sample-code"}
+# Using the cafe dataset, create a heat map that compares the number of people dining at each meal for each day that matches the listed specifications.
+
+
+
+```
+
 -----
 
 ## Mosiac Plot
 
 A mosiac plot indicates the relative counts of items in a data frame by sizing areas on a grid. The following figure is a mosiac plot that indicates the relationship between the number of gears and cylinders in several cars. Notice that 8-cylinder cars overwhelmingly have three gears while 4-cylinder cars tend to have four gears. This plot gives a quick visual representation of the relationships between categorical variables, like a pie chart shows the relationship between continuous variables. A mosiac plot would suffer the same weaknesses as a pie chart and are, generally, rather difficult to interpret.
 
-```{r fig0606,fig.width=3.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r fig.width=3.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 colpal <- colorRampPalette(c("purple", "white")) # generate a color palette
 plot(table(mtcars$cyl,mtcars$gear),
@@ -684,7 +837,6 @@ The following script creates a mosiac plot.
 * Lines 3-6: These are similar to those used for other graphics functions and should be fairly easy to understand.
 
 ```{r}
-
 # Mosiac Plots Using MTCars
 plot(x = table(mtcars$gear, mtcars$cyl),
   main = "Gears vs Cylinders",
@@ -699,19 +851,18 @@ plot(x = table(mtcars$gear, mtcars$cyl),
 
 Create a mosaic plot for the _infert_ data frame. The plot should have a main title of "Compare Induced and Education", the label for the X-axis should be "Number Induced" and for the y-Axis, "Education Level." Select three "terrain.colors" for the plot.
 
-```{r ex="ex06", type="pre-exercise-code"}
+```{r ex="ex06.06", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex06", type="sample-code"}
-
+```{r ex="ex06.06", type="sample-code"}
 # Create a mosaic plot for infert using the specifications listed above.
 
 ```
 
-```{r ex="ex06", type="solution"}
+```{r ex="ex06.06", type="solution"}
 
 plot(x = table(infert$induced, infert$education),
   main = "Compare Induced and Education",
@@ -722,7 +873,7 @@ plot(x = table(infert$induced, infert$education),
 
 ```
 
-```{r ex="ex06", type="sct"}
+```{r ex="ex06.06", type="sct"}
 
 ex61neq <- "Check to be sure the x value is a table of induced and education."
 ex62neq <- "The main title should be Compare Induced and Education."
@@ -754,6 +905,30 @@ state61 %>%
   check_equal(incorrect_msg = ex65neq)
 
 success_msg("Perfect! Mosaic plots are not too common but may be useful in some situations.")
+
+```
+
+### Activity 6.6: Mosaic Plot
+
+Using the _cafe_ dataset, create a mosaic plot that compares the number of people dining at each _meal_ (breakfast, lunch, dinner, other) to the rating for service (_svc_). The plot should:
+
+1. Have a title of “Activity 6.6: Mosaic”
+2. Have an xlab of “Meal”
+3. Have a ylab of “Service”
+4. Use five colors from the terrain color palette
+
+Copy/paste the mosaic plot in the deliverable document for this lab.
+
+```{r ex="act06.06", type="pre-exercise-code"}
+
+cafe <- read.csv('https://gself.com/cafe.csv')
+
+```
+
+```{r ex="act06.06", type="sample-code"}
+# Using the cafe dataset, create a mosaic plot that compares the number of people dining at each meal to the rating for service that matches the listed specifications.
+
+
 
 ```
 

@@ -103,7 +103,6 @@ Notes:
 ```
 
 ```{r ex="ex01.01", type="sample-code"}
-
 # Set M to 15 + ( 37 * 2 )
 
 
@@ -163,7 +162,6 @@ Include the answers to these three problems in the deliverable document for this
 ```
 
 ```{r ex="act01.01", type="sample-code"}
-
 # Find the value of 5 + 8 * 3
 
 # Find the value of 10 * 2/4
@@ -201,7 +199,7 @@ max(mtcars$mpg)
 
 ```
 
-## Skill Check: Data Frames
+### Skill Check: Data Frames
 
 In the following _R_ codebox, explore the [_airquality_](/tutorials/9999-data-dict/index.html#airquality) data frame. 
 
@@ -218,7 +216,6 @@ In the following _R_ codebox, explore the [_airquality_](/tutorials/9999-data-di
 ```
 
 ```{r ex="ex01.02", type="sample-code"}
-
 # Set max.wind to the maximum value of Wind
 
 
@@ -266,16 +263,15 @@ success_msg("Perfect! Thanks for exploring this built-in data frame!")
 
 ### Activity 1.2
 
-Using the *cafe* data, find the maximum and minimum values for the *bill* variable and include those values in the deliverable document for this lab.
+Using the _cafe_ data, find the maximum and minimum values for the *bill* variable and include those values in the deliverable document for this lab.
 
 ```{r ex="act01.02", type="pre-exercise-code"}
 
-cafe <- read.csv('http://gself.com/maincafe.csv')
+cafe <- read.csv('https://gself.com/cafe.csv')
 
 ```
 
 ```{r ex="act01.02", type="sample-code"}
-
 # Find the maximum value of bill.
 
 # Find the minimum value of bill.
