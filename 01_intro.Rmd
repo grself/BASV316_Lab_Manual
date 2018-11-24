@@ -96,13 +96,13 @@ Notes:
 * Set the variable P equal to 15 - ( sqrt(9) )
 
 
-```{r ex="ex01", type="pre-exercise-code"}
+```{r ex="ex01.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex01", type="sample-code"}
+```{r ex="ex01.01", type="sample-code"}
 
 # Set M to 15 + ( 37 * 2 )
 
@@ -116,7 +116,7 @@ Notes:
 ```
 
 
-```{r ex="ex01", type="solution"}
+```{r ex="ex01.01", type="solution"}
 
 M <- 15 + ( 37 * 2 )
 
@@ -126,15 +126,54 @@ P <- 15 - ( sqrt(9) )
 
 ```
 
-```{r ex="ex01", type="sct"}
+```{r ex="ex01.01", type="sct"}
 
-ex() %>% check_object("M") %>% check_equal()
-ex() %>% check_object("N") %>% check_equal()
-ex() %>% check_object("P") %>% check_equal()
+ex01.01.01neq <- "Check your input for M. It should be 15 + ( 37 * 2 )."
+ex01.01.02neq <- "Check your input for N. It should be 24 + ( 2 ^ 6 )."
+ex01.01.03neq <- "Check your input for P. It should be 15 - ( sqrt(9) )."
 
-success_msg("Good Work! Now you can use R to calculate both simple and complex math problems!")
+ex() %>% check_object("M") %>% 
+  check_equal(incorrect_msg = ex01.01.01neq)
+
+ex() %>% check_object("N") %>% 
+  check_equal(incorrect_msg = ex01.01.02neq)
+
+ex() %>% check_object("P") %>% 
+  check_equal(incorrect_msg = ex01.01.03neq)
+
+success_msg("Good Work! Now you can use R to calculate math problems!")
 
 ```
+
+
+### Activity 1.1
+
+Start R and calculate the following problems:
+
+* 5 + 8 * 3
+* 10 * 2/4
+* 5 * 3 * 3 - 20
+
+Include the answers to these three problems in the deliverable document for this lab.
+
+```{r ex="act01.01", type="pre-exercise-code"}
+
+# No pre-exercise code for this exercise
+
+```
+
+```{r ex="act01.01", type="sample-code"}
+
+# Find the value of 5 + 8 * 3
+
+# Find the value of 10 * 2/4
+
+# Find the value of 5 * 3 * 3 - 20
+
+
+
+```
+
 
 -----
 
@@ -146,28 +185,25 @@ A _data frame_ is a collection of data generated during a research project. An e
 
 * Line 2: Entering the name of the data frame, [_mtcars_](/tutorials/9999-data-dict/index.html#mtcars), on a line by itself causes _R_ to print the contents of the entire the data frame to the screen. Since _mtcars_ is rather small it is fine to print it to the screen, but some data frames have hundreds of lines and that may cause the screen to "scroll" for some time before the end of the data frame is reached.
 
-* Line 3: This prints the structure of the _mtcars_ data frame. The result shows that this is a _data.frame_ and has 32 observations (that is how many cars are in the dataset) of 11 variables (things like _mpg_). Also the structure command displays the type of data that are in the dataset. For example, all 11 variables are of the "number" type. The `str` function is frequently used to better understand a data frame.
+* Line 3: This prints the structure of the _mtcars_ data frame. The result shows that this is a _data.frame_ and has 32 observations (that is how many cars are in the dataset) of 11 variables (things like _mpg_). Also the structure command displays the type of data that are in the dataset. For example, all 11 variables are of the "number" type. The `str` function is frequently used to better understand a data frame. The structure for all of the data frames used in this book is contained in the appendix.
 
-* Line 4: This line prints the maximum _mpg_ value for the _mtcars_ data frame. Note that the specific variable desired is indicated by both the data frame name and the variable, separated by a dollar sign, like _mtcars$mpg_ on this line.
+* Line 4: This line prints the maximum _mpg_ value for the _mtcars_ data frame. Note that the specific vector desired is indicated by both the data frame name and the vector, separated by a dollar sign, like _mtcars$mpg_ on this line.
 
-* Line 5: This prints the minimum _mpg_ value.
-
-*If some of the lines in the result are too long to fit on one row in the R Console they will wrap around.*
+_If some of the lines in the result are too long to fit on one row in the R Console they will wrap around._
 
 
 ```{r}
-# The Motor Trend Cars Data Frame
+
+# Exploring the Motor Trend Cars Data Frame
 mtcars
 str(mtcars)
 max(mtcars$mpg)
-min(mpg)
+
 ```
 
 ## Skill Check: Data Frames
 
 In the following _R_ codebox, explore the [_airquality_](/tutorials/9999-data-dict/index.html#airquality) data frame. 
-
-* Determine the structure of the _airquality_ data frame
 
 * Set MaxWind to the maximum value of _Wind_
 
@@ -175,16 +211,13 @@ In the following _R_ codebox, explore the [_airquality_](/tutorials/9999-data-di
 
 * Set MinOzone to the minimum value of _Ozone_
 
-```{r ex="ex02", type="pre-exercise-code"}
+```{r ex="ex01.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex02", type="sample-code"}
-
-# Determine the structure of the airquality data frame
-
+```{r ex="ex01.02", type="sample-code"}
 
 # Set max.wind to the maximum value of Wind
 
@@ -198,27 +231,59 @@ In the following _R_ codebox, explore the [_airquality_](/tutorials/9999-data-di
 ```
 
 
-```{r ex="ex02", type="solution"}
-
-str(airquality)
+```{r ex="ex01.02", type="solution"}
 
 MaxWind <- max(airquality$Wind)
 
 MaxTemp <- max(airquality$Temp)
 
-MinOzone <- min(airquality$Ozone)
+MinWind <- min(airquality$Wind)
+
+MinTemp <- min(airquality$Temp)
 
 ```
 
-```{r ex="ex02", type="sct"}
+```{r ex="ex01.02", type="sct"}
 
-ex() %>% check_object("MaxWind") %>% check_equal()
-ex() %>% check_object("MaxTemp") %>% check_equal()
-ex() %>% check_object("MinOzone") %>% check_equal()
+ex01.02.01neq <- "Check your input for MaxWind. It should be max(airquality$Wind)."
+ex01.02.02neq <- "Check your input for MaxTemp. It should be max(airquality$Temp)."
+ex01.02.03neq <- "Check your input for MinWind. It should be min(airquality$Wind)."
+ex01.02.04neq <- "Check your input for MinTemp. It should be min(airquality$Temp)."
+
+ex() %>% check_object("MaxWind") %>% 
+  check_equal(incorrect_msg = ex01.02.01neq)
+ex() %>% check_object("MaxTemp") %>% 
+  check_equal(incorrect_msg = ex01.02.02neq)
+ex() %>% check_object("MinWind") %>% 
+  check_equal(incorrect_msg = ex01.02.03neq)
+ex() %>% check_object("MinTemp") %>% 
+  check_equal(incorrect_msg = ex01.02.04neq)
 
 success_msg("Perfect! Thanks for exploring this built-in data frame!")
 
 ```
+
+
+### Activity 1.2
+
+Using the *cafe* data, find the maximum and minimum values for the *bill* variable and include those values in the deliverable document for this lab.
+
+```{r ex="act01.02", type="pre-exercise-code"}
+
+cafe <- read.csv('http://gself.com/maincafe.csv')
+
+```
+
+```{r ex="act01.02", type="sample-code"}
+
+# Find the maximum value of bill.
+
+# Find the minimum value of bill.
+
+
+
+```
+
 
 ## Next
 
