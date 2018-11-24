@@ -26,3 +26,10 @@ The labs use tutorials written with *DataCamp Light* and must be served as HTML 
 8. Lab 8: Visualizing Data
 9. Lab 9: Parametric Hypothesis Testing
 10. Lab 10: Non-parametric Hypothesis Testing
+
+## History
+
+* 190101: Released v2.0
+  * Added _Skill Check_ exercises for all activities. These use DataCamp's _Submission Correction Testing_ to provide student feedback.
+  * Separated the background material from the tutorial material.
+* 180801: Released v1.0
