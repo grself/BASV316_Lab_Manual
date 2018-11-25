@@ -10,7 +10,7 @@ I have taught BASV 316, *Introductory Methods of Analysis*, online for the Unive
 
 *R* met those objectives so that is the software I chose to use. This manual started as a series of six lab exercises but has grown over the years to the ten topics covered in this edition. It is my hope that students will find the labs instructive and they will then be able to use *R* for other classes or later in their professional careers. 
 
-The labs use tutorials written with *DataCamp Light* and must be served as HTML documents rather than markdown so they are served from gself.com (my personal server). This lab manual was written with *R Bookdown* and is published under a Creative Commons license with a goal that other instructors can modify and use it to meet their own needs. I always welcome comments and will improve this manual as I receive feedback. 
+The labs use tutorials written with *DataCamp Light* and must be served as HTML documents rather than markdown so they are served from gself.com (my personal server). This lab manual was written with *R Bookdown* and is published under a Creative Commons Zero license with a goal that other instructors can modify and use it to meet their own needs. I always welcome comments and will improve this manual as I receive feedback. 
 
 —George Self
 
@@ -31,9 +31,9 @@ The labs use tutorials written with *DataCamp Light* and must be served as HTML 
 
 * 190101: Released v2.0
   * Added _Skill Check_ exercises for all activities. These use DataCamp's _Submission Correction Testing_ to provide student feedback.
-  * Todo: Add deliverable activities. (Las 1-7 done)
-  * Todo: Add a "Deliverable" paragraph at the bottom of each lab.
+  * Todo: Added deliverable activities.
+  * Todo: Added a "Deliverable" paragraph at the bottom of each lab.
+  * Todo: Update links (lab 1 done)
   * Todo: Separate the background material from the tutorial material.
-  * Todo: Update links, including link all mentions of data frames to the appendix
   * Todo: Can I resize the illustrations, like in Lab 4?
 * 180801: Released v1.0

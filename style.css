@@ -17,6 +17,12 @@ pre code {
   margin-top: 10px;
 }
 
+/* used to highlight in spans */
+.grshilite {
+  background: #ffff99; /* pale yellow */
+  font-style: italic;
+}
+
 /* used for the div "note" boxes */
 .grsnote {
 padding: 1em 1em 1em 4em;

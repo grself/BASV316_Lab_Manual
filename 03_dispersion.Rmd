@@ -1,4 +1,4 @@
-# Dispersion {#lab3}
+# Dispersion
 
 ```{r include = FALSE}
 
@@ -100,7 +100,7 @@ Using the _cafe_ data frame, find the range for _age_. Include that answer in th
 
 ```{r ex="act03.01", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -185,7 +185,7 @@ Using the _cafe_ data frame, find the summary for _age_. Include the values for 
 
 ```{r ex="act03.02", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -266,7 +266,7 @@ Using the _cafe_ data frame, find the inter-quartile-range (IQR) for _age_. Incl
 
 ```{r ex="act3.3", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -438,7 +438,7 @@ Using the _cafe_ data frame, find the standard deviation for _age_. Include the 
 
 ```{r ex="act03.04", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -449,7 +449,8 @@ cafe <- read.csv('https://gself.com/cafe.csv')
 
 ```
 
-## Next
+-----
 
-This tutorial described and calculated several measures of dispersion. The last tutorial described various types of [central measures](/tutorials/0020-central-measures/) and the next creates a [visualization](/tutorials/0040-boxplot/) of central measures and dispersion.
+## Deliverable
 
+Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 3," like "George Self Lab 3" and submit that document for grade.

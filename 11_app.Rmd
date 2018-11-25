@@ -1,6 +1,6 @@
 # (APPENDIX) Appendix {-} 
 
-# Data Used In These Labs {#app01_data_dic}
+# Data Used In These Labs
 
 ```{r include = FALSE}
 

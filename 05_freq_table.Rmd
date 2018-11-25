@@ -1,6 +1,6 @@
 # (PART) Counting {-}
 
-# Frequency Tables {#lab5}
+# Frequency Tables
 
 ```{r include = FALSE}
 
@@ -101,7 +101,7 @@ Using the _cafe_ data frame, generate a frequency table for _meal_. Copy/paste t
 
 ```{r ex="act05.01", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -181,7 +181,7 @@ Using the _cafe_ data frame, generate a frequency table for _meal_, include the 
 
 ```{r ex="act05.02", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -269,7 +269,7 @@ Using the _cafe_ data frame, generate a proportion table (proptable) for _meal_.
 
 ```{r ex="act05.03", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -357,7 +357,7 @@ Using the _cafe_ data frame, create a crosstab of _food_ and _svc_. Copy/paste t
 
 ```{r ex="act05.04", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -457,7 +457,7 @@ Using the _cafe_ data frame, create a crosstab of _food_ and _svc_ when grouped 
 
 ```{r ex="act05.05", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -651,7 +651,7 @@ Using the _cafe_ data frame, create a crosstab of the mean _tip_ when grouped by
 
 ```{r ex="act05.07", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -665,6 +665,6 @@ cafe <- read.csv('https://gself.com/cafe.csv')
 
 -----
 
-## Next
+## Deliverable
 
-The last tutorial created visualizations for various [descriptive measures](/tutorials/0040-boxplot) and the next one creates visualizations for [frequency measures](/tutorials/0060-viz-freq).
+Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 5," like "George Self Lab 5" and submit that document for grade.

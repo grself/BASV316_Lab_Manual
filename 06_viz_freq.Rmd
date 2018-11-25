@@ -1,4 +1,4 @@
-# Visualizing Frequency {#lab6}
+# Visualizing Frequency
 
 ```{r include = FALSE}
 
@@ -146,7 +146,7 @@ Copy/paste the bar chart in the deliverable document for this lab.
 
 ```{r ex="act06.01", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -485,7 +485,7 @@ Copy/paste the bar chart in the deliverable document for this lab.
 
 ```{r ex="act06.03", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -602,7 +602,7 @@ Copy/paste the pie chart in the deliverable document for this lab.
 
 ```{r ex="act06.04", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -651,7 +651,7 @@ The following script creates a heat map for _Party Size_ by _Meal_ in the _cafe_
 
 ```{r ex="heatmap", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -801,7 +801,7 @@ Copy/paste the heat map in the deliverable document for this lab.
 
 ```{r ex="act06.05", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -921,7 +921,7 @@ Copy/paste the mosaic plot in the deliverable document for this lab.
 
 ```{r ex="act06.06", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -934,6 +934,6 @@ cafe <- read.csv('https://gself.com/cafe.csv')
 
 -----
 
-## Next
+## Deliverable
 
-The previous tutorial described and created [frequency tables](/tutorials/0050-frequency-tables) and this tutorial visualized those tables. The next tutorial explores the [correlation](/tutorials/0070-correlation) between two variables.
+Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 6," like "George Self Lab 6" and submit that document for grade.

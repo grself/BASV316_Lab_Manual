@@ -1,6 +1,6 @@
 # (PART) Introduction {-}
 
-# Introduction to R {#lab1}
+# Introduction to R
 
 ```{r include=FALSE}
 # Load some libraries
@@ -177,15 +177,15 @@ Include the answers to these three problems in the deliverable document for this
 
 ## Data Frames
 
-A _data frame_ is a collection of data generated during a research project. An example data frame that is easy to understand would be a spreadsheet that contains the times recorded for a race. _R_ comes configured with a 103 built-in data frames used for training and the _R_ script below is an introduction to one of the data frames used in several of the labs in this manual: _mtcars_.
+A _data frame_ is a collection of data generated during a research project. An example data frame that is easy to understand would be a spreadsheet that contains the times recorded for a race. _R_ comes configured with a 103 built-in data frames used for training and the _R_ script below is an introduction to one of the data frames used in several of the labs in this manual: [mtcars].
 
 ### Demonstration: Data Frames
 
-* Line 2: Entering the name of the data frame, [_mtcars_](/tutorials/9999-data-dict/index.html#mtcars), on a line by itself causes _R_ to print the contents of the entire the data frame to the screen. Since _mtcars_ is rather small it is fine to print it to the screen, but some data frames have hundreds of lines and that may cause the screen to "scroll" for some time before the end of the data frame is reached.
+* Line 2: Entering the name of the data frame, [mtcars], on a line by itself causes _R_ to print the contents of the entire the data frame to the screen. Since [mtcars] is rather small it is fine to print it to the screen, but some data frames have hundreds of lines and that may cause the screen to "scroll" for some time before the end of the data frame is reached.
 
-* Line 3: This prints the structure of the _mtcars_ data frame. The result shows that this is a _data.frame_ and has 32 observations (that is how many cars are in the dataset) of 11 variables (things like _mpg_). Also the structure command displays the type of data that are in the dataset. For example, all 11 variables are of the "number" type. The `str` function is frequently used to better understand a data frame. The structure for all of the data frames used in this book is contained in the appendix.
+* Line 3: This prints the structure of the [mtcars] data frame. The result shows that this is a _data.frame_ and has 32 observations (that is how many cars are in the dataset) of 11 variables (things like _mpg_). Also the structure command displays the type of data that are in the dataset. For example, all 11 variables are of the "number" type. The `str` function is frequently used to better understand a data frame. The structure for all of the data frames used in this book is contained in the appendix.
 
-* Line 4: This line prints the maximum _mpg_ value for the _mtcars_ data frame. Note that the specific vector desired is indicated by both the data frame name and the vector, separated by a dollar sign, like _mtcars$mpg_ on this line.
+* Line 4: This line prints the maximum _mpg_ value for the [mtcars] data frame. Note that the specific vector desired is indicated by both the data frame name and the vector, separated by a dollar sign, like _mtcars$mpg_ on this line.
 
 _If some of the lines in the result are too long to fit on one row in the R Console they will wrap around._
 
@@ -201,7 +201,7 @@ max(mtcars$mpg)
 
 ### Skill Check: Data Frames
 
-In the following _R_ codebox, explore the [_airquality_](/tutorials/9999-data-dict/index.html#airquality) data frame. 
+In the following _R_ codebox, explore the [airquality] data frame. 
 
 * Set MaxWind to the maximum value of _Wind_
 
@@ -263,11 +263,11 @@ success_msg("Perfect! Thanks for exploring this built-in data frame!")
 
 ### Activity 1.2
 
-Using the _cafe_ data, find the maximum and minimum values for the *bill* variable and include those values in the deliverable document for this lab.
+Using the [cafe] data, find the maximum and minimum values for the _bill_ variable and include those values in the deliverable document for this lab.
 
 ```{r ex="act01.02", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -280,7 +280,8 @@ cafe <- read.csv('https://gself.com/cafe.csv')
 
 ```
 
+-----
 
-## Next
+## Deliverable
 
-This tutorial was an introduction to _R_ and how to complete basic arithmetic calculations. The next tutorial explores several different commonly-used [central measures](/tutorials/0020-central-measures/) and how to calculate those measures.
+Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 1," like "George Self Lab 1" and submit that document for grade.

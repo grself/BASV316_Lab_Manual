@@ -1,4 +1,4 @@
-# Non-Parametric Hypothesis Testing {#lab10}
+# Non-Parametric Hypothesis Testing
 
 ```{r include = FALSE}
 
@@ -58,32 +58,31 @@ Kruskal-Wallis chi-squared = 29.267, df = 4, p-value = 6.901e-06
 
 ```
 
-While a `kruskal.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span style="background-color: #ffff99; font-style: italic;">6.901e-06</span>, which is found at the end of Line 3. Because this is less than 0.05 (5%) it would be considered a significant result. Thus, the null hypothesis would be rejected (that there was no difference in Ozone by Month). Notice that this test does not indicate which month had the greatest ozone reading or if all months had some sort of significant variance from the mean, just that there is a significant difference between the months.
+While a `kruskal.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span class="grshilite">6.901e-06</span>, which is found at the end of Line 3. Because this is less than 0.05 (5%) it would be considered a significant result. Thus, the null hypothesis would be rejected (that there was no difference in Ozone by Month). Notice that this test does not indicate which month had the greatest ozone reading or if all months had some sort of significant variance from the mean, just that there is a significant difference between the months.
 
 ### Skill Check: Kruskal-Wallis H
 
 Using the [_chickweight_](/tutorials/9999-data-dict/index.html#chickweight) data frame, calculate a Kruskal-Wallis H for the _weight_ output when grouped by _Diet_.
 
-```{r ex="ex01", type="pre-exercise-code"}
+```{r ex="ex10.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex01", type="sample-code"}
-
+```{r ex="ex10.01", type="sample-code"}
 # Calculate Kruskal-Wallis H for weight by Diet for the chickweight data frame.
 
 
 ```
 
-```{r ex="ex01", type="solution"}
+```{r ex="ex10.01", type="solution"}
 
 kruskal.test(weight ~ Diet, data = ChickWeight)
 
 ```
 
-```{r ex="ex01", type="sct"}
+```{r ex="ex10.01", type="sct"}
 
 ex11neq <- "Remember that 'weight' is the dependent variable (comes first) and 'Diet' is the independent variable (comes second). Also, 'Diet' is capitalized."
 ex12neq <- "Remember that the data frame must be specified as 'chickweight'."
@@ -100,6 +99,66 @@ state1 %>%
 success_msg("Good job! This is an important test for nonparametric data.")
 
 ```
+
+### Activity 10.1: Kruskal-Wallis H
+
+Using the _cafe_ data, conduct a Kruskal-Wallis H and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 1 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+
+1. 6.352e-09
+2. 0.0059
+3. 4.028e-06
+4. 0.3275
+
+Here are the variables to test:
+
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+cor_tbl <- data.frame(
+  Num = c("1",
+          "2",
+          "3",
+          "4"
+          ),
+  y = c(
+    "Tip",
+    "Bill",
+    "Party Size (ptysize)",
+    "Length"),
+  x = c(
+    "Meal",
+    "Day",
+    "Recommend (recmd)",
+    "Sex"
+  )
+)
+
+kable(cor_tbl, 
+      "html",
+      caption = "Kruskal-Wallis H Lab") %>%
+  kable_styling(bootstrap_options = c("striped","hover","responsive"),
+                full_width = F,
+                position = "center") %>%
+  column_spec(1, bold = T, border_right = T)
+```
+
+```{r ex="act10.01", type="pre-exercise-code"}
+
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
+
+```
+
+```{r ex="act10.01", type="sample-code"}
+# Using the cafe data frame, conduct a Kruskal-Wallis H on the following variables.
+
+# Tip vs. Meal
+
+# Bill vs. Day
+
+# Party Size (ptysize) vs. Recommend (recmd)
+
+# Length vs. Sex
+
+```
+
 
 -----
 
@@ -136,33 +195,32 @@ alternative hypothesis: true location shift is not equal to 0
 
 <div class="grsnote">The warning message can be ignored. It is indicating that some of the values in the _Treatment_ vector are repeated ("tied"), but that is expected since more than one plant in this study got the same treatment. The estimated p-value is adequate for most research projects.</div>
 
-While a `wilcox.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span style="background-color: #ffff99; font-style: italic;">0.006358</span>, which is found at the end of Line 4. Because this is less than 0.05 (5%) it would be considered a significant result. 
+While a `wilcox.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span class="grshilite">0.006358</span>, which is found at the end of Line 4. Because this is less than 0.05 (5%) it would be considered a significant result. 
 
 ### Skill Check: Mann-Whitney U
 
 Using the [_mtcars_](/tutorials/9999-data-dict/index.html#mtcars) data frame, calculate a _Mann-Whitney U_ for the _disp_ output when grouped by _am_.
 
-```{r ex="ex02", type="pre-exercise-code"}
+```{r ex="ex10.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex02", type="sample-code"}
-
+```{r ex="ex10.02", type="sample-code"}
 # Calculate a Mann-Whitney U for disp when grouped by am in the mtcars data frame.
 
 
 ```
 
-```{r ex="ex02", type="solution"}
+```{r ex="ex10.02", type="solution"}
 
 wilcox.test(disp ~ am, data = mtcars)
 
 
 ```
 
-```{r ex="ex02", type="sct"}
+```{r ex="ex10.02", type="sct"}
 
 
 ex21neq <- "Remember that 'disp' is the dependent variable (comes first) and 'am' is the independent variable (comes second)."
@@ -188,8 +246,58 @@ success_msg("Perfect! A Mann-Whitney U test is a common non-parametric test that
 
 ```
 
+### Activity 10.2: Mann-Whitney U
+
+Using the _cafe_ data, conduct a Mann-Whitney U and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 2 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+
+1. 6.352e-09
+2. 0.0059
+
+Here are the variables to test:
+
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+cor_tbl <- data.frame(
+  Num = c("1",
+          "2"
+          ),
+  y = c(
+    "Food",
+    "Service (svc)"
+  ),
+  x = c(
+    "Recommend (recmd)",
+    "Preference (pref)"
+  )
+)
+
+kable(cor_tbl, 
+      "html",
+      caption = "Mann-Whitney U Lab") %>%
+  kable_styling(bootstrap_options = c("striped","hover","responsive"),
+                full_width = F,
+                position = "center") %>%
+  column_spec(1, bold = T, border_right = T)
+```
+
+```{r ex="act10.02", type="pre-exercise-code"}
+
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
+
+```
+
+```{r ex="act10.02", type="sample-code"}
+# Using the cafe data frame, conduct a Mann-Whitney U on the following variables.
+
+# Food vs. Recommend (recmd)
+
+# Service (svc) vs. Preference (pref)
+
+```
+
+
+
 -----
 
-## Next
+## Deliverable
 
-This tutorial explored hypothesis testing using _nonparametric_ means. Students who are interested in using _R_ for their own research should begin to explore this important software on their own. It is available as a [download](https://www.r-project.org/) without charge and can be used on _Windows_, _Mac_, or _Linux_ systems. It is also recommended that [RStudio](https://www.rstudio.com/), a free Integrated Developement Environment (IDE), be used for _R_ projects.
+Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 10," like "George Self Lab 10" and submit that document for grade.

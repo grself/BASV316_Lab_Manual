@@ -1,6 +1,6 @@
 # (PART) Hypothesis Testing {-} 
 
-# Parametric Hypothesis Testing {#lab9}
+# Parametric Hypothesis Testing
 
 ```{r include = FALSE}
 
@@ -85,32 +85,31 @@ The `ANOVA` function returns a lot of information, most of which is beyond the s
   Signif. codes: 0 *** 0.001 ** 0.01 * 0.05 . 0.1 1
 ```
 
-While an `ANOVA` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span style="background-color: #ffff99; font-style: italic;">0.0004827</span>, which is labeled _Pr(>F)_ and is found near the end of Line 6. Following that p-value, _R_ helpfully prints a code to aid in determining the significance of the result, three asterisks in this case. The last line in the results then lists the meaning of the various codes used. P-values that fall between 0 and 0.001 are marked with three asterisks, as in this case, so it is significant at the 0.1% level (0.001), the greatest possible level. (Note: the importance of the _P_ value was discussed in [Correlation and Regression](/tutorials/0070-correlation/index.html#significance))
+While an `ANOVA` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span class="grshilite">0.0004827</span>, which is labeled _Pr(>F)_ and is found near the end of Line 6. Following that p-value, _R_ helpfully prints a code to aid in determining the significance of the result, three asterisks in this case. The last line in the results then lists the meaning of the various codes used. P-values that fall between 0 and 0.001 are marked with three asterisks, as in this case, so it is significant at the 0.1% level (0.001), the greatest possible level. (Note: the importance of the _P_ value was discussed in [Correlation and Regression](/tutorials/0070-correlation/index.html#significance))
 
 ### Skill Check: ANOVA
 
 Using the [_npk_](/tutorials/9999-data-dict/index.html#npk) data frame, calculate an ANOVA for the _yield_ output for when grouped by _block_.
 
-```{r ex="ex01", type="pre-exercise-code"}
+```{r ex="ex09.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex01", type="sample-code"}
-
+```{r ex="ex09.01", type="sample-code"}
 # Calculate the ANOVA for yield when grouped by block in the npk data frame.
 
 
 ```
 
-```{r ex="ex01", type="solution"}
+```{r ex="ex09.01", type="solution"}
 
 anova(lm(yield ~ block, data = npk))
 
 ```
 
-```{r ex="ex01", type="sct"}
+```{r ex="ex09.01", type="sct"}
 
 ex11neq <- "Remember that 'yield' is the dependent variable (comes first) and 'block' is the independent variable (comes second)."
 ex12neq <- "Remember that the data frame must be specified as 'npk'."
@@ -131,6 +130,65 @@ ex() %>%
   check_equal(incorrect_msg = ex11neq)
 
 success_msg("Perfect! An ANOVA is one of the most commonly-used parametric tests and you can now conduct one for your own research projects.")
+
+```
+
+### Activity 9.1: ANOVA
+
+Using the _cafe_ data, conduct an ANOVA and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 9.1 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+
+1. 6.352e-09
+2. 0.0059
+3. 4.028e-06
+4. 0.3275
+
+Here are the variables to test:
+
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+cor_tbl <- data.frame(
+  Num = c("1",
+          "2",
+          "3",
+          "4"
+          ),
+  y = c(
+    "Length",
+    "Miles",
+    "Age",
+    "Tip"),
+  x = c(
+    "Day",
+    "Party Size (ptysize)",
+    "Food",
+    "Service (svc)"
+  )
+)
+
+kable(cor_tbl, 
+      "html",
+      caption = "ANOVA Lab") %>%
+  kable_styling(bootstrap_options = c("striped","hover","responsive"),
+                full_width = F,
+                position = "center") %>%
+  column_spec(1, bold = T, border_right = T)
+```
+
+```{r ex="act09.01", type="pre-exercise-code"}
+
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
+
+```
+
+```{r ex="act09.01", type="sample-code"}
+# Using the cafe data frame, conduct an ANOVA on the following variables.
+
+# Length vs. Day
+
+# Miles vs. Party Size (ptysize)
+
+# Age vs. Food
+
+# Tip vs. Service (svc)
 
 ```
 
@@ -169,32 +227,31 @@ The `t.test` function returns a lot of information, most of which is beyond the 
             0.75            2.33 
 ```
 
-While a `t.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span style="background-color: #ffff99; font-style: italic;">0.07939</span>, which is found at the end of Line 3. 
+While a `t.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span class="grshilite">0.07939</span>, which is found at the end of Line 3. 
 
 ### Skill Check: T-test
 
 Using the _npk_ data frame, calculate a t-test for the _yield_ output for when grouped by _N_.
 
-```{r ex="ex02", type="pre-exercise-code"}
+```{r ex="ex09.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex02", type="sample-code"}
-
+```{r ex="ex09.02", type="sample-code"}
 # Calculate a t-test for yield when grouped by N in the npk data frame.
 
 
 ```
 
-```{r ex="ex02", type="solution"}
+```{r ex="ex09.02", type="solution"}
 
 t.test(yield ~ N, data = npk)
 
 ```
 
-```{r ex="ex02", type="sct"}
+```{r ex="ex09.02", type="sct"}
 
 ex21neq <- "Remember that 'yield' is the dependent variable (comes first) and 'N' is the independent variable (comes second). Also, 'N' is a capital letter."
 ex22neq <- "Remember that the data frame must be specified as 'npk'."
@@ -212,8 +269,68 @@ success_msg("Perfect! A t-test is a common parametric test and you can now condu
 
 ```
 
+### Activity 9.2: T-test
+
+Using the _cafe_ data, conduct a t.test (independent) and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 2 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+
+1. 6.352e-09
+2. 0.0059
+3. 4.028e-06
+4. 0.3275
+
+Here are the variables to test:
+
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+cor_tbl <- data.frame(
+  Num = c("1",
+          "2",
+          "3",
+          "4"
+          ),
+  y = c(
+    "Miles",
+    "Length",
+    "Bill",
+    "Tip"),
+  x = c(
+    "Recommend (recmd)",
+    "Preference (pref)",
+    "Recommend (recmd)",
+    "Preference (pref)"
+  )
+)
+
+kable(cor_tbl, 
+      "html",
+      caption = "T.test Lab") %>%
+  kable_styling(bootstrap_options = c("striped","hover","responsive"),
+                full_width = F,
+                position = "center") %>%
+  column_spec(1, bold = T, border_right = T)
+```
+
+```{r ex="act09.02", type="pre-exercise-code"}
+
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
+
+```
+
+```{r ex="act09.02", type="sample-code"}
+# Using the cafe data frame, conduct a T-test on the following variables.
+
+# Miles vs. Recommend (recmd)
+
+# Length vs. Preference (pref)
+
+# Bill vs. Recommend (recmd)
+
+# Tip vs. Preference (pref)
+
+```
+
+
 -----
 
-## Next
+## Deliverable
 
-This tutorial explored hypothesis testing using _parametric_ tests and the next tutorial explores hypothesis testing using [nonparametric tests](/tutorials/0100-nonparametric/).
+Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 9," like "George Self Lab 9" and submit that document for grade.

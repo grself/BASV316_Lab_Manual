@@ -1,6 +1,6 @@
 # (PART) Descriptive Statistics {-}
 
-# Central Measures {#lab2}
+# Central Measures
 
 ```{r include = FALSE}
 
@@ -101,7 +101,7 @@ Using the _cafe_ data, find the number of items in the _age_ vector and include 
 
 ```{r ex="act02.01", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -184,7 +184,7 @@ Using the _cafe_ data frame, find the mean for _age_. Include that answer in the
 
 ```{r ex="act02.02", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -267,7 +267,7 @@ Using the _cafe_ data frame, find the mean for _miles_ with 15% trimmed. Include
 
 ```{r ex="act02.03", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -354,7 +354,7 @@ Using the _cafe_ data frame, find the median for _bill_. Include that answer in 
 
 ```{r ex="act02.04", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -393,6 +393,6 @@ There is no procedure for finding mode in this tutorial but a later tutorial dis
 
 -----
 
-## Next
+## Deliverable
 
-This tutorial descibed several different commonly-used central measures. The last tutorial was an [introduction to _R_](/tutorials/0010-intro-to-r/) and the next tutorial describes various types of [data dispersion](/tutorials/0030-dispersion/) and how those values are calculated.
+Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 2," like "George Self Lab 2" and submit that document for grade.

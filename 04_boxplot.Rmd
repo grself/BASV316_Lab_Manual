@@ -1,4 +1,4 @@
-# Visualizing Descriptives {#lab4}
+# Visualizing Descriptives
 
 ```{r include = FALSE}
 
@@ -174,7 +174,7 @@ Using the _cafe_ data frame, generate a boxplot for both _age_. Copy/paste the b
 
 ```{r ex="act04.01", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -261,7 +261,7 @@ Using the _cafe_ data frame, find the outliers for _miles_. Record those outlier
 
 ```{r ex="act04.02", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -415,7 +415,7 @@ Using the _cafe_ data frame, generate a boxplot of _length_ when grouped by _mea
 
 ```{r ex="act04.03", type="pre-exercise-code"}
 
-cafe <- read.csv('https://gself.com/cafe.csv')
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
@@ -429,6 +429,6 @@ cafe <- read.csv('https://gself.com/cafe.csv')
 
 -----
 
-## Next
+## Deliverable
 
-This tutorial created a visualization for various [central measures](/tutorials/0020-central-measures) and [measures of dispersion](/tutorials/0030-dispersion). The next tutorial is still being built and is not yet available.
+Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 4," like "George Self Lab 4" and submit that document for grade.
