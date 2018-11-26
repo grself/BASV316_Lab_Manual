@@ -45,9 +45,9 @@ One commonly-used example of the difference between the null and alternate hypot
 
 For the most part, researchers will never conclude that the alternate hypothesis is true. There are always confounding variables that are not considered but could be the cause of some observation. For example, in the smoking mothers example mentioned above, even if the evidence indicates that babies born to smokers weigh less the researcher could not state conclusively that smoking caused that observation. Perhaps non-smoking mothers had better health care, perhaps they had better diets, perhaps they exercised more, or any of a number of other reasonable explanations not related to smoking. For that reason, the result of a research project is normally reported with one of two phrases:
 
-* *The null hypothesis is rejected*. If the evidence indicates that there is a significant difference between the status quo and whatever was observed then the null hypothesis would be rejected. For the "tipping" example above, if the researcher found a significant difference in the amount of money tipped on weekends compared to weekdays then the null hypothesis (that is, tipping is the same on weekdays and weekends) would be rejected.
+* _The null hypothesis is rejected_. If the evidence indicates that there is a significant difference between the status quo and whatever was observed then the null hypothesis would be rejected. For the "tipping" example above, if the researcher found a significant difference in the amount of money tipped on weekends compared to weekdays then the null hypothesis (that is, tipping is the same on weekdays and weekends) would be rejected.
 
-* *The null hypothesis cannot be rejected*. If the evidence indicates that there is no significant difference between the status quo and whatever was observed then the researcher would report that the null hypothesis could not be rejected. For example, if there was no significant difference in the birth weights of babies born to smokers and non-smokers then the researcher failed to reject the null hypothesis.
+* _The null hypothesis cannot be rejected_. If the evidence indicates that there is no significant difference between the status quo and whatever was observed then the researcher would report that the null hypothesis could not be rejected. For example, if there was no significant difference in the birth weights of babies born to smokers and non-smokers then the researcher failed to reject the null hypothesis.
 
 Often, a research hypothesis is based on a prediction rather than an observation and that hypothesis can be tested. Imagine a hypothesis like "walking one mile a day for one month decreases blood pressure." A researcher could test this by measuring the blood pressure of a group of volunteers, have them walk a mile every day for a month, and then measure their blood pressure at the end of the experiment to see if there was any significant difference.
 
@@ -61,7 +61,7 @@ An Analysis of Variance (ANOVA) is used to analyze the difference in _more than 
 
 The _R_ `ANOVA` function requires the two variables being compared to be input as a linear model (`lm`) formula in the form of _y ~ x_, where _y_ is the dependent variable (measured outcomes) and _x_ is the independent variable (the groups used to divide the measured outcomes). Also the data source is specified with a _data =_ parameter. In the case of the professor's _Tutoring Efficacy_ hypothesis mentioned in the previous paragraph, the students' final exam score would be the dependent variable, the measured outcome, while the amount of tutoring, the three tutoring groups, would be the independent variable.
 
-The following one-line script generates an `ANOVA` from the [_morley_](/tutorials/9999-data-dict/index.html#morley) data frame. The speed of light was measured twenty times in each of five different experiments. To see if there is any significant difference in the groups of experiments an ANOVA would be calculated where the _Speed_ is the measured outcome and the _Expt_ are the experiment groups.
+The following one-line script generates an `ANOVA` from the [morley] data frame. The speed of light was measured twenty times in each of five different experiments. To see if there is any significant difference in the groups of experiments an ANOVA would be calculated where the _Speed_ is the measured outcome and the _Expt_ are the experiment groups.
 
 ```{r tut=TRUE}
 
@@ -85,11 +85,11 @@ The `ANOVA` function returns a lot of information, most of which is beyond the s
   Signif. codes: 0 *** 0.001 ** 0.01 * 0.05 . 0.1 1
 ```
 
-While an `ANOVA` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span class="grshilite">0.0004827</span>, which is labeled _Pr(>F)_ and is found near the end of Line 6. Following that p-value, _R_ helpfully prints a code to aid in determining the significance of the result, three asterisks in this case. The last line in the results then lists the meaning of the various codes used. P-values that fall between 0 and 0.001 are marked with three asterisks, as in this case, so it is significant at the 0.1% level (0.001), the greatest possible level. (Note: the importance of the _P_ value was discussed in [Correlation and Regression](/tutorials/0070-correlation/index.html#significance))
+While an `ANOVA` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span class="grshilite">0.0004827</span>, which is labeled _Pr(>F)_ and is found near the end of Line 6. Following that p-value, _R_ helpfully prints a code to aid in determining the significance of the result, three asterisks in this case. The last line in the results then lists the meaning of the various codes used. P-values that fall between 0 and 0.001 are marked with three asterisks, as in this case, so it is significant at the 0.1% level (0.001), the greatest possible level. (Note: the interpretation of the _p-value_ was discussed in [Correlation and Regression])
 
 ### Skill Check: ANOVA
 
-Using the [_npk_](/tutorials/9999-data-dict/index.html#npk) data frame, calculate an ANOVA for the _yield_ output for when grouped by _block_.
+Using the [npk] data frame, calculate an ANOVA for the _yield_ output for when grouped by _block_.
 
 ```{r ex="ex09.01", type="pre-exercise-code"}
 
@@ -135,7 +135,7 @@ success_msg("Perfect! An ANOVA is one of the most commonly-used parametric tests
 
 ### Activity 9.1: ANOVA
 
-Using the _cafe_ data, conduct an ANOVA and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 9.1 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+Using the [cafe] data, conduct an `ANOVA` and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 9.1 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
 
 1. 6.352e-09
 2. 0.0059
@@ -203,7 +203,7 @@ A t-test is used to analyze the difference in _two groups_ of samples that are n
 
 A `t.test` requires the two variables being compared to be input as a formula in the form of _y ~ x_, where _y_ is the dependent variable (measured outcomes) and _x_ is the independent variable (the groups used to divide the measured outcomes). Also the data source is specified with a _data =_ parameter. In the case of the _Dining Spending_ hypothesis mentioned in the previous paragraph, the size of the dining bills would be the dependent variable, the measured outcome, while the groups of diners, the two cities, would be the independent variable.
 
-The following one-line script generates a `t-test` from the [_sleep_](/tutorials/9999-data-dict/index.html#sleep) data frame. In this experiment, two soporific drugs (increases the hours of sleep) were given in two different strengths to twenty patients. To see if there is any significant difference in the two groups of patients a t-test would be calculated where the _extra_ sleep is the measured outcome and the _group_ is the strength of the drug given.
+The following one-line script generates a `t-test` from the [sleep] data frame. In this experiment, two soporific drugs (increases the hours of sleep) were given in two different strengths to twenty patients. To see if there is any significant difference in the two groups of patients a t-test would be calculated where the _extra_ sleep is the measured outcome and the _group_ is the strength of the drug given.
 
 ```{r}
 
@@ -231,7 +231,7 @@ While a `t.test` function returns information that would be useful in a more tho
 
 ### Skill Check: T-test
 
-Using the _npk_ data frame, calculate a t-test for the _yield_ output for when grouped by _N_.
+Using the [npk] data frame, calculate a t-test for the _yield_ output for when grouped by _N_.
 
 ```{r ex="ex09.02", type="pre-exercise-code"}
 
@@ -271,7 +271,7 @@ success_msg("Perfect! A t-test is a common parametric test and you can now condu
 
 ### Activity 9.2: T-test
 
-Using the _cafe_ data, conduct a t.test (independent) and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 2 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+Using the [cafe] data, conduct a `t.test` and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 9.2 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
 
 1. 6.352e-09
 2. 0.0059

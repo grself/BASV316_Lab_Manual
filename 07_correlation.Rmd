@@ -80,7 +80,7 @@ kable(cor_tbl,
 
 ## Pearson's r
 
-Pearson's Product-Moment Correlation Coefficient (normally called Pearson's _r_) is a measure of the strength of the relationship between two variables having continuous data that are normally distributed (they have bell-shaped curves). _(Note: [Tutorial 1](/tutorials/0010-intro-to-r/) contains information about various data types._ The following examples of correlation using Pearson's _r_ are from the [_mtcars_](/tutorials/9999-data-dict/index.html#mtcars) dataset. 
+Pearson's Product-Moment Correlation Coefficient (normally called Pearson's _r_) is a measure of the strength of the relationship between two variables having continuous data that are normally distributed (they have bell-shaped curves). _(Note: The [Introduction to R] tutorial contains information about various data types._ The following examples of correlation using Pearson's _r_ are from the [mtcars] dataset. 
 
 ```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
@@ -125,6 +125,7 @@ The following script demonstrates how to calculate Pearson's _r_.
 * Line 3: This is a continuation of the `cor.test` function call and specifies the method to be Pearson's _r_. Since Pearson's _r_ is the default method for the `cor.test` function this line did not need to be included but it is used in this example since the specification will be important in later examples in this lab.
 
 ```{r}
+
 # Pearson's r
 cor.test(airquality$Wind, airquality$Ozone,
   method = "pearson")
@@ -139,7 +140,7 @@ The `cor.test` function returns a lot of information that will be important in l
     * The "t" score is used to calculate the p-value at the end of the line. 
     * The "df" are the "degrees of freedom" and is a measure of how many different levels the variables can take. 
     * The "p-value" is the probability value and, normally, a p-value less than 0.05 is considered significant. (Significance and p-value are discussed later in this tutorial.)
-1. **alternative...**: The alternative hypothesis being tested. The default is that the correlation is not equal to zero and this line simply states the alternative hypothesis so the researcher can compare that hypothesis with the correlation and p-value to see if the null hypothesis can be rejected. ("Hypothesis" is discussed in [Tutorial 9](/tutorials/0090-parametric).)
+1. **alternative...**: The alternative hypothesis being tested. The default is that the correlation is not equal to zero and this line simply states the alternative hypothesis so the researcher can compare that hypothesis with the correlation and p-value to see if the null hypothesis can be rejected. ("Hypothesis" is discussed in the [Parametric Hypothesis Testing] tutorial.)
 1. **95 percent...**: This shows the 95% confidence level for the true correlation. In this case, the true correlation should be between -0.706 and -0.471.
 1. **sample estimates**: This begins the "estimates" section of the report.
 1. **cor**: This verifies that the test executed was Pearson's _r_ (Spearman's will report _rho_ and Kendall's will report _tau_).
@@ -147,7 +148,7 @@ The `cor.test` function returns a lot of information that will be important in l
 
 ### Skill Check: Pearson's R
 
-Using the [_CO2_](/tutorials/9999-data-dict/index.html#CO2) data frame, calculate Pearson's _r_ for the variables _conc_ and _uptake_.
+Using the [CO2] data frame, calculate Pearson's _r_ for the variables _conc_ and _uptake_.
 
 ```{r ex="ex07.01", type="pre-exercise-code"}
 
@@ -184,7 +185,7 @@ success_msg("Perfect! Correlations are one of the most important tools available
 
 ### Activity 7.1: Pearson's R
 
-Using the _cafe_ data frame, determine the correlation between the _length_ of the meal and the _bill_ to see if longer meals tend to cost more. Because these are both ratio variables, use Pearson's _r_ as the correlation method. Record the correlation in the deliverable document for this lab.
+Using the [cafe] data frame, determine the correlation between the _length_ of the meal and the _bill_ to see if longer meals tend to cost more. Because these are both ratio variables, use Pearson's _r_ as the correlation method. Record the correlation in the deliverable document for this lab.
 
 ```{r ex="act07.01", type="pre-exercise-code"}
 
@@ -209,7 +210,7 @@ For example, imagine a research project that is attempting to determine movie pr
 
 On the other hand, imagine that a dataset included information about the age of people who purchased various makes of automobiles. If the "makes" are selected from a list (Ford, Chevrolet, Honda, etc.) then the data are categorical but no order is implied (that is, "Ford" is neither better or worse than "Chevrolet") so Kendall's _tau_ would be used to calculate the correlation between the customers' preference for the make of an automobile and their ages. Perhaps the correlation would come out to +0.534 (this is a made-up number). This would indicate that there was a strong positive correlation between these two variables; that is, people tend to prefer a specific make based upon their age; or, to put it another way, as people age their preference for automobile make changes in a predictable way.
 
-The following examples are from the _mtcars_ dataset and since they all involve ordered data Spearman's _rho_ was used to calculate the correlations.
+The following examples are from the [mtcars] dataset and since they all involve ordered data Spearman's _rho_ was used to calculate the correlations.
 
 ```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
@@ -249,7 +250,7 @@ kable(cor_tbl,
 
 ### Demonstration: Spearman's Rho
 
-The following script demonstrates using `cor.test` to calculate correlations from the [_esoph_](/tutorials/9999-data-dict/index.html#esoph) data frame using Spearman's _rho_. The process for this calculation is the same as for Pearson's _r_ except the method specified is "spearman". There is one other difference between this script and the first. <span style="background-color: #ffff99; font-style: italic;">Notice on line 2 that _esoph$agegp_ is inside an `as.numeric` function. Since _agegp_ uses text like "25-34" instead of a number this converts that to a number for Spearman's _rho_.</span> (Note: This script will generate a warnings about p-values but that can be safely ignored for this tutorial.)
+The following script demonstrates using `cor.test` to calculate correlations from the [esoph] data frame using Spearman's _rho_. The process for this calculation is the same as for Pearson's _r_ except the method specified is "spearman". There is one other difference between this script and the first. <span class="grshilite">Notice on line 2 that _esoph$agegp_ is inside an as.numeric function. Since _agegp_ uses text like "25-34" instead of a number this converts that to a number for Spearman's _rho_.</span> (Note: This script will generate a warnings about p-values but that can be safely ignored for this tutorial.)
 
 ```{r}
 
@@ -263,7 +264,7 @@ The interpretation of the results of Spearman's _rho_ is similar to that for Pea
 
 ### Skill Check: Spearman's _rho_
 
-Using the [_CO2_](/tutorials/9999-data-dict/index.html#CO2) data frame, calculate Spearmans's _rho_ for the variables _Plant_ (which is ordered) and _uptake_.
+Using the [CO2] data frame, calculate Spearmans's _rho_ for the variables _Plant_ (which is ordered) and _uptake_.
 
 ```{r ex="ex07.02", type="pre-exercise-code"}
 
@@ -316,7 +317,7 @@ success_msg("Perfect! Correlations are one of the most important tools available
 
 ### Activity 7.2: Spearman's Rho
 
-Using the _cafe_ data frame, determine the correlation between _age_ and service (_svc_) to see if there is a relationship between a customer's age and their rating for the service. Because service contains ordered data, use Spearman's _rho_ as the correlation method. Record the correlation in the deliverable document for this lab.
+Using the [cafe] data frame, determine the correlation between _age_ and service (_svc_) to see if there is a relationship between a customer's age and their rating for the service. Because service contains ordered data, use Spearman's _rho_ as the correlation method. Record the correlation in the deliverable document for this lab.
 
 ```{r ex="act07.02", type="pre-exercise-code"}
 
@@ -335,7 +336,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ### Demonstration: Kendall's Tau
 
-The following script demonstrates using `cor.test` to calculate correlations from the [_npk_](/tutorials/9999-data-dict/index.html#npk) data frame using Kendall's _tau_. The process for this calculation is the same as for Pearson's _r_ except the method specified is "kendall". As in the Spearman example, the first variable must be converted to numeric values. Also, this function will generate a warning but that can be ignored for this lab.
+The following script demonstrates using `cor.test` to calculate correlations from the [npk] data frame using Kendall's _tau_. The process for this calculation is the same as for Pearson's _r_ except the method specified is "kendall". As in the Spearman example, the first variable must be converted to numeric values. Also, this function will generate a warning but that can be ignored for this lab.
 
 ```{r}
 # Kendall's tau
@@ -348,7 +349,7 @@ Interpreting Kendall's _tau_ is similar to Pearson's _r_ and will not be further
 
 ### Skill Check: Kendall's _tau_
 
-Using the [_CO2_](/tutorials/9999-data-dict/index.html#CO2) data frame, calculate Kendall's _tau_ for the variables _Type_ and _uptake_.
+Using the [CO2] data frame, calculate Kendall's _tau_ for the variables _Type_ and _uptake_.
 
 ```{r ex="ex07.03", type="pre-exercise-code"}
 
@@ -401,7 +402,7 @@ success_msg("Perfect! Correlations are one of the most important tools available
 
 ### Activity 7.3: Kendall's Tau
 
-Using the _cafe_ data frame, determine the correlation between the distance driven (_miles_) and the _meal_ eaten. Because meal is categorical but not ordered, use Kendall's _tau_ as the correlation method. Record the correlation in the deliverable document for this lab.
+Using the [cafe] data frame, determine the correlation between the distance driven (_miles_) and the _meal_ eaten. Because meal is categorical but not ordered, use Kendall's _tau_ as the correlation method. Record the correlation in the deliverable document for this lab.
 
 ```{r ex="act07.03", type="pre-exercise-code"}
 
@@ -430,8 +431,8 @@ cor_tbl <- data.frame(
                   ),
   Data = c(
     "both data items being correlated are continuous.",
-    "at least one variable is ordered and larger sample size.",
-    "at least one variable is categorical (but not necessarily ordered) and smaller sample size."
+    "at least one variable is ordered and the sample size is large.",
+    "at least one variable is categorical (but not necessarily ordered) and the sample size is small."
   )
 )
 
@@ -460,30 +461,30 @@ In general, researchers use one of three significance levels: 1%, 5%, or 10%. A 
 
 It must seem somewhat subjective for a researcher to simply select the desired significance level, but an overwhelming number researchers in business and the social and behavioral sciences (like education, sociology, and psychology) tend to choose a significance level of 5%. There is no real reason for choosing a 5% level other than it is just the way things have traditionally been done for many years. Therefore, if a researcher selected something other than 5%, peer researchers would want some explanation concerning the "weird" significance level.
 
-The calculated significance is typically reported as a _p-value_ (for "probability value"). The following table contains the correlation and p-value for several pairs of variables from the _mtcars_ data frame. 
+The calculated significance is typically reported as a _p-value_ (for "probability value"). The following table contains the correlation and p-value for several pairs of variables from the [mtcars] data frame. 
 
 ```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
-  Variables = c(
-    "wt—disp",
-    "cyl—vs",
-    "hp—drat",
+Variables = c(
+    "wt—qsec",
     "am—hp",
-    "wt—qsec"
+    "hp—drat",
+    "cyl—vs",
+    "wt—disp"
   ),
   Correlation = c(
-    "+0.8880",
-    "-0.8108",
-    "-0.4488",
+    "-0.1747",
     "-0.2432",
-    "-0.1747"
+    "-0.4488",
+    "-0.8108",
+    "+0.8880"
   ),
   Pvalue = c(
-    "1.222 x 10^-11^",
-    "1.843 x 10^-08^",
-    "0.009989",
+    "0.3389",
     "0.1798",
-    "0.3389"
+    "0.009989",
+    "1.843 x 10^-08^",
+    "1.222 x 10^-11^"
   )
 )
 
@@ -497,24 +498,25 @@ kable(cor_tbl,
 
 ```
 
-If a 5% significance level were specified for this data then any p-value smaller than 0.05 is considered significant; that is, the observed relationship is not likely due to chance. Given that, there is no significance in the correlation between _am—hp_ and between _wt—qsec_ since the p-values for those correlations are greater than 0.05. However, the correlations between the other variables are significant since the p-values for those are smaller than 0.05.
+If a 5% significance level were specified for this data then any p-value smaller than 0.05 is considered significant; that is, the observed relationship is not likely due to chance. Given that, there is no significance in the correlation between _wt—qsec_ and between _am—hp_ since the p-values for those correlations are greater than 0.05. However, the correlations between the other variables are significant since the p-values for those are smaller than 0.05.
 
 ### Demonstration: Significance
 
-One of the statistics calculated by `cor.test` is the p-value, so that test can be used to find significance along with a correlation. The following script demonstrates using `cor.test` to find the significance in the correlation between _Wind_ and _Temp_ in the _airquality_ data frame.
+One of the statistics calculated by `cor.test` is the p-value, so that test can be used to find significance along with a correlation. The following script demonstrates using `cor.test` to find the significance in the correlation between _Wind_ and _Temp_ in the [airquality] data frame.
 
 ```{r}
+
 # Significance
 cor.test(airquality$Wind, airquality$Temp,
   method = "pearson")
 
 ```
 
-At the end of line two of the results (not counting the title line), the _p-value_ is reported at 2.642e-09, which is how _r_ reports $2.642X10^{-09}$, and that is far smaller than 0.05. This correlation, then, would be considered statistically significant.
+At the end of line two of the results (not counting the title line), the _p-value_ is reported at <span class="grshilite">2.642e-09</span>, which is how _R_ reports 2.642 &times; 10^-09^, and that is far smaller than 0.05. This correlation, then, would be considered statistically significant.
 
 ### Skill Check: Significance
 
-Using the _CO2_ data frame, calculate the p-value for the variables _conc_ and _uptake_. Since these are both continuous data, "pearson" should be selected for the method.
+Using the [CO2] data frame, calculate the p-value for the correlation between _conc_ and _uptake_. Since these are both continuous data, _pearson_ should be selected for the method.
 
 ```{r ex="ex07.04", type="pre-exercise-code"}
 
@@ -551,7 +553,7 @@ success_msg("Good job! With a p-value of less than 0.05, this correlation is sig
 
 ### Activity 7.4: Significance
 
-Using the _cafe_ data frame, calculate the p-value for the variables _age_ and _bill_. Since these are both continuous data, _pearson_ should be selected for the method. Record the p-value in the deliverable document for this lab.
+Using the [cafe] data frame, calculate the p-value for the correlation between _age_ and _bill_. Since these are both continuous data, _pearson_ should be selected for the method. Record the p-value in the deliverable document for this lab.
 
 ```{r ex="act07.04", type="pre-exercise-code"}
 
@@ -572,7 +574,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 A regression line can be drawn on a scatter plot to graphically show the relationship between two variables (this is sometimes called a "trend line" and a "line of best fit"). Moreover, if the data points in the scatter plot are all close to the regression line, then it indicates a strong correlation.
 
-As an example, in the _mtcars_ dataset the calculated Pearson's _r_ for Quarter-mile Time and Horsepower is -0.708. These two variables have a strong negative correlation and are plotted below.
+As an example, in the [mtcars] dataset the calculated Pearson's _r_ for Quarter-mile Time and Horsepower is -0.708. These two variables have a strong negative correlation and are plotted below.
 
 ```{r fig.width=4,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE}
 
@@ -602,7 +604,7 @@ y &= 16.86435
 \end{aligned}
 $$
 
-In the equation, _m_ is the slope of the regression line and _b_ is the y-intercept. By plugging in the required value for _x_ a simple calculation will determine the predicted value for _y_, which is 16.86 (rounded) in this example.
+In the equation, _m_ is the slope of the regression line and _b_ is the y-intercept. By plugging in the required value for _x_, a simple calculation will determine the predicted value for _y_, which is 16.86 (rounded) in this example.
 
 Regression analysis becomes less certain if the supplied _x_ value is at the edge or outside the main body of the scatter plot. For example, using the above figure, it is mathematically possible to predict the quarter-mile time (y value) for a horsepower of 50:
 
@@ -622,7 +624,7 @@ However, since the selected _x_ value is at the very edge of the main body of th
 The following _r_ script uses the `lm` function to find the values of $m$ and $b$ for a correlation between two variables. Then, it calculates a predicted value for _y_ when given an _x_ value. 
 
 * Line 3: The slope-intercept formula is noted in a comment on line 3.
-* Line 5: This line executes the `lm` function to generate a "linear model" (the line of best fit) for _horsepower_ (x-axis) and _quarter-mile time_ (y-axis) in the _mtcars_ data frame. The result of this function is stored in a variable named _lmod_. It is important to ensure that the variables are entered in the correct order or the linear model will be backwards. The dependent variable (the y-axis) is listed first and then the independent variable (the x-axis). Thus, it is expected that the quarter-mile time is dependent on the horsepower of the car, not the other way around.
+* Line 5: This line executes the `lm` function to generate a "linear model" (the line of best fit) for _horsepower_ (x-axis) and _quarter-mile time_ (y-axis) in the [mtcars] data frame. The result of this function is stored in a variable named _lmod_. It is important to ensure that the variables are entered in the correct order or the linear model will be backwards. The dependent variable (the y-axis) is listed first and then the independent variable (the x-axis). Thus, it is expected that the quarter-mile time is dependent on the horsepower of the car, not the other way around.
 * Lines 6-7: Each of these lines store one number in a variable for use in Line 13. There is an odd format used to extract each of these numbers. `lmod` contains a lot of information, including dozens of numbers, and Line 6 (the slope) accesses the `coef` section of `lmod` and extracts just the slope and then stores it in a variable named _b_. Line 7 accesses the `coef` section of `lmod` and extracts just the intercept and stores it in a variable named _m_.
 * Line 10: The value of interest is stored in _x_ for use in Line 13. In this case, the quarter-mile time for a car with 200 horsepower is being predicted
 * Line 13: This is the slope-intercept formula written in _R_ format. The formula is executed with the variables generated in Lines 6, 7, and 10 and the result is displayed on the screen. (Note, this result is slightly different from the one reported earlier in this lab due to rounding.)
@@ -666,7 +668,7 @@ abline(lmod,
 ```
 
 
-Using the _airquality_ data frame, predict the _Wind_ (y-axis) when the _Temp_ (x-axis) is 80 degrees.
+Using the [airquality] data frame, predict the _Wind_ (y-axis) when the _Temp_ (x-axis) is 80 degrees.
 
 ```{r ex="ex07.05", type="pre-exercise-code"}
 
@@ -711,7 +713,7 @@ success_msg("Perfect! So the predicted wind on an 80 degree day is 9.596533.")
 
 ### Activity 7.5: Regression
 
-Using the _cafe_ data frame, predict the tip from a customer who is 48 years old. Round the tip to the nearest penny. Record the prediction in the deliverable document for this lab.
+Using the [cafe] data frame, predict the tip from a customer who is 48 years old. Round the tip to the nearest penny. Record the prediction in the deliverable document for this lab.
 
 ```{r ex="act07.05", type="pre-exercise-code"}
 

@@ -28,7 +28,7 @@ tutorial::go_interactive()
 
 ## Introduction
 
-Researchers often begin a project with a hypothesis and then gather data to see if the hypothesis supports an underlying theory in a process commonly called the _scientific method_. Categorical data gathered as part of the research project are analyzed using nonparametric techniques and two of the most commonly-used tests are described in this lab. (Note: the concept of "hypothesis" is discussed in [Parametric Hypothesis Testing](/tutorials/0090-parametric/index.html#hypothesis).)
+Researchers often begin a project with a hypothesis and then gather data to see if the hypothesis supports an underlying theory in a process commonly called the _scientific method_. Categorical data gathered as part of the research project are analyzed using nonparametric techniques and two of the most commonly-used tests are described in this lab. (Note: the concept of "hypothesis" is discussed in [Parametric Hypothesis Testing].)
 
 ## Kruskal-Wallis H
 
@@ -38,7 +38,7 @@ This test is used to determine if there are any significant differences in three
 
 The _R_ `kruskal.test` function requires the two variables being compared to be input in the form of _y ~ x_, where _y_ is the dependent variable (measured outcomes) and _x_ is the independent variable (the groups used to divide the measured outcomes). Also the data source is specified with a _data =_ parameter. In the case of the smoking example mentioned in the previous paragraph, the number of packs smoked would be the dependent variable, the measured outcome, while the age group would be the independent variable.
 
-The following one-line script generates a `kruskal.test` from the [_airquality_](/tutorials/9999-data-dict/index.html#airquality) data frame. The amount of Ozone in the air was measured every day for several months. To see if there is any significant difference between the months a _Kruskal-Wallis H_ would be calculated where the _Ozone_ is the measured outcome and the _Month_ is the grouping variable.
+The following one-line script generates a `kruskal.test` from the [airquality] data frame. The amount of Ozone in the air was measured every day for several months. To see if there is any significant difference between the months a _Kruskal-Wallis H_ would be calculated where the _Ozone_ is the measured outcome and the _Month_ is the grouping variable.
 
 ```{r}
 
@@ -62,7 +62,7 @@ While a `kruskal.test` function returns information that would be useful in a mo
 
 ### Skill Check: Kruskal-Wallis H
 
-Using the [_chickweight_](/tutorials/9999-data-dict/index.html#chickweight) data frame, calculate a Kruskal-Wallis H for the _weight_ output when grouped by _Diet_.
+Using the [chickweight] data frame, calculate a Kruskal-Wallis H for the _weight_ output when grouped by _Diet_.
 
 ```{r ex="ex10.01", type="pre-exercise-code"}
 
@@ -102,7 +102,7 @@ success_msg("Good job! This is an important test for nonparametric data.")
 
 ### Activity 10.1: Kruskal-Wallis H
 
-Using the _cafe_ data, conduct a Kruskal-Wallis H and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 1 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+Using the [cafe] data, conduct a _Kruskal-Wallis H_ and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 10.1 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
 
 1. 6.352e-09
 2. 0.0059
@@ -171,7 +171,7 @@ This test is used to determine if there are any significant differences in two g
 
 _R_ uses the `wilcox.test` function for several different types of nonparametric tests. It will automatically compute a _Mann-Whitney U_ test when the dependent variable is numeric and the independent variable is binary (that is, only two levels). The `wilcox.test` function requires the two variables being compared to be input in the form of _y ~ x_, where _y_ is the dependent variable (measured outcomes) and _x_ is the independent variable (the two groups used to divide the measured outcomes). Also the data source is specified with a _data =_ parameter. In the case of the movie analysis example mentioned in the previous paragraph, the number of movie rating would be the dependent variable, the measured outcome, while the city would be the independent, or grouping, variable.
 
-The following one-line script generates a _Mann-Whitney U_ from the [_CO2_](/tutorials/9999-data-dict/index.html#co2) data frame. The amount of CO2 uptake of a group of plants was measured while chilled or not chilled. To see if there is any significant difference between the cold tolerance of those plants, a _Mann-Whitney U_ test would be calculated where the _uptake_ is the measured outcome and the _Treatment_ is the grouping variable.
+The following one-line script generates a _Mann-Whitney U_ from the [CO2] data frame. The amount of CO~2~ uptake of a group of plants was measured while chilled or not chilled. To see if there is any significant difference between the cold tolerance of those plants, a _Mann-Whitney U_ test would be calculated where the _uptake_ is the measured outcome and the _Treatment_ is the grouping variable.
 
 ```{r}
 
@@ -199,7 +199,7 @@ While a `wilcox.test` function returns information that would be useful in a mor
 
 ### Skill Check: Mann-Whitney U
 
-Using the [_mtcars_](/tutorials/9999-data-dict/index.html#mtcars) data frame, calculate a _Mann-Whitney U_ for the _disp_ output when grouped by _am_.
+Using the [mtcars] data frame, calculate a _Mann-Whitney U_ for the _disp_ output when grouped by _am_.
 
 ```{r ex="ex10.02", type="pre-exercise-code"}
 
@@ -248,7 +248,7 @@ success_msg("Perfect! A Mann-Whitney U test is a common non-parametric test that
 
 ### Activity 10.2: Mann-Whitney U
 
-Using the _cafe_ data, conduct a Mann-Whitney U and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 2 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+Using the [cafe] data, conduct a _Mann-Whitney U_ and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 10.2 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
 
 1. 6.352e-09
 2. 0.0059
