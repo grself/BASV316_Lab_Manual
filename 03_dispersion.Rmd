@@ -35,16 +35,16 @@ One way to describe a vector is to report its dispersion, or spread. For example
 
 ## Range
 
-The maximum and minimum values are those at the extreme ends of a vector and the range is nothing more than the maximum minus the minimum values. For the 2016 version of the Scholastic Aptitude Test (SAT) the maximum score is 1600 and the minimum score is 400, so the range is 1600 - 400. Occasionally, the range is expressed as a single number, 1200 in the case of the SAT scores, but researchers normally want to know the actual endpoints rather than just the spread and those endpoints are what R reports for range.
+The maximum and minimum values are those at the extreme ends of a vector and the range is nothing more than the maximum minus the minimum values. For the 2016 version of the Scholastic Aptitude Test (SAT) the maximum score is 1600 and the minimum score is 400, so the range is 1600 - 400, or 1200. Even though the range is sometimes expressed as a single number, as in the case of the SAT scores, researchers normally want to know the actual endpoints rather than just the spread and those endpoints are what _R_ reports for range.
 
 ### Demonstration: Range
 
 To find the range of a vector, use the `range` function as found in the _R_ script below.
 
-* Lines 2-4: These display the ranges for three different variables in the [_trees_](/tutorials/9999-data-dict/index.html#trees) data frame.
-* Lines 7-8: These lines are very similar to Lines 1-4 but use variables in the [_rock_](/tutorials/9999-data-dict/index.html#rock) data frame.
+* Lines 2-4: These display the ranges for three different variables in the [trees] data frame.
+* Lines 7-8: These lines are very similar to Lines 1-4 but use variables in the [rock] data frame.
 
-<span style="background-color: #ffff99; font-style: italic;">This demonstration contains five different examples of finding the range.</span>
+<span class="grshilite">This demonstration contains five different examples of finding the range.</span>
 
 ```{r}
 # Range for trees
@@ -60,7 +60,7 @@ range(rock$perm)
 
 ### Skill Check: Range
 
-Using the [_faithful_](/tutorials/9999-data-dict/index.html#faithful) data frame, find the range for _eruptions_.
+Using the [faithful] data frame, find the range for _eruptions_.
 
 ```{r ex="ex03.01", type="pre-exercise-code"}
 
@@ -96,7 +96,7 @@ success_msg("Perfect! You can find the range of a vector!")
 
 ### Activity 3.1: Range
 
-Using the _cafe_ data frame, find the range for _age_. Include that answer in the deliverable document for this lab.
+Using the [cafe] data frame, find the range for _age_. Include that answer in the deliverable document for this lab.
 
 ```{r ex="act03.01", type="pre-exercise-code"}
 
@@ -115,18 +115,18 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ## Quartiles
 
-A measure that is closely related to the median is the first and third quartile. The first quartile (Q1) is the score that splits the lowest 25% of the values from the rest and the third quartile (Q3) splits the highest 25% of the values from the rest. The second quartile (Q2) is the same as the median and, normally, the term "median" is used rather than Q2. For example, consider this vector: 5, 7, 10, 13, 17, 19, 23. The median of this vector is 13 because three values are smaller and three are larger. The first quartile is 7, which is the median for the lower half of the values (not including 13, the median of the entire vector); or the score that splits the lowest 25% from the rest of the data. The third quartile is 19, which is the median for the upper half of the scores; or the score that splits the highest 25% from the rest of the data.
+A measure that is closely related to the [median] is the first and third quartile. The first quartile (Q1) is the score that splits the lowest 25% of the values from the rest and the third quartile (Q3) splits the highest 25% of the values from the rest. The second quartile (Q2) is the same as the median and, normally, the term _median_ is used rather than Q2. For example, consider this vector: 5, 7, 10, 13, 17, 19, 23. The median of this vector is 13 because three values are smaller and three are larger. The first quartile is 7, which is the median for the lower half of the values (not including 13, the median of the entire vector); or the score that splits the lowest 25% from the rest of the data. The third quartile is 19, which is the median for the upper half of the scores; or the score that splits the highest 25% from the rest of the data.
 
-Occasionally, the word "hinges" appears in statistical literature. The two hinges for a vector are the medians for the lower half and the upper half of the data, but those halves also include the median for the entire vector. For the simple vector above, the lower hinge is the median of 5, 7, 10, and 13, or 8.5. The upper hinge is the median of 13, 17, 19, and 23, or 18. Quartiles and hinges usually have about the same accuracy but quartiles are more commonly used.
+Occasionally, the word _hinges_ appears in statistical literature. The two hinges for a vector are the medians for the lower half and the upper half of the data, but those halves also include the median for the entire vector. For the simple vector above, the lower hinge is the median of 5, 7, 10, and 13, or 8.5. The upper hinge is the median of 13, 17, 19, and 23, or 18. Quartiles and hinges usually have about the same accuracy but quartiles are more commonly used.
 
 ### Demonstration: Quartiles
 
 _R_ calculates and prints the quartiles, along with several other descriptive measures, using the `summary()` function. This is a very important function that returns a great deal of useful information and is a staple in a data scientest’s toolbox. To find the quartiles of a vector, use the `summary` function found in the R script below.
 
-* Lines 2-4: Display summary information for three different variables in the _trees_ data frame.
-* Lines 7-10: Display summary information for four different variables in the _rock_ data frame.
+* Lines 2-4: Display summary information for three different variables in the [trees] data frame.
+* Lines 7-10: Display summary information for four different variables in the [rock] data frame.
 
-<span style="background-color: #ffff99; font-style: italic;">This demonstration contains seven different examples of finding quartiles.</span>
+<span class="grshilite">This demonstration contains seven different examples of finding quartiles.</span>
 
 ```{r}
 # Summary for trees
@@ -145,7 +145,7 @@ summary(rock$perm)
 
 ### Skill Check: Quartiles
 
-Using the [_USJudgeRatings_](/tutorials/9999-data-dict/index.html#usjudgeratings) data frame, find the summary for _WRIT_.
+Using the [USJudgeRatings] data frame, find the summary for _WRIT_.
 
 ```{r ex="ex03.02", type="pre-exercise-code"}
 
@@ -181,7 +181,7 @@ success_msg("Good Job! You found a summary with all of those quartiles!")
 
 ### Activity 3.2: Quartiles Using Summary
 
-Using the _cafe_ data frame, find the summary for _age_. Include the values for Q1 and Q3 in the deliverable document for this lab.
+Using the [cafe] data frame, find the summary for _age_. Include the values for Q1 and Q3 in the deliverable document for this lab.
 
 ```{r ex="act03.02", type="pre-exercise-code"}
 
@@ -199,16 +199,16 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ## IQR (Inter-Quartile Range)
 
-Another measure of dispersion that is occasionally used is the Inter-Quartile Range (IQR); that is, the difference between Q1 and Q3. To The IQR function is find the IQR for a vector, use the IQR command: IQR(hp). R reports that the difference between Q1 and Q3 for the horsepower vector is 83.5. Since the IQR removes outliers it may sometimes provide a better indication of the data dispersion. 
+Another measure of dispersion that is occasionally used is the Inter-Quartile Range (IQR); that is, the difference between Q1 and Q3. To find the IQR for a vector, use the IQR function: `IQR`. For example, _R_ reports that the difference between Q1 and Q3 for the horsepower vector in the [mtcars] data frame is 83.5. Since the IQR removes outliers it may sometimes provide a better indication of the data dispersion. 
 
 ### Demonstration: IQR (Inter-Quartile Range)
 
 To find the inter-quartile range of a vector, use the `IQR` function found in the R script below. _Note: `IQR` is one of the few functions in R that uses upper-case letters._
 
-* Lines 2-4: Display inter-quartile range for three different variables in the _trees_ data frame.
-* Lines 7-10: Display inter-quartile range for four different variables in the _rock_ data frame.
+* Lines 2-4: Display inter-quartile range for three different variables in the [trees] data frame.
+* Lines 7-10: Display inter-quartile range for four different variables in the [rock] data frame.
 
-<span style="background-color: #ffff99; font-style: italic;">This demonstration contains seven different examples of find the inter-quartile range (IQR).</span>
+<span class="grshilite">This demonstration contains seven different examples of find the inter-quartile range (IQR).</span>
 
 ```{r}
 # IQR for trees
@@ -226,7 +226,7 @@ IQR(rock$perm)
 
 ### Skill Check: IQR (Inter-Quartile Range)
 
-Using the [_swiss_](/tutorials/9999-data-dict/index.html#swiss) data frame, find the IQR for _Agriculture_.
+Using the [swiss] data frame, find the IQR for _Agriculture_.
 
 ```{r ex="ex03.03", type="pre-exercise-code"}
 
@@ -262,7 +262,7 @@ success_msg("Good Job! The Inter-Quartile Range you found is correct!")
 
 ### Activity 3.3: Inter-Quartile Range (IQR)
 
-Using the _cafe_ data frame, find the inter-quartile-range (IQR) for _age_. Include that answer in the deliverable document for this lab.
+Using the [cafe] data frame, find the inter-quartile-range (IQR) for _age_. Include that answer in the deliverable document for this lab.
 
 ```{r ex="act3.3", type="pre-exercise-code"}
 
@@ -376,10 +376,10 @@ It is difficult to categorically state whether a specific standard deviation is 
 
 To find the standard deviation of a vector, use the `sd` function as found in the R script below.
 
-* Lines 2-4: Display standard deviation for three different variables in the _trees_ data frame.
-* Lines 7-10: Display standard deviation for four different variables in the _rock_ data frame.
+* Lines 2-4: Display standard deviation for three different variables in the [trees] data frame.
+* Lines 7-10: Display standard deviation for four different variables in the [rock] data frame.
 
-<span style="background-color: #ffff99; font-style: italic;">This demonstration contains seven different examples of finding the standard deviation.</span>
+<span class="grshilite">This demonstration contains seven different examples of finding the standard deviation.</span>
 
 ```{r}
 # Summary for trees
@@ -399,7 +399,7 @@ In the results, notice that the tree girth has a standard deviation of about 3.1
 
 ### Skill Check: Standard Deviation
 
-Using the [_stackloss_](/tutorials/9999-data-dict/index.html#stackloss) data frame, find the standard deviation for _Air.Flow_.
+Using the [stackloss] data frame, find the standard deviation for _Air.Flow_.
 
 ```{r ex="ex03.04", type="pre-exercise-code"}
 
@@ -434,7 +434,7 @@ success_msg("Perfect! You calculated a standard deviation!")
 
 ### Activity 3.4: Standard Deviation
 
-Using the _cafe_ data frame, find the standard deviation for _age_. Include the answer in the deliverable document for this lab.
+Using the [cafe] data frame, find the standard deviation for _age_. Include the answer in the deliverable document for this lab.
 
 ```{r ex="act03.04", type="pre-exercise-code"}
 
