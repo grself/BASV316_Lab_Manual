@@ -2,7 +2,7 @@
 
 # Central Measures
 
-```{r 02.01, include = FALSE}
+```{r 020.01, include = FALSE}
 
 # Load some libraries
 library(knitr)
@@ -51,7 +51,7 @@ To find the number of items in a vector ( _N_ ), use the `length` procedure as f
 
 <span class="grshilite">This demonstration contains two different examples of finding N.</span>
 
-```{r 02.02}
+```{r 020.02}
 
 # Finding N
 length(rivers)
@@ -63,26 +63,26 @@ length(faithful$eruptions)
 
 Using the [attitude] data frame, find _N_ for _critical_.
 
-```{r 02.03, ex="ex02.01", type="pre-exercise-code"}
+```{r 020.03, ex="sc020.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r 02.04, ex="ex02.01", type="sample-code"}
+```{r 020.04, ex="sc020.01", type="sample-code"}
 
 # Find N for 'critical' in the 'attitude' data frame
 
 ```
 
 
-```{r 02.05, ex="ex02.01", type="solution"}
+```{r 020.05, ex="sc020.01", type="solution"}
 
 length(attitude$critical)
 
 ```
 
-```{r 02.06, ex="ex02.01", type="sct"}
+```{r 020.06, ex="sc020.01", type="sct"}
 
 ex1neq <- "Make sure the vector name includes the data frame: attitude$critical."
 
@@ -99,13 +99,13 @@ success_msg("Perfect! Now you know how many items are in the 'critical' vector!"
 
 Using the [cafe] data, find the number of items in the _age_ vector and include that number in the deliverable document for this lab.
 
-```{r 02.07, ex="act02.01", type="pre-exercise-code"}
+```{r 020.07, ex="act020.01", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r 02.08, ex="act02.01", type="sample-code"}
+```{r 020.08, ex="act020.01", type="sample-code"}
 # Find the number of items in the age vector.
 
 
@@ -128,7 +128,7 @@ To find the mean of a vector, use the `mean` procedure as found in the _R_ scrip
 
 <span class="grshilite">This demonstration contains six different examples of finding the mean.</span>
 
-```{r 02.09}
+```{r 020.09}
 # Find means for faithful
 mean(faithful$eruptions)
 mean(faithful$waiting)
@@ -144,26 +144,26 @@ mean(iris$Petal.Length)
 
 Using the [attitude] data frame, find the mean for _critical_.
 
-```{r 02.10, ex="ex02.02", type="pre-exercise-code"}
+```{r 020.10, ex="sc020.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r 02.11, ex="ex02.02", type="sample-code"}
+```{r 020.11, ex="sc020.02", type="sample-code"}
 # Find the mean for 'critical' in the 'attitude' data frame
 
 
 
 ```
 
-```{r 02.12, ex="ex02.02", type="solution"}
+```{r 020.12, ex="sc020.02", type="solution"}
 
 mean(attitude$critical)
 
 ```
 
-```{r 02.13, ex="ex02.02", type="sct"}
+```{r 020.13, ex="sc020.02", type="sct"}
 
 ex2neq <- "Make sure the vector name includes the data frame: attitude$critical."
 
@@ -180,13 +180,13 @@ success_msg("Perfect! Now you know the mean for the 'critical' vector!")
 
 Using the [cafe] data frame, find the mean for _age_. Include that answer in the deliverable document for this lab.
 
-```{r 02.14, ex="act02.02", type="pre-exercise-code"}
+```{r 020.14, ex="act020.02", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r 02.15, ex="act02.02", type="sample-code"}
+```{r 020.15, ex="act020.02", type="sample-code"}
 # Using the cafe data frame, find the mean for age.
 
 
@@ -209,7 +209,7 @@ The trimmed mean can be easily found in _R_ by adding a "trim" parameter to the 
 
 <span class="grshilite">Note: this demonstration contains two examples of finding the mean and four examples of finding the trimmed mean.</span>
 
-```{r 02.16}
+```{r 020.16}
 
 # Find trimmed means for rivers
 mean(rivers)
@@ -227,26 +227,26 @@ mean(attenu$accel, trim=0.25)
 
 Using the [attitude] data frame, find the mean for _critical_ with 15% trimmed.
 
-```{r 02.17, ex="ex02.03", type="pre-exercise-code"}
+```{r 020.17, ex="sc020.03", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r 02.18, ex="ex02.03", type="sample-code"}
+```{r 020.18, ex="sc020.03", type="sample-code"}
 # Find the mean for 'critical' with 15% trimmed in the 'attitude' data frame
 
 
 ```
 
 
-```{r 02.19, ex="ex02.03", type="solution"}
+```{r 020.19, ex="sc020.03", type="solution"}
 
 mean(attitude$critical, trim=0.15)
 
 ```
 
-```{r 02.20, ex="ex02.03", type="sct"}
+```{r 020.20, ex="sc020.03", type="sct"}
 
 ex3neq <- "Check the vector name (attitude$critical) and the amount of the trim (0.15)."
 
@@ -263,13 +263,13 @@ success_msg("Perfect! You can calculate the trimmed mean of a vector!")
 
 Using the [cafe] data frame, find the mean for _miles_ with 15% trimmed. Include that answer in the deliverable document for this lab.
 
-```{r 02.21, ex="act02.03", type="pre-exercise-code"}
+```{r 020.21, ex="act020.03", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r 02.22, ex="act02.03", type="sample-code"}
+```{r 020.22, ex="act020.03", type="sample-code"}
 # Using the cafe data frame, find the mean for miles with 15% trimmed.
 
 
@@ -297,7 +297,7 @@ To find the median of a vector, use the `median` procedure as found in the _R_ s
 
 <span class="grshilite">This demonstration contains six different examples of finding the median.</span>
 
-```{r 02.23}
+```{r 020.23}
 # Find medians for faithful
 median(faithful$eruptions)
 median(faithful$waiting)
@@ -314,26 +314,26 @@ median(iris$Petal.Length)
 
 Using the [attitude] data frame, find the median for _critical_.
 
-```{r 02.24, ex="ex02.04", type="pre-exercise-code"}
+```{r 020.24, ex="sc020.04", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r 02.25, ex="ex02.04", type="sample-code"}
+```{r 020.25, ex="sc020.04", type="sample-code"}
 # Find the median for 'critical' in the 'attitude' data frame
 
 
 ```
 
 
-```{r 02.26, ex="ex02.04", type="solution"}
+```{r 020.26, ex="sc020.04", type="solution"}
 
 median(attitude$critical)
 
 ```
 
-```{r 02.27, ex="ex02.04", type="sct"}
+```{r 020.27, ex="sc020.04", type="sct"}
 
 ex4neq <- "Check that the variable name includes both the data frame and vector (attitude$critical)."
 
@@ -350,13 +350,13 @@ success_msg("Perfect! You can calculate the median of a vector!")
 
 Using the [cafe] data frame, find the median for _bill_. Include that answer in the deliverable document for this lab.
 
-```{r 02.28, ex="act02.04", type="pre-exercise-code"}
+```{r 020.28, ex="act020.04", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r 02.29, ex="act02.04", type="sample-code"}
+```{r 020.29, ex="act020.04", type="sample-code"}
 # Using the cafe data frame, find the median for bill.
 
 
@@ -370,7 +370,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 The mode is used to describe the center of nominal or ordinal data and is nothing more than the item that was most commonly found in the vector. For example, if a question asked respondents to select their zip code from a list of five local codes and "12345" was selected more often than any other then that would be the mode for that item. Calculating the mode is no more difficult than counting the number of times the various values are found and choosing the one that is most frequent. As an example, the [mtcars] data frame lists the following for the number of cylinders in each car:
 
-```{r 02.30, cyltable, echo=FALSE, message=FALSE, warnings=FALSE, results='asis', tut=FALSE}
+```{r 020.30, echo=FALSE, message=FALSE, warnings=FALSE, results='asis', tut=FALSE}
 
 dt <- as.data.frame(table(mtcars$cyl))
 names(dt) <- c("Cylinders","N")

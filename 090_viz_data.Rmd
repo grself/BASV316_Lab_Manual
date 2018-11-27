@@ -1,6 +1,6 @@
 # Visualizing Data
 
-```{r include = FALSE}
+```{r 090.01, include = FALSE}
 
 # Load some libraries
 library(knitr)
@@ -38,7 +38,7 @@ It is often very useful to visualize data frames rather than simply observe a ta
 
 A histogram is a graph that shows the disribution of data that are continuous in nature, for example, age or height. A histogram resembles a bar chart but there is an important difference: a histogram is used for continuous data while a bar chart is used for categorical data. To emphasize that difference, histograms are normally drawn with no space between the bars (the data are continuous along the entire x-axis) while bar charts are normally drawn with a small space between bars (the data are categorical along the x-axis). As an example of a histogram, the next figure shows the New York city high temperature from May to September 1973 from the [airquality] data frame.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.02, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 mypalette <- brewer.pal(9,"PuOr")
 
@@ -59,7 +59,7 @@ Notice that there is not a separate bar for each temperature; rather, _R_ has cl
 
 As another example, the following figure shows a histogram for the body temperature of a beaver recorded every 10 minutes over the course of several hours, as found in the [beaver1] data frame. This histogram shows normally-distributed data though there is an outlier at a temperature of 37.6°.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.03, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 mypalette <- brewer.pal(10,"BrBG")
 
@@ -78,7 +78,7 @@ hist(beaver1$temp,
 
 Histograms can also indicate data that are skewed and this would be important to researchers during a project's exploratory phase. Consider, for example, the following figure which is the shape of petroleum rock samples in the [rock] data frame. While this histogram still indicates a normal distribution with levels falling off from a peak, there is a longer "tail" to the right so the data have a positive skew.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.04, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 mypalette <- brewer.pal(9,"RdYlGn")
 
@@ -97,7 +97,7 @@ hist(rock$shape,
 
 Finally, consider the histogram in the following figure, which is taken from the _peri_ vector in the [rock] data frame. This shows a bi-modal distribution where there are two clear peaks in the data. It is critical for researchers to know that the data are bi-modal before they begin analyzing it since having two modes can cause certain statistical tests to fail.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.05, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 mypalette <- brewer.pal(10,"RdBu")
 
@@ -123,7 +123,7 @@ The following script creates an example histogram.
 * Line 7: This specifies that 10 colors will be used from the "cm.color" palette to shade the various bars in the histogram. Researchers need to experiment a bit with the color palette and number of colors to get the best result; however, "cm.color" along with the number of bars in the histogram seems to work well for this histogram. (Note: setting colors on graphs was introduced in [Color].)
 
 
-```{r}
+```{r 090.06}
 # Histogram
 hist(morley$Speed,
   main = "Morley's Experiment",
@@ -147,19 +147,19 @@ Using the [USJudgeRatings] data frame, create a histogram of the _CONT_ vector. 
 * Breaks: 11
 * Colors: cm.colors(8)
 
-```{r ex="ex08.01", type="pre-exercise-code"}
+```{r 090.07, ex="sc090.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex08.01", type="sample-code"}
+```{r 090.08, ex="sc090.01", type="sample-code"}
 # Create the histogram as specified above.
 
 
 ```
 
-```{r ex="ex08.01", type="solution"}
+```{r 090.09, ex="sc090.01", type="solution"}
 
 hist(USJudgeRatings$INTG,
   main = "US Judge Ratings",
@@ -171,7 +171,7 @@ hist(USJudgeRatings$INTG,
 
 ```
 
-```{r ex="ex08.01", type="sct"}
+```{r 090.10, ex="sc090.01", type="sct"}
 
 # These are numbered by the exercise number and a sequence within the exercise.
 # The sequence number is not necessary if there is only one check.
@@ -225,13 +225,13 @@ Using the [cafe] data frame, create a histogram of _age_. The histogram should:
 
 Copy/paste the histogram in the deliverable document for this lab.
 
-```{r ex="act08.01", type="pre-exercise-code"}
+```{r 090.11, ex="act090.01", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act08.01", type="sample-code"}
+```{r 090.12, ex="act090.01", type="sample-code"}
 # Using the cafe data frame, create a histogram of age that matches the listed specifications.
 
 
@@ -244,7 +244,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 A density plot provides the same information as a histogram but it is smoothed out so it is easier to read. Here is the same NY City temperature data from an earlier histogram but drawn as a density plot.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.13, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 plot(density(airquality$Temp),
      main = "NY Temperature",
@@ -259,7 +259,7 @@ plot(density(airquality$Temp),
 
 Given the previous plot it is natural to wonder, "What is density?" This is a calculated value such that the total area under the curve is assumed to be one and then each point along the x-axis is calculated to contribute the correct proportional amount to that total density. For many purposes it is adequate to just consider a density plot to be a smoothed histogram. As just one other example, following is a density plot of the bi-modal histogram presented earlier. The density plot makes the bi-modal nature of the data very evident.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.14, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 plot(density(rock$peri),
      main = "Rock Perimeter",
@@ -274,7 +274,7 @@ plot(density(rock$peri),
 
 The following script creates a density plot of the _speed_ variable in the [morley] data frame. The script is very similar to the last script except _R_ plots the density of the data in Line 2 rather than just a count of the various bins.
 
-```{r}
+```{r 090.15}
 
 # Density Plot
 plot(density(morley$Speed),
@@ -298,7 +298,7 @@ The following script creates a density plot for the _Rape_ vector in the [USArre
 * Line 6: The type of line to draw. "Lwd 2" is a relitively thick line that is easy to see on a graph.
 * Line 7: The color for this graph is "magenta4"
 
-```{r tut=TRUE}
+```{r 090.16, tut=TRUE}
 # Density plot of US Arrests for rape.
 plot(density(USArrests$Rape),
   main = "US Rape Arrests",
@@ -320,19 +320,19 @@ Using the [USJudgeRatings] data frame, create a density plot of the _CONT_ vecto
 * Lwd: 2
 * Color: blue4
 
-```{r ex="ex08.02", type="pre-exercise-code"}
+```{r 090.17, ex="sc090.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex08.02", type="sample-code"}
+```{r 090.18, ex="sc090.02", type="sample-code"}
 # Create the density plot as specified above.
 
 
 ```
 
-```{r ex="ex08.02", type="solution"}
+```{r 090.19, ex="sc090.02", type="solution"}
 
 plot(density(USJudgeRatings$INTG),
   main = "US Judge Ratings",
@@ -344,7 +344,7 @@ plot(density(USJudgeRatings$INTG),
 
 ```
 
-```{r ex="ex08.02", type="sct"}
+```{r 090.20, ex="sc090.02", type="sct"}
 
 # These are numbered by the exercise number and a sequence within the exercise.
 # The sequence number is not necessary if there is only one check.
@@ -401,13 +401,13 @@ Using the [cafe] data frame, create a density plot of _age_. The plot should:
 
 Copy/paste the density plot in the deliverable document for this lab.
 
-```{r ex="act08.02", type="pre-exercise-code"}
+```{r 090.21, ex="act090.02", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act08.02", type="sample-code"}
+```{r 090.22, ex="act090.02", type="sample-code"}
 # Using the cafe data frame, create a density plot of age that matches the listed specifications.
 
 
@@ -420,7 +420,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 Line graphs display the frequency of some value in a linear form that makes trend detection easier. These types of graphs are especially useful with what is called "time series" data; that is, data that are gathered over a long period of time. As an example, consider the following from the [airmiles] dataset which charts the number of passenger miles on US commercial airlines from 1937 to 1960.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.23, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 plot(airmiles,
      main = "Passenger Air Miles",
@@ -435,7 +435,7 @@ plot(airmiles,
 
 The following figure shows the number of accidental deaths in the United States from 1973 until 1979 by month taken from the [USAccDeaths] data frame. This line graph clearly shows a seasonal difference where there are more accidental deaths in the summer months than winter and detecting this type of seasonal variation is one of the strengths of a line graph.
 
-```{r fig.width=6,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.24, fig.width=6,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 plot(USAccDeaths,
      main = "US Accidental Deaths",
@@ -450,7 +450,7 @@ plot(USAccDeaths,
 
 As one final example, the following figure shows the approval rating for US Presidents from 1945 until 1975 taken from the [presidents] data frame. This line graph shows a very high approval rating in 1945 (Roosevelt at the end of WWII) with dips in the early 1950’s (Truman and the Korean Conflict) and about 1974 (Watergate and Nixon’s resignation). Notice that there are two gaps in the line (late 1940’s and 1973) caused by missing data in the data frame.
 
-```{r fig.width=6,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.25, fig.width=6,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 plot(presidents,
      main = "US Presidential Approval",
@@ -483,7 +483,7 @@ Researchers could quickly try several different settings to determine the best w
 * Line 7: The _lwd_ parameter sets the width of the line. The default value is 1 so this line specifies a double-width line in order to make it easier to see.
 * Line 8: This sets the color of the line to red in order to set it off from the axis and text.
 
-```{r}
+```{r 090.26}
 # Line Graph
 plot(ldeaths,
   main = "Lung Disease Deaths",
@@ -511,19 +511,19 @@ Using the [UKgas] data frame, create a line graph that meets this specification:
 * Color: _lightskyblue_
 
 
-```{r ex="ex08.03", type="pre-exercise-code"}
+```{r 090.27, ex="sc090.03", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex08.03", type="sample-code"}
+```{r 090.28, ex="sc090.03", type="sample-code"}
 # Create a line graph using the specifications listed above.
 
 
 ```
 
-```{r ex="ex08.03", type="solution"}
+```{r 090.29, ex="sc090.03", type="solution"}
 
 # Line Graph
 plot(UKgas,
@@ -537,7 +537,7 @@ plot(UKgas,
 
 ```
 
-```{r ex="ex08.03", type="sct"}
+```{r 090.30, ex="sc090.03", type="sct"}
 
 # These are numbered by the exercise number and a sequence within the exercise.
 # The sequence number is not necessary if there is only one check.
@@ -598,13 +598,13 @@ Create a line graph of the [lynx] data frame. The plot should:
 
 Copy/paste the line graph in the deliverable document for this lab.
 
-```{r ex="act08.03", type="pre-exercise-code"}
+```{r 090.31, ex="act090.03", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act08.03", type="sample-code"}
+```{r 090.32, ex="act090.03", type="sample-code"}
 # Create a line graph of the lynx data frame that matches the listed specifications.
 
 
@@ -617,7 +617,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 Plots (often called "scatter plots") are used to show how two different variables are related. Scatter plots are often used in connection with correlation where they visually indicate the correlation between two variables. For example, The following figure is the plot of stopping distance vs. speed from the [cars] data frame.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.33, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 plot(cars,
      main = "Stopping Distances",
@@ -631,7 +631,7 @@ plot(cars,
 
 The previous figure shows that as a car's speed increases the stopping distance also increases, which is exactly what would be expected. (Note: this data were gathered on cars in the 1920s.) Often, a line of best fit is included with a plot to better visualize the relationship between the two variables, as illustrated in the following figure.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.34, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 plot(cars,
      main = "Stopping Distances",
@@ -650,7 +650,7 @@ abline(lm(cars$dist ~ cars$speed),
 
 As a second example, The following figure is a plot of the eruption time for Old Faithful geyser, taken from the [faithful] data frame, as a function of the waiting time between eruptions.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.35, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 plot(faithful$eruptions ~ faithful$waiting,
      main = "Old Faithful Eruptions",
@@ -670,7 +670,7 @@ The previous figure shows that as the time between eruptions increases the time 
 
 _R_ has 25 different types of symbols that could be used for the points on a plot as shown on the following chart.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.36, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 # this script found at http://www.sthda.com/english/wiki/r-plot-pch-symbols-the-different-point-shapes-available-in-r
 #++++++++++++++++++++++++++++++++++++++++++++
@@ -703,7 +703,7 @@ The following script creates a simple plot using the [swiss] data frame.
 * Line 8: The line color of the circle is specified using the _col_ attribute.
 
 
-```{r}
+```{r 090.37}
 # Simple Plot
 plot(swiss$Fertility ~ swiss$Education,
   main = "Swiss Indicators",
@@ -722,7 +722,7 @@ The following script creates a plot with a line of best fit.
 * Line 10: This starts the `abline` function that ends on line 13. `Abline` draws a line "from point A to point B" (which is why the function is named "abline") on an existing plot. In this case, the line to be drawn is calculated with the `lm` function, which calculates the slope and y-intercept of the line of best fit for the two specified vectors. The `lm` function was introduced in the tutorial about [Correlation and Regression].
 * Lines 11-12: These are the parameters for the line of best fit as drawn on the plot.
 
-```{r}
+```{r 090.38}
 
 # Line of Best Fit
 plot(attitude$complaints ~ attitude$rating,
@@ -760,19 +760,19 @@ Abline:
 * Color: _violetred3_
 
 
-```{r ex="ex08.04", type="pre-exercise-code"}
+```{r 090.39, ex="sc090.04", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex08.04", type="sample-code"}
+```{r 090.40, ex="sc090.04", type="sample-code"}
 # Create a scatter plot with a line of best fit as specified above.
 
 
 ```
 
-```{r ex="ex08.04", type="solution"}
+```{r 090.41, ex="sc090.04", type="solution"}
 
 # Line of Best Fit
 plot(rock$area ~ rock$peri,
@@ -790,7 +790,7 @@ abline(lm(rock$area ~ rock$peri),
 
 ```
 
-```{r ex="ex08.04", type="sct"}
+```{r 090.42, ex="sc090.04", type="sct"}
 
 ex401neq <- "Check that the plot formula is rock$area ~ rock$peri."
 ex402neq <- "Check that main is Rock Area by Perimeter."
@@ -867,13 +867,13 @@ Abline:
 
 Copy/paste the plot in the deliverable document for this lab.
 
-```{r ex="act08.04", type="pre-exercise-code"}
+```{r 090.43, ex="act090.04", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act08.04", type="sample-code"}
+```{r 090.44, ex="act090.04", type="sample-code"}
 # Using the cafe dataset, create a simple plot of length (x) vs. bill (y) and a line of best fit that matches the listed specifications.
 
 
@@ -887,7 +887,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 Very often, researchers in the exploratory phase of a project need to know whether a data frame is normally distributed. Creating a histogram or density plot is very helpful in that regard, but a Q-Q ("Quantile-Quantile") Plot is a typical method used to determine if a data frame is normally distributed. The following figure is a Q-Q plot of the New York City temperatures in the [airquality] data frame.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.45, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 qqnorm(airquality$Temp,
        main = "QQ Plot: NY City Temps"
@@ -900,7 +900,7 @@ qqline(airquality$Temp,
 
 An absolutely perfect normal distribution would generate a straight line Q-Q plot and the blue line in the previous figure is ideal. Interpreting a Q-Q plot is more art than science but as long as most values are near the ideal line then the data are considered normally distributed. The following figure is a Q-Q plot for the Old Faithful eruption, as plotted earlier in this tutorial.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.46, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 qqnorm(faithful$eruptions,
        main = "QQ Plot: Old Faithful"
@@ -915,7 +915,7 @@ The above plot shows a typical bi-modal pattern. On the left side of the plot is
 
 The following figure shows a curved Q-Q plot that is typical for a data frame that is skewed. In this case, the plotted sunspot data have a heavy positive skew which is indicated by the long "tail" on the left side of the plot. That skew should be verified with a histogram or density plot.
 
-```{r fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 090.47, fig.width=4.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 qqnorm(sunspots,
        main = "QQ Plot: Sunspots"
@@ -934,7 +934,7 @@ The following script creates a Q-Q plot for a normally-distributed data frame.
 * Lines 2-4: This executes the `qqnorm` function and passes that function the weight variable from the [chickwts] data frame. This function draws the Q-Q Plot. The only parameter needed is _main_, which adds the title to the plot.
 * Lines 6-9: This executes the `qqline` function and passes that function the weight variable from the [chickwts] data frame. This function draws the straight line that indicates a perfect Q-Q plot. The only parameters passed to the function in this script is to set the size to 2 and the color to blue, in the same way for the scatterplots above.
 
-```{r}
+```{r 090.48}
 # Q-Q Plot
 qqnorm(chickwts$weight,
   main = "QQ Plot: Chick Weights"
@@ -951,19 +951,19 @@ qqline(chickwts$weight,
 
 Using the [swiss] data frame, create a Q-Q plot of the _Fertility_ vector. The plot should have a main title of _QQ Plot: Swiss Fertility_ and a _red_ Q-Q line with a width of 2.
 
-```{r ex="ex08.05", type="pre-exercise-code"}
+```{r 090.49, ex="sc090.05", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex08.05", type="sample-code"}
+```{r 090.50, ex="sc090.05", type="sample-code"}
 # Create a Q-Q plot of the Fertility vector in the swiss data frame using the requirements listed above.
 
 
 ```
 
-```{r ex="ex08.05", type="solution"}
+```{r 090.51, ex="sc090.05", type="solution"}
 
 qqnorm(swiss$Fertility,
   main = "QQ Plot: Swiss Fertility"
@@ -975,7 +975,7 @@ qqline(swiss$Fertility,
 
 ```
 
-```{r ex="ex08.05", type="sct"}
+```{r 090.52, ex="sc090.05", type="sct"}
 
 ex51neq <- "Check that the qqnorm function is for swiss$Fertility (the capital F on Fertility is important)."
 ex52neq <- "Check that main is QQ Plot: Swiss Fertility."
@@ -1012,13 +1012,13 @@ Using the [cafe] data frame, create a Q-Q plot of _age_. The plot should h ave a
 
 Copy/paste the plot in the deliverable document for this lab.
 
-```{r ex="act08.05", type="pre-exercise-code"}
+```{r 090.53, ex="act090.05", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act08.05", type="sample-code"}
+```{r 090.54, ex="act090.05", type="sample-code"}
 # Using the cafe dataset, create a Q-Q plot of age that matches the listed specification.
 
 

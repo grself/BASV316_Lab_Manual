@@ -2,7 +2,7 @@
 
 # Introduction to R
 
-```{r 01.01, include=FALSE}
+```{r 010.01, include=FALSE}
 # Load some libraries
 library(here)
 
@@ -61,7 +61,7 @@ All _R_ commands are entered from a "Command Line" environment. Many students fi
 
 * Line 13: The contents of the variable `TestScores` is printed to the screen.
 
-```{r 01.02}
+```{r 010.02}
 # Some basic calculations
 3 + 5
 5 + 8 * 2
@@ -96,13 +96,13 @@ Notes:
 * Set the variable P equal to 15 - ( sqrt(9) )
 
 
-```{r 01.03, ex="ex01.01", type="pre-exercise-code"}
+```{r 010.03, ex="sc010.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r 01.04, ex="ex01.01", type="sample-code"}
+```{r 010.04, ex="sc010.01", type="sample-code"}
 # Set M to 15 + ( 37 * 2 )
 
 
@@ -115,7 +115,7 @@ Notes:
 ```
 
 
-```{r 01.05, ex="ex01.01", type="solution"}
+```{r 010.05, ex="sc010.01", type="solution"}
 
 M <- 15 + ( 37 * 2 )
 
@@ -125,7 +125,7 @@ P <- 15 - ( sqrt(9) )
 
 ```
 
-```{r 01.06, ex="ex01.01", type="sct"}
+```{r 010.06, ex="sc010.01", type="sct"}
 
 ex01.01.01neq <- "Check your input for M. It should be 15 + ( 37 * 2 )."
 ex01.01.02neq <- "Check your input for N. It should be 24 + ( 2 ^ 6 )."
@@ -155,13 +155,13 @@ Start R and calculate the following problems:
 
 Include the answers to these three problems in the deliverable document for this lab.
 
-```{r 01.07, ex="act01.01", type="pre-exercise-code"}
+```{r 010.07, ex="act010.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r 01.08, ex="act01.01", type="sample-code"}
+```{r 010.08, ex="act010.01", type="sample-code"}
 # Find the value of 5 + 8 * 3
 
 # Find the value of 10 * 2/4
@@ -190,7 +190,7 @@ A _data frame_ is a collection of data generated during a research project. An e
 _If some of the lines in the result are too long to fit on one row in the R Console they will wrap around._
 
 
-```{r 01.09}
+```{r 010.09}
 
 # Exploring the Motor Trend Cars Data Frame
 mtcars
@@ -209,13 +209,13 @@ In the following _R_ codebox, explore the [airquality] data frame.
 
 * Set MinOzone to the minimum value of _Ozone_
 
-```{r 01.10, ex="ex01.02", type="pre-exercise-code"}
+```{r 010.10, ex="sc010.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r 01.11, ex="ex01.02", type="sample-code"}
+```{r 010.11, ex="sc010.02", type="sample-code"}
 # Set max.wind to the maximum value of Wind
 
 
@@ -228,7 +228,7 @@ In the following _R_ codebox, explore the [airquality] data frame.
 ```
 
 
-```{r 01.12, ex="ex01.02", type="solution"}
+```{r 010.12, ex="sc010.02", type="solution"}
 
 MaxWind <- max(airquality$Wind)
 
@@ -240,7 +240,7 @@ MinTemp <- min(airquality$Temp)
 
 ```
 
-```{r 01.13, ex="ex01.02", type="sct"}
+```{r 010.13, ex="sc010.02", type="sct"}
 
 ex01.02.01neq <- "Check your input for MaxWind. It should be max(airquality$Wind)."
 ex01.02.02neq <- "Check your input for MaxTemp. It should be max(airquality$Temp)."
@@ -265,13 +265,13 @@ success_msg("Perfect! Thanks for exploring this built-in data frame!")
 
 Using the [cafe] data, find the maximum and minimum values for the _bill_ variable and include those values in the deliverable document for this lab.
 
-```{r 01.14, ex="act01.02", type="pre-exercise-code"}
+```{r 010.14, ex="act010.02", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r 01.15, ex="act01.02", type="sample-code"}
+```{r 010.15, ex="act010.02", type="sample-code"}
 # Find the maximum value of bill.
 
 # Find the minimum value of bill.

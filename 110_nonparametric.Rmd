@@ -1,6 +1,6 @@
 # Non-Parametric Hypothesis Testing
 
-```{r include = FALSE}
+```{r 110.01, include = FALSE}
 
 # Load some libraries
 library(knitr)
@@ -40,7 +40,7 @@ The _R_ `kruskal.test` function requires the two variables being compared to be 
 
 The following one-line script generates a `kruskal.test` from the [airquality] data frame. The amount of Ozone in the air was measured every day for several months. To see if there is any significant difference between the months a _Kruskal-Wallis H_ would be calculated where the _Ozone_ is the measured outcome and the _Month_ is the grouping variable.
 
-```{r}
+```{r 110.02}
 
 # Kruskal-Wallis H
 kruskal.test(Ozone ~ Month, data = airquality)
@@ -64,25 +64,25 @@ While a `kruskal.test` function returns information that would be useful in a mo
 
 Using the [chickweight] data frame, calculate a Kruskal-Wallis H for the _weight_ output when grouped by _Diet_.
 
-```{r ex="ex10.01", type="pre-exercise-code"}
+```{r 110.03, ex="sc110.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex10.01", type="sample-code"}
+```{r 110.04, ex="sc110.01", type="sample-code"}
 # Calculate Kruskal-Wallis H for weight by Diet for the chickweight data frame.
 
 
 ```
 
-```{r ex="ex10.01", type="solution"}
+```{r 110.05, ex="sc110.01", type="solution"}
 
 kruskal.test(weight ~ Diet, data = ChickWeight)
 
 ```
 
-```{r ex="ex10.01", type="sct"}
+```{r 110.06, ex="sc110.01", type="sct"}
 
 ex11neq <- "Remember that 'weight' is the dependent variable (comes first) and 'Diet' is the independent variable (comes second). Also, 'Diet' is capitalized."
 ex12neq <- "Remember that the data frame must be specified as 'chickweight'."
@@ -111,7 +111,7 @@ Using the [cafe] data, conduct a _Kruskal-Wallis H_ and report the p-value for t
 
 Here are the variables to test:
 
-```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r 110.07, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Num = c("1",
           "2",
@@ -140,13 +140,13 @@ kable(cor_tbl,
   column_spec(1, bold = T, border_right = T)
 ```
 
-```{r ex="act10.01", type="pre-exercise-code"}
+```{r 110.08, ex="act110.01", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act10.01", type="sample-code"}
+```{r 110.09, ex="act110.01", type="sample-code"}
 # Using the cafe data frame, conduct a Kruskal-Wallis H on the following variables.
 
 # Tip vs. Meal
@@ -173,7 +173,7 @@ _R_ uses the `wilcox.test` function for several different types of nonparametric
 
 The following one-line script generates a _Mann-Whitney U_ from the [CO2] data frame. The amount of CO~2~ uptake of a group of plants was measured while chilled or not chilled. To see if there is any significant difference between the cold tolerance of those plants, a _Mann-Whitney U_ test would be calculated where the _uptake_ is the measured outcome and the _Treatment_ is the grouping variable.
 
-```{r}
+```{r 110.10}
 
 # Mann-Whitney U
 wilcox.test(uptake ~ Treatment, data = CO2)
@@ -201,26 +201,26 @@ While a `wilcox.test` function returns information that would be useful in a mor
 
 Using the [mtcars] data frame, calculate a _Mann-Whitney U_ for the _disp_ output when grouped by _am_.
 
-```{r ex="ex10.02", type="pre-exercise-code"}
+```{r 110.11, ex="sc110.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex10.02", type="sample-code"}
+```{r 110.12, ex="sc110.02", type="sample-code"}
 # Calculate a Mann-Whitney U for disp when grouped by am in the mtcars data frame.
 
 
 ```
 
-```{r ex="ex10.02", type="solution"}
+```{r 110.13, ex="sc110.02", type="solution"}
 
 wilcox.test(disp ~ am, data = mtcars)
 
 
 ```
 
-```{r ex="ex10.02", type="sct"}
+```{r 110.14, ex="sc110.02", type="sct"}
 
 
 ex21neq <- "Remember that 'disp' is the dependent variable (comes first) and 'am' is the independent variable (comes second)."
@@ -255,7 +255,7 @@ Using the [cafe] data, conduct a _Mann-Whitney U_ and report the p-value for the
 
 Here are the variables to test:
 
-```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r 110.15, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Num = c("1",
           "2"
@@ -279,13 +279,13 @@ kable(cor_tbl,
   column_spec(1, bold = T, border_right = T)
 ```
 
-```{r ex="act10.02", type="pre-exercise-code"}
+```{r 110.16, ex="act110.02", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act10.02", type="sample-code"}
+```{r 110.17, ex="act110.02", type="sample-code"}
 # Using the cafe data frame, conduct a Mann-Whitney U on the following variables.
 
 # Food vs. Recommend (recmd)
