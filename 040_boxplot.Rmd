@@ -291,43 +291,7 @@ boxplot(wt ~ cyl, data = mtcars,
 
 By comparing the three boxplots it is easy to see that the more cylinders an engine has then the more the automobile weighs since the plots tend to be “higher” as the number of cylinders increases. Also notice that the plot for 8-cylinder cars does not have an upper whisker since it is exactly the same as Q3 but it does include outliers. It is also interesting to note that the whiskers for the three plots overlap, indicating, for example, that some 4-cylinder cars are heavier than some 6-cylinder cars.
 
------
-
-## Color
-
-_R_ permits designers to use a number of different color palettes to make a graph easier to understand. Here are the palettes available in base _R_, as used in this tutorial. _Note: R can use any of the millions of colors available on a computer screen, but the five fundamental palettes shown below are easy to use and will serve analysts well in many projects._
-
-```{r fig04.05, fig.dim=c(2.5,4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
-d <- as.table(c(1,1,1,1,1,1,1,1,1,1))
-par(mfrow = c(5,1), mai = c(0.35,0.35,0.35,0.35), cex.main = 1.5)
-barplot(d, col = cm.colors(10), axisnames = FALSE, axes = FALSE, main = "cm (cyan-magenta)")
-barplot(d, col = heat.colors(10), axisnames = FALSE, axes = FALSE, main = "heat")
-barplot(d, col = rainbow(10), axisnames = FALSE, axes = FALSE, main = "rainbow")
-barplot(d, col = terrain.colors(10), axisnames = FALSE, axes = FALSE, main = "terrain")
-barplot(d, col = topo.colors(10), axisnames = FALSE, axes = FALSE, main = "topo")
-
-```
-
-Adding the _heat_ color palette to the grouped boxplot generated earlier in this tutorial makes it easier to read.
-
-```{r fig04.06, fig.dim=c(4.0, 4.0), fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
-
-boxplot(wt ~ cyl, data = mtcars,
-        ylab = "Weight (x1000 lbs)",
-        xlab = "Number of Cylinders",
-        main = "Grouped Boxplots With Heat Color", 
-        col = heat.colors(3)
-        )
-
-```
-
-When using color with graphics it is important for the researcher to keep two points in mind.
-
-1. First, it is estimated that about 8% of males and 0.5% of females are unable to distinguish between two or more colors, a condition that is often called “color blindness.”
-
-2. Second, if the research is ever printed in a black-and-white form then all color information is lost.
-
-For these two reasons, it is probably best to not rely on color alone to provide information to the reader; rather, color should be used to enhance the understanding of a chart without being a sole source of information for that chart. 
+_Color_ can be added to a boxplot to make it more pleasing and easier to understand. More information can be found in the [About Colors] section in the appendix.
 
 ### Demonstration: Grouped Boxplots With Color
 

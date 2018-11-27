@@ -196,28 +196,7 @@ The following script creates a clustered bar plot.
 * Line 8: A stacked bar is the default type of plot but Line 8 instructs _R_ to create a plot with the variables beside each other. "Stacked" plots are described in the next section of this tutorial.
 * Line 9: This rather odd-looking line adds a title to the legend, otherwise users would be confused about what the various colors used in the plot mean.
 
-```{r}
-# Clustered Bar Plot
-barplot(height = table(mtcars$cyl, mtcars$gear),
-  main = "Number of Cars by Gears and Cylinders",
-  xlab = "Gears",
-  ylab = "Count",
-  col = topo.colors(3),
-  legend = TRUE,
-  beside = TRUE,
-  args.legend = list(title = "Cylinders")
-)
-
-```
-
-### Clustered Bar Plot with Gradient Colors
-
-Designers must be careful about using multiple hues on a single visual display since that creates what is sometimes called “clown’s pants” due to the extreme patchy color scheme. Plots with that type of coloration can be distracting and unusable. Instead, it is generally a best practice to use only shades of the same color or gradients from one color to another. As a comparison, the following script produces the bar plot seen in the previous figure but using only shades of blue.
-
-* Line 2: This line creates a custom palette named `colpal` (for “color palette”), which is, essentially, a new _R_ command that creates color codes for plots. In this case, the function will create the codes for color gradients between blue and white. _Note: While any two colors can be specified for colorRampPalette, only one hue should be selected along with either white or black in order to make plots more usable for readers who are color blind._
-* Lines 4-7: These are the same as found in the previous bar plot script.
-* Line 8: This line sets the color for this plot by using `colpal` which was created in Line 2 and specifying three colors.
-* Lines 9-12: These are the same as found in the previous bar plot script.
+_Color_ can be added to a barplot to make it more pleasing and easier to understand. More information can be found in the [About Colors] section in the appendix.
 
 ```{r}
 
@@ -225,16 +204,17 @@ Designers must be careful about using multiple hues on a single visual display s
 colpal <- colorRampPalette(c("blue", "white"))
 
 barplot(height = table(mtcars$cyl, mtcars$gear),
-  main = "Number of Cars by Gears and Cylinders",
+  main = "Cars by Gears and Cylinders",
   xlab = "Gears",
   ylab = "Count",
-  col = colpal(3),
   legend = TRUE,
   beside = TRUE,
-  args.legend = list(title = "Cylinders")
+  args.legend = list(title = "Cylinders"),
+  col = colpal(3)
 )
 
 ```
+
 
 ### Skill Check: Clustered Bar Plot
 
