@@ -19,15 +19,16 @@ pre code {
 
 /* used to highlight in spans */
 .grshilite {
-  background: #ffff99; /* pale yellow */
+  background: #ffffee; /* pale yellow */
   font-style: italic;
 }
 
 /* used for the div "note" boxes */
 .grsnote {
 padding: 1em 1em 1em 4em;
-  margin-bottom: 10px;
-  background: #ffff99; /* pale yellow */
+  /* margin-bottom: 10px; */
+  background: #ffffee; /* pale yellow */
+  border: 5px double #FFD700; /* gold */
   font-weight: bold;
   position:relative;
 }
@@ -35,6 +36,7 @@ padding: 1em 1em 1em 4em;
 .grsnote:before {
     content: "\f14b"; /* pencil */
     font-family: FontAwesome;
+    color: #FFDD99; /* pale gold */
     left:10px;
     position:absolute;
     top:0;
@@ -43,18 +45,20 @@ padding: 1em 1em 1em 4em;
 
 /* used for the div "note" boxes */
 .grswarn {
-padding: 1em 1em 1em 4em;
-  margin-bottom: 10px;
-  background: #ffcccc; /* pale red */
+  padding: 1em 1em 1em 4em;
+  /*margin-bottom: 10px; */
+  background: #ffeeee; /* pale red */
+  border: 5px double red;
   font-weight: bold;
   position:relative;
 }
 
 .grswarn:before {
-    content: "\f06a"; /* exclaimation mark */
-    font-family: FontAwesome;
-    left:10px;
-    position:absolute;
-    top:0;
-    font-size: 45px;
+  content: "\f06a"; /* exclaimation mark */
+  font-family: FontAwesome;
+  color: #ffaaaa;
+  left:10px;
+  position:absolute;
+  top:0;
+  font-size: 45px;
 }

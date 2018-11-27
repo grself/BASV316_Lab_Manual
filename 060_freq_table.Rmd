@@ -2,7 +2,7 @@
 
 # Frequency Tables
 
-```{r include = FALSE}
+```{r 06.01, include = FALSE}
 
 # Load some libraries
 library(knitr)
@@ -39,7 +39,7 @@ Categorical data items are normally reported in frequency tables and crosstabs w
 
 A frequency table is a one-dimensional table that lists a count of the number of times that some categorical data item appears in a vector. As an example, consider the following table which lists the number of cars for each number of cylinders in the [mtcars] data frame.
 
-```{r tut=FALSE}
+```{r 06.02, tut=FALSE}
 table(mtcars$cyl)
 ```
 
@@ -53,7 +53,7 @@ The following script creates a frequency table.
 
 * Line 2: Create a simple frequency table listing the number of cars in the [mtcars] data frame by the forward gears.
 
-```{r tut=TRUE}
+```{r 06.03, tut=TRUE}
 # Count of cars by gears
 table(mtcars$gear)
 
@@ -63,25 +63,25 @@ table(mtcars$gear)
 
 Using the [chickwts] data frame, create a frequency table for _feed_.
 
-```{r ex="ex05.01", type="pre-exercise-code"}
+```{r 06.04, ex="ex05.01", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex05.01", type="sample-code"}
+```{r 06.05, ex="ex05.01", type="sample-code"}
 # Create a frequency table for feed in the chickwts data frame.
 
 
 ```
 
-```{r ex="ex05.01", type="solution"}
+```{r 06.06, ex="ex05.01", type="solution"}
 
 table(chickwts$feed)
 
 ```
 
-```{r ex="ex05.01", type="sct"}
+```{r 06.07, ex="ex05.01", type="sct"}
 
 ex1neq <- "Check that the variable for the table function is chickwts$feed."
 
@@ -99,13 +99,13 @@ success_msg("Good work! A frequency table is a foundational categorical data ana
 
 Using the [cafe] data frame, generate a frequency table for _meal_. Copy/paste the table in the deliverable document for this lab.
 
-```{r ex="act05.01", type="pre-exercise-code"}
+```{r 06.08, ex="act05.01", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act05.01", type="sample-code"}
+```{r 06.09, ex="act05.01", type="sample-code"}
 # Using the cafe data frame, generate a frequency table for meal.
 
 
@@ -119,7 +119,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 It is often useful to include the total number of items counted in a frequency table and that is provided by the `addmargins` function. As an example, consider the following table which is the same frequency table shown above but includes the total number of cars in the [mtcars] data frame.
 
-```{r tut=FALSE}
+```{r 06.10, tut=FALSE}
 
 addmargins(table(mtcars$cyl))
 
@@ -132,7 +132,7 @@ The following script creates a frequency table with margins
 
 * Line 2: Create a frequency table with margins listing the number of cars in the [mtcars] data frame by the forward gears.
 
-```{r tut=TRUE}
+```{r 06.11, tut=TRUE}
 # Count of cars by gears
 addmargins(table(mtcars$gear))
 
@@ -143,25 +143,25 @@ addmargins(table(mtcars$gear))
 
 Using the [chickwts] data frame, create a frequency table with margins for _feed_.
 
-```{r ex="ex05.02", type="pre-exercise-code"}
+```{r 06.12, ex="ex05.02", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex05.02", type="sample-code"}
+```{r 06.13, ex="ex05.02", type="sample-code"}
 # Create a frequency table with margins for feed in the chickwts data frame.
 
 
 ```
 
-```{r ex="ex05.02", type="solution"}
+```{r 06.14, ex="ex05.02", type="solution"}
 
 addmargins(table(chickwts$feed))
 
 ```
 
-```{r ex="ex05.02", type="sct"}
+```{r 06.15, ex="ex05.02", type="sct"}
 
 ex21neq <- "Check that the addmargins function calls table(chickwts$feed)."
 
@@ -179,13 +179,13 @@ success_msg("Perfect! Margins provide a little extra information to a frequency 
 
 Using the [cafe] data frame, generate a frequency table for _meal_, include the margins on this table. Copy/paste the table in the deliverable document for this lab.
 
-```{r ex="act05.02", type="pre-exercise-code"}
+```{r 06.16, ex="act05.02", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act05.02", type="sample-code"}
+```{r 06.17, ex="act05.02", type="sample-code"}
 # Using the cafe data frame, generate a frequency table for meal, include the margins on this table.
 
 
@@ -198,7 +198,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 Occasionally, researchers prefer to present percentages rather than raw numbers since those are easier to quickly interpret. Here is a proportion table of the number of cylinders for cars in the [mtcars] data frame.
 
-```{r tut=FALSE}
+```{r 06.18, tut=FALSE}
 
 prop.table(table(mtcars$cyl)) * 100
 
@@ -215,7 +215,7 @@ The following script creates a proportion table with the results presented in pe
 
 <span class="grshilite">This demonstration contains two different examples of generating a proportion table.</span>
 
-```{r tut=TRUE}
+```{r 06.19, tut=TRUE}
 # Proportion table
 prop.table(table(mtcars$gear))
 
@@ -228,25 +228,25 @@ prop.table(table(mtcars$gear)) * 100
 
 Using the [chickwts] data frame, create a proportion table for _feed_. The proportions should be multiplied by 100.
 
-```{r ex="ex05.03", type="pre-exercise-code"}
+```{r 06.20, ex="ex05.03", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex05.03", type="sample-code"}
+```{r 06.21, ex="ex05.03", type="sample-code"}
 # Create a proportion table for feed in the chickwts data frame.
 
 
 ```
 
-```{r ex="ex05.03", type="solution"}
+```{r 06.22, ex="ex05.03", type="solution"}
 
 prop.table(table(chickwts$feed)) * 100
 
 ```
 
-```{r ex="ex05.03", type="sct"}
+```{r 06.23, ex="ex05.03", type="sct"}
 
 ex31neq <- "Check that the prop.table function calls table(chickwts$feed)."
 ex32neq <- "Check that the results of the prop.table function are multiplied by 100."
@@ -267,13 +267,13 @@ success_msg("Perfect! A proportion table formatted like this is a valuable tool!
 
 Using the [cafe] data frame, generate a proportion table (proptable) for _meal_. Copy/paste the table in the deliverable document for this lab.
 
-```{r ex="act05.03", type="pre-exercise-code"}
+```{r 06.24, ex="act05.03", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act05.03", type="sample-code"}
+```{r 06.25, ex="act05.03", type="sample-code"}
 # Using the cafe data frame, generate a generate a proportion table (proptable) for meal.
 
 
@@ -287,7 +287,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 A crosstab (sometimes called a contingency table or pivot table), is a table of frequencies used to display the relationship between two nominal or ordinal variables. As an example of a crosstab, consider a table from the [mtcars] data frame that lists the number of cars by forward gears and the number of cylinders.
 
 
-```{r tut=FALSE}
+```{r 06.26, tut=FALSE}
 
 xtabs(~gear+cyl, data=mtcars)
 
@@ -297,7 +297,7 @@ In this case, one car had a four cylinder engine and three forward gears while 1
 
 Here is a second example from the [esoph] data frame.
 
-```{r tut=FALSE}
+```{r 06.27, tut=FALSE}
 
 xtabs(~agegp+ncases, data=esoph)
 
@@ -311,7 +311,7 @@ The following script demonstrates how to create crosstabs.
 
 * Line 2: The `xtabs` command (for "Cross Tabs") creates a crosstab for the variables entered. It is important to notice the tilde character in this function. In many _R_ commands the tilde is used to separate two parts of a formula. The part before the tilde are the data values to be acted upon and the second part are the grouping vectors. In Line 2, there are no data values specified so _R_ will simply count the number of times the various groups show up. The "row" group is listed first and then the "column" group. For example, "gear 3 - cylinder 8" appear 12 times in the data frame.
 
-```{r}
+```{r 06.28}
 # Count of gears and cylinders
 xtabs(~mtcars$gear+mtcars$cyl)
 
@@ -321,24 +321,24 @@ xtabs(~mtcars$gear+mtcars$cyl)
 
 Using the [esoph] data frame, create a crosstabs table for _tobgp_ (tobacco group) and _alcgp_ (alcohol group).
 
-```{r ex="ex05.04", type="pre-exercise-code"}
+```{r 06.29, ex="ex05.04", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex05.04", type="sample-code"}
+```{r 06.30, ex="ex05.04", type="sample-code"}
 # Create a crosstabs table for tobgp and alcgp in the esoph data frame.
 
 ```
 
-```{r ex="ex05.04", type="solution"}
+```{r 06.31, ex="ex05.04", type="solution"}
 
 xtabs(~esoph$tobgp+esoph$alcgp)
 
 ```
 
-```{r ex="ex05.04", type="sct"}
+```{r 06.32, ex="ex05.04", type="sct"}
 
 ex41neq <- "There should be a tilde followed by the two grouping variables."
 
@@ -355,13 +355,13 @@ success_msg("Perfect! This type of crosstab is very commonly used!")
 
 Using the [cafe] data frame, create a crosstab of _food_ and _svc_. Copy/paste the table in the deliverable document for this lab.
 
-```{r ex="act05.04", type="pre-exercise-code"}
+```{r 06.33, ex="act05.04", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act05.04", type="sample-code"}
+```{r 06.34, ex="act05.04", type="sample-code"}
 # Using the cafe data frame, create a crosstab of food and svc.
 
 
@@ -375,7 +375,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 Crosstabs can contain more than two dimensions. As an example, consider an experiment with pea plants where the amount of nitrogen, phosphorus, and potassium was varied to see what would happen to the crop yield. The [npk] data frame contains the result of that experiment and this crosstab displays that result in a multidimensional table. Notice that the row group is listed first, the column group is second, and the block group is third.
 
-```{r tut=FALSE}
+```{r 06.35, tut=FALSE}
 
 xtabs(~N+P+K, data=npk)
 
@@ -385,7 +385,7 @@ When nitrogen (N) is 0, phosphorus (P) is 0, and potassium (K) is 0 the crop yie
 
 As a second example, consider the [mtcars] data frame. A researcher wanted to know if there is any relationship between the number of forward gears, the number of cylinders in the engine (that is, the size of the engine), and whether the car had a manual or automatic transmission. Here is the crosstab that was created.
 
-```{r tut=FALSE}
+```{r 06.36, tut=FALSE}
 
 xtabs(~cyl+gear+am, data=mtcars)
 
@@ -402,7 +402,7 @@ The following script demonstrates how to create multi-dimensional crosstabs.
 
 <span class="grshilite">This demonstration contains two different examples of generating a multi-dimensional crosstab.</span>
 
-```{r}
+```{r 06.37}
 # Count of gears and cylinders by transmission
 xtabs(~gear+cyl+am, data = mtcars)
 
@@ -416,24 +416,24 @@ xtabs(~carb+cyl+vs, data = mtcars)
 
 Using the [esoph] data frame, create a crosstabs table for _tobgp_ (tobacco group), _alcgp_ (alcohol group), and _agegp_ (age group). 
 
-```{r ex="ex05.05", type="pre-exercise-code"}
+```{r 06.38, ex="ex05.05", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex05.05", type="sample-code"}
+```{r 06.39, ex="ex05.05", type="sample-code"}
 # Create a crosstabs table for tobgp, alcgp, and agegp in the esoph data frame.
 
 ```
 
-```{r ex="ex05.05", type="solution"}
+```{r 06.40, ex="ex05.05", type="solution"}
 
 xtabs(~tobgp+alcgp+agegp, data=esoph)
 
 ```
 
-```{r ex="ex05.05", type="sct"}
+```{r 06.41, ex="ex05.05", type="sct"}
 
 ex51neq <- "There should be a tilde followed by the three grouping variables."
 ex52neq <- "Be sure esoph is specified as the data."
@@ -455,13 +455,13 @@ success_msg("Perfect! A multi-dimensional crosstab is very useful!")
 
 Using the [cafe] data frame, create a crosstab of _food_ and _svc_ when grouped by _sex_. Copy/paste the table in the deliverable document for this lab.
 
-```{r ex="act05.05", type="pre-exercise-code"}
+```{r 06.42, ex="act05.05", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act05.05", type="sample-code"}
+```{r 06.43, ex="act05.05", type="sample-code"}
 # Using the cafe data frame, create a crosstab of food and svc when grouped by sex.
 
 
@@ -474,7 +474,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 Each of the crosstabs presented so far have displayed only counts of data; however, by using the `aggregate` function, crosstabs can also display calculated values, like the mean temperature for each summer month in the [airquality] data frame.
 
-```{r tut=FALSE}
+```{r 06.44, tut=FALSE}
 
 aggregate(Temp ~ Month, 
                 data = airquality, 
@@ -486,7 +486,7 @@ Though the above table has a number of calculated values the _R_ command is only
 
 As another example, the mean horsepower for automobiles can be calculated by the number of forward gears and engine cylinders from the [mtcars] data frame.
 
-```{r tut=FALSE}
+```{r 06.45, tut=FALSE}
 
 aggregate(hp ~ gear + cyl, 
           data = mtcars, 
@@ -502,7 +502,7 @@ The following script demonstrates how to create calculated crosstab.
 * Line 5: This line also calculates the mean displacement but groups the result by both number of cylinders and number of forward gears, creating a multi-dimensional calculated crosstab. It calculates that the mean displacement for four cylinder cars with three forward gears is just over 120 cubic inches.
 
 
-```{r}
+```{r 06.46}
 # Mean of displacement by cylinders
 aggregate(disp~cyl, data = mtcars, FUN = mean)
 
@@ -515,25 +515,25 @@ aggregate(disp~cyl+gear, data = mtcars, FUN = mean)
 
 Using the [npk] data frame, create a calculated crosstab for _N_ (nitrogen), _P_ (phosphate), and _K_ (potassium). Aggregate the mean _yield_ for all three vectors. _Notice that the vector names are capital letters._
 
-```{r ex="ex05.06", type="pre-exercise-code"}
+```{r 06.47, ex="ex05.06", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex05.06", type="sample-code"}
+```{r 06.48, ex="ex05.06", type="sample-code"}
 # Create a calculated crosstab for the mean yield for N, P, and K in the npk data frame.
 
 
 ```
 
-```{r ex="ex05.06", type="solution"}
+```{r 06.49, ex="ex05.06", type="solution"}
 
 aggregate(yield~N+P+K, data = npk, FUN = mean)
 
 ```
 
-```{r ex="ex05.06", type="sct"}
+```{r 06.50, ex="ex05.06", type="sct"}
 
 ex61neq <- "Yield should be followed by a tilde then the three grouping variables."
 ex62neq <- "Be sure npk is specified as the data."
@@ -560,11 +560,11 @@ success_msg("Perfect! Calculating the mean or other value makes crosstabs more u
 
 Using the [cafe] data frame, create a crosstab of the mean _tip_ when grouped by _food_ and _svc_. Copy/paste the table in the deliverable document for this lab.
 
-```{r ex="act05.06", type="pre-exercise-code"}
+```{r 06.51, ex="act05.06", type="pre-exercise-code"}
 cafe <- read.csv('http://georgeself.com/maincafe.csv')
 ```
 
-```{r ex="act05.06", type="sample-code"}
+```{r 06.52, ex="act05.06", type="sample-code"}
 # Using the cafe data frame, create a calculated crosstab of the mean tip for food and svc.
 
 ```
@@ -582,7 +582,7 @@ As an example, here is the same `aggregate` command used in the previous example
 
 <span class="grshilite">This demonstration contains two different examples of rounding.</span>
 
-```{r}
+```{r 06.53}
 # Mean of displacement by cylinders
 round(aggregate(disp~cyl, data = mtcars, FUN = mean), digits = 3)
 
@@ -595,25 +595,25 @@ round(aggregate(disp~cyl+gear, data = mtcars, FUN = mean), digits = 2)
 
 Using the [infert] data frame, create a calculated crosstab for _case_, _induced_, and _spontaneous_. Aggregate the mean _age_ for all three vectors. Round the results to two decimal places.
 
-```{r ex="ex05.07", type="pre-exercise-code"}
+```{r 06.54, ex="ex05.07", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r ex="ex05.07", type="sample-code"}
+```{r 06.55, ex="ex05.07", type="sample-code"}
 # Create a calculated crosstab of age rounded to two decimal places for case, induced, and spontaneous in the infert data frame.
 
 
 ```
 
-```{r ex="ex05.07", type="solution"}
+```{r 06.56, ex="ex05.07", type="solution"}
 
 round(aggregate(age~case+induced+spontaneous, data=infert, FUN=mean), digits = 2)
 
 ```
 
-```{r ex="ex05.07", type="sct"}
+```{r 06.57, ex="ex05.07", type="sct"}
 
 ex71neq <- "In aggregate, age should be followed by a tilde then the three grouping variables."
 ex72neq <- "In aggregate, be sure infert is specified as the data."
@@ -647,13 +647,13 @@ success_msg("Good Work! A rounded mean is much easier to use!")
 
 Using the [cafe] data frame, create a crosstab of the mean _tip_ when grouped by _food_ and _svc_. Round the calculated values to two decimal places. Copy/paste the table in the deliverable document for this lab.
 
-```{r ex="act05.07", type="pre-exercise-code"}
+```{r 06.58, ex="act05.07", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r ex="act05.07", type="sample-code"}
+```{r 06.59, ex="act05.07", type="sample-code"}
 # Using the cafe data frame, create a calculated crosstab of the mean tip for food and svc, rounded to two decimal places.
 
 

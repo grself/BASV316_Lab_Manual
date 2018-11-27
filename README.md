@@ -31,9 +31,10 @@ The labs use tutorials written with *DataCamp Light* and must be served as HTML 
 
 * 190101: Released v2.0
   * Added _Skill Check_ exercises for all activities. These use DataCamp's _Submission Correction Testing_ to provide student feedback.
-  * Todo: Added deliverable activities.
-  * Todo: Added a "Deliverable" paragraph at the bottom of each lab.
-  * Todo: Updated cross-reference links
-  * Todo: Separate the background material from the tutorial material.
+  * Added deliverable activities.
+  * Added a "Deliverable" paragraph at the bottom of each lab.
+  * Updated cross-reference links
+  * Moved the "colors" background material into the appendix
+  * Todo: Label all code chunks (labs 10-70 done)
   * Todo: Can I resize the illustrations, like in Lab 4?
 * 180801: Released v1.0
