@@ -60,7 +60,7 @@ Kruskal-Wallis chi-squared = 29.267, df = 4, p-value = 6.901e-06
 
 While a `kruskal.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span class="grshilite">6.901e-06</span>, which is found at the end of Line 3. Because this is less than 0.05 (5%) it would be considered a significant result. Thus, the null hypothesis would be rejected (that there was no difference in Ozone by Month). Notice that this test does not indicate which month had the greatest ozone reading or if all months had some sort of significant variance from the mean, just that there is a significant difference between the months.
 
-### Skill Check: Kruskal-Wallis H
+### Guided Practice: Kruskal-Wallis H
 
 Using the [chickweight] data frame, calculate a Kruskal-Wallis H for the _weight_ output when grouped by _Diet_.
 
@@ -111,7 +111,7 @@ Using the [cafe] data, conduct a _Kruskal-Wallis H_ and report the p-value for t
 
 Here are the variables to test:
 
-```{r 110.07, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Num = c("1",
           "2",
@@ -197,7 +197,7 @@ alternative hypothesis: true location shift is not equal to 0
 
 While a `wilcox.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span class="grshilite">0.006358</span>, which is found at the end of Line 4. Because this is less than 0.05 (5%) it would be considered a significant result. 
 
-### Skill Check: Mann-Whitney U
+### Guided Practice: Mann-Whitney U
 
 Using the [mtcars] data frame, calculate a _Mann-Whitney U_ for the _disp_ output when grouped by _am_.
 
@@ -255,7 +255,7 @@ Using the [cafe] data, conduct a _Mann-Whitney U_ and report the p-value for the
 
 Here are the variables to test:
 
-```{r 110.15, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Num = c("1",
           "2"

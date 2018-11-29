@@ -59,7 +59,7 @@ table(mtcars$gear)
 
 ```
 
-### Skill Check: Frequency Tables
+### Guided Practice: Frequency Tables
 
 Using the [chickwts] data frame, create a frequency table for _feed_.
 
@@ -139,7 +139,7 @@ addmargins(table(mtcars$gear))
 ```
 
 
-### Skill Check: Margins
+### Guided Practice: Margins
 
 Using the [chickwts] data frame, create a frequency table with margins for _feed_.
 
@@ -224,7 +224,7 @@ prop.table(table(mtcars$gear)) * 100
 
 ```
 
-### Skill Check: Proportion Tables (Proptables)
+### Guided Practice: Proportion Tables (Proptables)
 
 Using the [chickwts] data frame, create a proportion table for _feed_. The proportions should be multiplied by 100.
 
@@ -317,7 +317,7 @@ xtabs(~mtcars$gear+mtcars$cyl)
 
 ```
 
-### Skill Check: Crosstabs
+### Guided Practice: Crosstabs
 
 Using the [esoph] data frame, create a crosstabs table for _tobgp_ (tobacco group) and _alcgp_ (alcohol group).
 
@@ -412,7 +412,7 @@ xtabs(~carb+cyl+vs, data = mtcars)
 ```
 
 
-### Skill Check: Multi-dimensional Crosstabs
+### Guided Practice: Multi-dimensional Crosstabs
 
 Using the [esoph] data frame, create a crosstabs table for _tobgp_ (tobacco group), _alcgp_ (alcohol group), and _agegp_ (age group). 
 
@@ -511,7 +511,7 @@ aggregate(disp~cyl+gear, data = mtcars, FUN = mean)
 
 ```
 
-### Skill Check: Calculated Crosstabs
+### Guided Practice: Calculated Crosstabs
 
 Using the [npk] data frame, create a calculated crosstab for _N_ (nitrogen), _P_ (phosphate), and _K_ (potassium). Aggregate the mean _yield_ for all three vectors. _Notice that the vector names are capital letters._
 
@@ -591,7 +591,7 @@ round(aggregate(disp~cyl+gear, data = mtcars, FUN = mean), digits = 2)
 
 ```
 
-### Skill Check: Rounding
+### Guided Practice: Rounding
 
 Using the [infert] data frame, create a calculated crosstab for _case_, _induced_, and _spontaneous_. Aggregate the mean _age_ for all three vectors. Round the results to two decimal places.
 

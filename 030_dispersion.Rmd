@@ -58,7 +58,7 @@ range(rock$perm)
 
 ```
 
-### Skill Check: Range
+### Guided Practice: Range
 
 Using the [faithful] data frame, find the range for _eruptions_.
 
@@ -143,7 +143,7 @@ summary(rock$perm)
 ```
 
 
-### Skill Check: Quartiles
+### Guided Practice: Quartiles
 
 Using the [USJudgeRatings] data frame, find the summary for _WRIT_.
 
@@ -224,7 +224,7 @@ IQR(rock$perm)
 
 ```
 
-### Skill Check: IQR (Inter-Quartile Range)
+### Guided Practice: IQR (Inter-Quartile Range)
 
 Using the [swiss] data frame, find the IQR for _Agriculture_.
 
@@ -397,7 +397,7 @@ sd(rock$perm)
 
 In the results, notice that the tree girth has a standard deviation of about 3.14 inches while the range was 8.3-20.6 inches (the range function is found in an activity earlier in this tutorial). While that range is fairly large, the standard deviation indicates that the girths of most of the trees were within about 6 inches of each other, so the trees were all about the same size. This is an example of how the standard deviation can provide information to help interpret the range.
 
-### Skill Check: Standard Deviation
+### Guided Practice: Standard Deviation
 
 Using the [stackloss] data frame, find the standard deviation for _Air.Flow_.
 

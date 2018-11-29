@@ -79,7 +79,7 @@ TestScores
 
 <div class="grsnote">The _DataCamp_ blocks found throughout this lab manual are designed to "try out" _R_ commands. Click the yellow "Run" button in the lower left corner to execute the entire script and see the results. There are two panels available in the box. Clicking _script.R_ in the top of the box displays the _R_ script and clicking _R Console_ displays the results of executing the script. The commands in the script can be modified and rerun in order to "play around" with _R_. Also, _R_ commands can be entered directly in the *R Console* and executed by tapping the `ENTER` key.</div>
 
-### Skill Check: The R Command Line
+### Guided Practice: The R Command Line
 
 Now is a time to try some of the command line skills demonstrated above. In the following _R_ codebox, calculate these values. 
 
@@ -199,7 +199,7 @@ max(mtcars$mpg)
 
 ```
 
-### Skill Check: Data Frames
+### Guided Practice: Data Frames
 
 In the following _R_ codebox, explore the [airquality] data frame. 
 

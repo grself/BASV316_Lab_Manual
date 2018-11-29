@@ -133,7 +133,7 @@ boxplot(rock$perm, main="Rock Perm")
 Given these four boxplots, _rock\$peri_ has the most symmetrical data since the box and whiskers are fairly equally distributed around the median, _rock\$perm_ is the most skewed since so much of the plot is above the median, and _rock\$shape_ has three upper outliers.
 
 
-### Skill Check: Boxplot
+### Guided Practice: Boxplot
 
 Using the [iris] data frame, create a boxplot for _Sepal.Length_.
 
@@ -221,7 +221,7 @@ This output has four different lines:
 
 4. **\$out** These are the values of the outliers and the _rock$shape_ vector has three: 0.438712, 0,464125, and 0.420477. Thus, to find the outliers of a vector all that is needed is to use the fourth output line of the `boxplot.stats()` function. If there are no outliers then that line reports _numeric(0)_ to indicate that there are zero outliers.
 
-### Skill Check: Outliers
+### Guided Practice: Outliers
 
 Using the [iris] data frame, use boxplot.stats to see if _Sepal.Width_ has any outliers.
 
@@ -329,7 +329,7 @@ boxplot(weight ~ feed,
 
 ```
 
-### Skill Check: Grouped Boxplot With Color
+### Guided Practice: Grouped Boxplot With Color
 
 Using the [morley] data frame, generate a grouped boxplot where _Speed_ is grouped by _Expt_. Set: 
 

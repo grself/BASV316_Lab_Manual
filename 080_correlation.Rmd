@@ -42,7 +42,7 @@ From the outset of this lab, it is important to remember that correlation does n
 
 A correlation is a number between -1.0 and +1.0, where 0.0 means there is no correlation between the two variables and either +1.0 or -1.0 means there is a perfect correlation. A positive correlation means that as one variable increases the other also increases. For example, as people age they tend to weigh more so a positive correlation would be expected between age and weight. A negative correlation, on the other hand, means that as one variable increases the other decreases. For example, as people age they tend to run slower so a negative correlation would be expected between age and running speed. Here are the verbal definitions that are commonly accepted for a correlation's value.
 
-```{r 080.02, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Correlation = c("+.70 or higher", 
                   "+.40 to +.69", 
@@ -82,7 +82,7 @@ kable(cor_tbl,
 
 Pearson's Product-Moment Correlation Coefficient (normally called Pearson's _r_) is a measure of the strength of the relationship between two variables having continuous data that are normally distributed (they have bell-shaped curves). _(Note: The [Introduction to R] tutorial contains information about various data types._ The following examples of correlation using Pearson's _r_ are from the [mtcars] dataset. 
 
-```{r 080.03, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Variables = c("disp-mpg",
                 "wt-mpg",
@@ -146,7 +146,7 @@ The `cor.test` function returns a lot of information that will be important in l
 1. **cor**: This verifies that the test executed was Pearson's _r_ (Spearman's will report _rho_ and Kendall's will report _tau_).
 1. **-0.6015465**: This is the calculated correlation between the two variables.
 
-### Skill Check: Pearson's R
+### Guided Practice: Pearson's R
 
 Using the [CO2] data frame, calculate Pearson's _r_ for the variables _conc_ and _uptake_.
 
@@ -212,7 +212,7 @@ On the other hand, imagine that a dataset included information about the age of 
 
 The following examples are from the [mtcars] dataset and since they all involve ordered data Spearman's _rho_ was used to calculate the correlations.
 
-```{r 080.11, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Variables = c("cyl—gear",
                 "gear—am",
@@ -262,7 +262,7 @@ cor.test(as.numeric(esoph$agegp), esoph$ncases,
 
 The interpretation of the results of Spearman's _rho_ is similar to that for Pearson's _r_ and will not be further explained here.
 
-### Skill Check: Spearman's _rho_
+### Guided Practice: Spearman's _rho_
 
 Using the [CO2] data frame, calculate Spearmans's _rho_ for the variables _Plant_ (which is ordered) and _uptake_.
 
@@ -347,7 +347,7 @@ cor.test(as.numeric(npk$N), npk$yield,
 
 Interpreting Kendall's _tau_ is similar to Pearson's _r_ and will not be further discussed here.
 
-### Skill Check: Kendall's _tau_
+### Guided Practice: Kendall's _tau_
 
 Using the [CO2] data frame, calculate Kendall's _tau_ for the variables _Type_ and _uptake_.
 
@@ -423,7 +423,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 Pearson's _r_, Spearman's _rho_, and Kendall's _tau_ all calculate correlation and it is reasonable to wonder which method should be used in any given situation. Here is a quick chart to help.
 
-```{r 080.26, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Correlation = c("Pearson's r",
                 "Spearman's rho",
@@ -463,7 +463,7 @@ It must seem somewhat subjective for a researcher to simply select the desired s
 
 The calculated significance is typically reported as a _p-value_ (for "probability value"). The following table contains the correlation and p-value for several pairs of variables from the [mtcars] data frame. 
 
-```{r 080.27, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
 Variables = c(
     "wt—qsec",
@@ -514,7 +514,7 @@ cor.test(airquality$Wind, airquality$Temp,
 
 At the end of line two of the results (not counting the title line), the _p-value_ is reported at <span class="grshilite">2.642e-09</span>, which is how _R_ reports 2.642 &times; 10^-09^, and that is far smaller than 0.05. This correlation, then, would be considered statistically significant.
 
-### Skill Check: Significance
+### Guided Practice: Significance
 
 Using the [CO2] data frame, calculate the p-value for the correlation between _conc_ and _uptake_. Since these are both continuous data, _pearson_ should be selected for the method.
 
@@ -570,7 +570,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 -----
 
-## Regression
+## Prediction by Regression
 
 A regression line can be drawn on a scatter plot to graphically show the relationship between two variables (this is sometimes called a "trend line" and a "line of best fit"). Moreover, if the data points in the scatter plot are all close to the regression line, then it indicates a strong correlation.
 
@@ -593,7 +593,7 @@ abline(lmod,
 
 ```
 
-Using _r's_ linear model function (`lm`), the line drawn in the above figure was determined to have a slope of -0.01846 and a y-intercept of 20.55635. Using this information and the slope intercept formula, $y = mx + b$, the quarter-mile time (y value) for a specific horsepower (x value) can be predicted. For example, imagine that the quarter-mile time for a horsepower of 200 is required:
+While regression analysis can have many uses, one of the simplest and most common is to make y-axis predictions for new x-axis values. Using _r's_ linear model function (`lm`), the line drawn in the above figure was determined to have a slope of -0.01846 and a y-intercept of 20.55635. Using this information and the slope intercept equation, $y = mx + b$, the quarter-mile time (y-axis) for a new horsepower (x-axis) can be predicted. For example, the following predicts the quarter-mile time for a horsepower of 200.
 
 $$
 \begin{aligned}
@@ -604,9 +604,9 @@ y &= 16.86435
 \end{aligned}
 $$
 
-In the equation, _m_ is the slope of the regression line and _b_ is the y-intercept. By plugging in the required value for _x_, a simple calculation will determine the predicted value for _y_, which is 16.86 (rounded) in this example.
+In the equation, _m_ is the slope of the regression line and _b_ is the y-intercept. By plugging in the new value for _x_, a simple calculation will determine the predicted value for _y_, which is 16.86 (rounded).
 
-Regression analysis becomes less certain if the supplied _x_ value is at the edge or outside the main body of the scatter plot. For example, using the above figure, it is mathematically possible to predict the quarter-mile time (y value) for a horsepower of 50:
+Regression analysis becomes less certain if the supplied _x_ value is at the edge or outside the main body of the scatter plot. For example, using the above figure, it is mathematically possible to predict the quarter-mile time (y-axis) for a horsepower of 50.
 
 $$
 \begin{aligned}
@@ -619,34 +619,34 @@ $$
 
 However, since the selected _x_ value is at the very edge of the main body of the scatter plot then the calculated _y_ value is suspect and should not be reported.
 
-### Demonstration: Regression
+### Demonstration: Prediction by Regression
 
 The following _r_ script uses the `lm` function to find the values of $m$ and $b$ for a correlation between two variables. Then, it calculates a predicted value for _y_ when given an _x_ value. 
 
-* Line 3: The slope-intercept formula is noted in a comment on line 3.
+* Line 3: The slope-intercept equation is noted in a comment on line 3.
 * Line 5: This line executes the `lm` function to generate a "linear model" (the line of best fit) for _horsepower_ (x-axis) and _quarter-mile time_ (y-axis) in the [mtcars] data frame. The result of this function is stored in a variable named _lmod_. It is important to ensure that the variables are entered in the correct order or the linear model will be backwards. The dependent variable (the y-axis) is listed first and then the independent variable (the x-axis). Thus, it is expected that the quarter-mile time is dependent on the horsepower of the car, not the other way around.
 * Lines 6-7: Each of these lines store one number in a variable for use in Line 13. There is an odd format used to extract each of these numbers. `lmod` contains a lot of information, including dozens of numbers, and Line 6 (the slope) accesses the `coef` section of `lmod` and extracts just the slope and then stores it in a variable named _b_. Line 7 accesses the `coef` section of `lmod` and extracts just the intercept and stores it in a variable named _m_.
-* Line 10: The value of interest is stored in _x_ for use in Line 13. In this case, the quarter-mile time for a car with 200 horsepower is being predicted
-* Line 13: This is the slope-intercept formula written in _R_ format. The formula is executed with the variables generated in Lines 6, 7, and 10 and the result is displayed on the screen. (Note, this result is slightly different from the one reported earlier in this lab due to rounding.)
+* Line 10: The new value of horsepower is stored in a variable named _x_. In this case, the quarter-mile time for a car with 250 horsepower is being predicted
+* Line 13: This is the slope-intercept equation written in _R_ format and it is executed with the variables stored in Lines 6, 7, and 10.
 
 ```{r 080.36}
-# Demonstration: Regression Analysis
+# Demonstration: Prediction by Regression
 
-# Slope-intercept formula: y = mx + b
+# Slope-intercept equation: y = mx + b
 # First, determine m and b
 lmod <- lm(mtcars$qsec ~ mtcars$hp)
 b <- coef(lmod)[[1]] # slope
 m <- coef(lmod)[[2]] # intercept
 
 # Now, specify the value of x
-x <- 200.0
+x <- 250.0
 
-# Calculate the regression
+# Calculate the predicted y value
 (m * x) + b
 
 ```
 
-### Skill Check: Regression
+### Guided Practice: Prediction by Regression
 
 ```{r 080.37, fig.width=4,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, include=FALSE}
 
@@ -711,7 +711,7 @@ success_msg("Perfect! So the predicted wind on an 80 degree day is 9.596533.")
 
 ```
 
-### Activity 7.5: Regression
+### Activity 7.5: Prediction by Regression
 
 Using the [cafe] data frame, predict the tip from a customer who is 48 years old. Round the tip to the nearest penny. Record the prediction in the deliverable document for this lab.
 

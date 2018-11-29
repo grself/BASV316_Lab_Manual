@@ -163,7 +163,7 @@ There are a number of data frames used in the lab exercises in this book and thi
 
 **New York Air Quality Measurements**. Daily air quality measurements in New York, May to September 1973. This is a data frame with 154 observations on 6 variables:
 
-```{r 200.08, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c("Ozone", 
     "Solar.R", 
@@ -203,7 +203,7 @@ kable(cor_tbl,
 
 **The Joyner-Boore Attenuation Data**. This data gives peak accelerations measured at various observation stations for 23 earthquakes in California. The data have been used by various workers to estimate the attenuating affect of distance on ground acceleration. This is a data frame with 182 observations on 5 variables:
 
-```{r 200.09, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "event", 
@@ -242,7 +242,7 @@ kable(cor_tbl,
 
 **The Chatterjee-Price Attitude Data**. From a survey of the clerical employees of a large financial organization, the data are aggregated from the questionnaires of the approximately 35 employees for each of 30 (randomly selected) departments. The numbers give the percent proportion of favourable responses to seven questions in each department. This is a data frame with 30 observations on 7 variables:
 
-```{r 200.10, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "ratings", 
@@ -286,7 +286,7 @@ kable(cor_tbl,
 
 **Body Temperature Series of Two Beavers**. Reynolds (1994) describes a small part of a study of the long-term temperature dynamics of beaver Castor canadensis in north-central Wisconsin. Body temperature was measured by telemetry every 10 minutes for four females, but data from a one period of less than a day for each of two animals is used there. There are two data frames: beaver1 has 114 rows and 4 columns on body temperature measurements at 10 minute intervals and beaver2 has 100 rows and 4 columns on body temperature measurements at 10 minute intervals.
 
-```{r 200.11, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "day", 
@@ -321,7 +321,7 @@ kable(cor_tbl,
 
 _This is simulated data._ Customers of the Main Street Cafe completed surveys over a one week period. This is a data frame with observations on 13 variables:
 
-```{r 200.12, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "sex", 
@@ -383,7 +383,7 @@ kable(cor_tbl,
 
 **Speed and Stopping Distances of Cars**. The data give the speed of cars and the distances taken to stop. Note that the data were recorded in the 1920s. This is a data frame with 50 observations on 2 variables:
 
-```{r 200.13, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "speed", 
@@ -412,7 +412,7 @@ kable(cor_tbl,
 
 **Weight Versus Age of Chicks on Different Diets**. The ChickWeight data frame was generated from an experiment on the effect of diet on early growth of chicks. This is a data frame with 578 observations on 4 variables:
 
-```{r 200.14, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "weight", 
@@ -447,7 +447,7 @@ kable(cor_tbl,
 
 **Chicken Weights by Feed Type**. An experiment was conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens. This is a data frame with 71 observations on 2 variables:
 
-```{r 200.15, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "weight", 
@@ -476,7 +476,7 @@ kable(cor_tbl,
 
 **Carbon Dioxide Uptake in Grass Plants**. This data set is from an experiment on the cold tolerance of the grass species _Echinochloa crusgalli_. This is a data frame with 84 observations on 5 variables:
 
-```{r 200.16, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "Plant", 
@@ -515,7 +515,7 @@ kable(cor_tbl,
 
 **Smoking, Alcohol and (O)esophageal Cancer** . Data from a case-control study of (o)esophageal cancer in Ille-et-Vilaine, France. This is a data frame with 88 observations on 5 variables:
 
-```{r 200.17, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "agegp", 
@@ -553,7 +553,7 @@ kable(cor_tbl,
 
 **Old Faithful Geyser Data**. Waiting time between eruptions and the duration of the eruption for the Old Faithful geyser in Yellowstone National Park, Wyoming, USA. This is a data frame with 272 observations on 2 variables:
 
-```{r 200.18, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "eruptions", 
@@ -582,7 +582,7 @@ kable(cor_tbl,
 
 **Infertility Study**. This is a matched case-control study. This is a data frame with 248 observations on 8 variables:
 
-```{r 200.19, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "education", 
@@ -629,7 +629,7 @@ kable(cor_tbl,
 
 **Edgar Anderson’s Iris Data**. This famous (Fisher’s or Anderson’s) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris: Iris setosa, versicolor, and virginica. This is a data frame with 150 observations on 5 variables:
 
-```{r 200.20, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "Sepal.Length", 
@@ -675,7 +675,7 @@ kable(cor_tbl,
 
 **Longley’s Economic Regression Data**. This data set is a macroeconomic data set which provides a well-known example for a highly collinear regression. This is a data frame with 7 variables observed annually from 1947 to 1962 (n = 16):
 
-```{r 200.21, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "GNP.deflator", 
@@ -723,7 +723,7 @@ kable(cor_tbl,
 
 **Michelson Speed of Light Data**. A classical data of Michelson (but not this one with Morley) on measurements done in 1879 on the speed of light. The data consists of five experiments, each consisting of 20 consecutive "runs". The response is the speed of light measurement, suitably coded (km/sec, with 299,000 subtracted). This is a data frame with 100 observations on 3 variables:
 
-```{r 200.22, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "Expt", 
@@ -755,7 +755,7 @@ kable(cor_tbl,
 
 **Motor Trend Car Road Tests**. The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models). This is a data frame with 32 observations on 11 variables:
 
-```{r 200.23, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "mpg", 
@@ -811,7 +811,7 @@ kable(cor_tbl,
 
 **Classical N, P, K Factorial Experiment**. A classical N, P, K (nitrogen, phosphate, potassium) factorial experiment on the growth of peas conducted on 6 blocks. Each half of a fractional factorial design confounding the NPK interaction was used on 3 of the plots. This is a data frame with 24 observations on 5 variables:
 
-```{r 200.24, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "block", 
@@ -850,7 +850,7 @@ kable(cor_tbl,
 
 **Results from an Experiment on Plant Growth**. Results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions. This is a data frame with 30 observations on 2 variables:
 
-```{r 200.25, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "weight", 
@@ -888,7 +888,7 @@ kable(cor_tbl,
 
 **Measurements on Petroleum Rock Samples**. This data set contains measurements on 48 rock samples from a petroleum reservoir. This is a data frame with 48 observations on 4 variables:
 
-```{r 200.26, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "area", 
@@ -924,7 +924,7 @@ kable(cor_tbl,
 
 **Student’s Sleep Data**. Data which show the effect of two soporific drugs (increase in hours of sleep compared to control) on 10 patients. This is a data frame with 20 observations on 3 variables:
 
-```{r 200.27, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "extra", 
@@ -956,7 +956,7 @@ kable(cor_tbl,
 
 **Brownlee's Stack Loss Plant Data**. Operational data of a plant for the oxidation of ammonia to nitric acid. This is a data frame with 21 observations on 4 variables:
 
-```{r 200.28, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "Air Flow", 
@@ -999,7 +999,7 @@ kable(cor_tbl,
 
 **Swiss Fertility and Socioeconomic Indicators (1888) Data**. Standardized fertility measure and socio-economic indicators for each of 47 French-speaking provinces of Switzerland at about 1888. This is a data frame with 47 observations on 6 variables, each of which is in percent (0-100):
 
-```{r 200.29, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "Fertility", 
@@ -1040,7 +1040,7 @@ kable(cor_tbl,
 
 **Survival of passengers on the Titanic**. This data set provides information on the fate of passengers on the fatal maiden voyage of the ocean liner "Titanic," summarized according to economic status (class), sex, age and survival. This is a 4-dimensional array resulting from cross-tabulating 2201 observations on 4 variables. The variables and their levels are as follows:
 
-```{r 200.30, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Num = c(
     "1", 
@@ -1075,7 +1075,7 @@ kable(cor_tbl,
 
 **Girth, Height and Volume for Black Cherry Trees**. This data set provides measurements of the girth, height and volume of timber in 31 felled black cherry trees. Note that girth is the diameter of the tree (in inches) measured at 4 ft 6 in above the ground. This is a data frame with 31 observations on 3 variables:
 
-```{r 200.31, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "Girth", 
@@ -1107,7 +1107,7 @@ kable(cor_tbl,
 
 **Student Admissions at UC Berkeley**. Aggregate data on applicants to graduate school at Berkeley for the six largest departments in 1973 classified by admission and sex. This is a 3-dimensional array resulting from cross-tabulating 4526 observations on 3 variables. The variables and their levels are as follows:
 
-```{r 200.32, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Num = c(
     "1", 
@@ -1147,7 +1147,7 @@ kable(cor_tbl,
 
 **Violent Crime Rates by US State**. This data set contains statistics about the arrests per 100,000 residents for assault, murder, and rape in each of the 50 US states in 1973. Also given is the percent of the population living in urban areas. This is a data frame with 50 observations on 4 variables:
 
-```{r 200.33, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "Murder", 
@@ -1182,7 +1182,7 @@ kable(cor_tbl,
 
 **Lawyers' Ratings of State Judges in the US Superior Court**. This contains lawyers' ratings of state judges in the US Superior Court. This is a data frame with 43 observations on 12 variables:
 
-```{r 200.34, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "CONT", 
@@ -1242,7 +1242,7 @@ kable(cor_tbl,
 
 **The Number of Breaks in Yarn During Weaving**. This data set gives the number of warp breaks per loom, where a loom corresponds to a fixed length of yarn. This is a data frame with 54 observations on 3 variables:
 
-```{r 200.35, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Name = c(
     "breaks", 

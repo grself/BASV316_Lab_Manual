@@ -137,7 +137,7 @@ hist(morley$Speed,
 
 <div class="grsnote">The DataCamp interface generates graphics in a _Plots_ tab but because of the size of the interface those plots are "squished" and impossible to read. Click the double-headed arrow button on the _Plots_ tab to open the graph in a larger window for evaluation and copying to a document. If the graphic does not open in a larger window then temporarily pause the browser's pop-up blocker.</div>
 
-### Skill Check: Histogram
+### Guided Practice: Histogram
 
 Using the [USJudgeRatings] data frame, create a histogram of the _CONT_ vector. The histogram should have these characteristics:
 
@@ -310,7 +310,7 @@ plot(density(USArrests$Rape),
 
 ```
 
-### Skill Check: Density Plot
+### Guided Practice: Density Plot
 
 Using the [USJudgeRatings] data frame, create a density plot of the _CONT_ vector. The plot should have these characteristics:
 
@@ -498,7 +498,7 @@ plot(ldeaths,
 
 The above graph shows an interesting cyclic variation in the number of deaths over the course of a year. The years listed on the x-axis indicate January of that year. The number of deaths seems to spike high over the winther months and hit a low in about August or September. This type of cycle is very easy to see on this plot but would be difficult to detect in a table full of numbers.
 
-### Skill Check: Line Graph
+### Guided Practice: Line Graph
 
 Using the [UKgas] data frame, create a line graph that meets this specification:
 
@@ -741,7 +741,7 @@ abline(lm(attitude$complaints ~ attitude$rating),
 ```
 
 
-### Skill Check: Plot
+### Guided Practice: Plot
 
 Using the [rock] data frame, create a plot of _area_ (y-axis) as a function of _peri_ (x-axis). The graph should use these specifications:
 
@@ -947,7 +947,7 @@ qqline(chickwts$weight,
 
 ```
 
-### Skill Check: Q-Q Plot
+### Guided Practice: Q-Q Plot
 
 Using the [swiss] data frame, create a Q-Q plot of the _Fertility_ vector. The plot should have a main title of _QQ Plot: Swiss Fertility_ and a _red_ Q-Q line with a width of 2.
 

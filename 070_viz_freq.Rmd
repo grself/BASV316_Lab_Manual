@@ -72,7 +72,7 @@ barplot(height = table(mtcars$gear),
 
 <div class="grsnote">The DataCamp interface generates graphics in a _Plots_ tab but because of the size of the interface those plots are "squished" and impossible to read. Click the double-headed arrow button on the _Plots_ tab to open the graph in a larger window for evaluation and copying to a document. If the graphic does not open in a larger window then temporarily pause the browser's pop-up blocker.</div>
 
-### Skill Check: Bar Plot
+### Guided Practice: Bar Plot
 
 Using the [stackloss] data frame, create a bar plot for _Water.Temp_. The plot should: 
 
@@ -216,7 +216,7 @@ barplot(height = table(mtcars$cyl, mtcars$gear),
 ```
 
 
-### Skill Check: Clustered Bar Plot
+### Guided Practice: Clustered Bar Plot
 
 Using the [infert] data frame, create a clustered bar plot for _spontaneous_ grouped by _education_. The plot should have: 
 
@@ -370,7 +370,7 @@ barplot(height = table(mtcars$cyl, mtcars$gear),
 
 It should be evident that the bar plot created in the above script is not very useful. While it is fairly easy to see that the number of 8-cylinder cars with three gears is much larger than the other categories, it is difficult to determine, for example, how many cars have five gears and eight cylinders. This difficulty is even worse when there are more than three levels for either of the two variables being plotted.
 
-### Skill Check: Stacked Bar Plot
+### Guided Practice: Stacked Bar Plot
 
 Using the [infert] data frame, create a stacked bar plot for _induced_ grouped by _education_. The plot should: 
 
@@ -524,7 +524,7 @@ pie(x = table(chickwts$feed),
 
 Note: The pie chart shows the number of chicks that were given a particular type of feed. Even though the pie “slices” are very nearly the same size there was a slightly different number of chicks on each type of feed.
 
-### Skill Check: Pie Chart
+### Guided Practice: Pie Chart
 
 Create a pie chart for the [state.division] data frame. NOTE: This data frame has only one vector so it is not necessary to use the `$` operator. The chart should: 
 
@@ -692,9 +692,9 @@ heatmap(x = hmap,
 
 ```
 
-### Skill Check: Heat Map
+### Guided Practice: Heat Map
 
-Create a heat map for the [_attitude_](/tutorials/9999-data-dict/index.html#attitude) data frame. The heat map should have a main title of "Clerical Employees Attitude", the label for the X-axis should be "Characteristic" and for the y-Axis, "Department." Specify that the Rowv and Colv are both "NA." Scale by "row" and set the margins for "c(8,3)."
+Create a heat map for the [attitude] data frame. The heat map should have a main title of "Clerical Employees Attitude", the label for the X-axis should be "Characteristic" and for the y-Axis, "Department." Specify that the Rowv and Colv are both "NA." Scale by "row" and set the margins for "c(8,3)."
 
 ```{r 070.38, ex="sc070.05", type="pre-exercise-code"}
 
@@ -840,7 +840,7 @@ plot(x = table(mtcars$gear, mtcars$cyl),
 
 ```
 
-### Skill Check: Mosaic Plot
+### Guided Practice: Mosaic Plot
 
 Create a mosaic plot for the [infert] data frame. The plot should have:
 

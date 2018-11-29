@@ -34,7 +34,7 @@ tutorial::go_interactive()
 
 It is often desirable to characterize an entire vector of numbers with a single value and the number that is "in the middle" of the vector would seem most logical to use. Students in elementary school are taught how to find the average of a group of numbers and they learn that the average is the best representation for that entire group. In statistics, though, there are several different numbers that are often used to represent an entire vector of numbers and these are  collectively known as the Central Measures, or numbers that are the "middle" of the vector.
 
-<div class="grsnote">A _vector_ is nothing more than a list of related items. For example, a vector of street names may look like `c("elm", "main", "first", "raven")` and a vector of test scores may look like `c(83, 91, 76, 88)`. Notice that vectors in _R_ are created with a `c()` (for "combine") operator.</div>
+<div class="grsnote">A _vector_ is nothing more than a list of related items. For example, a vector of street names may look like {"elm", "main", "first", "raven"} and a vector of test scores may look like {83, 91, 76, 88}.</div>
 
 -----
 
@@ -46,20 +46,16 @@ One of the simplest of measures is nothing more than the number of items in a ve
 
 To find the number of items in a vector ( _N_ ), use the `length` procedure as found in the _R_ script below.
 
-* Line 2: The length of the [rivers] vector is printed, which is the same as the number of items in that vector, or _N_.
-* Line 3: The length of the _eruptions_ vector in the [faithful] data frame is printed, which is the same as the number of items in the vector, or _N_. **The [faithful] data frame contains more than one vector so it is necessary to specify both the data frame name and the vector name using a dollar sign operator.**
-
-<span class="grshilite">This demonstration contains two different examples of finding N.</span>
+* Line 1: Any line in _R_ that starts with a hash is a comment and is ignored when the script is executed. _(Fun fact, the official name for that symbol is "octothorpe".)_
+* Line 2: The length of the _eruptions_ vector in the [faithful] data frame is printed, which is the same as the number of items in the vector, or _N_. **Notice how a vector is identified using the data frame name then the vector name with a dollar sign operator.**
 
 ```{r 020.02}
-
 # Finding N
-length(rivers)
 length(faithful$eruptions)
 
 ```
 
-### Skill Check: N
+### Guided Practice: N
 
 Using the [attitude] data frame, find _N_ for _critical_.
 
@@ -70,7 +66,6 @@ Using the [attitude] data frame, find _N_ for _critical_.
 ```
 
 ```{r 020.04, ex="sc020.01", type="sample-code"}
-
 # Find N for 'critical' in the 'attitude' data frame
 
 ```
@@ -123,6 +118,7 @@ The mean is calculated by adding all of the data items together and then dividin
 
 To find the mean of a vector, use the `mean` procedure as found in the _R_ script below.
 
+* Line 1: Any line in _R_ that starts with a hash is a comment and is ignored when the script is executed.
 * Lines 3-4: Calculate the means for _eruptions_ and _waiting_ in the [faithful] data frame.
 * Lines 9-12: Calculate the means for various variables in the [iris] data frame.
 
@@ -140,7 +136,7 @@ mean(iris$Petal.Width)
 mean(iris$Petal.Length)
 ```
 
-### Skill Check: Mean
+### Guided Practice: Mean
 
 Using the [attitude] data frame, find the mean for _critical_.
 
@@ -197,25 +193,43 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ## Trimmed Mean
 
-If a vector has outliers, or values that are unusually large or small, then the mean is often skewed such that it no longer represents the "average" value. As an example, the length (in miles) of the 141 longest rivers in North America ranges from 135 to 3710 and the mean of these values is 591 miles (these data are found in the [rivers] data frame included with _R_). Unfortunately, because the lengths of the top few rivers are disproportionately higher than the rest of the values in the vector (their lengths are [outliers]), the mean is skewed upward. One way to compensate for outliers is to use a trimmed mean (sometimes called a truncated mean). A trimmed mean is calculated by removing a specific number of values from both the top and bottom of the vector and then finding the mean of the remaining values. In the case of the rivers vector, if 5% of the values are removed from both the top and bottom (7 values from each end of the vector, for 10% total) then 127 values remain with a range from 230 to 1450 and the trimmed mean for that vector is 519. It is not possible, or desirable, to trim a different amount from the top and bottom. A trimmed mean always trims the same amount from both ends of the vector. Trimming the vector effectively removes both upper and lower outliers and produces a much more reasonable central value for this vector. In actual practice, a trimmed mean is not commonly used since it is difficult to know how much to trim from the vector and the resulting mean may be just as skewed as if no values were trimmed; thus, when outliers are suspected, the best "middle" term to report is the median.
+If a vector has values that are unusually large or small, then the mean is often skewed such that it no longer represents the "average" value. As an example, the weight, in grams, of chicks being fed different diets over 21 days ranges from 35 to 373. This is a huge spread with several unusually high weights (some chicks seemed to fare much better on their diets than others). In the end, the mean weight, 121.82g, is not representative of the entire group because those few heavy chicks tended to skew the mean upward. One way to compensate for unusual high, or low, values in a vector is to use a _trimmed mean_ (sometimes called a _truncated mean_). 
+
+A trimmed mean is calculated by removing a specific number of values from both the top and bottom of the vector and then finding the mean of the remaining values. In the case of the chick weights, the following table shows the weight mean with various amounts trimmed. 
+
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+trimwts <- data.frame(
+  Trim = c("0.00",
+           "0.05",
+           "0.10",
+           "0.15"
+           ),
+  Mean = c(
+    "121.82g",
+    "116.48g",
+    "113.18g",
+    "110.83g"
+  )
+)
+
+kable(trimwts, 
+      "html",
+      caption = "Trimmed Mean") %>%
+  kable_styling(bootstrap_options = c("striped","hover","responsive"),
+                full_width = F,
+                position = "center") %>%
+  column_spec(1, bold = T, border_right = T)
+```
+The untrimmed mean is 121.82g, but as values are trimmed the unusually high weights are removed. Thus, the trimmed mean better represents the entire group of chick weights. It is not possible, or desirable, to trim a different amount from the top and bottom, a trimmed mean always trims the same amount from both ends of the vector. In actual practice, a trimmed mean is not commonly used since it is difficult to know how much to trim and the resulting mean may be just as skewed as if no values were trimmed; thus, when unusual values are suspected, the best "middle" term to report is the median.
 
 ### Demonstration: Trimmed Mean
 
 The trimmed mean can be easily found in _R_ by adding a "trim" parameter to the `mean` command, as demonstrated in the following script. 
 
-* Lines 2-4: calculate the trimmed mean by including "trim=..." in the `mean` function. Line 3 trims 15% from each end of the [rivers] vector and Line 4 trims 25%.
+* Line 1: Any line in _R_ that starts with a hash is a comment and is ignored when the script is executed.
+* Lines 2-4: calculate the trimmed mean by including "trim=..." in the `mean` function. Line 2 is the mean for the _accel_ vector in the [attenu] data frame, Line 3 trims 15% from each end of the vector and Line 4 trims 25%.
 
-* Lines 6-8: calculate the trimmed mean by including "trim=..." in the `mean` function. Line 7 trims 15% from each end of the _accel_ vector in the [attenu] data frame and Line 8 trims 25%.
-
-<span class="grshilite">Note: this demonstration contains two examples of finding the mean and four examples of finding the trimmed mean.</span>
-
-```{r 020.16}
-
-# Find trimmed means for rivers
-mean(rivers)
-mean(rivers, trim=0.15)
-mean(rivers, trim=0.25)
-
+```{r 020.17}
 # Find trimmed means for attenu
 mean(attenu$accel)
 mean(attenu$accel, trim=0.15)
@@ -223,30 +237,30 @@ mean(attenu$accel, trim=0.25)
 
 ```
 
-### Skill Check: Trimmed Mean
+### Guided Practice: Trimmed Mean
 
 Using the [attitude] data frame, find the mean for _critical_ with 15% trimmed.
 
-```{r 020.17, ex="sc020.03", type="pre-exercise-code"}
+```{r 020.18, ex="sc020.03", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r 020.18, ex="sc020.03", type="sample-code"}
+```{r 020.19, ex="sc020.03", type="sample-code"}
 # Find the mean for 'critical' with 15% trimmed in the 'attitude' data frame
 
 
 ```
 
 
-```{r 020.19, ex="sc020.03", type="solution"}
+```{r 020.20, ex="sc020.03", type="solution"}
 
 mean(attitude$critical, trim=0.15)
 
 ```
 
-```{r 020.20, ex="sc020.03", type="sct"}
+```{r 020.21, ex="sc020.03", type="sct"}
 
 ex3neq <- "Check the vector name (attitude$critical) and the amount of the trim (0.15)."
 
@@ -263,13 +277,13 @@ success_msg("Perfect! You can calculate the trimmed mean of a vector!")
 
 Using the [cafe] data frame, find the mean for _miles_ with 15% trimmed. Include that answer in the deliverable document for this lab.
 
-```{r 020.21, ex="act020.03", type="pre-exercise-code"}
+```{r 020.22, ex="act020.03", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r 020.22, ex="act020.03", type="sample-code"}
+```{r 020.23, ex="act020.03", type="sample-code"}
 # Using the cafe data frame, find the mean for miles with 15% trimmed.
 
 
@@ -282,11 +296,11 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 The median is found by listing all of the data items in numeric order and then mechanically finding the middle item. For  example, using the vector 6, 8, 9, the middle item (or median) is 8. If the vector has an even number of items, then the median is calculated as the mean between the two middle items. For example, in the vector 6, 8, 9, 13 the median is 8.5, which is the mean of 8 and 9, the two middle terms. 
 
-The median is very useful in cases where the vector has outliers. As an example of using a median rather than a mean, consider the vector 5, 6, 7, 8, 30. The mean is (5+6+7+8+30)/5 = 56/5 = 11.2. However, 11.2 is clearly much higher than most of the other numbers in that vector since one outlier, 30, is significantly skewing the mean upward. A much better representation of the center of this vector is 7, which is the median. To re-visit the river lengths introduced above, the median of the vector is 425, which is much more representative of the "middle" length than using either the mean or the trimmed mean.
+The median is very useful in cases where the vector has unusually small or large values. As an example of using a median rather than a mean, consider the vector 5, 6, 7, 8, 30. The mean is (5+6+7+8+30)/5 = 56/5 = 11.2. However, 11.2 is clearly much higher than most of the other numbers in that vector since one unusually high value, 30, is significantly skewing the mean upward. A much better representation of the center of this vector is 7, which is the median. To re-visit the chick weights used above, the median of that vector is 103, which is much more representative of the "middle" weight than using either the mean or the trimmed mean.
 
-As another example where the median is the best central measure, suppose a newspaper reporter wanted to find the "average" wage for a group of factory workers. The ten workers in that factory all have an annual salary of \$25,000; however, the supervisor has a salary of \$125,000. In the newspaper article, the supervisor is quoted as saying that his workers have an average salary of \$34,090. That is correct if the mean of all those salaries (including the supervisor's) is reported, but that number is clearly higher than any sort of reasonable "average" salary for workers in the factory due to the one outlier. In this case, the median of \$25,000 would be much more representative of the "average" salary. The median is typically reported for salaries, home values, and other vectors where one or two outliers typically distort the reported "middle" value.
+As another example where the median is the best central measure, suppose a newspaper reporter wanted to find the "average" wage for a group of factory workers. The ten workers in that factory all have an annual salary of \$25,000; however, the supervisor has a salary of \$125,000. In the newspaper article, the supervisor is quoted as saying that his workers have an average salary of \$34,090. That is correct if the mean of all those salaries (including the supervisor's) is reported, but that number is clearly higher than any sort of reasonable "average" salary for workers in the factory due to the one unusually large salary. In this case, the median of \$25,000 would be much more representative of the "average" salary. The median is typically reported for salaries, home values, and other vectors where one or two unusually small or large values typically distort the reported "middle" value.
 
-If the vector contains no outliers, then the mean and median are the same; but if there are outliers then these two measures become separated, often by a large amount. Consider the [rivers] vector mentioned in the Mean section above. That vector has a mean of 591 and a median of 425. This difference, 166, is about 28% of the mean and is significant. The size of this difference would tell a researcher that there are outliers in the vector that may be skewing the mean.
+If the vector contains no unusually small or large values, then the mean and median are the same; but if those values exist then these two measures become separated, often by a large amount. Consider the _weight_ vector from the [ChickWeight] data frame mentioned in the Mean section above. That vector has a mean of 121.82 and a median of 103. This difference, 18.82, is about 15% of the mean and is significant. The size of this difference indicates that there are unusually small or large values in the vector that may be skewing the mean.
 
 ### Demonstration: Median
 
@@ -297,7 +311,7 @@ To find the median of a vector, use the `median` procedure as found in the _R_ s
 
 <span class="grshilite">This demonstration contains six different examples of finding the median.</span>
 
-```{r 020.23}
+```{r 020.24}
 # Find medians for faithful
 median(faithful$eruptions)
 median(faithful$waiting)
@@ -310,30 +324,30 @@ median(iris$Petal.Length)
 
 ```
 
-### Skill Check: Median
+### Guided Practice: Median
 
 Using the [attitude] data frame, find the median for _critical_.
 
-```{r 020.24, ex="sc020.04", type="pre-exercise-code"}
+```{r 020.25, ex="sc020.04", type="pre-exercise-code"}
 
 # No pre-exercise code for this exercise
 
 ```
 
-```{r 020.25, ex="sc020.04", type="sample-code"}
+```{r 020.26, ex="sc020.04", type="sample-code"}
 # Find the median for 'critical' in the 'attitude' data frame
 
 
 ```
 
 
-```{r 020.26, ex="sc020.04", type="solution"}
+```{r 020.27, ex="sc020.04", type="solution"}
 
 median(attitude$critical)
 
 ```
 
-```{r 020.27, ex="sc020.04", type="sct"}
+```{r 020.28, ex="sc020.04", type="sct"}
 
 ex4neq <- "Check that the variable name includes both the data frame and vector (attitude$critical)."
 
@@ -350,13 +364,13 @@ success_msg("Perfect! You can calculate the median of a vector!")
 
 Using the [cafe] data frame, find the median for _bill_. Include that answer in the deliverable document for this lab.
 
-```{r 020.28, ex="act020.04", type="pre-exercise-code"}
+```{r 020.29, ex="act020.04", type="pre-exercise-code"}
 
 cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-```{r 020.29, ex="act020.04", type="sample-code"}
+```{r 020.30, ex="act020.04", type="sample-code"}
 # Using the cafe data frame, find the median for bill.
 
 
@@ -370,7 +384,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 The mode is used to describe the center of nominal or ordinal data and is nothing more than the item that was most commonly found in the vector. For example, if a question asked respondents to select their zip code from a list of five local codes and "12345" was selected more often than any other then that would be the mode for that item. Calculating the mode is no more difficult than counting the number of times the various values are found and choosing the one that is most frequent. As an example, the [mtcars] data frame lists the following for the number of cylinders in each car:
 
-```{r 020.30, echo=FALSE, message=FALSE, warnings=FALSE, results='asis', tut=FALSE}
+```{r echo=FALSE, message=FALSE, warnings=FALSE, results='asis', tut=FALSE}
 
 dt <- as.data.frame(table(mtcars$cyl))
 names(dt) <- c("Cylinders","N")

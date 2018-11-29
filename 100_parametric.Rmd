@@ -87,7 +87,7 @@ The `ANOVA` function returns a lot of information, most of which is beyond the s
 
 While an `ANOVA` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span class="grshilite">0.0004827</span>, which is labeled _Pr(>F)_ and is found near the end of Line 6. Following that p-value, _R_ helpfully prints a code to aid in determining the significance of the result, three asterisks in this case. The last line in the results then lists the meaning of the various codes used. P-values that fall between 0 and 0.001 are marked with three asterisks, as in this case, so it is significant at the 0.1% level (0.001), the greatest possible level. (Note: the interpretation of the _p-value_ was discussed in [Correlation and Regression])
 
-### Skill Check: ANOVA
+### Guided Practice: ANOVA
 
 Using the [npk] data frame, calculate an ANOVA for the _yield_ output for when grouped by _block_.
 
@@ -144,7 +144,7 @@ Using the [cafe] data, conduct an `ANOVA` and report the p-value for the followi
 
 Here are the variables to test:
 
-```{r 100.07, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Num = c("1",
           "2",
@@ -229,7 +229,7 @@ The `t.test` function returns a lot of information, most of which is beyond the 
 
 While a `t.test` function returns information that would be useful in a more thorough statistical analysis, this lab is only concerned with the p-value, <span class="grshilite">0.07939</span>, which is found at the end of Line 3. 
 
-### Skill Check: T-test
+### Guided Practice: T-test
 
 Using the [npk] data frame, calculate a t-test for the _yield_ output for when grouped by _N_.
 
@@ -280,7 +280,7 @@ Using the [cafe] data, conduct a `t.test` and report the p-value for the followi
 
 Here are the variables to test:
 
-```{r 100.15, tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
+```{r tut=FALSE, echo=FALSE, message=FALSE, warnings=FALSE}
 cor_tbl <- data.frame(
   Num = c("1",
           "2",
