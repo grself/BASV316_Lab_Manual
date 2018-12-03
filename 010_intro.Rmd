@@ -57,10 +57,6 @@ All _R_ commands are entered from a "Command Line" environment. Many students fi
 
 * Line 9: Entering a variable name, like `Range`, on a line by itself causes the value stored in that variable to be displayed.
 
-* Line 12: In _R_, a list of numbers can be stored in a single variable by using the "combine" function, which is a _c_ followed by a list of the numbers inside a parenthesis. This line creates a variable called `TestScores` and then stores a list of six numbers in that variable.
-
-* Line 13: The contents of the variable `TestScores` is printed to the screen.
-
 ```{r 010.02}
 # Some basic calculations
 3 + 5
@@ -72,9 +68,7 @@ MinScore <- 22
 Range <- MaxScore - MinScore
 Range
 
-# The combination function
-TestScores <- c(85, 83, 92, 88, 71, 85)
-TestScores
+
 ```
 
 <div class="grsnote">The _DataCamp_ blocks found throughout this lab manual are designed to "try out" _R_ commands. Click the yellow "Run" button in the lower left corner to execute the entire script and see the results. There are two panels available in the box. Clicking _script.R_ in the top of the box displays the _R_ script and clicking _R Console_ displays the results of executing the script. The commands in the script can be modified and rerun in order to "play around" with _R_. Also, _R_ commands can be entered directly in the *R Console* and executed by tapping the `ENTER` key.</div>
@@ -83,17 +77,17 @@ TestScores
 
 Now is a time to try some of the command line skills demonstrated above. In the following _R_ codebox, calculate these values. 
 
-Notes:
-
-1. In the second line the `^` symbol means "raise to the power of" so that line reads "24 plus the value of 2 raised to the 6th power."
-
-2. In the third line the `sqrt()` function calculates the square root of the number in the parenthesis, or the square root of 9 in this example.
-
 * Set the variable M equal to 15 + ( 37 * 2 )
 
-* Set the variable N equal to 24 + ( 2 ^ 6 )
+* Print the value of M
 
-* Set the variable P equal to 15 - ( sqrt(9) )
+* Set the variable N equal to 24 + ( 6 / 2 )
+
+* Print the value of N
+
+* Set the variable P equal to 15 / ( 3 + 2 )
+
+* Print the value of P
 
 
 ```{r 010.03, ex="sc010.01", type="pre-exercise-code"}
@@ -106,10 +100,20 @@ Notes:
 # Set M to 15 + ( 37 * 2 )
 
 
-# Set N to 24 + ( 2 ^ 6 )
+# Print the value of M
 
 
-# Set P to 15 - ( sqrt(9) )
+# Set N to 24 + ( 6 / 2 )
+
+
+# Print the value of N
+
+
+# Set P to 15 / ( 3 + 2 )
+
+
+# Print the value of P
+
 
 
 ```
@@ -119,17 +123,24 @@ Notes:
 
 M <- 15 + ( 37 * 2 )
 
-N <- 24 + ( 2 ^ 6 )
+M
 
-P <- 15 - ( sqrt(9) )
+N <- 24 + ( 6 / 2 )
+
+N
+
+P <- 15 / ( 3 + 2 )
+
+P
+
 
 ```
 
 ```{r 010.06, ex="sc010.01", type="sct"}
 
 ex01.01.01neq <- "Check your input for M. It should be 15 + ( 37 * 2 )."
-ex01.01.02neq <- "Check your input for N. It should be 24 + ( 2 ^ 6 )."
-ex01.01.03neq <- "Check your input for P. It should be 15 - ( sqrt(9) )."
+ex01.01.02neq <- "Check your input for N. It should be 24 + ( 6 / 2 )."
+ex01.01.03neq <- "Check your input for P. It should be 15 / ( 3 + 2 )."
 
 ex() %>% check_object("M") %>% 
   check_equal(incorrect_msg = ex01.01.01neq)
@@ -147,11 +158,11 @@ success_msg("Good Work! Now you can use R to calculate math problems!")
 
 ### Activity 1.1
 
-Start R and calculate the following problems:
+Calculate the following problems:
 
 * 5 + 8 * 3
 * 10 * 2/4
-* 5 * 3 * 3 - 20
+* 5 * 3 + 3 - 20
 
 Include the answers to these three problems in the deliverable document for this lab.
 
@@ -166,7 +177,7 @@ Include the answers to these three problems in the deliverable document for this
 
 # Find the value of 10 * 2/4
 
-# Find the value of 5 * 3 * 3 - 20
+# Find the value of 5 * 3 + 3 - 20
 
 
 
@@ -177,25 +188,30 @@ Include the answers to these three problems in the deliverable document for this
 
 ## Data Frames
 
-A _data frame_ is a collection of data generated during a research project. An example data frame that is easy to understand would be a spreadsheet that contains the times recorded for a race. _R_ comes configured with a 103 built-in data frames used for training and the _R_ script below is an introduction to one of the data frames used in several of the labs in this manual: [mtcars].
+A _data frame_ is a collection of data generated during a research project. An example data frame that is easy to understand would be a spreadsheet that contains the times recorded for a race. _R_ comes configured with a 103 built-in data frames used for training and the _R_ script below is an introduction to one of the data frames used in several of the labs in this manual: [stackloss].
 
 ### Demonstration: Data Frames
 
-* Line 2: Entering the name of the data frame, [mtcars], on a line by itself causes _R_ to print the contents of the entire the data frame to the screen. Since [mtcars] is rather small it is fine to print it to the screen, but some data frames have hundreds of lines and that may cause the screen to "scroll" for some time before the end of the data frame is reached.
+* Line 1: Any line in _R_ that starts with a hash tag is a comment and will be ignored by _R_.
 
-* Line 3: This prints the structure of the [mtcars] data frame. The result shows that this is a _data.frame_ and has 32 observations (that is how many cars are in the dataset) of 11 variables (things like _mpg_). Also the structure command displays the type of data that are in the dataset. For example, all 11 variables are of the "number" type. The `str` function is frequently used to better understand a data frame. The structure for all of the data frames used in this book is contained in the appendix.
+* Line 2: Entering the name of the data frame, [stackloss], on a line by itself causes _R_ to print the contents of the entire the data frame to the screen. Since [stackloss] is rather small it is fine to print it to the screen, but some data frames have hundreds of lines and that may cause the screen to "scroll" for some time before the end of the data frame is reached.
 
-* Line 4: This line prints the maximum _mpg_ value for the [mtcars] data frame. Note that the specific vector desired is indicated by both the data frame name and the vector, separated by a dollar sign, like _mtcars$mpg_ on this line.
+* Line 3: This prints the structure of the [stackloss] data frame. The result shows that this is a _data.frame_ and has 21 observations (that is how many lines are in the dataset) of 4 variables (things like _Air.Flow_). Also the structure command displays the type of data that are in the dataset. For example, all 4 variables are of the "number" type. The `str` function is frequently used to better understand a data frame. The structure for all of the data frames used in this book is contained in the appendix.
+
+* Line 4: This line puts the maximum _Air.Flow_ value for the [stackloss] data frame into a variable named _MaxAirFlow_. Note that the specific vector in the data frame is indicated by both the data frame and vector names separated by a dollar sign, like _stackloss$Air.Flow_ on this line.
+
+* Line 5: Entering the name of a variable on a line by itself displays the value of that variable so this line displays the maximum value of _MaxAirFlow_.
 
 _If some of the lines in the result are too long to fit on one row in the R Console they will wrap around._
 
 
 ```{r 010.09}
+# Exploring the Stack Loss Data Frame
+stackloss
+str(stackloss)
+MaxAirFlow <- max(stackloss$Air.Flow)
+MaxAirFlow
 
-# Exploring the Motor Trend Cars Data Frame
-mtcars
-str(mtcars)
-max(mtcars$mpg)
 
 ```
 
@@ -203,11 +219,11 @@ max(mtcars$mpg)
 
 In the following _R_ codebox, explore the [airquality] data frame. 
 
-* Set MaxWind to the maximum value of _Wind_
+* Look at the structure of the _airquality_ data frame.
 
-* Set MaxTemp to the maximum value of _Temp_
+* Set _MaxWind_ to the maximum value of _Wind_ in the _airquality_ data frame.
 
-* Set MinOzone to the minimum value of _Ozone_
+* Display the value of _MaxWind_
 
 ```{r 010.10, ex="sc010.02", type="pre-exercise-code"}
 
@@ -216,45 +232,46 @@ In the following _R_ codebox, explore the [airquality] data frame.
 ```
 
 ```{r 010.11, ex="sc010.02", type="sample-code"}
-# Set max.wind to the maximum value of Wind
+# View the structure of the airquality data frame
 
 
-# Set max.temp to the maximum value of Temp
+# Set MaxWind to the maximum value of Wind
 
 
-# Set min.ozone to the minimum value of Ozone
+# Display the value of MaxWind
+
 
 
 ```
 
 
 ```{r 010.12, ex="sc010.02", type="solution"}
+str(airquality)
 
 MaxWind <- max(airquality$Wind)
 
-MaxTemp <- max(airquality$Temp)
+MaxWind
 
-MinWind <- min(airquality$Wind)
-
-MinTemp <- min(airquality$Temp)
 
 ```
 
 ```{r 010.13, ex="sc010.02", type="sct"}
 
-ex01.02.01neq <- "Check your input for MaxWind. It should be max(airquality$Wind)."
-ex01.02.02neq <- "Check your input for MaxTemp. It should be max(airquality$Temp)."
-ex01.02.03neq <- "Check your input for MinWind. It should be min(airquality$Wind)."
-ex01.02.04neq <- "Check your input for MinTemp. It should be min(airquality$Temp)."
+ex01.02.01neq <- "Check to be sure you found the structure for airquality. It should be str(airquality)."
+ex01.02.02neq <- "Check your input for MaxWind. It should be MaxWind <- max(airquality$Wind)."
+ex01.02.03neq <- "Did you remember to print the value of MaxWind? To do that put 'MaxWind' on a line by itself."
 
-ex() %>% check_object("MaxWind") %>% 
+ex() %>% 
+  check_function("str") %>% 
+  check_arg("object") %>% 
   check_equal(incorrect_msg = ex01.02.01neq)
-ex() %>% check_object("MaxTemp") %>% 
+
+ex() %>% 
+  check_object("MaxWind") %>% 
   check_equal(incorrect_msg = ex01.02.02neq)
-ex() %>% check_object("MinWind") %>% 
-  check_equal(incorrect_msg = ex01.02.03neq)
-ex() %>% check_object("MinTemp") %>% 
-  check_equal(incorrect_msg = ex01.02.04neq)
+
+ex() %>%
+  check_output_expr(., MaxWind, missing_msg=ex01.02.03neq)
 
 success_msg("Perfect! Thanks for exploring this built-in data frame!")
 
@@ -263,7 +280,7 @@ success_msg("Perfect! Thanks for exploring this built-in data frame!")
 
 ### Activity 1.2
 
-Using the [cafe] data, find the maximum and minimum values for the _bill_ variable and include those values in the deliverable document for this lab.
+Using the [cafe] data, find the maximum values for _bill_ and _age_ and include those values in the deliverable document for this lab.
 
 ```{r 010.14, ex="act010.02", type="pre-exercise-code"}
 
@@ -274,8 +291,8 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 ```{r 010.15, ex="act010.02", type="sample-code"}
 # Find the maximum value of bill.
 
-# Find the minimum value of bill.
 
+# Find the maximum value of age.
 
 
 ```
