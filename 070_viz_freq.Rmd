@@ -36,7 +36,7 @@ Categorical data items are often reported using frequency tables where the numbe
 
 A bar plot is used to display the frequency count for categorical data. The following figure is a bar plot showing the number of automobiles with three, four, and five gears according to the [mtcars] data frame.
 
-```{r 070.02, fig0601,fig.width=3.5,fig.height=4,out.width="40%", fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
+```{r 070.02, fig.width=3.5,fig.height=4,out.width="40%", fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
 barplot(table(mtcars$gear), 
         main = "Count by Gears",
@@ -74,12 +74,12 @@ barplot(height = table(mtcars$gear),
 
 ### Guided Practice: Bar Plot
 
-Using the [stackloss] data frame, create a bar plot for _Water.Temp_. The plot should: 
+Using the [stackloss] data frame, create a bar plot for _Water.Temp_. The plot should meet these specifications: 
 
-* Have a main title of _Water Temperature_
-* The X-Axis should have a lable of _Number_
-* The Y-Axis should have a lable of _Temperature_
-* The color palette should be _cm.colors(9)_
+* Title: Water Temperature
+* X-Axis lable: Number
+* Y-Axis lable: Temperature
+* Color: cm.colors(9)
 
 ```{r 070.04, ex="sc070.01", type="pre-exercise-code"}
 
@@ -138,14 +138,14 @@ success_msg("Perfect! A bar plot like this makes frequency analysis easier.")
 
 ```
 
-### Activity 6.1: Bar Plot
+### Activity: Bar Plot
 
-Using the [cafe] data frame, create a bar plot for _meal_.  The plot should:
+Using the [cafe] data frame, create a bar plot for _meal_.  The plot should meet these specifications:
 
-1. Have a title of _Activity 6.1: Bar Plot_
-2. The x-axis should have a label of _Meal_
-3. The y-axis should have a label of _Count_
-4. The color palette should be _topo.colors(4)_
+1. Title: Bar Plot
+2. X-axis label: Meal
+3. Y-axis label: Count
+4. Color: topo.colors(4)
 
 Copy/paste the bar chart in the deliverable document for this lab.
 
@@ -218,13 +218,13 @@ barplot(height = table(mtcars$cyl, mtcars$gear),
 
 ### Guided Practice: Clustered Bar Plot
 
-Using the [infert] data frame, create a clustered bar plot for _spontaneous_ grouped by _education_. The plot should have: 
+Using the [infert] data frame, create a clustered bar plot for _spontaneous_ grouped by _education_. The plot should meet these specifications: 
 
-* A main title of _Spontaneous Cases by Education Level_
-* The X-Axis should have a lable of _Education Level_
-* The Y-Axis should have a lable of _Count_
-* The colors should be from a custom palette using orange to white
-* The legend should have a title of _Spontaneous_
+* Title: Spontaneous Cases by Education Level
+* X-Axis lable: Education Level
+* Y-Axis lable: Count
+* Color: from a custom palette using orange to white
+* Legend title: Spontaneous
 
 ```{r 070.12, ex="sc070.02", type="pre-exercise-code"}
 
@@ -308,15 +308,15 @@ success_msg("Perfect! A clustered bar plot is useful for comparing variables.")
 ```
 
 
-### Activity 6.2: Clustered Bar Plot
+### Activity: Clustered Bar Plot
 
-Using the [cafe] data frame, create a clustered bar plot that shows the number of people who ate a given _meal_ by _sex_. The plot should have three clusters (male, female, other) and each of those three clusters should have four meals (breakfast, lunch, dinner, other). The plot should: 
+Using the [cafe] data frame, create a clustered bar plot that shows the number of people who ate a given _meal_ by _sex_. The plot should have three clusters (male, female, other) and each of those three clusters should have four meals (breakfast, lunch, dinner, other). The plot should meet these specifications: 
 
-* Have a title of _Activity 6.2: Clustered Bar Plot_
-* The x-axis should have a label of _Sex_ 
-* The y-axis should have a label of _Count_
-* The colors should be from a custom palette using dark green to white
-* The legend should have a title of _Meal_
+* Title: Clustered Bar Plot
+* X-axis label: Sex
+* Y-axis label: Count
+* Color: from a custom palette using dark green to white
+* Legend title: Meal
 
 Copy/paste the bar chart in the deliverable document for this lab.
 
@@ -372,13 +372,13 @@ It should be evident that the bar plot created in the above script is not very u
 
 ### Guided Practice: Stacked Bar Plot
 
-Using the [infert] data frame, create a stacked bar plot for _induced_ grouped by _education_. The plot should: 
+Using the [infert] data frame, create a stacked bar plot for _induced_ grouped by _education_. The plot should meet these specifications: 
 
-* Have a main title of _Induced Cases by Education Level_
-* The X-Axis should have a lable of _Education Level_
-* The Y-Axis should have a lable of _Count_
-* The colors should be from a custom palette using purple to white
-* The legend should have a title of _Induced_
+* Title: Induced Cases by Education Level
+* X-Axis lable: Education Level
+* Y-Axis lable: Count
+* Color: from a custom palette using purple to white
+* Legend title: Induced
 
 ```{r 070.20, ex="sc070.03", type="pre-exercise-code"}
 
@@ -460,15 +460,15 @@ success_msg("Good Job! A stacked bar plot is useful for comparing variables.")
 
 ```
 
-### Activity 6.3: Stacked Bar Plot
+### Activity: Stacked Bar Plot
 
-Using the [cafe] data frame, create a stacked bar chart that shows the number of people who ate a given _meal_ by _sex_. The chart should have three columns (male, female, other) and each of those three columns should have four meals (breakfast, lunch, dinner, other). The chart should:
+Using the [cafe] data frame, create a stacked bar chart that shows the number of people who ate a given _meal_ by _sex_. The chart should have three columns (male, female, other) and each of those three columns should have four meals (breakfast, lunch, dinner, other). The chart should meet these specifications:
 
-* Have a title of _Activity 6.3: Stacked Bar Plot_
-* The x-axis should have a label of _Sex_ 
-* The y-axis should have a label of _Count_
-* The colors should be from a custom palette using goldenrod to white
-* The legend should have a title of _Meal_
+* Title: Stacked Bar Plot
+* X-axis label: Sex
+* Y-axis label: Count
+* Color: from a custom palette using goldenrod to white
+* Legend title: Meal
 
 Copy/paste the bar chart in the deliverable document for this lab.
 
@@ -526,11 +526,11 @@ Note: The pie chart shows the number of chicks that were given a particular type
 
 ### Guided Practice: Pie Chart
 
-Create a pie chart for the [state.division] data frame. NOTE: This data frame has only one vector so it is not necessary to use the `$` operator. The chart should: 
+Create a pie chart for the [state.division] data frame. NOTE: This data frame has only one vector so it is not necessary to use the `$` operator. The chart should meet these specifications: 
 
-* Have a main title of _States by Division_
-* Nine colors should be used from the topo.colors palette
-* The lables should be the same as the _states.division_ vector
+* Title: States by Division
+* Color: Nine colors from the _topo.colors_ palette
+* Labels: For each pie slice
 
 ```{r 070.28, ex="sc070.04", type="pre-exercise-code"}
 
@@ -583,13 +583,13 @@ success_msg("Perfect! Pie charts are very popular.")
 
 ```
 
-### Activity 6.4: Pie Chart
+### Activity: Pie Chart
 
-Using the [cafe] data frame, create a pie chart that shows the number of people who ate a given _meal_ (breakfast, lunch, dinner, other). The chart should:
+Using the [cafe] data frame, create a pie chart that shows the number of people who ate a given _meal_ (breakfast, lunch, dinner, other). The chart should meet these specifications:
 
-* Have a title of _Activity 6.4: Pie Chart_
-* Use six colors from the terrain color palette
-* Include labels for each of the pie slices
+* Title: Pie Chart
+* Colors: six colors from the _terrain_ color palette
+* Labels: for each pie slice
 
 Copy/paste the pie chart in the deliverable document for this lab.
 
@@ -694,7 +694,14 @@ heatmap(x = hmap,
 
 ### Guided Practice: Heat Map
 
-Create a heat map for the [attitude] data frame. The heat map should have a main title of "Clerical Employees Attitude", the label for the X-axis should be "Characteristic" and for the y-Axis, "Department." Specify that the Rowv and Colv are both "NA." Scale by "row" and set the margins for "c(8,3)."
+Create a heat map for the [attitude] data frame. The heat map should meet these specifications: 
+
+* Title: Clerical Employees Attitude
+* X-axis label: Characteristic
+* Y-axis label: Department 
+* Rowv/Colv symbols: NA
+* Scale: row
+* Margins: _c(8,3)_
 
 ```{r 070.38, ex="sc070.05", type="pre-exercise-code"}
 
@@ -779,16 +786,16 @@ success_msg("Good Job! Heat maps display a lot of data in a compact way.")
 
 ```
 
-### Activity 6.5: Heat Map
+### Activity: Heat Map
 
-Using the [cafe] dataset, create a heat map that compares the number of people dining at each _meal_ (breakfast, lunch, dinner, other) for each _day_ (Monday, Tuesday, etc.). The goal is to find the most/least popular meal for each day of the week. (Tip: _meal_ is column 4 and _day_ is column 3 in the data frame.) The chart should:
+Using the [cafe] dataset, create a heat map that compares the number of people dining at each _meal_ (breakfast, lunch, dinner, other) for each _day_ (Monday, Tuesday, etc.). The goal is to find the most/least popular meal for each day of the week. (Tip: _meal_ is column 4 and _day_ is column 3 in the data frame.) The chart should meet these specifications:
 
-* Have a title of _Activity 6.5: Heat Map_
-* Have an xlab of _Meal_
-* Have a ylab of _Day_
-* Not include the Rowv/Colv symbols
-* Scale by column
-* Have margins=c(8,7)
+* Title: Heat Map
+* X-axis label: Meal
+* Y-axis label: Day
+* Rowv/Colv symbols: NA
+* Scale: column
+* Margins: _c(8,7)_
 
 Copy/paste the heat map in the deliverable document for this lab.
 
@@ -842,12 +849,12 @@ plot(x = table(mtcars$gear, mtcars$cyl),
 
 ### Guided Practice: Mosaic Plot
 
-Create a mosaic plot for the [infert] data frame. The plot should have:
+Create a mosaic plot for the [infert] data frame. The plot should meet these specifications:
 
-* Have a title of _Compare Induced and Education_
-* Have an xlab of _Number Induced_
-* Have a ylab of _Education Level_ 
-* Use five colors from the _terrain.colors_ palette
+* Title: Compare Induced and Education
+* X-axis label: Number Induced
+* Y-axis label: Education Level
+* Color: five colors from the _terrain.colors_ palette
 
 ```{r 070.46, ex="sc070.06", type="pre-exercise-code"}
 
@@ -906,14 +913,14 @@ success_msg("Perfect! Mosaic plots are not too common but may be useful in some 
 
 ```
 
-### Activity 6.6: Mosaic Plot
+### Activity: Mosaic Plot
 
-Using the [cafe] dataset, create a mosaic plot that compares the number of people dining at each _meal_ (breakfast, lunch, dinner, other) to the rating for service (_svc_). The plot should:
+Using the [cafe] dataset, create a mosaic plot that compares the number of people dining at each _meal_ (breakfast, lunch, dinner, other) to the rating for service (_svc_). The plot should meet these specifications:
 
-* Have a title of _Activity 6.6: Mosaic_
-* Have an xlab of _Meal_
-* Have a ylab of _Service_
-* Use five colors from the _terrain.colors_ palette
+* Title: Mosaic Plot
+* X-axis label: Meal
+* Y-axis label: Service
+* Color: five colors from the _terrain.colors_ palette
 
 Copy/paste the mosaic plot in the deliverable document for this lab.
 

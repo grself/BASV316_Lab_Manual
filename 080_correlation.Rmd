@@ -117,7 +117,7 @@ kable(cor_tbl,
 ```
 
 
-### Demonstration: Pearson's R
+### Demonstration: Pearson's r
 
 The following script demonstrates how to calculate Pearson's _r_.
 
@@ -146,7 +146,7 @@ The `cor.test` function returns a lot of information that will be important in l
 1. **cor**: This verifies that the test executed was Pearson's _r_ (Spearman's will report _rho_ and Kendall's will report _tau_).
 1. **-0.6015465**: This is the calculated correlation between the two variables.
 
-### Guided Practice: Pearson's R
+### Guided Practice: Pearson's r
 
 Using the [CO2] data frame, calculate Pearson's _r_ for the variables _conc_ and _uptake_.
 
@@ -183,7 +183,7 @@ success_msg("Perfect! Correlations are one of the most important tools available
 ```
 
 
-### Activity 7.1: Pearson's R
+### Activity: Pearson's r
 
 Using the [cafe] data frame, determine the correlation between the _length_ of the meal and the _bill_ to see if longer meals tend to cost more. Because these are both ratio variables, use Pearson's _r_ as the correlation method. Record the correlation in the deliverable document for this lab.
 
@@ -248,7 +248,7 @@ kable(cor_tbl,
 
 -----
 
-### Demonstration: Spearman's Rho
+### Demonstration: Spearman's rho
 
 The following script demonstrates using `cor.test` to calculate correlations from the [esoph] data frame using Spearman's _rho_. The process for this calculation is the same as for Pearson's _r_ except the method specified is "spearman". There is one other difference between this script and the first. <span class="grshilite">Notice on line 2 that _esoph$agegp_ is inside an as.numeric function. Since _agegp_ uses text like "25-34" instead of a number this converts that to a number for Spearman's _rho_.</span> (Note: This script will generate a warnings about p-values but that can be safely ignored for this tutorial.)
 
@@ -262,7 +262,7 @@ cor.test(as.numeric(esoph$agegp), esoph$ncases,
 
 The interpretation of the results of Spearman's _rho_ is similar to that for Pearson's _r_ and will not be further explained here.
 
-### Guided Practice: Spearman's _rho_
+### Guided Practice: Spearman's rho
 
 Using the [CO2] data frame, calculate Spearmans's _rho_ for the variables _Plant_ (which is ordered) and _uptake_.
 
@@ -315,7 +315,7 @@ success_msg("Perfect! Correlations are one of the most important tools available
 
 ```
 
-### Activity 7.2: Spearman's Rho
+### Activity: Spearman's rho
 
 Using the [cafe] data frame, determine the correlation between _age_ and service (_svc_) to see if there is a relationship between a customer's age and their rating for the service. Because service contains ordered data, use Spearman's _rho_ as the correlation method. Record the correlation in the deliverable document for this lab.
 
@@ -334,7 +334,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 -----
 
-### Demonstration: Kendall's Tau
+### Demonstration: Kendall's tau
 
 The following script demonstrates using `cor.test` to calculate correlations from the [npk] data frame using Kendall's _tau_. The process for this calculation is the same as for Pearson's _r_ except the method specified is "kendall". As in the Spearman example, the first variable must be converted to numeric values. Also, this function will generate a warning but that can be ignored for this lab.
 
@@ -347,7 +347,7 @@ cor.test(as.numeric(npk$N), npk$yield,
 
 Interpreting Kendall's _tau_ is similar to Pearson's _r_ and will not be further discussed here.
 
-### Guided Practice: Kendall's _tau_
+### Guided Practice: Kendall's tau
 
 Using the [CO2] data frame, calculate Kendall's _tau_ for the variables _Type_ and _uptake_.
 
@@ -400,7 +400,7 @@ success_msg("Perfect! Correlations are one of the most important tools available
 ```
 
 
-### Activity 7.3: Kendall's Tau
+### Activity: Kendall's tau
 
 Using the [cafe] data frame, determine the correlation between the distance driven (_miles_) and the _meal_ eaten. Because meal is categorical but not ordered, use Kendall's _tau_ as the correlation method. Record the correlation in the deliverable document for this lab.
 
@@ -551,7 +551,7 @@ success_msg("Good job! With a p-value of less than 0.05, this correlation is sig
 ```
 
 
-### Activity 7.4: Significance
+### Activity: Significance
 
 Using the [cafe] data frame, calculate the p-value for the correlation between _age_ and _bill_. Since these are both continuous data, _pearson_ should be selected for the method. Record the p-value in the deliverable document for this lab.
 
@@ -711,7 +711,7 @@ success_msg("Perfect! So the predicted wind on an 80 degree day is 9.596533.")
 
 ```
 
-### Activity 7.5: Prediction by Regression
+### Activity: Prediction by Regression
 
 Using the [cafe] data frame, predict the tip from a customer who is 48 years old. Round the tip to the nearest penny. Record the prediction in the deliverable document for this lab.
 

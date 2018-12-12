@@ -139,13 +139,13 @@ hist(morley$Speed,
 
 ### Guided Practice: Histogram
 
-Using the [USJudgeRatings] data frame, create a histogram of the _CONT_ vector. The histogram should have these characteristics:
+Using the [USJudgeRatings] data frame, create a histogram of the _INTG_ vector. The histogram should meet these specifications:
 
-* Main title: _US Judge Ratings_
-* X-axis label: _Integrity Rating_
-* Y-axis label: _Frequency_
+* Title: US Judge Ratings
+* X-axis label: Integrity Rating
+* Y-axis label: Frequency
 * Breaks: 11
-* Colors: cm.colors(8)
+* Color: eight colors from the _cm.colors_ palette
 
 ```{r 090.07, ex="sc090.01", type="pre-exercise-code"}
 
@@ -213,15 +213,15 @@ success_msg("Good Job! Histograms are very important tools for data analysis.")
 
 ```
 
-### Activity 8.1: Histogram
+### Activity: Histogram
 
-Using the [cafe] data frame, create a histogram of _age_. The histogram should:
+Using the [cafe] data frame, create a histogram of _age_. The histogram should meet these specifications:
 
-* Main title: _Activity 8.1: Histogram_
-* X-axis label: _Age_
-* Y-axis label: _Frequency_
+* Title: Histogram
+* X-axis label: Age
+* Y-axis label: Frequency
 * Breaks: 10
-* Colors: topo.colors(12)
+* Colors: 12 colors from the _topo.colors_ palette
 
 Copy/paste the histogram in the deliverable document for this lab.
 
@@ -312,11 +312,11 @@ plot(density(USArrests$Rape),
 
 ### Guided Practice: Density Plot
 
-Using the [USJudgeRatings] data frame, create a density plot of the _CONT_ vector. The plot should have these characteristics:
+Using the [USJudgeRatings] data frame, create a density plot of the _INTG_ vector. The plot should meet these specifications:
 
-* Main title: _US Judge Ratings_
-* X-axis label: _Integrity Rating_
-* Y-axis label: _Frequency_
+* Title: US Judge Ratings
+* X-axis label: Integrity Rating
+* Y-axis label: Frequency
 * Lwd: 2
 * Color: blue4
 
@@ -391,13 +391,13 @@ success_msg("Good Job! Density plots are very important tools for data analysis.
 
 ### Activity 8.2: Density Plot
 
-Using the [cafe] data frame, create a density plot of _age_. The plot should:
+Using the [cafe] data frame, create a density plot of _age_. The plot should meet these specifications:
 
-* Main title: _Activity 8.2: Density Plot_
-* X-axis label: _Age_
-* Y-axis label: _Density_
+* Title: Density Plot
+* X-axis label: Age
+* Y-axis label: Density
 * Lwd: 2
-* Color: _cadetblue4_
+* Color: cadetblue4
 
 Copy/paste the density plot in the deliverable document for this lab.
 
@@ -500,15 +500,15 @@ The above graph shows an interesting cyclic variation in the number of deaths ov
 
 ### Guided Practice: Line Graph
 
-Using the [UKgas] data frame, create a line graph that meets this specification:
+Using the [UKgas] data frame, create a line graph should meet these specifications:
 
-* Plot: [UKgas]
-* Main title: _UK Quarterly Gas Consumption_
-* X-axis label: _Year_
-* Y-axis label: _Millions of Therms_
+* Plot: UKgas
+* Title: UK Quarterly Gas Consumption
+* X-axis label: Year
+* Y-axis label: Millions of Therms
 * Type: l (this is a lower-case "L")
 * Lwd: 2
-* Color: _lightskyblue_
+* Color: lightskyblue
 
 
 ```{r 090.27, ex="sc090.03", type="pre-exercise-code"}
@@ -584,17 +584,17 @@ success_msg("Perfect! A line graph can reveal interesting trends over time.")
 ```
 
 
-### Activity 8.3: Line Graph
+### Activity: Line Graph
 
-Create a line graph of the [lynx] data frame. The plot should:
+Create a line graph of the [lynx] data frame. The plot should meet these specifications:
 
-* Plot: [lynx]
-* Main title: _Activity 8.3: Line Graph_
-* X-axis label: _Year_
-* Y-axis label: _Number_
+* Plot: lynx
+* Title: Line Graph
+* X-axis label: Year
+* Y-axis label: Number
 * Type: l (this is a lower-case "L")
 * Lwd: 2
-* Color: _firebrick4_
+* Color: firebrick4
 
 Copy/paste the line graph in the deliverable document for this lab.
 
@@ -743,21 +743,21 @@ abline(lm(attitude$complaints ~ attitude$rating),
 
 ### Guided Practice: Plot
 
-Using the [rock] data frame, create a plot of _area_ (y-axis) as a function of _peri_ (x-axis). The graph should use these specifications:
+Using the [rock] data frame, create a plot of _area_ (y-axis) as a function of _peri_ (x-axis). The graph should meet these specifications:
 
 Plot:
 
-* Main title: _Rock Area by Perimeter_
-* X-axis label: _Perimeter_
-* Y-axis label: _Area_
+* Title: Rock Area by Perimeter
+* X-axis label: Perimeter
+* Y-axis label: Area
 * Pch: 21
-* Bg: _goldenrod3_
-* Color: _black_
+* Bg: goldenrod3
+* Color: black
 
 Abline:
 
 * Lwd: 2
-* Color: _violetred3_
+* Color: violetred3
 
 
 ```{r 090.39, ex="sc090.04", type="pre-exercise-code"}
@@ -846,23 +846,23 @@ success_msg("Perfect! A scatterplot is one of the most common graphs used in res
 
 ```
 
-### Activity 8.4: Line of Best Fit
+### Activity: Line of Best Fit
 
-Using the [cafe] data frame, create a simple plot with _length_ on the x-axis, _bill_ on the y-axis, and a line of best fit to see if there is a relationship between the length of the meal and the bill. The plot should:
+Using the [cafe] data frame, create a simple plot with _length_ on the x-axis, _bill_ on the y-axis, and a line of best fit to see if there is a relationship between the length of the meal and the bill. The plot should meet these specifications:
 
 Plot:
 
-* Main title: _Activity 8.4: Line of Best Fit_
-* X-axis label: _Length of Meal_
-* Y-axis label: _Bill_
+* Title: Line of Best Fit
+* X-axis label: Length of Meal
+* Y-axis label: Bill
 * Pch: 23
-* Bg: _indianred4_
-* Color: _black_
+* Bg: indianred4
+* Color: black
 
 Abline:
 
 * Lwd: 2
-* Color: _mediumblue_
+* Color: mediumblue
 
 
 Copy/paste the plot in the deliverable document for this lab.

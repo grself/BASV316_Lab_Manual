@@ -100,9 +100,9 @@ success_msg("Good job! This is an important test for nonparametric data.")
 
 ```
 
-### Activity 10.1: Kruskal-Wallis H
+### Activity: Kruskal-Wallis H
 
-Using the [cafe] data, conduct a _Kruskal-Wallis H_ and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 10.1 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+Using the [cafe] data, conduct a _Kruskal-Wallis H_ and report the p-value for the following variables. Note: in the document submitted for this lab, the Activity should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
 
 1. 6.352e-09
 2. 0.0059
@@ -246,9 +246,9 @@ success_msg("Perfect! A Mann-Whitney U test is a common non-parametric test that
 
 ```
 
-### Activity 10.2: Mann-Whitney U
+### Activity: Mann-Whitney U
 
-Using the [cafe] data, conduct a _Mann-Whitney U_ and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 10.2 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+Using the [cafe] data, conduct a _Mann-Whitney U_ and report the p-value for the following variables. Note: in the document submitted for this lab, the Activity should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
 
 1. 6.352e-09
 2. 0.0059

@@ -94,7 +94,7 @@ success_msg("Perfect! You can find the range of a vector!")
 
 ```
 
-### Activity 3.1: Range
+### Activity: Range
 
 Using the [cafe] data frame, find the range for _age_. Include that answer in the deliverable document for this lab.
 
@@ -179,9 +179,9 @@ success_msg("Good Job! You found a summary with all of those quartiles!")
 
 ```
 
-### Activity 3.2: Quartiles Using Summary
+### Activity: Quartiles
 
-Using the [cafe] data frame, find the summary for _age_. Include the values for Q1 and Q3 in the deliverable document for this lab.
+Using the [cafe] data frame, find the summary for _age_ and record the values for Q1 and Q3 in the deliverable document for this lab.
 
 ```{r 030.14, ex="act030.02", type="pre-exercise-code"}
 
@@ -190,7 +190,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 ```
 
 ```{r 030.15, ex="act030.02", type="sample-code"}
-# Using the cafe data frame, find the summary for age.
+# Using the cafe data frame, find the summary for age and record the values for Q1 and Q3.
 
 
 ```
@@ -260,7 +260,7 @@ success_msg("Good Job! The Inter-Quartile Range you found is correct!")
 
 ```
 
-### Activity 3.3: Inter-Quartile Range (IQR)
+### Activity: Inter-Quartile Range (IQR)
 
 Using the [cafe] data frame, find the inter-quartile-range (IQR) for _age_. Include that answer in the deliverable document for this lab.
 
@@ -432,7 +432,7 @@ success_msg("Perfect! You calculated a standard deviation!")
 
 ```
 
-### Activity 3.4: Standard Deviation
+### Activity: Standard Deviation
 
 Using the [cafe] data frame, find the standard deviation for _age_. Include the answer in the deliverable document for this lab.
 

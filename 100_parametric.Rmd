@@ -133,9 +133,9 @@ success_msg("Perfect! An ANOVA is one of the most commonly-used parametric tests
 
 ```
 
-### Activity 9.1: ANOVA
+### Activity: ANOVA
 
-Using the [cafe] data, conduct an `ANOVA` and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 9.1 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+Using the [cafe] data, conduct an `ANOVA` and report the p-value for the following variables. Note: in the document submitted for this lab, the Activity should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
 
 1. 6.352e-09
 2. 0.0059
@@ -269,9 +269,9 @@ success_msg("Perfect! A t-test is a common parametric test and you can now condu
 
 ```
 
-### Activity 9.2: T-test
+### Activity: T-test
 
-Using the [cafe] data, conduct a `t.test` and report the p-value for the following variables. Note: in the document submitted for this lab, Activity 9.2 should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
+Using the [cafe] data, conduct a `t.test` and report the p-value for the following variables. Note: in the document submitted for this lab, the Activity should have a simple listing, something like illustrated here. (Notes: these are not the correct answers to the listed tests. To indicate tiny values use scientific notation in a form like 1.6e-05 since that is easier to type.) Record the p-values in the deliverable document for this lab.
 
 1. 6.352e-09
 2. 0.0059

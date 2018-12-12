@@ -95,7 +95,7 @@ success_msg("Good work! A frequency table is a foundational categorical data ana
 ```
 
 
-### Activity 5.1: Frequency Tables
+### Activity: Frequency Tables
 
 Using the [cafe] data frame, generate a frequency table for _meal_. Copy/paste the table in the deliverable document for this lab.
 
@@ -175,7 +175,7 @@ success_msg("Perfect! Margins provide a little extra information to a frequency 
 ```
 
 
-### Activity 5.2: Frequency Tables With Margins
+### Activity: Margins
 
 Using the [cafe] data frame, generate a frequency table for _meal_, include the margins on this table. Copy/paste the table in the deliverable document for this lab.
 
@@ -263,7 +263,7 @@ success_msg("Perfect! A proportion table formatted like this is a valuable tool!
 
 ```
 
-### Activity 5.3: Proportion Tables (Proptables)
+### Activity: Proportion Tables (Proptables)
 
 Using the [cafe] data frame, generate a proportion table (proptable) for _meal_. Copy/paste the table in the deliverable document for this lab.
 
@@ -351,7 +351,7 @@ success_msg("Perfect! This type of crosstab is very commonly used!")
 
 ```
 
-### Activity 5.4: Crosstabs
+### Activity: Crosstabs
 
 Using the [cafe] data frame, create a crosstab of _food_ and _svc_. Copy/paste the table in the deliverable document for this lab.
 
@@ -451,7 +451,7 @@ success_msg("Perfect! A multi-dimensional crosstab is very useful!")
 
 ```
 
-### Activity 5.5: Multi-dimensional Crosstabs
+### Activity: Multi-dimensional Crosstabs
 
 Using the [cafe] data frame, create a crosstab of _food_ and _svc_ when grouped by _sex_. Copy/paste the table in the deliverable document for this lab.
 
@@ -511,7 +511,7 @@ aggregate(disp~cyl+gear, data = mtcars, FUN = mean)
 
 ```
 
-### Guided Practice: Calculated Crosstabs
+### Guided Practice: Calculated Crosstab
 
 Using the [npk] data frame, create a calculated crosstab for _N_ (nitrogen), _P_ (phosphate), and _K_ (potassium). Aggregate the mean _yield_ for all three vectors. _Notice that the vector names are capital letters._
 
@@ -556,7 +556,7 @@ success_msg("Perfect! Calculating the mean or other value makes crosstabs more u
 
 ```
 
-### Activity 5.6: Calculated Crosstab
+### Activity: Calculated Crosstab
 
 Using the [cafe] data frame, create a crosstab of the mean _tip_ when grouped by _food_ and _svc_. Copy/paste the table in the deliverable document for this lab.
 
@@ -643,7 +643,7 @@ success_msg("Good Work! A rounded mean is much easier to use!")
 
 ```
 
-### Activity 5.7: Rounding
+### Activity: Rounding
 
 Using the [cafe] data frame, create a crosstab of the mean _tip_ when grouped by _food_ and _svc_. Round the calculated values to two decimal places. Copy/paste the table in the deliverable document for this lab.
 
