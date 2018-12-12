@@ -79,7 +79,7 @@ Using the [stackloss] data frame, create a bar plot for _Water.Temp_. The plot s
 * Title: Water Temperature
 * X-Axis lable: Number
 * Y-Axis lable: Temperature
-* Color: cm.colors(9)
+* Color: nine colors from the _cm.colors_ palette
 
 ```{r 070.04, ex="sc070.01", type="pre-exercise-code"}
 
@@ -145,7 +145,7 @@ Using the [cafe] data frame, create a bar plot for _meal_.  The plot should meet
 1. Title: Bar Plot
 2. X-axis label: Meal
 3. Y-axis label: Count
-4. Color: topo.colors(4)
+4. Color: four colors from the _topo.colors_ palette
 
 Copy/paste the bar chart in the deliverable document for this lab.
 
@@ -315,13 +315,15 @@ Using the [cafe] data frame, create a clustered bar plot that shows the number o
 * Title: Clustered Bar Plot
 * X-axis label: Sex
 * Y-axis label: Count
-* Color: from a custom palette using dark green to white
+* Color: four values from a custom palette using dark green to white
 * Legend title: Meal
 
 Copy/paste the bar chart in the deliverable document for this lab.
 
 ```{r 070.16, ex="act070.02", type="pre-exercise-code"}
-cafe <- read.csv('http://georgeself.com/maincafe.csv')
+
+cafe <- read.csv('https://labs.basv316.com/cafe.csv')
+
 ```
 
 ```{r 070.17, ex="act070.02", type="sample-code"}
@@ -467,7 +469,7 @@ Using the [cafe] data frame, create a stacked bar chart that shows the number of
 * Title: Stacked Bar Plot
 * X-axis label: Sex
 * Y-axis label: Count
-* Color: from a custom palette using goldenrod to white
+* Color: four values from a custom palette using goldenrod to white
 * Legend title: Meal
 
 Copy/paste the bar chart in the deliverable document for this lab.
@@ -529,8 +531,8 @@ Note: The pie chart shows the number of chicks that were given a particular type
 Create a pie chart for the [state.division] data frame. NOTE: This data frame has only one vector so it is not necessary to use the `$` operator. The chart should meet these specifications: 
 
 * Title: States by Division
-* Color: Nine colors from the _topo.colors_ palette
-* Labels: For each pie slice
+* Color: nine colors from the _topo.colors_ palette
+* Labels: for each pie slice
 
 ```{r 070.28, ex="sc070.04", type="pre-exercise-code"}
 

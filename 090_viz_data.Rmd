@@ -848,7 +848,7 @@ success_msg("Perfect! A scatterplot is one of the most common graphs used in res
 
 ### Activity: Line of Best Fit
 
-Using the [cafe] data frame, create a simple plot with _length_ on the x-axis, _bill_ on the y-axis, and a line of best fit to see if there is a relationship between the length of the meal and the bill. The plot should meet these specifications:
+Using the [cafe] data frame, create a simple plot with _bill_ on the y-axis, _length_ on the x-axis, and a line of best fit to see if there is a relationship between the length of the meal and the bill. The plot should meet these specifications:
 
 Plot:
 
@@ -1006,9 +1006,9 @@ success_msg("Great Job! Using Q-Q Plot makes it easy to graphically determine if
 
 ```
 
-### Activity 8.5: Q-Q Plot
+### Activity: Q-Q Plot
 
-Using the [cafe] data frame, create a Q-Q plot of _age_. The plot should h ave a title of _Activity 8.5: Q-Q Plot_ and a _sienna4_ Q-Q line with a width of 2.
+Using the [cafe] data frame, create a Q-Q plot of _age_. The plot should h ave a title of _Q-Q Plot_ and a _sienna4_ Q-Q line with a width of 2.
 
 Copy/paste the plot in the deliverable document for this lab.
 

@@ -199,7 +199,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 A t-test is used to analyze the difference in _two groups_ of samples that are normally distributed. Compare this with _ANOVA_ (presented in the previous section) where more than two groups are compared. As an example, imagine that the spending habits of two similar groups of people are compared; do the residents of Tucson spend more on dining out than the residents of Phoenix? The null hypothesis (H~0~) is "People in Tucson and Phoenix spend the same amount of money when dining out." The alternate hypothesis (H~a~) is "People in Tucson and Phoenix spend different amounts of money when dining out." Imagine that the dining bills of 100 people from both cities were recorded and it was discovered that the mean bill in Phoenix is \$15.13 and in Tucson is \$12.47. If a t-test determines that there was a significant difference in those two numbers the null hypothesis would be rejected.
 
-## Demonstration: T-test
+### Demonstration: T-test
 
 A `t.test` requires the two variables being compared to be input as a formula in the form of _y ~ x_, where _y_ is the dependent variable (measured outcomes) and _x_ is the independent variable (the groups used to divide the measured outcomes). Also the data source is specified with a _data =_ parameter. In the case of the _Dining Spending_ hypothesis mentioned in the previous paragraph, the size of the dining bills would be the dependent variable, the measured outcome, while the groups of diners, the two cities, would be the independent variable.
 

@@ -170,7 +170,7 @@ success_msg("Good work! A boxplot is a foundational visualization!")
 
 ### Activity: Boxplot
 
-Using the [cafe] data frame, generate a boxplot for both _age_. Copy/paste the boxplot in the deliverable document for this lab.
+Using the [cafe] data frame, generate a boxplot for _age_. Copy/paste the boxplot in the deliverable document for this lab.
 
 ```{r 040.10, ex="act040.01", type="pre-exercise-code"}
 
@@ -331,10 +331,10 @@ boxplot(weight ~ feed,
 
 ### Guided Practice: Grouped Boxplot With Color
 
-Using the [morley] data frame, generate a grouped boxplot where _Speed_ is grouped by _Expt_. Set: 
+Using the [morley] data frame, generate a grouped boxplot where _Speed_ is grouped by _Expt_. The boxplot should meet these specifications: 
 
-* The _main_ title to "Morley Experiment" 
-* The color to _rainbow(5)_
+* Title: Morley Experiment
+* Color: five colors from the _terrain.colors_ palette
 
 
 ```{r 040.22, ex="sc040.03", type="pre-exercise-code"}
@@ -379,10 +379,10 @@ success_msg("Great Job! Colorful boxplots are very useful!")
 
 ### Activity: Grouped Boxplot With Color
 
-Using the [cafe] data frame, generate a boxplot of _length_ when grouped by _meal_ to see if there is any difference in the length of the meal by the type of meal eaten (breakfast, lunch, dinner, other). Set: 
+Using the [cafe] data frame, generate a boxplot of _length_ when grouped by _meal_ to see if there is any difference in the length of the meal by the type of meal eaten (breakfast, lunch, dinner, other). The boxplot should meet these specifications: 
 
-* The main title to "Grouped Boxplot"
-* The color to _topo.colors(4)_
+* Title: Grouped Boxplot
+* Color: four colors from the _topo.colors_ palette
 
 Copy/paste the boxplot in the deliverable document for this lab.
 
