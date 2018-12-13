@@ -272,8 +272,6 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ```
 
-<!-- # Note: for my solution file, use this: boxplot.stats(miles)[[4]] -->
-
 -----
 
 ## Grouped Boxplots

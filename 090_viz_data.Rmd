@@ -848,7 +848,7 @@ success_msg("Perfect! A scatterplot is one of the most common graphs used in res
 
 ### Activity: Line of Best Fit
 
-Using the [cafe] data frame, create a simple plot with _bill_ on the y-axis, _length_ on the x-axis, and a line of best fit to see if there is a relationship between the length of the meal and the bill. The plot should meet these specifications:
+Using the [cafe] data frame, create a simple plot with _bill_ (y-axis) as a function of _length_ (x-axis), and a line of best fit to see if there is a relationship between the length of the meal and the bill. The plot should meet these specifications:
 
 Plot:
 
@@ -874,7 +874,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 ```
 
 ```{r 090.44, ex="act090.04", type="sample-code"}
-# Using the cafe dataset, create a simple plot of length (x) vs. bill (y) and a line of best fit that matches the listed specifications.
+# Using the cafe dataset, create a simple plot of bill (y) and length (x) plus a line of best fit that matches the listed specifications.
 
 
 

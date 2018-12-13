@@ -698,6 +698,7 @@ heatmap(x = hmap,
 
 Create a heat map for the [attitude] data frame. The heat map should meet these specifications: 
 
+* Scope: Only the first 20 lines from the data frame should be used
 * Title: Clerical Employees Attitude
 * X-axis label: Characteristic
 * Y-axis label: Department 
@@ -792,6 +793,7 @@ success_msg("Good Job! Heat maps display a lot of data in a compact way.")
 
 Using the [cafe] dataset, create a heat map that compares the number of people dining at each _meal_ (breakfast, lunch, dinner, other) for each _day_ (Monday, Tuesday, etc.). The goal is to find the most/least popular meal for each day of the week. (Tip: _meal_ is column 4 and _day_ is column 3 in the data frame.) The chart should meet these specifications:
 
+* Scope: This data frame is small so do not restrict the number of lines used
 * Title: Heat Map
 * X-axis label: Meal
 * Y-axis label: Day
