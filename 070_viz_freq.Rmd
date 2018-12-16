@@ -57,7 +57,7 @@ The following script creates a simple bar plot. _Note: this is one long R comman
 * Line 3: The “main” attribute sets the main title for the bar plot. In general, for any graphic in _R_ _main_ is used to set the title of the graph.
 * Line 4: This creates the label for the x-axis. 
 * Line 5: This creates the label for the y-axis.
-* Line 6: This sets the color palette for the graph. In this case, the _rainbow_ palette is used for the graph. Three colors were requested from that palette but specifying any number larger than three would have worked and created a slightly different palette. Experimentation is needed to find the most suitable palette for any given graph. (Note: setting colors on graphs was introduced in [color].)
+* Line 6: This sets the color palette for the graph. In this case, the _rainbow_ palette is used for the graph. Three colors were requested from that palette but specifying any number larger than three would have worked and created a slightly different palette. Experimentation is needed to find the most suitable palette for any given graph. (Note: More information can be found in the [About Colors] section in the appendix.)
 
 ```{r 070.03}
 # Simple Bar Plot
@@ -190,13 +190,13 @@ legend(x = "topright",
 
 The following script creates a clustered bar plot.
 
-* Line 2: This begins the `barplot` function. It creates a table that contains the counts for _cyl_ and _gear_ in the [mtcars] data frame and then uses that table to produce the bar plot. Note the order of the variables in the table command. The grouping variable is listed second. In this example, the cars are grouped by gears and within each group the number of cylinders are displayed. The height of each bar is determined by the count of cars in each group.
-* Lines 3-6: These lines are essentially the same as for a simple bar plot as described above.
-* Line 7: Setting legend to TRUE displays a legend in the corner of the plot. Whenever more than one variable is being plotted it is important to display a legend for the reader. In this case, the legend displays the colors used for the _cyl_ variable.
-* Line 8: A stacked bar is the default type of plot but Line 8 instructs _R_ to create a plot with the variables beside each other. "Stacked" plots are described in the next section of this tutorial.
-* Line 9: This rather odd-looking line adds a title to the legend, otherwise users would be confused about what the various colors used in the plot mean.
-
-_Color_ can be added to a barplot to make it more pleasing and easier to understand. More information can be found in the [About Colors] section in the appendix.
+* Line 3: The first line of the script creates a custom color palette named _colpal_ (for “color palette”), which, contains color codes. In this case, the _colorRampPalette_ function will create the codes for color gradients between blue and white. More information about colors can be found in the [About Colors] section in the appendix.
+* Line 5: This begins the `barplot` function. It creates a table that contains the counts for _cyl_ and _gear_ in the [mtcars] data frame and then uses that table to produce the bar plot. Note the order of the variables in the table command. The grouping variable is listed second. In this example, the cars are grouped by gears and within each group the number of cylinders are displayed. The height of each bar is determined by the count of cars in each group.
+* Lines 6-8: These lines are essentially the same as for a simple bar plot as described above.
+* Line 9: Setting legend to TRUE displays a legend in the corner of the plot. Whenever more than one variable is being plotted it is important to display a legend for the reader. In this case, the legend displays the colors used for the _cyl_ variable.
+* Line 10: A stacked bar is the default type of plot but Line 8 instructs _R_ to create a plot with the variables beside each other. "Stacked" plots are described in the next section of this tutorial.
+* Line 11: This rather odd-looking line adds a title to the legend, otherwise users would be confused about what the various colors used in the plot mean.
+* Line 12: This selects three colors from the _colpal_ variable created in Line 3.
 
 ```{r 070.11}
 
@@ -681,6 +681,8 @@ The following script creates a heat map for the [USJudgeRating] data frame.
 * Line 7: Sets the heat map to scale the rows. In this way, the color for each row cell is calculated such that the entire row’s mean is zero and the standard deviation is one. The other option is to scale “column” and researchers would want to try both to see which provides a better heat map.
 * Line 8: This sets the right and bottom margins. The values were found by simple trial-and-error to produce the most legible heat map.
 
+Note that colors were not specified for this heat map. While a special color palette could be used, the default colors used by _R_ work well.
+
 ```{r 070.37}
 hmap <- as.matrix(x = USJudgeRatings[20:1,])
 heatmap(x = hmap,
@@ -824,12 +826,12 @@ A mosiac plot indicates the relative counts of items in a data frame by sizing a
 
 ```{r 070.44, fig.width=3.5,fig.height=4,fig.align="center", echo=FALSE, message=FALSE, warnings=FALSE, tut=FALSE}
 
-colpal <- colorRampPalette(c("purple", "white")) # generate a color palette
 plot(table(mtcars$cyl,mtcars$gear),
      main = "US Car Information",
      xlab = "Cylinders",
      ylab = "Gears",
-     col=colpal(4))
+     col = terrain.colors(3)
+     )
 
 ```
 
