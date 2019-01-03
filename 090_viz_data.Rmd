@@ -272,20 +272,6 @@ plot(density(rock$peri),
 
 ```
 
-The following script creates a density plot of the _speed_ variable in the [morley] data frame. The script is very similar to the last script except _R_ plots the density of the data in Line 2 rather than just a count of the various bins.
-
-```{r 090.15}
-
-# Density Plot
-plot(density(morley$Speed),
-  main = "Morley's Experiment",
-  xlab = "Speed",
-  ylab = "Density",
-  lwd = 2,
-  col = "blue4"
-)
-
-```
 
 ### Demonstration: Density Plot
 
@@ -316,7 +302,7 @@ Using the [USJudgeRatings] data frame, create a density plot of the _INTG_ vecto
 
 * Title: US Judge Ratings
 * X-axis label: Integrity Rating
-* Y-axis label: Frequency
+* Y-axis label: Density
 * Lwd: 2
 * Color: blue4
 
@@ -337,7 +323,7 @@ Using the [USJudgeRatings] data frame, create a density plot of the _INTG_ vecto
 plot(density(USJudgeRatings$INTG),
   main = "US Judge Ratings",
   xlab = "Integrity Rating",
-  ylab = "Frequency",
+  ylab = "Density",
   lwd = 2,
   col = "blue4"
 )
@@ -348,40 +334,40 @@ plot(density(USJudgeRatings$INTG),
 
 # These are numbered by the exercise number and a sequence within the exercise.
 # The sequence number is not necessary if there is only one check.
-ex21neq <- "Check the density plot settings to be sure they match the requirement."
-ex22neq <- "Check that the density plot is using the USJudgeRatings$INTG vector."
-ex23neq <- "Check that main is US Judge Ratings."
-ex24neq <- "Check that xlab is Integrity Rating."
-ex25neq <- "Check that ylab is Frequency."
-ex26neq <- "Check that lwd is 2."
-ex27neq <- "Check that col is blue4."
+ex20neq <- "Check the density plot settings to be sure they match the requirement."
+ex21neq <- "Check that the density plot is using the USJudgeRatings$INTG vector."
+ex22neq <- "Check that main is US Judge Ratings."
+ex23neq <- "Check that xlab is Integrity Rating."
+ex24neq <- "Check that ylab is Density"
+ex25neq <- "Check that lwd is 2."
+ex26neq <- "Check that col is blue4."
 
 ex() %>%
   check_function("plot") %>%
   check_result() %>%
-  check_equal(incorrect_msg = ex21neq)
+  check_equal(incorrect_msg = ex20neq)
 
 state21 <- ex() %>% check_function("density")
-state1 %>%
+state21 %>%
   check_arg("x") %>%
-  check_equal(incorrect_msg = ex22neq)
+  check_equal(incorrect_msg = ex21neq)
 
 state22 <- ex() %>% check_function("plot")
 state22 %>%
   check_arg("main") %>%
-  check_equal(incorrect_msg = ex23neq)
+  check_equal(incorrect_msg = ex22neq)
 state22 %>%
   check_arg("xlab") %>%
-  check_equal(incorrect_msg = ex24neq)
+  check_equal(incorrect_msg = ex23neq)
 state22 %>%
   check_arg("ylab") %>%
-  check_equal(incorrect_msg = ex25neq)
+  check_equal(incorrect_msg = ex24neq)
 state22 %>%
   check_arg("lwd") %>%
-  check_equal(incorrect_msg = ex26neq)
+  check_equal(incorrect_msg = ex25neq)
 state22 %>%
   check_arg("col") %>%
-  check_equal(incorrect_msg = ex27neq)
+  check_equal(incorrect_msg = ex26neq)
 
 
 success_msg("Good Job! Density plots are very important tools for data analysis.")
@@ -806,9 +792,9 @@ ex409neq <- "Check that col is violetred3."
 ex410neq <- "Check that lwd is 2."
 
 state41 <- ex() %>% check_function("plot")
-state41 %>%
-  check_arg("x") %>%
-  check_equal(incorrect_msg = ex401neq)
+# state41 %>%
+#   check_arg("x") %>%
+#   check_equal(incorrect_msg = ex401neq)
 state41 %>%
   check_arg("main") %>%
   check_equal(incorrect_msg = ex402neq)

@@ -402,7 +402,7 @@ success_msg("Perfect! Correlations are one of the most important tools available
 
 ### Activity: Kendall's tau
 
-Using the [cafe] data frame, determine the correlation between the distance driven (_miles_) and the _meal_ eaten. Because meal is categorical but not ordered, use Kendall's _tau_ as the correlation method. Record the correlation in the deliverable document for this lab.
+Using the [cafe] data frame, determine the correlation between the _meal_ eaten and distance driven (_miles_). Because meal is categorical but not ordered, use Kendall's _tau_ as the correlation method. Record the correlation in the deliverable document for this lab.
 
 ```{r 080.24, ex="act080.03", type="pre-exercise-code"}
 
@@ -411,7 +411,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 ```
 
 ```{r 080.25, ex="act080.03", type="sample-code"}
-# Using the cafe data frame, determine the correlation between miles and meal. 
+# Using the cafe data frame, determine the correlation between meal and miles. 
 
 
 

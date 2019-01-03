@@ -408,7 +408,7 @@ kable(cor_tbl,
   # column_spec(1, bold = T, border_right = T)
 ```
 
-## chickweight
+## ChickWeight
 
 **Weight Versus Age of Chicks on Different Diets**. The ChickWeight data frame was generated from an experiment on the effect of diet on early growth of chicks. This is a data frame with 578 observations on 4 variables:
 
@@ -987,9 +987,9 @@ kable(cor_tbl,
   # column_spec(1, bold = T, border_right = T)
 ```
 
-## state.region
+## state.division
 
-**US State Facts and Figures**. Data sets related to the 50 states of the United States of America. This is a factor giving the state region (Northeast, South, North Central, West).
+**US State Facts and Figures**. Data sets related to the 50 states of the United States of America. This is a factor giving the state division (New England, Middle Atlantic, South Atlantic, East North Central, East South Central, West North Central, West South Central, Mountain, Pacific).
 
 ## sunspots
 

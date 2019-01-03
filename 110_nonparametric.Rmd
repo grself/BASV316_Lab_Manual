@@ -62,7 +62,7 @@ While a `kruskal.test` function returns information that would be useful in a mo
 
 ### Guided Practice: Kruskal-Wallis H
 
-Using the [chickweight] data frame, calculate a Kruskal-Wallis H for the _weight_ output when grouped by _Diet_.
+Using the [ChickWeight] data frame, calculate a Kruskal-Wallis H for the _weight_ output when grouped by _Diet_.
 
 ```{r 110.03, ex="sc110.01", type="pre-exercise-code"}
 

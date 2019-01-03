@@ -373,17 +373,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 ## Multi-Dimensional Crosstab
 
-A crosstab can contain more than two dimensions. As an example, consider an experiment with pea plants where the amount of nitrogen, phosphorus, and potassium was varied to see what would happen to the crop yield. The [npk] data frame contains the result of that experiment and this crosstab displays that result in a multidimensional table. Notice that the row group is listed first, the column group is second, and the block group is third.
-
-```{r 060.35, tut=FALSE}
-
-xtabs(~N+P+K, data=npk)
-
-```
-
-When nitrogen (N) is 0, phosphorus (P) is 0, and potassium (K) is 0 the crop yield is 154.3 pounds/plot.
-
-As a second example, consider the [mtcars] data frame. A researcher wanted to know if there is any relationship between the number of forward gears, the number of cylinders in the engine (that is, the size of the engine), and whether the car had a manual or automatic transmission. Here is the crosstab that was created.
+A crosstab can contain more than two dimensions. As an example, consider the [mtcars] data frame. A researcher wanted to know if there is any relationship between the number of forward gears, the number of cylinders in the engine (that is, the size of the engine), and whether the car had a manual or automatic transmission. Here is the crosstab that was created.
 
 ```{r 060.36, tut=FALSE}
 

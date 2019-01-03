@@ -223,7 +223,7 @@ Using the [infert] data frame, create a clustered bar plot for _spontaneous_ gro
 * Title: Spontaneous Cases by Education Level
 * X-Axis lable: Education Level
 * Y-Axis lable: Count
-* Color: from a custom palette using orange to white
+* Color: three values from a custom palette using orange to white
 * Legend title: Spontaneous
 
 ```{r 070.12, ex="sc070.02", type="pre-exercise-code"}
@@ -243,7 +243,7 @@ Using the [infert] data frame, create a clustered bar plot for _spontaneous_ gro
 colpal <- colorRampPalette(c("orange", "white"))
 
 barplot(height = table(infert$spontaneous, infert$education),
-  main = "Spontaneous Cases By Education Level",
+  main = "Spontaneous Cases by Education Level",
   xlab = "Education Level",
   ylab = "Count",
   col = colpal(3),
@@ -258,7 +258,7 @@ barplot(height = table(infert$spontaneous, infert$education),
 
 ex21neq <- "The color specifications should be orange, white."
 ex22neq <- "The height should be a table of spontaneous and education."
-ex23neq <- "The main title should be Spontaneous Cases By Education Level."
+ex23neq <- "The main title should be Spontaneous Cases by Education Level."
 ex24neq <- "The x-axis label should be Education Level."
 ex25neq <- "The y-axis label should be Count."
 ex26neq <- "The color palette should be specified as colpal(3)."
@@ -279,7 +279,7 @@ state22 %>%
   check_arg("height") %>% 
   check_equal(incorrect_msg = ex22neq)
 
-state22 %>% 
+state22 %>%
   check_arg("main") %>%
   check_equal(incorrect_msg = ex23neq)
 
@@ -379,7 +379,7 @@ Using the [infert] data frame, create a stacked bar plot for _induced_ grouped b
 * Title: Induced Cases by Education Level
 * X-Axis lable: Education Level
 * Y-Axis lable: Count
-* Color: from a custom palette using purple to white
+* Color: three values from a custom palette using purple to white
 * Legend title: Induced
 
 ```{r 070.20, ex="sc070.03", type="pre-exercise-code"}
@@ -399,7 +399,7 @@ Using the [infert] data frame, create a stacked bar plot for _induced_ grouped b
 colpal <- colorRampPalette(c("purple", "white"))
 
 barplot(height = table(infert$induced, infert$education),
-  main = "Induced Cases By Education Level",
+  main = "Induced Cases by Education Level",
   xlab = "Education Level",
   ylab = "Count",
   col = colpal(3),
@@ -413,7 +413,7 @@ barplot(height = table(infert$induced, infert$education),
 
 ex31neq <- "The color specifications should be purple, white."
 ex32neq <- "The height should be a table of induced and education."
-ex33neq <- "The main title should be Induced Cases By Education Level."
+ex33neq <- "The main title should be Induced Cases by Education Level."
 ex34neq <- "The x-axis label should be Education Level."
 ex35neq <- "The y-axis label should be Count."
 ex36neq <- "The color palette should be specified as colpal(3)."
@@ -433,7 +433,7 @@ state32 %>%
   check_arg("height") %>% 
   check_equal(incorrect_msg = ex32neq)
 
-state32 %>% 
+state32 %>%
   check_arg("main") %>%
   check_equal(incorrect_msg = ex33neq)
 
@@ -541,7 +541,7 @@ Create a pie chart for the [state.division] data frame. NOTE: This data frame ha
 ```
 
 ```{r 070.29, ex="sc070.04", type="sample-code"}
-# Create a pie chart for states.division using the specifications listed above.
+# Create a pie chart for state.division using the specifications listed above.
 
 
 ```
@@ -569,7 +569,7 @@ state41 %>%
   check_arg("x") %>% 
   check_equal(incorrect_msg = ex41neq)
 
-state41 %>% 
+state41 %>%
   check_arg("main") %>%
   check_equal(incorrect_msg = ex42neq)
 
@@ -631,6 +631,8 @@ heatmap(x,
 
 In a heat map produced by _R_, lighter colors represent larger numbers. Thus, the province with the highest fertility rate is _Franches-Mnt_ since it has the lightest color and the province with the least agriculture is _Courtelary_ since it has the darkest color for those variables. Interpreting the heat map can be a challenge for the researcher. In some cases a light color would be positive and in others negative. For example, the highest education level would be in _Neuveville_ (positive) but the highest infant mortality would be in _Porrentruy_ (negative). Also, the colors are often very similar and difficult to distinguish. For example, for _examination_, _Cossonay_ has a numeric value of 22 while _Aigle_ has 21. These two colors are slightly different but it would be difficult to detect that from the image. Often, the best that can be done with a heat map is identifying broad generalizations.
 
+### Demonstration: Heat Map
+
 The following script creates a heat map for _Party Size_ by _Meal_ in the [cafe] data frame.
 
 * Line 4: This line creates a contingency table from columns 8 and 4 of the [cafe] data frame and store that table in a variable named _htbl_. Those two columns contain the data requested for this heatmap, column 8 is the party size and column 4 is the meal.
@@ -668,11 +670,9 @@ heatmap(hmap,
 
 ```
 
-### Demonstration: Heat Map
-
 The following script creates a heat map for the [USJudgeRating] data frame.
 
-* Line 1: _R_ can store data in several different formats and many, like vector and data frame, are used by other tutorials in this series. Heat maps require data to be in a matrix format and this line converts the first 20 lines, out of 43, in the data frame into a matrix named _hmap_. Notice how the first twenty lines in that data frame are specified, using _[20:1,]_. Finally, _x_ is the name of the parameter in the `as.matrix` function that receives the input data.
+* Line 1: _R_ can store data in several different formats and many, like vector and data frame, are used by other tutorials in this series. Heat maps require data to be in a matrix format and this line converts the first 20 lines, out of 43, in the data frame into a matrix named _hmap_. Notice how the first twenty lines in that data frame are specified, using _[20:1,]_ which also reverses their order so they are alphabetized. Finally, _x_ is the name of the parameter in the `as.matrix` function that receives the input data.
 * Line 2: This is the start of the heat map function. This line instructs _R_ to create a heat map from the _hmap_ matrix. _R_ designates the input variable for _heatmap_ to be _x_.
 * Line 3: The main title of the heatmap is _US Judge Ratings_.
 * Line 4: The x-axis is labeled _Characteristic_.
@@ -700,7 +700,7 @@ heatmap(x = hmap,
 
 Create a heat map for the [attitude] data frame. The heat map should meet these specifications: 
 
-* Scope: Only the first 20 lines from the data frame should be used
+* Scope: Only the first 20 lines from the data frame should be used, like _attitude[1:20,]_
 * Title: Clerical Employees Attitude
 * X-axis label: Characteristic
 * Y-axis label: Department 
@@ -725,7 +725,7 @@ Create a heat map for the [attitude] data frame. The heat map should meet these 
 hmap <- as.matrix(x = attitude[1:20,])
 
 heatmap(x = hmap,
-  main = "Clarical Employees Attitude",
+  main = "Clerical Employees Attitude",
   xlab = "Characteristic",
   ylab = "Department",
   Rowv=NA,
@@ -740,7 +740,7 @@ heatmap(x = hmap,
 
 ex51neq <- "Check to be sure the x value is attitude[1:20,] -- don't forget the comma after 20!"
 ex52neq <- "The x value should be hmap."
-ex53neq <- "The main title should be Clarical Employees Attitude."
+ex53neq <- "The main title should be Clerical Employees Attitude."
 ex54neq <- "The x-axis label should be Characteristic."
 ex55neq <- "The y-axis label should be Department."
 ex56neq <- "Rowv should be NA."
@@ -759,7 +759,7 @@ state51 %>%
   check_arg("x") %>% 
   check_equal(incorrect_msg = ex52neq)
 
-state51 %>% 
+state51 %>%
   check_arg("main") %>%
   check_equal(incorrect_msg = ex53neq)
 
@@ -793,9 +793,9 @@ success_msg("Good Job! Heat maps display a lot of data in a compact way.")
 
 ### Activity: Heat Map
 
-Using the [cafe] dataset, create a heat map that compares the number of people dining at each _meal_ (breakfast, lunch, dinner, other) for each _day_ (Monday, Tuesday, etc.). The goal is to find the most/least popular meal for each day of the week. (Tip: _meal_ is column 4 and _day_ is column 3 in the data frame.) The chart should meet these specifications:
+Using the [cafe] dataset, create a heat map that compares the number of people dining at each _meal_ (breakfast, lunch, dinner, other) for each _day_ (Monday, Tuesday, etc.). The goal is to find the most/least popular meal for each day of the week. (Tip: _day_ is column 3 and _meal_ is column 4 in the data frame.) The chart should meet these specifications:
 
-* Scope: This data frame is small so do not restrict the number of lines used
+* Scope: This data frame is small so do not restrict the number of lines used, but specify the columns needed like _cafe[,c(3,4)]_
 * Title: Heat Map
 * X-axis label: Meal
 * Y-axis label: Day
@@ -855,7 +855,7 @@ plot(x = table(mtcars$gear, mtcars$cyl),
 
 ### Guided Practice: Mosaic Plot
 
-Create a mosaic plot for the [infert] data frame. The plot should meet these specifications:
+Create a mosaic plot for the induced and education vectors in the [infert] data frame. The plot should meet these specifications:
 
 * Title: Compare Induced and Education
 * X-axis label: Number Induced
@@ -879,7 +879,7 @@ plot(x = table(infert$induced, infert$education),
   main = "Compare Induced and Education",
   xlab = "Number Induced",
   ylab = "Education Level",
-  col = terrain.colors(3)
+  col = terrain.colors(5)
   )
 
 ```
@@ -890,7 +890,7 @@ ex61neq <- "Check to be sure the x value is a table of induced and education."
 ex62neq <- "The main title should be Compare Induced and Education."
 ex63neq <- "The x-axis label should be Number Induced."
 ex64neq <- "The y-axis label should be Education Level."
-ex65neq <- "The color should be terrain.colors(3)."
+ex65neq <- "The color should be terrain.colors(5)."
 
 state61 <- ex() %>% 
   check_function("plot")
@@ -899,7 +899,7 @@ state61 %>%
   check_arg("x") %>% 
   check_equal(incorrect_msg = ex61neq)
 
-state61 %>% 
+state61 %>%
   check_arg("main") %>%
   check_equal(incorrect_msg = ex62neq)
 
