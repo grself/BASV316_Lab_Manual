@@ -77,8 +77,8 @@ barplot(height = table(mtcars$gear),
 Using the [stackloss] data frame, create a bar plot for _Water.Temp_. The plot should meet these specifications: 
 
 * Title: Water Temperature
-* X-Axis lable: Number
-* Y-Axis lable: Temperature
+* X-Axis label: Number
+* Y-Axis label: Temperature
 * Color: nine colors from the _cm.colors_ palette
 
 ```{r 070.04, ex="sc070.01", type="pre-exercise-code"}
@@ -221,8 +221,8 @@ barplot(height = table(mtcars$cyl, mtcars$gear),
 Using the [infert] data frame, create a clustered bar plot for _spontaneous_ grouped by _education_. The plot should meet these specifications: 
 
 * Title: Spontaneous Cases by Education Level
-* X-Axis lable: Education Level
-* Y-Axis lable: Count
+* X-Axis label: Education Level
+* Y-Axis label: Count
 * Color: three values from a custom palette using orange to white
 * Legend title: Spontaneous
 
@@ -377,8 +377,8 @@ It should be evident that the bar plot created in the above script is not very u
 Using the [infert] data frame, create a stacked bar plot for _induced_ grouped by _education_. The plot should meet these specifications: 
 
 * Title: Induced Cases by Education Level
-* X-Axis lable: Education Level
-* Y-Axis lable: Count
+* X-Axis label: Education Level
+* Y-Axis label: Count
 * Color: three values from a custom palette using purple to white
 * Legend title: Induced
 
