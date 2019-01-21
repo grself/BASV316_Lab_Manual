@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>BASV 316 R Lab Manual</title>
+  <meta name="description" content="This is the lab manual for the University of Arizona South BASV 316 class.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="BASV 316 R Lab Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the lab manual for the University of Arizona South BASV 316 class." />
+  <meta name="github-repo" content="grself/BASV316_Lab_Manual" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="BASV 316 R Lab Manual" />
+  
+  <meta name="twitter:description" content="This is the lab manual for the University of Arizona South BASV 316 class." />
+  
+
+<meta name="author" content="George Self">
+
+
+<meta name="date" content="2019-01-03">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="visualizing-descriptives.html">
+<link rel="next" href="visualizing-frequency.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src=https://cdn.datacamp.com/datacamp-light-latest.min.js></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="fontawesome.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BASV 316 R Lab Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="1" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#types-of-data"><i class="fa fa-check"></i><b>1.1</b> Types of Data</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-r-command-line"><i class="fa fa-check"></i><b>1.2</b> The R Command Line</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#demonstration-the-r-command-line"><i class="fa fa-check"></i><b>1.2.1</b> Demonstration: The R Command Line</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#guided-practice-the-r-command-line"><i class="fa fa-check"></i><b>1.2.2</b> Guided Practice: The R Command Line</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#activity-the-r-command-line"><i class="fa fa-check"></i><b>1.2.3</b> Activity: The R Command Line</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-frames"><i class="fa fa-check"></i><b>1.3</b> Data Frames</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#demonstration-data-frames"><i class="fa fa-check"></i><b>1.3.1</b> Demonstration: Data Frames</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#guided-practice-data-frames"><i class="fa fa-check"></i><b>1.3.2</b> Guided Practice: Data Frames</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#activity-data-frames"><i class="fa fa-check"></i><b>1.3.3</b> Activity: Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#deliverable"><i class="fa fa-check"></i><b>1.4</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>II Descriptive Statistics</b></span></li>
+<li class="chapter" data-level="2" data-path="central-measures.html"><a href="central-measures.html"><i class="fa fa-check"></i><b>2</b> Central Measures</a><ul>
+<li class="chapter" data-level="2.1" data-path="central-measures.html"><a href="central-measures.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="central-measures.html"><a href="central-measures.html#n"><i class="fa fa-check"></i><b>2.2</b> N</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-n"><i class="fa fa-check"></i><b>2.2.1</b> Demonstration: N</a></li>
+<li class="chapter" data-level="2.2.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-n"><i class="fa fa-check"></i><b>2.2.2</b> Guided Practice: N</a></li>
+<li class="chapter" data-level="2.2.3" data-path="central-measures.html"><a href="central-measures.html#activity-n"><i class="fa fa-check"></i><b>2.2.3</b> Activity: N</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="central-measures.html"><a href="central-measures.html#mean"><i class="fa fa-check"></i><b>2.3</b> Mean</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-mean"><i class="fa fa-check"></i><b>2.3.1</b> Demonstration: Mean</a></li>
+<li class="chapter" data-level="2.3.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-mean"><i class="fa fa-check"></i><b>2.3.2</b> Guided Practice: Mean</a></li>
+<li class="chapter" data-level="2.3.3" data-path="central-measures.html"><a href="central-measures.html#activity-mean"><i class="fa fa-check"></i><b>2.3.3</b> Activity: Mean</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="central-measures.html"><a href="central-measures.html#trimmed-mean"><i class="fa fa-check"></i><b>2.4</b> Trimmed Mean</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-trimmed-mean"><i class="fa fa-check"></i><b>2.4.1</b> Demonstration: Trimmed Mean</a></li>
+<li class="chapter" data-level="2.4.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-trimmed-mean"><i class="fa fa-check"></i><b>2.4.2</b> Guided Practice: Trimmed Mean</a></li>
+<li class="chapter" data-level="2.4.3" data-path="central-measures.html"><a href="central-measures.html#activity-trimmed-mean"><i class="fa fa-check"></i><b>2.4.3</b> Activity: Trimmed Mean</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="central-measures.html"><a href="central-measures.html#median"><i class="fa fa-check"></i><b>2.5</b> Median</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-median"><i class="fa fa-check"></i><b>2.5.1</b> Demonstration: Median</a></li>
+<li class="chapter" data-level="2.5.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-median"><i class="fa fa-check"></i><b>2.5.2</b> Guided Practice: Median</a></li>
+<li class="chapter" data-level="2.5.3" data-path="central-measures.html"><a href="central-measures.html#activity-median"><i class="fa fa-check"></i><b>2.5.3</b> Activity: Median</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="central-measures.html"><a href="central-measures.html#mode"><i class="fa fa-check"></i><b>2.6</b> Mode</a></li>
+<li class="chapter" data-level="2.7" data-path="central-measures.html"><a href="central-measures.html#deliverable-1"><i class="fa fa-check"></i><b>2.7</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dispersion.html"><a href="dispersion.html"><i class="fa fa-check"></i><b>3</b> Dispersion</a><ul>
+<li class="chapter" data-level="3.1" data-path="dispersion.html"><a href="dispersion.html#introduction-1"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="dispersion.html"><a href="dispersion.html#range"><i class="fa fa-check"></i><b>3.2</b> Range</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-range"><i class="fa fa-check"></i><b>3.2.1</b> Demonstration: Range</a></li>
+<li class="chapter" data-level="3.2.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-range"><i class="fa fa-check"></i><b>3.2.2</b> Guided Practice: Range</a></li>
+<li class="chapter" data-level="3.2.3" data-path="dispersion.html"><a href="dispersion.html#activity-range"><i class="fa fa-check"></i><b>3.2.3</b> Activity: Range</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="dispersion.html"><a href="dispersion.html#quartiles"><i class="fa fa-check"></i><b>3.3</b> Quartiles</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-quartiles"><i class="fa fa-check"></i><b>3.3.1</b> Demonstration: Quartiles</a></li>
+<li class="chapter" data-level="3.3.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-quartiles"><i class="fa fa-check"></i><b>3.3.2</b> Guided Practice: Quartiles</a></li>
+<li class="chapter" data-level="3.3.3" data-path="dispersion.html"><a href="dispersion.html#activity-quartiles"><i class="fa fa-check"></i><b>3.3.3</b> Activity: Quartiles</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="dispersion.html"><a href="dispersion.html#iqr-inter-quartile-range"><i class="fa fa-check"></i><b>3.4</b> IQR (Inter-Quartile Range)</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-iqr-inter-quartile-range"><i class="fa fa-check"></i><b>3.4.1</b> Demonstration: IQR (Inter-Quartile Range)</a></li>
+<li class="chapter" data-level="3.4.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-iqr-inter-quartile-range"><i class="fa fa-check"></i><b>3.4.2</b> Guided Practice: IQR (Inter-Quartile Range)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="dispersion.html"><a href="dispersion.html#activity-inter-quartile-range-iqr"><i class="fa fa-check"></i><b>3.4.3</b> Activity: Inter-Quartile Range (IQR)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="dispersion.html"><a href="dispersion.html#standard-deviation"><i class="fa fa-check"></i><b>3.5</b> Standard Deviation</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-standard-deviation"><i class="fa fa-check"></i><b>3.5.1</b> Demonstration: Standard Deviation</a></li>
+<li class="chapter" data-level="3.5.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-standard-deviation"><i class="fa fa-check"></i><b>3.5.2</b> Guided Practice: Standard Deviation</a></li>
+<li class="chapter" data-level="3.5.3" data-path="dispersion.html"><a href="dispersion.html#activity-standard-deviation"><i class="fa fa-check"></i><b>3.5.3</b> Activity: Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="dispersion.html"><a href="dispersion.html#deliverable-2"><i class="fa fa-check"></i><b>3.6</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html"><i class="fa fa-check"></i><b>4</b> Visualizing Descriptives</a><ul>
+<li class="chapter" data-level="4.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#introduction-2"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#about-visualizations"><i class="fa fa-check"></i><b>4.2</b> About Visualizations</a></li>
+<li class="chapter" data-level="4.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#boxplots"><i class="fa fa-check"></i><b>4.3</b> Boxplots</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#demonstration-boxplots"><i class="fa fa-check"></i><b>4.3.1</b> Demonstration: Boxplots</a></li>
+<li class="chapter" data-level="4.3.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#guided-practice-boxplot"><i class="fa fa-check"></i><b>4.3.2</b> Guided Practice: Boxplot</a></li>
+<li class="chapter" data-level="4.3.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#activity-boxplot"><i class="fa fa-check"></i><b>4.3.3</b> Activity: Boxplot</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#outliers"><i class="fa fa-check"></i><b>4.4</b> Outliers</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#demonstration-outliers"><i class="fa fa-check"></i><b>4.4.1</b> Demonstration: Outliers</a></li>
+<li class="chapter" data-level="4.4.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#guided-practice-outliers"><i class="fa fa-check"></i><b>4.4.2</b> Guided Practice: Outliers</a></li>
+<li class="chapter" data-level="4.4.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#activity-outliers"><i class="fa fa-check"></i><b>4.4.3</b> Activity: Outliers</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#grouped-boxplots"><i class="fa fa-check"></i><b>4.5</b> Grouped Boxplots</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#demonstration-grouped-boxplots-with-color"><i class="fa fa-check"></i><b>4.5.1</b> Demonstration: Grouped Boxplots With Color</a></li>
+<li class="chapter" data-level="4.5.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#guided-practice-grouped-boxplot-with-color"><i class="fa fa-check"></i><b>4.5.2</b> Guided Practice: Grouped Boxplot With Color</a></li>
+<li class="chapter" data-level="4.5.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#activity-grouped-boxplot-with-color"><i class="fa fa-check"></i><b>4.5.3</b> Activity: Grouped Boxplot With Color</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#deliverable-3"><i class="fa fa-check"></i><b>4.6</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>III Counting</b></span></li>
+<li class="chapter" data-level="5" data-path="frequency-table.html"><a href="frequency-table.html"><i class="fa fa-check"></i><b>5</b> Frequency Table</a><ul>
+<li class="chapter" data-level="5.1" data-path="frequency-table.html"><a href="frequency-table.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="frequency-table.html"><a href="frequency-table.html#frequency-table-1"><i class="fa fa-check"></i><b>5.2</b> Frequency Table</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-frequency-table"><i class="fa fa-check"></i><b>5.2.1</b> Demonstration: Frequency Table</a></li>
+<li class="chapter" data-level="5.2.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-frequency-table"><i class="fa fa-check"></i><b>5.2.2</b> Guided Practice: Frequency Table</a></li>
+<li class="chapter" data-level="5.2.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-frequency-table"><i class="fa fa-check"></i><b>5.2.3</b> Activity: Frequency Table</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="frequency-table.html"><a href="frequency-table.html#margins"><i class="fa fa-check"></i><b>5.3</b> Margins</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-margins"><i class="fa fa-check"></i><b>5.3.1</b> Demonstration: Margins</a></li>
+<li class="chapter" data-level="5.3.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-margins"><i class="fa fa-check"></i><b>5.3.2</b> Guided Practice: Margins</a></li>
+<li class="chapter" data-level="5.3.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-margins"><i class="fa fa-check"></i><b>5.3.3</b> Activity: Margins</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="frequency-table.html"><a href="frequency-table.html#proportion-table-proptable"><i class="fa fa-check"></i><b>5.4</b> Proportion Table (Proptable)</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-proportion-table-proptable"><i class="fa fa-check"></i><b>5.4.1</b> Demonstration: Proportion Table (Proptable)</a></li>
+<li class="chapter" data-level="5.4.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-proportion-table-proptable"><i class="fa fa-check"></i><b>5.4.2</b> Guided Practice: Proportion Table (Proptable)</a></li>
+<li class="chapter" data-level="5.4.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-proportion-table-proptable"><i class="fa fa-check"></i><b>5.4.3</b> Activity: Proportion Table (Proptable)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="frequency-table.html"><a href="frequency-table.html#crosstab"><i class="fa fa-check"></i><b>5.5</b> Crosstab</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-crosstab"><i class="fa fa-check"></i><b>5.5.1</b> Demonstration: Crosstab</a></li>
+<li class="chapter" data-level="5.5.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-crosstab"><i class="fa fa-check"></i><b>5.5.2</b> Guided Practice: Crosstab</a></li>
+<li class="chapter" data-level="5.5.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-crosstab"><i class="fa fa-check"></i><b>5.5.3</b> Activity: Crosstab</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="frequency-table.html"><a href="frequency-table.html#multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6</b> Multi-Dimensional Crosstab</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6.1</b> Demonstration: Multi-dimensional Crosstab</a></li>
+<li class="chapter" data-level="5.6.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6.2</b> Guided Practice: Multi-dimensional Crosstab</a></li>
+<li class="chapter" data-level="5.6.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6.3</b> Activity: Multi-dimensional Crosstab</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="frequency-table.html"><a href="frequency-table.html#calculated-crosstab"><i class="fa fa-check"></i><b>5.7</b> Calculated Crosstab</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-calculated-crosstab"><i class="fa fa-check"></i><b>5.7.1</b> Demonstration: Calculated Crosstab</a></li>
+<li class="chapter" data-level="5.7.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-calculated-crosstab"><i class="fa fa-check"></i><b>5.7.2</b> Guided Practice: Calculated Crosstab</a></li>
+<li class="chapter" data-level="5.7.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-calculated-crosstab"><i class="fa fa-check"></i><b>5.7.3</b> Activity: Calculated Crosstab</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="frequency-table.html"><a href="frequency-table.html#rounding"><i class="fa fa-check"></i><b>5.8</b> Rounding</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstrate-rounding"><i class="fa fa-check"></i><b>5.8.1</b> Demonstrate: Rounding</a></li>
+<li class="chapter" data-level="5.8.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-rounding"><i class="fa fa-check"></i><b>5.8.2</b> Guided Practice: Rounding</a></li>
+<li class="chapter" data-level="5.8.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-rounding"><i class="fa fa-check"></i><b>5.8.3</b> Activity: Rounding</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="frequency-table.html"><a href="frequency-table.html#deliverable-4"><i class="fa fa-check"></i><b>5.9</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html"><i class="fa fa-check"></i><b>6</b> Visualizing Frequency</a><ul>
+<li class="chapter" data-level="6.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#introduction-4"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#bar-plot"><i class="fa fa-check"></i><b>6.2</b> Bar Plot</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-bar-plot"><i class="fa fa-check"></i><b>6.2.1</b> Demonstration: Bar Plot</a></li>
+<li class="chapter" data-level="6.2.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-bar-plot"><i class="fa fa-check"></i><b>6.2.2</b> Guided Practice: Bar Plot</a></li>
+<li class="chapter" data-level="6.2.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-bar-plot"><i class="fa fa-check"></i><b>6.2.3</b> Activity: Bar Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#clustered-bar-plot"><i class="fa fa-check"></i><b>6.3</b> Clustered Bar Plot</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-clustered-bar-plot"><i class="fa fa-check"></i><b>6.3.1</b> Demonstration: Clustered Bar Plot</a></li>
+<li class="chapter" data-level="6.3.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-clustered-bar-plot"><i class="fa fa-check"></i><b>6.3.2</b> Guided Practice: Clustered Bar Plot</a></li>
+<li class="chapter" data-level="6.3.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-clustered-bar-plot"><i class="fa fa-check"></i><b>6.3.3</b> Activity: Clustered Bar Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#stacked-bar-plot"><i class="fa fa-check"></i><b>6.4</b> Stacked Bar Plot</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-stacked-bar-plot"><i class="fa fa-check"></i><b>6.4.1</b> Demonstration: Stacked Bar Plot</a></li>
+<li class="chapter" data-level="6.4.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-stacked-bar-plot"><i class="fa fa-check"></i><b>6.4.2</b> Guided Practice: Stacked Bar Plot</a></li>
+<li class="chapter" data-level="6.4.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-stacked-bar-plot"><i class="fa fa-check"></i><b>6.4.3</b> Activity: Stacked Bar Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#pie-chart"><i class="fa fa-check"></i><b>6.5</b> Pie Chart</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-pie-chart"><i class="fa fa-check"></i><b>6.5.1</b> Demonstration: Pie Chart</a></li>
+<li class="chapter" data-level="6.5.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-pie-chart"><i class="fa fa-check"></i><b>6.5.2</b> Guided Practice: Pie Chart</a></li>
+<li class="chapter" data-level="6.5.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-pie-chart"><i class="fa fa-check"></i><b>6.5.3</b> Activity: Pie Chart</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#heat-map"><i class="fa fa-check"></i><b>6.6</b> Heat Map</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-heat-map"><i class="fa fa-check"></i><b>6.6.1</b> Demonstration: Heat Map</a></li>
+<li class="chapter" data-level="6.6.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-heat-map"><i class="fa fa-check"></i><b>6.6.2</b> Guided Practice: Heat Map</a></li>
+<li class="chapter" data-level="6.6.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-heat-map"><i class="fa fa-check"></i><b>6.6.3</b> Activity: Heat Map</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#mosiac-plot"><i class="fa fa-check"></i><b>6.7</b> Mosiac Plot</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-mosaic-plot"><i class="fa fa-check"></i><b>6.7.1</b> Demonstration: Mosaic Plot</a></li>
+<li class="chapter" data-level="6.7.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-mosaic-plot"><i class="fa fa-check"></i><b>6.7.2</b> Guided Practice: Mosaic Plot</a></li>
+<li class="chapter" data-level="6.7.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-mosaic-plot"><i class="fa fa-check"></i><b>6.7.3</b> Activity: Mosaic Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#deliverable-5"><i class="fa fa-check"></i><b>6.8</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>IV Relationships</b></span></li>
+<li class="chapter" data-level="7" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>7</b> Correlation and Regression</a><ul>
+<li class="chapter" data-level="7.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#introduction-5"><i class="fa fa-check"></i><b>7.1</b> Introduction</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#causation"><i class="fa fa-check"></i><b>7.1.1</b> Causation</a></li>
+<li class="chapter" data-level="7.1.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#definition"><i class="fa fa-check"></i><b>7.1.2</b> Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#pearsons-r"><i class="fa fa-check"></i><b>7.2</b> Pearson’s r</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-pearsons-r"><i class="fa fa-check"></i><b>7.2.1</b> Demonstration: Pearson’s r</a></li>
+<li class="chapter" data-level="7.2.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-pearsons-r"><i class="fa fa-check"></i><b>7.2.2</b> Guided Practice: Pearson’s r</a></li>
+<li class="chapter" data-level="7.2.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-pearsons-r"><i class="fa fa-check"></i><b>7.2.3</b> Activity: Pearson’s r</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#categorical-data"><i class="fa fa-check"></i><b>7.3</b> Categorical Data</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-spearmans-rho"><i class="fa fa-check"></i><b>7.3.1</b> Demonstration: Spearman’s rho</a></li>
+<li class="chapter" data-level="7.3.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-spearmans-rho"><i class="fa fa-check"></i><b>7.3.2</b> Guided Practice: Spearman’s rho</a></li>
+<li class="chapter" data-level="7.3.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-spearmans-rho"><i class="fa fa-check"></i><b>7.3.3</b> Activity: Spearman’s rho</a></li>
+<li class="chapter" data-level="7.3.4" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-kendalls-tau"><i class="fa fa-check"></i><b>7.3.4</b> Demonstration: Kendall’s tau</a></li>
+<li class="chapter" data-level="7.3.5" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-kendalls-tau"><i class="fa fa-check"></i><b>7.3.5</b> Guided Practice: Kendall’s tau</a></li>
+<li class="chapter" data-level="7.3.6" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-kendalls-tau"><i class="fa fa-check"></i><b>7.3.6</b> Activity: Kendall’s tau</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#selecting-a-correlation-test"><i class="fa fa-check"></i><b>7.4</b> Selecting a Correlation Test</a></li>
+<li class="chapter" data-level="7.5" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#significance"><i class="fa fa-check"></i><b>7.5</b> Significance</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-significance"><i class="fa fa-check"></i><b>7.5.1</b> Demonstration: Significance</a></li>
+<li class="chapter" data-level="7.5.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-significance"><i class="fa fa-check"></i><b>7.5.2</b> Guided Practice: Significance</a></li>
+<li class="chapter" data-level="7.5.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-significance"><i class="fa fa-check"></i><b>7.5.3</b> Activity: Significance</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#prediction-by-regression"><i class="fa fa-check"></i><b>7.6</b> Prediction by Regression</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-prediction-by-regression"><i class="fa fa-check"></i><b>7.6.1</b> Demonstration: Prediction by Regression</a></li>
+<li class="chapter" data-level="7.6.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-prediction-by-regression"><i class="fa fa-check"></i><b>7.6.2</b> Guided Practice: Prediction by Regression</a></li>
+<li class="chapter" data-level="7.6.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-prediction-by-regression"><i class="fa fa-check"></i><b>7.6.3</b> Activity: Prediction by Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#deliverable-6"><i class="fa fa-check"></i><b>7.7</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>8</b> Visualizing Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="visualizing-data.html"><a href="visualizing-data.html#introduction-6"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="visualizing-data.html"><a href="visualizing-data.html#histogram"><i class="fa fa-check"></i><b>8.2</b> Histogram</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-histogram"><i class="fa fa-check"></i><b>8.2.1</b> Demonstration: Histogram</a></li>
+<li class="chapter" data-level="8.2.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-histogram"><i class="fa fa-check"></i><b>8.2.2</b> Guided Practice: Histogram</a></li>
+<li class="chapter" data-level="8.2.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-histogram"><i class="fa fa-check"></i><b>8.2.3</b> Activity: Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="visualizing-data.html"><a href="visualizing-data.html#density-plot"><i class="fa fa-check"></i><b>8.3</b> Density Plot</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-density-plot"><i class="fa fa-check"></i><b>8.3.1</b> Demonstration: Density Plot</a></li>
+<li class="chapter" data-level="8.3.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-density-plot"><i class="fa fa-check"></i><b>8.3.2</b> Guided Practice: Density Plot</a></li>
+<li class="chapter" data-level="8.3.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-8.2-density-plot"><i class="fa fa-check"></i><b>8.3.3</b> Activity 8.2: Density Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="visualizing-data.html"><a href="visualizing-data.html#line-graph"><i class="fa fa-check"></i><b>8.4</b> Line Graph</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-line-graph"><i class="fa fa-check"></i><b>8.4.1</b> Demonstration: Line Graph</a></li>
+<li class="chapter" data-level="8.4.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-line-graph"><i class="fa fa-check"></i><b>8.4.2</b> Guided Practice: Line Graph</a></li>
+<li class="chapter" data-level="8.4.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-line-graph"><i class="fa fa-check"></i><b>8.4.3</b> Activity: Line Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="visualizing-data.html"><a href="visualizing-data.html#plot"><i class="fa fa-check"></i><b>8.5</b> Plot</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="visualizing-data.html"><a href="visualizing-data.html#plot-point-types"><i class="fa fa-check"></i><b>8.5.1</b> Plot Point Types</a></li>
+<li class="chapter" data-level="8.5.2" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-plot"><i class="fa fa-check"></i><b>8.5.2</b> Demonstration: Plot</a></li>
+<li class="chapter" data-level="8.5.3" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-plot"><i class="fa fa-check"></i><b>8.5.3</b> Guided Practice: Plot</a></li>
+<li class="chapter" data-level="8.5.4" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-line-of-best-fit"><i class="fa fa-check"></i><b>8.5.4</b> Activity: Line of Best Fit</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="visualizing-data.html"><a href="visualizing-data.html#q-q-plot"><i class="fa fa-check"></i><b>8.6</b> Q-Q Plot</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-q-q-plot"><i class="fa fa-check"></i><b>8.6.1</b> Demonstration: Q-Q Plot</a></li>
+<li class="chapter" data-level="8.6.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-q-q-plot"><i class="fa fa-check"></i><b>8.6.2</b> Guided Practice: Q-Q Plot</a></li>
+<li class="chapter" data-level="8.6.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-q-q-plot"><i class="fa fa-check"></i><b>8.6.3</b> Activity: Q-Q Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="visualizing-data.html"><a href="visualizing-data.html#deliverable-7"><i class="fa fa-check"></i><b>8.7</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>V Hypothesis Testing</b></span></li>
+<li class="chapter" data-level="9" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html"><i class="fa fa-check"></i><b>9</b> Parametric Hypothesis Testing</a><ul>
+<li class="chapter" data-level="9.1" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#introduction-7"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#hypothesis"><i class="fa fa-check"></i><b>9.2</b> Hypothesis</a></li>
+<li class="chapter" data-level="9.3" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#anova"><i class="fa fa-check"></i><b>9.3</b> ANOVA</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#demonstration-anova"><i class="fa fa-check"></i><b>9.3.1</b> Demonstration: ANOVA</a></li>
+<li class="chapter" data-level="9.3.2" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#guided-practice-anova"><i class="fa fa-check"></i><b>9.3.2</b> Guided Practice: ANOVA</a></li>
+<li class="chapter" data-level="9.3.3" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#activity-anova"><i class="fa fa-check"></i><b>9.3.3</b> Activity: ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#t-test"><i class="fa fa-check"></i><b>9.4</b> T-test</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#demonstration-t-test"><i class="fa fa-check"></i><b>9.4.1</b> Demonstration: T-test</a></li>
+<li class="chapter" data-level="9.4.2" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#guided-practice-t-test"><i class="fa fa-check"></i><b>9.4.2</b> Guided Practice: T-test</a></li>
+<li class="chapter" data-level="9.4.3" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#activity-t-test"><i class="fa fa-check"></i><b>9.4.3</b> Activity: T-test</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#deliverable-8"><i class="fa fa-check"></i><b>9.5</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html"><i class="fa fa-check"></i><b>10</b> Non-Parametric Hypothesis Testing</a><ul>
+<li class="chapter" data-level="10.1" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#introduction-8"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
+<li class="chapter" data-level="10.2" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2</b> Kruskal-Wallis H</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#demonstration-kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2.1</b> Demonstration: Kruskal-Wallis H</a></li>
+<li class="chapter" data-level="10.2.2" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#guided-practice-kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2.2</b> Guided Practice: Kruskal-Wallis H</a></li>
+<li class="chapter" data-level="10.2.3" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#activity-kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2.3</b> Activity: Kruskal-Wallis H</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#mann-whitney-u"><i class="fa fa-check"></i><b>10.3</b> Mann-Whitney U</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#demonstration-mann-whitney-u"><i class="fa fa-check"></i><b>10.3.1</b> Demonstration: Mann-Whitney U</a></li>
+<li class="chapter" data-level="10.3.2" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#guided-practice-mann-whitney-u"><i class="fa fa-check"></i><b>10.3.2</b> Guided Practice: Mann-Whitney U</a></li>
+<li class="chapter" data-level="10.3.3" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#activity-mann-whitney-u"><i class="fa fa-check"></i><b>10.3.3</b> Activity: Mann-Whitney U</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#deliverable-9"><i class="fa fa-check"></i><b>10.4</b> Deliverable</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="about-colors.html"><a href="about-colors.html"><i class="fa fa-check"></i><b>A</b> About Colors</a><ul>
+<li class="chapter" data-level="A.1" data-path="about-colors.html"><a href="about-colors.html#basic-colors"><i class="fa fa-check"></i><b>A.1</b> Basic Colors</a></li>
+<li class="chapter" data-level="A.2" data-path="about-colors.html"><a href="about-colors.html#color-palette"><i class="fa fa-check"></i><b>A.2</b> Color Palette</a></li>
+<li class="chapter" data-level="A.3" data-path="about-colors.html"><a href="about-colors.html#custom-palette"><i class="fa fa-check"></i><b>A.3</b> Custom Palette</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html"><i class="fa fa-check"></i><b>B</b> About The Data Frames</a><ul>
+<li class="chapter" data-level="B.1" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#airmiles"><i class="fa fa-check"></i><b>B.1</b> airmiles</a></li>
+<li class="chapter" data-level="B.2" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#airquality"><i class="fa fa-check"></i><b>B.2</b> airquality</a></li>
+<li class="chapter" data-level="B.3" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#attenu"><i class="fa fa-check"></i><b>B.3</b> attenu</a></li>
+<li class="chapter" data-level="B.4" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#attitude"><i class="fa fa-check"></i><b>B.4</b> attitude</a></li>
+<li class="chapter" data-level="B.5" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#beaver"><i class="fa fa-check"></i><b>B.5</b> beaver</a></li>
+<li class="chapter" data-level="B.6" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#cafe"><i class="fa fa-check"></i><b>B.6</b> cafe</a></li>
+<li class="chapter" data-level="B.7" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#cars"><i class="fa fa-check"></i><b>B.7</b> cars</a></li>
+<li class="chapter" data-level="B.8" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#chickweight"><i class="fa fa-check"></i><b>B.8</b> ChickWeight</a></li>
+<li class="chapter" data-level="B.9" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#chickwts"><i class="fa fa-check"></i><b>B.9</b> chickwts</a></li>
+<li class="chapter" data-level="B.10" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#co2"><i class="fa fa-check"></i><b>B.10</b> CO2</a></li>
+<li class="chapter" data-level="B.11" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#esoph"><i class="fa fa-check"></i><b>B.11</b> esoph</a></li>
+<li class="chapter" data-level="B.12" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#faithful"><i class="fa fa-check"></i><b>B.12</b> faithful</a></li>
+<li class="chapter" data-level="B.13" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#infert"><i class="fa fa-check"></i><b>B.13</b> infert</a></li>
+<li class="chapter" data-level="B.14" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#iris"><i class="fa fa-check"></i><b>B.14</b> iris</a></li>
+<li class="chapter" data-level="B.15" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#lakehuron"><i class="fa fa-check"></i><b>B.15</b> LakeHuron</a></li>
+<li class="chapter" data-level="B.16" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#ldeaths"><i class="fa fa-check"></i><b>B.16</b> ldeaths</a></li>
+<li class="chapter" data-level="B.17" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#longley"><i class="fa fa-check"></i><b>B.17</b> longley</a></li>
+<li class="chapter" data-level="B.18" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#lynx"><i class="fa fa-check"></i><b>B.18</b> lynx</a></li>
+<li class="chapter" data-level="B.19" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#morley"><i class="fa fa-check"></i><b>B.19</b> morley</a></li>
+<li class="chapter" data-level="B.20" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#mtcars"><i class="fa fa-check"></i><b>B.20</b> mtcars</a></li>
+<li class="chapter" data-level="B.21" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#npk"><i class="fa fa-check"></i><b>B.21</b> npk</a></li>
+<li class="chapter" data-level="B.22" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#plantgrowth"><i class="fa fa-check"></i><b>B.22</b> PlantGrowth</a></li>
+<li class="chapter" data-level="B.23" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#presidents"><i class="fa fa-check"></i><b>B.23</b> presidents</a></li>
+<li class="chapter" data-level="B.24" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#rivers"><i class="fa fa-check"></i><b>B.24</b> rivers</a></li>
+<li class="chapter" data-level="B.25" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#rock"><i class="fa fa-check"></i><b>B.25</b> rock</a></li>
+<li class="chapter" data-level="B.26" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#sleep"><i class="fa fa-check"></i><b>B.26</b> sleep</a></li>
+<li class="chapter" data-level="B.27" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#stackloss"><i class="fa fa-check"></i><b>B.27</b> stackloss</a></li>
+<li class="chapter" data-level="B.28" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#state.division"><i class="fa fa-check"></i><b>B.28</b> state.division</a></li>
+<li class="chapter" data-level="B.29" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#sunspots"><i class="fa fa-check"></i><b>B.29</b> sunspots</a></li>
+<li class="chapter" data-level="B.30" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#swiss"><i class="fa fa-check"></i><b>B.30</b> swiss</a></li>
+<li class="chapter" data-level="B.31" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#titanic"><i class="fa fa-check"></i><b>B.31</b> Titanic</a></li>
+<li class="chapter" data-level="B.32" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#trees"><i class="fa fa-check"></i><b>B.32</b> trees</a></li>
+<li class="chapter" data-level="B.33" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#ucb-admissions"><i class="fa fa-check"></i><b>B.33</b> UCB Admissions</a></li>
+<li class="chapter" data-level="B.34" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#ukgas"><i class="fa fa-check"></i><b>B.34</b> UKgas</a></li>
+<li class="chapter" data-level="B.35" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#usaccdeaths"><i class="fa fa-check"></i><b>B.35</b> USAccDeaths</a></li>
+<li class="chapter" data-level="B.36" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#usarrests"><i class="fa fa-check"></i><b>B.36</b> USArrests</a></li>
+<li class="chapter" data-level="B.37" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#usjudgeratings"><i class="fa fa-check"></i><b>B.37</b> USJudgeRatings</a></li>
+<li class="chapter" data-level="B.38" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#warpbreaks"><i class="fa fa-check"></i><b>B.38</b> warpbreaks</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BASV 316 R Lab Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="frequency-table" class="section level1">
+<h1><span class="header-section-number">Lab 5</span> Frequency Table</h1>
+<div id="introduction-3" class="section level2">
+<h2><span class="header-section-number">5.1</span> Introduction</h2>
+<p>Categorical data items are normally reported in frequency tables and crosstabs where the counts for a particular item are displayed. The only difference between these two types of tables is in the number of dimensions they display, frequency tables display only a single variable while a crosstab displays two variables. Both of these types of tables are commonly used to display polling data during the run-up to an election and would list things like the number of voters who would support some proposition (frequency table) or that same data broken out by party affiliation, sex, age, or some other category (crosstab). This lab explores both types of table.</p>
+<hr />
+</div>
+<div id="frequency-table-1" class="section level2">
+<h2><span class="header-section-number">5.2</span> Frequency Table</h2>
+<p>A frequency table is a one-dimensional table that lists a count of the number of times that some categorical data item appears in a vector. As an example, consider the following table which lists the number of cars for each number of cylinders in the <a href="about-the-data-frames.html#mtcars">mtcars</a> data frame.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">table</span>(mtcars<span class="op">$</span>cyl)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt;  4  6  8 </span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; 11  7 14</span></a></code></pre></div>
+<p>This table shows that 11 cars in the data frame had 4 cylinders, 7 had 6 cylinders, and 14 had eight cylinders.</p>
+<p>Frequency tables are only useful for categorical data-type items. To illustrate why this is true, imagine creating a survey for all of the students at the University of Arizona and including “age” (continuous-type data) as one of the survey questions. Attempting to create a frequency table for the ages of the respondents would have, potentially, more than 65 columns since student ages would range from about 15 to more than 80 and each column would report the number of students for that particular age. While <em>R</em> could create a frequency table that large it would have so many columns that it would be virtually unusable. Normally, if continuous-type data need to be displayed in a table the data are grouped in some way, like ages 15-19, 20-24, etc, so there would be a manageable number of group counts to display.</p>
+<div id="demonstration-frequency-table" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Demonstration: Frequency Table</h3>
+<p>The following script creates a frequency table.</p>
+<ul>
+<li>Line 2: Create a simple frequency table listing the number of cars in the <a href="about-the-data-frames.html#mtcars">mtcars</a> data frame by the forward gears.</li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENvdW50IG9mIGNhcnMgYnkgZ2VhcnNcbnRhYmxlKG10Y2FycyRnZWFyKVxuIn0=
+</div>
+</div>
+<div id="guided-practice-frequency-table" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Guided Practice: Frequency Table</h3>
+<p>Using the <a href="about-the-data-frames.html#chickwts">chickwts</a> data frame, create a frequency table for <em>feed</em>.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuIyBObyBwcmUtZXhlcmNpc2UgY29kZSBmb3IgdGhpcyBleGVyY2lzZVxuIiwic2FtcGxlIjoiIyBDcmVhdGUgYSBmcmVxdWVuY3kgdGFibGUgZm9yIGZlZWQgaW4gdGhlIGNoaWNrd3RzIGRhdGEgZnJhbWUuXG5cbiIsInNvbHV0aW9uIjoiXG50YWJsZShjaGlja3d0cyRmZWVkKVxuIiwic2N0IjoiXG5leDFuZXEgPC0gXCJDaGVjayB0aGF0IHRoZSB2YXJpYWJsZSBmb3IgdGhlIHRhYmxlIGZ1bmN0aW9uIGlzIGNoaWNrd3RzJGZlZWQuXCJcblxuZXgoKSAlPiUgXG4gIGNoZWNrX2Z1bmN0aW9uKFwidGFibGVcIikgJT4lIFxuICBjaGVja19hcmcoXCIuLi5cIikgJT4lIFxuICBjaGVja19lcXVhbChpbmNvcnJlY3RfbXNnID0gZXgxbmVxKVxuXG5zdWNjZXNzX21zZyhcIkdvb2Qgd29yayEgQSBmcmVxdWVuY3kgdGFibGUgaXMgYSBmb3VuZGF0aW9uYWwgY2F0ZWdvcmljYWwgZGF0YSBhbmFseXNpcyB0b29sIVwiKVxuIn0=
+</div>
+</div>
+<div id="activity-frequency-table" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Activity: Frequency Table</h3>
+<p>Using the <a href="about-the-data-frames.html#cafe">cafe</a> data frame, generate a frequency table for <em>meal</em>. Copy/paste the table in the deliverable document for this lab.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuY2FmZSA8LSByZWFkLmNzdignaHR0cHM6Ly9sYWJzLmJhc3YzMTYuY29tL2NhZmUuY3N2JylcbiIsInNhbXBsZSI6IiMgVXNpbmcgdGhlIGNhZmUgZGF0YSBmcmFtZSwgZ2VuZXJhdGUgYSBmcmVxdWVuY3kgdGFibGUgZm9yIG1lYWwuXG5cblxuIn0=
+</div>
+<hr />
+</div>
+</div>
+<div id="margins" class="section level2">
+<h2><span class="header-section-number">5.3</span> Margins</h2>
+<p>It is often useful to include the total number of items counted in a frequency table and that is provided by the <code>addmargins</code> function. As an example, consider the following table which is the same frequency table shown above but includes the total number of cars in the <a href="about-the-data-frames.html#mtcars">mtcars</a> data frame.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">addmargins</span>(<span class="kw">table</span>(mtcars<span class="op">$</span>cyl))</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt;   4   6   8 Sum </span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt;  11   7  14  32</span></a></code></pre></div>
+<div id="demonstration-margins" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Demonstration: Margins</h3>
+<p>The following script creates a frequency table with margins</p>
+<ul>
+<li>Line 2: Create a frequency table with margins listing the number of cars in the <a href="about-the-data-frames.html#mtcars">mtcars</a> data frame by the forward gears.</li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENvdW50IG9mIGNhcnMgYnkgZ2VhcnNcbmFkZG1hcmdpbnModGFibGUobXRjYXJzJGdlYXIpKVxuIn0=
+</div>
+</div>
+<div id="guided-practice-margins" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Guided Practice: Margins</h3>
+<p>Using the <a href="about-the-data-frames.html#chickwts">chickwts</a> data frame, create a frequency table with margins for <em>feed</em>.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuIyBObyBwcmUtZXhlcmNpc2UgY29kZSBmb3IgdGhpcyBleGVyY2lzZVxuIiwic2FtcGxlIjoiIyBDcmVhdGUgYSBmcmVxdWVuY3kgdGFibGUgd2l0aCBtYXJnaW5zIGZvciBmZWVkIGluIHRoZSBjaGlja3d0cyBkYXRhIGZyYW1lLlxuXG4iLCJzb2x1dGlvbiI6IlxuYWRkbWFyZ2lucyh0YWJsZShjaGlja3d0cyRmZWVkKSlcbiIsInNjdCI6IlxuZXgyMW5lcSA8LSBcIkNoZWNrIHRoYXQgdGhlIGFkZG1hcmdpbnMgZnVuY3Rpb24gY2FsbHMgdGFibGUoY2hpY2t3dHMkZmVlZCkuXCJcblxuZXgoKSAlPiVcbiAgY2hlY2tfZnVuY3Rpb24oXCJhZGRtYXJnaW5zXCIpICU+JVxuICBjaGVja19yZXN1bHQoKSAlPiVcbiAgY2hlY2tfZXF1YWwoaW5jb3JyZWN0X21zZyA9IGV4MjFuZXEpXG5cbnN1Y2Nlc3NfbXNnKFwiUGVyZmVjdCEgTWFyZ2lucyBwcm92aWRlIGEgbGl0dGxlIGV4dHJhIGluZm9ybWF0aW9uIHRvIGEgZnJlcXVlbmN5IHRhYmxlIVwiKVxuIn0=
+</div>
+</div>
+<div id="activity-margins" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Activity: Margins</h3>
+<p>Using the <a href="about-the-data-frames.html#cafe">cafe</a> data frame, generate a frequency table for <em>meal</em>, include the margins on this table. Copy/paste the table in the deliverable document for this lab.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuY2FmZSA8LSByZWFkLmNzdignaHR0cHM6Ly9sYWJzLmJhc3YzMTYuY29tL2NhZmUuY3N2JylcbiIsInNhbXBsZSI6IiMgVXNpbmcgdGhlIGNhZmUgZGF0YSBmcmFtZSwgZ2VuZXJhdGUgYSBmcmVxdWVuY3kgdGFibGUgZm9yIG1lYWwsIGluY2x1ZGUgdGhlIG1hcmdpbnMgb24gdGhpcyB0YWJsZS5cblxuXG4ifQ==
+</div>
+<hr />
+</div>
+</div>
+<div id="proportion-table-proptable" class="section level2">
+<h2><span class="header-section-number">5.4</span> Proportion Table (Proptable)</h2>
+<p>Occasionally, researchers prefer to present percentages rather than raw numbers since those are easier to quickly interpret. Here is a proportion table of the number of cylinders for cars in the <a href="about-the-data-frames.html#mtcars">mtcars</a> data frame.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">prop.table</span>(<span class="kw">table</span>(mtcars<span class="op">$</span>cyl)) <span class="op">*</span><span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt;      4      6      8 </span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; 34.375 21.875 43.750</span></a></code></pre></div>
+<p>Thus, about 44% of the cars have eight cylinders.</p>
+<div id="demonstration-proportion-table-proptable" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Demonstration: Proportion Table (Proptable)</h3>
+<p>The following script creates a proportion table with the results presented in percent format.</p>
+<ul>
+<li>Line 2: Create a simple proportion table listing the number of cars in the <a href="about-the-data-frames.html#mtcars">mtcars</a> data frame by the forward gears.</li>
+<li>Line 4: Multiply all values in the proportion table by 100 to make it a percentage.</li>
+</ul>
+<p><span class="grshilite">This demonstration contains two different examples of generating a proportion table.</span></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFByb3BvcnRpb24gdGFibGVcbnByb3AudGFibGUodGFibGUobXRjYXJzJGdlYXIpKVxuXG4jIE11bHRpcGx5IGFsbCBwcm9wb3J0aW9ucyBieSAxMDAgdG8gbWFrZSB0aGVtIHBlcmNlbnRhZ2VzXG5wcm9wLnRhYmxlKHRhYmxlKG10Y2FycyRnZWFyKSkgKiAxMDBcbiJ9
+</div>
+</div>
+<div id="guided-practice-proportion-table-proptable" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> Guided Practice: Proportion Table (Proptable)</h3>
+<p>Using the <a href="about-the-data-frames.html#chickwts">chickwts</a> data frame, create a proportion table for <em>feed</em>. The proportions should be multiplied by 100.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuIyBObyBwcmUtZXhlcmNpc2UgY29kZSBmb3IgdGhpcyBleGVyY2lzZVxuIiwic2FtcGxlIjoiIyBDcmVhdGUgYSBwcm9wb3J0aW9uIHRhYmxlIGZvciBmZWVkIGluIHRoZSBjaGlja3d0cyBkYXRhIGZyYW1lLlxuXG4iLCJzb2x1dGlvbiI6IlxucHJvcC50YWJsZSh0YWJsZShjaGlja3d0cyRmZWVkKSkgKiAxMDBcbiIsInNjdCI6IlxuZXgzMW5lcSA8LSBcIkNoZWNrIHRoYXQgdGhlIHByb3AudGFibGUgZnVuY3Rpb24gY2FsbHMgdGFibGUoY2hpY2t3dHMkZmVlZCkuXCJcbmV4MzJuZXEgPC0gXCJDaGVjayB0aGF0IHRoZSByZXN1bHRzIG9mIHRoZSBwcm9wLnRhYmxlIGZ1bmN0aW9uIGFyZSBtdWx0aXBsaWVkIGJ5IDEwMC5cIlxuXG5leCgpICU+JVxuICBjaGVja19mdW5jdGlvbihcInByb3AudGFibGVcIikgJT4lXG4gIGNoZWNrX3Jlc3VsdCgpICU+JVxuICBjaGVja19lcXVhbChpbmNvcnJlY3RfbXNnID0gZXgzMW5lcSlcblxuZXgoKSAlPiVcbiAgY2hlY2tfY29kZShcIi4rWypdXFxcXHMqMTAwXCIsIG1pc3NpbmdfbXNnID0gZXgzMm5lcSlcblxuc3VjY2Vzc19tc2coXCJQZXJmZWN0ISBBIHByb3BvcnRpb24gdGFibGUgZm9ybWF0dGVkIGxpa2UgdGhpcyBpcyBhIHZhbHVhYmxlIHRvb2whXCIpXG4ifQ==
+</div>
+</div>
+<div id="activity-proportion-table-proptable" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> Activity: Proportion Table (Proptable)</h3>
+<p>Using the <a href="about-the-data-frames.html#cafe">cafe</a> data frame, generate a proportion table (proptable) for <em>meal</em>. The proportions should be multiplied by 100. Copy/paste the table in the deliverable document for this lab.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuY2FmZSA8LSByZWFkLmNzdignaHR0cHM6Ly9sYWJzLmJhc3YzMTYuY29tL2NhZmUuY3N2JylcbiIsInNhbXBsZSI6IiMgVXNpbmcgdGhlIGNhZmUgZGF0YSBmcmFtZSwgZ2VuZXJhdGUgYSBnZW5lcmF0ZSBhIHByb3BvcnRpb24gdGFibGUgKHByb3B0YWJsZSkgZm9yIG1lYWwuIFRoZSBwcm9wb3J0aW9ucyBzaG91bGQgYmUgbXVsdGlwbGllZCBieSAxMDAuXG5cblxuIn0=
+</div>
+<hr />
+</div>
+</div>
+<div id="crosstab" class="section level2">
+<h2><span class="header-section-number">5.5</span> Crosstab</h2>
+<p>A crosstab (sometimes called a contingency table or pivot table), is a table of frequencies used to display the relationship between two nominal or ordinal variables. As an example of a crosstab, consider a table from the <a href="about-the-data-frames.html#mtcars">mtcars</a> data frame that lists the number of cars by forward gears and the number of cylinders.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">xtabs</span>(<span class="op">~</span>gear<span class="op">+</span>cyl, <span class="dt">data=</span>mtcars)</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt;     cyl</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; gear  4  6  8</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt;    3  1  2 12</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt;    4  8  4  0</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt;    5  2  1  2</span></a></code></pre></div>
+<p>In this case, one car had a four cylinder engine and three forward gears while 12 cars had eight cylinders and three forward gears. By using a crosstab, a researcher can determine the frequency of some incident (number of cars) by two different criteria (gears and cylinders).</p>
+<p>Here is a second example from the <a href="about-the-data-frames.html#esoph">esoph</a> data frame.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">xtabs</span>(<span class="op">~</span>agegp<span class="op">+</span>ncases, <span class="dt">data=</span>esoph)</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt;        ncases</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt; agegp    0  1  2  3  4  5  6  8  9 17</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt;   25-34 14  1  0  0  0  0  0  0  0  0</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co">#&gt;   35-44 10  2  2  1  0  0  0  0  0  0</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">#&gt;   45-54  3  2  2  2  3  2  2  0  0  0</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co">#&gt;   55-64  0  0  2  4  3  2  2  1  2  0</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co">#&gt;   65-74  1  4  2  2  2  2  1  0  0  1</span></a>
+<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="co">#&gt;   75+    1  7  3  0  0  0  0  0  0  0</span></a></code></pre></div>
+<p>Notice that there were few cases of esophageal cancer among people under the age of 45 but the number of cases increased between the ages of 45 and 74, with a peak in the 55-64 age group.</p>
+<div id="demonstration-crosstab" class="section level3">
+<h3><span class="header-section-number">5.5.1</span> Demonstration: Crosstab</h3>
+<p>The following script demonstrates how to create a crosstab.</p>
+<ul>
+<li>Line 2: The <code>xtabs</code> command (for “Cross Tabs”) creates a crosstab for the variables entered. It is important to notice the tilde character in this function. In many <em>R</em> commands the tilde is used to separate two parts of a formula. The part before the tilde are the data values to be acted upon and the second part are the grouping vectors. In Line 2, there are no data values specified so <em>R</em> will simply count the number of times the various groups show up. The “row” group is listed first and then the “column” group. For example, “gear 3 - cylinder 8” appear 12 times in the data frame.</li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENvdW50IG9mIGdlYXJzIGFuZCBjeWxpbmRlcnNcbnh0YWJzKH5tdGNhcnMkZ2VhcittdGNhcnMkY3lsKVxuIn0=
+</div>
+</div>
+<div id="guided-practice-crosstab" class="section level3">
+<h3><span class="header-section-number">5.5.2</span> Guided Practice: Crosstab</h3>
+<p>Using the <a href="about-the-data-frames.html#esoph">esoph</a> data frame, create a crosstab for <em>tobgp</em> (tobacco group) and <em>alcgp</em> (alcohol group).</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuIyBObyBwcmUtZXhlcmNpc2UgY29kZSBmb3IgdGhpcyBleGVyY2lzZVxuIiwic2FtcGxlIjoiIyBDcmVhdGUgYSBjcm9zc3RhYnMgdGFibGUgZm9yIHRvYmdwIGFuZCBhbGNncCBpbiB0aGUgZXNvcGggZGF0YSBmcmFtZS5cbiIsInNvbHV0aW9uIjoiXG54dGFicyh+ZXNvcGgkdG9iZ3ArZXNvcGgkYWxjZ3ApXG4iLCJzY3QiOiJcbmV4NDFuZXEgPC0gXCJUaGVyZSBzaG91bGQgYmUgYSB0aWxkZSBmb2xsb3dlZCBieSB0aGUgdHdvIGdyb3VwaW5nIHZhcmlhYmxlcy5cIlxuXG5leCgpICU+JSBcbiAgY2hlY2tfZnVuY3Rpb24oXCJ4dGFic1wiKSAlPiUgXG4gIGNoZWNrX2FyZyhcImZvcm11bGFcIikgJT4lIFxuICBjaGVja19lcXVhbChpbmNvcnJlY3RfbXNnID0gZXg0MW5lcSlcblxuc3VjY2Vzc19tc2coXCJQZXJmZWN0ISBUaGlzIHR5cGUgb2YgY3Jvc3N0YWIgaXMgdmVyeSBjb21tb25seSB1c2VkIVwiKVxuIn0=
+</div>
+</div>
+<div id="activity-crosstab" class="section level3">
+<h3><span class="header-section-number">5.5.3</span> Activity: Crosstab</h3>
+<p>Using the <a href="about-the-data-frames.html#cafe">cafe</a> data frame, create a crosstab of <em>food</em> and <em>svc</em>. Copy/paste the table in the deliverable document for this lab.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuY2FmZSA8LSByZWFkLmNzdignaHR0cHM6Ly9sYWJzLmJhc3YzMTYuY29tL2NhZmUuY3N2JylcbiIsInNhbXBsZSI6IiMgVXNpbmcgdGhlIGNhZmUgZGF0YSBmcmFtZSwgY3JlYXRlIGEgY3Jvc3N0YWIgb2YgZm9vZCBhbmQgc3ZjLlxuXG5cbiJ9
+</div>
+<hr />
+</div>
+</div>
+<div id="multi-dimensional-crosstab" class="section level2">
+<h2><span class="header-section-number">5.6</span> Multi-Dimensional Crosstab</h2>
+<p>A crosstab can contain more than two dimensions. As an example, consider the <a href="about-the-data-frames.html#mtcars">mtcars</a> data frame. A researcher wanted to know if there is any relationship between the number of forward gears, the number of cylinders in the engine (that is, the size of the engine), and whether the car had a manual or automatic transmission. Here is the crosstab that was created.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">xtabs</span>(<span class="op">~</span>cyl<span class="op">+</span>gear<span class="op">+</span>am, <span class="dt">data=</span>mtcars)</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; , , am = 0</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt;    gear</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt; cyl  3  4  5</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt;   4  1  2  0</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt;   6  2  2  0</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt;   8 12  0  0</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co">#&gt; , , am = 1</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt;    gear</span></a>
+<a class="sourceLine" id="cb8-14" data-line-number="14"><span class="co">#&gt; cyl  3  4  5</span></a>
+<a class="sourceLine" id="cb8-15" data-line-number="15"><span class="co">#&gt;   4  0  6  2</span></a>
+<a class="sourceLine" id="cb8-16" data-line-number="16"><span class="co">#&gt;   6  0  2  1</span></a>
+<a class="sourceLine" id="cb8-17" data-line-number="17"><span class="co">#&gt;   8  0  0  2</span></a></code></pre></div>
+<p>When <em>am</em> is 0 (which is the code for an automatic transmission) there were no cars with five forward gears and when <em>am</em> is 1 (manual transmission) there were no cars with three forward gears.</p>
+<div id="demonstration-multi-dimensional-crosstab" class="section level3">
+<h3><span class="header-section-number">5.6.1</span> Demonstration: Multi-dimensional Crosstab</h3>
+<p>The following script demonstrates how to create a multi-dimensional crosstab.</p>
+<ul>
+<li>Line 2: The <code>xtabs</code> command creates a crosstab for the variables entered. In this case, there is nothing on the left side of the tilde so <em>R</em> will return a count of the various categories. Since there are three grouping variables, <em>gear</em>, <em>cyl</em>, and <em>am</em>, <em>R</em> will count instances for all three variables. For example, “gear 4” and “cylinder 4” appear together 2 times when the transmission is 0 and 6 times when the transmission is 1. Note that a <em>data = mtcars</em> parameter is also specified so the <code>$</code> operator does not need to be used for each variable. This makes the formula easier to read.</li>
+<li>Line 5: This is another example of multi-dimensional crosstab.</li>
+</ul>
+<p><span class="grshilite">This demonstration contains two different examples of generating a multi-dimensional crosstab.</span></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENvdW50IG9mIGdlYXJzIGFuZCBjeWxpbmRlcnMgYnkgdHJhbnNtaXNzaW9uXG54dGFicyh+Z2VhcitjeWwrYW0sIGRhdGEgPSBtdGNhcnMpXG5cbiMgQ291bnQgb2YgY2FyYnMgYW5kIGN5bGluZGVycyBieSBlbmdpbmUgdHlwZVxueHRhYnMofmNhcmIrY3lsK3ZzLCBkYXRhID0gbXRjYXJzKVxuIn0=
+</div>
+</div>
+<div id="guided-practice-multi-dimensional-crosstab" class="section level3">
+<h3><span class="header-section-number">5.6.2</span> Guided Practice: Multi-dimensional Crosstab</h3>
+<p>Using the <a href="about-the-data-frames.html#esoph">esoph</a> data frame, create a crosstab for <em>tobgp</em> (tobacco group), <em>alcgp</em> (alcohol group), and <em>agegp</em> (age group).</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuIyBObyBwcmUtZXhlcmNpc2UgY29kZSBmb3IgdGhpcyBleGVyY2lzZVxuIiwic2FtcGxlIjoiIyBDcmVhdGUgYSBjcm9zc3RhYnMgdGFibGUgZm9yIHRvYmdwLCBhbGNncCwgYW5kIGFnZWdwIGluIHRoZSBlc29waCBkYXRhIGZyYW1lLlxuIiwic29sdXRpb24iOiJcbnh0YWJzKH50b2JncCthbGNncCthZ2VncCwgZGF0YT1lc29waClcbiIsInNjdCI6IlxuZXg1MW5lcSA8LSBcIlRoZXJlIHNob3VsZCBiZSBhIHRpbGRlIGZvbGxvd2VkIGJ5IHRoZSB0aHJlZSBncm91cGluZyB2YXJpYWJsZXMuXCJcbmV4NTJuZXEgPC0gXCJCZSBzdXJlIGVzb3BoIGlzIHNwZWNpZmllZCBhcyB0aGUgZGF0YS5cIlxuXG5mdW5zdGF0ZSA8LSBleCgpICU+JSBjaGVja19mdW5jdGlvbihcInh0YWJzXCIpXG5mdW5zdGF0ZSAlPiUgXG4gIGNoZWNrX2FyZyhcImZvcm11bGFcIikgJT4lIFxuICBjaGVja19lcXVhbChpbmNvcnJlY3RfbXNnID0gZXg1MW5lcSlcblxuZnVuc3RhdGUgJT4lIFxuICBjaGVja19hcmcoXCJkYXRhXCIpICU+JSBcbiAgY2hlY2tfZXF1YWwoaW5jb3JyZWN0X21zZyA9IGV4NTJuZXEpXG5cbnN1Y2Nlc3NfbXNnKFwiUGVyZmVjdCEgQSBtdWx0aS1kaW1lbnNpb25hbCBjcm9zc3RhYiBpcyB2ZXJ5IHVzZWZ1bCFcIilcbiJ9
+</div>
+</div>
+<div id="activity-multi-dimensional-crosstab" class="section level3">
+<h3><span class="header-section-number">5.6.3</span> Activity: Multi-dimensional Crosstab</h3>
+<p>Using the <a href="about-the-data-frames.html#cafe">cafe</a> data frame, create a crosstab of <em>food</em> and <em>svc</em> when grouped by <em>sex</em>. Copy/paste the table in the deliverable document for this lab.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuY2FmZSA8LSByZWFkLmNzdignaHR0cHM6Ly9sYWJzLmJhc3YzMTYuY29tL2NhZmUuY3N2JylcbiIsInNhbXBsZSI6IiMgVXNpbmcgdGhlIGNhZmUgZGF0YSBmcmFtZSwgY3JlYXRlIGEgY3Jvc3N0YWIgb2YgZm9vZCBhbmQgc3ZjIHdoZW4gZ3JvdXBlZCBieSBzZXguXG5cblxuIn0=
+</div>
+<hr />
+</div>
+</div>
+<div id="calculated-crosstab" class="section level2">
+<h2><span class="header-section-number">5.7</span> Calculated Crosstab</h2>
+<p>Each of the crosstabs presented so far have displayed only counts of data; however, by using the <code>aggregate</code> function, a crosstab can also display calculated values, like the mean temperature for each summer month in the <a href="about-the-data-frames.html#airquality">airquality</a> data frame.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">aggregate</span>(Temp <span class="op">~</span><span class="st"> </span>Month, </a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">                <span class="dt">data =</span> airquality, </a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">                <span class="dt">FUN =</span> mean)</a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt;   Month     Temp</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; 1     5 65.54839</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; 2     6 79.10000</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt; 3     7 83.90323</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt; 4     8 83.96774</span></a>
+<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt; 5     9 76.90000</span></a></code></pre></div>
+<p>Though the above table has a number of calculated values the <em>R</em> command is only one line long.</p>
+<p>As another example, the mean horsepower for automobiles can be calculated by the number of forward gears and engine cylinders from the <a href="about-the-data-frames.html#mtcars">mtcars</a> data frame.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">aggregate</span>(hp <span class="op">~</span><span class="st"> </span>gear <span class="op">+</span><span class="st"> </span>cyl, </a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">          <span class="dt">data =</span> mtcars, </a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">          <span class="dt">FUN =</span> mean)</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt;   gear cyl       hp</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="co">#&gt; 1    3   4  97.0000</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">#&gt; 2    4   4  76.0000</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt; 3    5   4 102.0000</span></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co">#&gt; 4    3   6 107.5000</span></a>
+<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co">#&gt; 5    4   6 116.5000</span></a>
+<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt; 6    5   6 175.0000</span></a>
+<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="co">#&gt; 7    3   8 194.1667</span></a>
+<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="co">#&gt; 8    5   8 299.5000</span></a></code></pre></div>
+<div id="demonstration-calculated-crosstab" class="section level3">
+<h3><span class="header-section-number">5.7.1</span> Demonstration: Calculated Crosstab</h3>
+<p>The following script demonstrates how to create a calculated crosstab.</p>
+<ul>
+<li>Line 2: This line uses the <code>aggregate</code> command to calculate the mean displacement for each category of cylinders. Notice that this command has a tilde formula where displacement will be aggregated for each category of cylinders. The values to be calculated comes first (displacement) and the grouping variable comes second (cylinder). Next is the name of the dataset used, <a href="about-the-data-frames.html#mtcars">mtcars</a>. Finally, the statistical function is listed as <em>FUN = mean</em>. Note that the key word <em>FUN</em> is in capital letters. This aggregate function determines that four cylinder cars have a mean displacement of just over 105 cubic inches.</li>
+<li>Line 5: This line also calculates the mean displacement but groups the result by both number of cylinders and number of forward gears, creating a multi-dimensional calculated crosstab. It calculates that the mean displacement for four cylinder cars with three forward gears is just over 120 cubic inches.</li>
+</ul>
+<p><span class="grshilite">This demonstration contains two different examples of generating a calculated crosstab.</span></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIE1lYW4gb2YgZGlzcGxhY2VtZW50IGJ5IGN5bGluZGVyc1xuYWdncmVnYXRlKGRpc3B+Y3lsLCBkYXRhID0gbXRjYXJzLCBGVU4gPSBtZWFuKVxuXG4jIE1lYW4gb2YgZGlzcGxhY2VtZW50IGJ5IGN5bCBhbmQgZ2VhcnNcbmFnZ3JlZ2F0ZShkaXNwfmN5bCtnZWFyLCBkYXRhID0gbXRjYXJzLCBGVU4gPSBtZWFuKVxuIn0=
+</div>
+</div>
+<div id="guided-practice-calculated-crosstab" class="section level3">
+<h3><span class="header-section-number">5.7.2</span> Guided Practice: Calculated Crosstab</h3>
+<p>Using the <a href="about-the-data-frames.html#npk">npk</a> data frame, create a calculated crosstab for <em>N</em> (nitrogen), <em>P</em> (phosphate), and <em>K</em> (potassium). Aggregate the mean <em>yield</em> for all three vectors. <em>Notice that the vector names are capital letters.</em></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuIyBObyBwcmUtZXhlcmNpc2UgY29kZSBmb3IgdGhpcyBleGVyY2lzZVxuIiwic2FtcGxlIjoiIyBDcmVhdGUgYSBjYWxjdWxhdGVkIGNyb3NzdGFiIGZvciB0aGUgbWVhbiB5aWVsZCBmb3IgTiwgUCwgYW5kIEsgaW4gdGhlIG5wayBkYXRhIGZyYW1lLlxuXG4iLCJzb2x1dGlvbiI6IlxuYWdncmVnYXRlKHlpZWxkfk4rUCtLLCBkYXRhID0gbnBrLCBGVU4gPSBtZWFuKVxuIiwic2N0IjoiXG5leDYxbmVxIDwtIFwiWWllbGQgc2hvdWxkIGJlIGZvbGxvd2VkIGJ5IGEgdGlsZGUgdGhlbiB0aGUgdGhyZWUgZ3JvdXBpbmcgdmFyaWFibGVzLlwiXG5leDYybmVxIDwtIFwiQmUgc3VyZSBucGsgaXMgc3BlY2lmaWVkIGFzIHRoZSBkYXRhLlwiXG5leDYzbmVxIDwtIFwiQmUgc3VyZSBtZWFuIGlzIHNwZWNpZmllZCBhcyB0aGUgZnVuY3Rpb24uXCJcblxuc3RhdGU2IDwtIGV4KCkgJT4lIGNoZWNrX2Z1bmN0aW9uKFwiYWdncmVnYXRlXCIpXG5zdGF0ZTYgJT4lIFxuICBjaGVja19hcmcoXCJmb3JtdWxhXCIpICU+JSBcbiAgY2hlY2tfZXF1YWwoaW5jb3JyZWN0X21zZyA9IGV4NjFuZXEpXG5cbnN0YXRlNiAlPiUgXG4gIGNoZWNrX2FyZyhcImRhdGFcIikgJT4lIFxuICBjaGVja19lcXVhbChpbmNvcnJlY3RfbXNnID0gZXg2Mm5lcSlcblxuc3RhdGU2ICU+JSBcbiAgY2hlY2tfYXJnKFwiRlVOXCIpICU+JSBcbiAgY2hlY2tfZXF1YWwoaW5jb3JyZWN0X21zZyA9IGV4NjNuZXEpXG5cbnN1Y2Nlc3NfbXNnKFwiUGVyZmVjdCEgQ2FsY3VsYXRpbmcgdGhlIG1lYW4gb3Igb3RoZXIgdmFsdWUgbWFrZXMgY3Jvc3N0YWJzIG1vcmUgdXNlZnVsIVwiKVxuIn0=
+</div>
+</div>
+<div id="activity-calculated-crosstab" class="section level3">
+<h3><span class="header-section-number">5.7.3</span> Activity: Calculated Crosstab</h3>
+<p>Using the <a href="about-the-data-frames.html#cafe">cafe</a> data frame, create a calculated crosstab of the mean <em>tip</em> when grouped by <em>food</em> and <em>svc</em>. Copy/paste the table in the deliverable document for this lab.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuY2FmZSA8LSByZWFkLmNzdignaHR0cHM6Ly9sYWJzLmJhc3YzMTYuY29tL2NhZmUuY3N2JylcbiIsInNhbXBsZSI6IiMgVXNpbmcgdGhlIGNhZmUgZGF0YSBmcmFtZSwgY3JlYXRlIGEgY2FsY3VsYXRlZCBjcm9zc3RhYiBvZiB0aGUgbWVhbiB0aXAgZm9yIGZvb2QgYW5kIHN2Yy5cbiJ9
+</div>
+<hr />
+</div>
+</div>
+<div id="rounding" class="section level2">
+<h2><span class="header-section-number">5.8</span> Rounding</h2>
+<p>In order to facilite understanding, <em>R</em> makes it easy for researchers to round the results of calculations to whatever level is desired. The <em>R</em> command to round a number is <code>round()</code> where the number to be rounded is listed first in the parenthesis and the number of decimal places is listed second. So <code>round(1.3498, 2)</code> would be rounded to 1.35 and <code>round(1.3498, 1)</code> would be rounded to 1.3. The number to be rounded can be a calculated value rather than just a plain number.
+<span class="grshilite">It is important to note that even if the displayed value is rounded, <em>R</em> still uses the full decimal number for calculations. Also, when rounding a 5, “banker’s” rounding is used, that is, “go to the even digit.” So, 2.5 is rounded to 2.0 but 3.5 is rounded to 4.0.</span></p>
+<div id="demonstrate-rounding" class="section level3">
+<h3><span class="header-section-number">5.8.1</span> Demonstrate: Rounding</h3>
+<p>As an example, here is the same <code>aggregate</code> command used in the previous example, but with the results rounded. Notice how the <code>aggregate</code> command is the same, but it is wrapped in a <code>round</code> function to round off the calculations. In the first example the result is rounded to three decimal places and in the second example to two decimal places.</p>
+<p><span class="grshilite">This demonstration contains two different examples of rounding.</span></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIE1lYW4gb2YgZGlzcGxhY2VtZW50IGJ5IGN5bGluZGVyc1xucm91bmQoYWdncmVnYXRlKGRpc3B+Y3lsLCBkYXRhID0gbXRjYXJzLCBGVU4gPSBtZWFuKSwgZGlnaXRzID0gMylcblxuIyBNZWFuIG9mIGRpc3BsYWNlbWVudCBieSBjeWwgYW5kIGdlYXJzXG5yb3VuZChhZ2dyZWdhdGUoZGlzcH5jeWwrZ2VhciwgZGF0YSA9IG10Y2FycywgRlVOID0gbWVhbiksIGRpZ2l0cyA9IDIpXG4ifQ==
+</div>
+</div>
+<div id="guided-practice-rounding" class="section level3">
+<h3><span class="header-section-number">5.8.2</span> Guided Practice: Rounding</h3>
+<p>Using the <a href="about-the-data-frames.html#infert">infert</a> data frame, create a calculated crosstab for <em>case</em>, <em>induced</em>, and <em>spontaneous</em>. Aggregate the mean <em>age</em> for all three vectors. Round the results to two decimal places.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuIyBObyBwcmUtZXhlcmNpc2UgY29kZSBmb3IgdGhpcyBleGVyY2lzZVxuIiwic2FtcGxlIjoiIyBDcmVhdGUgYSBjYWxjdWxhdGVkIGNyb3NzdGFiIG9mIGFnZSByb3VuZGVkIHRvIHR3byBkZWNpbWFsIHBsYWNlcyBmb3IgY2FzZSwgaW5kdWNlZCwgYW5kIHNwb250YW5lb3VzIGluIHRoZSBpbmZlcnQgZGF0YSBmcmFtZS5cblxuIiwic29sdXRpb24iOiJcbnJvdW5kKGFnZ3JlZ2F0ZShhZ2V+Y2FzZStpbmR1Y2VkK3Nwb250YW5lb3VzLCBkYXRhPWluZmVydCwgRlVOPW1lYW4pLCBkaWdpdHMgPSAyKVxuIiwic2N0IjoiXG5leDcxbmVxIDwtIFwiSW4gYWdncmVnYXRlLCBhZ2Ugc2hvdWxkIGJlIGZvbGxvd2VkIGJ5IGEgdGlsZGUgdGhlbiB0aGUgdGhyZWUgZ3JvdXBpbmcgdmFyaWFibGVzLlwiXG5leDcybmVxIDwtIFwiSW4gYWdncmVnYXRlLCBiZSBzdXJlIGluZmVydCBpcyBzcGVjaWZpZWQgYXMgdGhlIGRhdGEuXCJcbmV4NzNuZXEgPC0gXCJJbiBhZ2dyZWdhdGUsIGJlIHN1cmUgbWVhbiBpcyBzcGVjaWZpZWQgYXMgdGhlIEZVTi5cIlxuZXg3NG5lcSA8LSBcIkNoZWNrIHRvIGJlIHN1cmUgeW91IGhhdmUgcm91bmRlZCB0byB0aGUgY29ycmVjdCBudW1iZXIgb2YgZGlnaXRzLlwiXG5cbnN0YXRlNzEgPC0gZXgoKSAlPiUgY2hlY2tfZnVuY3Rpb24oXCJhZ2dyZWdhdGVcIilcbnN0YXRlNzEgJT4lIFxuICBjaGVja19hcmcoXCJmb3JtdWxhXCIpICU+JSBcbiAgY2hlY2tfZXF1YWwoaW5jb3JyZWN0X21zZyA9IGV4NzFuZXEpXG5cbnN0YXRlNzEgJT4lIFxuICBjaGVja19hcmcoXCJkYXRhXCIpICU+JSBcbiAgY2hlY2tfZXF1YWwoaW5jb3JyZWN0X21zZyA9IGV4NzJuZXEpXG5cbnN0YXRlNzEgJT4lIFxuICBjaGVja19hcmcoXCJGVU5cIikgJT4lIFxuICBjaGVja19lcXVhbChpbmNvcnJlY3RfbXNnID0gZXg3M25lcSlcblxuc3RhdGU3MiA8LSBleCgpICU+JSBjaGVja19mdW5jdGlvbihcInJvdW5kXCIpXG5zdGF0ZTcyICU+JSBcbiAgY2hlY2tfcmVzdWx0KCkgJT4lXG4gIGNoZWNrX2VxdWFsKGluY29ycmVjdF9tc2cgPSBleDc0bmVxKVxuXG5cbnN1Y2Nlc3NfbXNnKFwiR29vZCBXb3JrISBBIHJvdW5kZWQgbWVhbiBpcyBtdWNoIGVhc2llciB0byB1c2UhXCIpXG4ifQ==
+</div>
+</div>
+<div id="activity-rounding" class="section level3">
+<h3><span class="header-section-number">5.8.3</span> Activity: Rounding</h3>
+<p>Using the <a href="about-the-data-frames.html#cafe">cafe</a> data frame, create a calculated crosstab of the mean <em>tip</em> when grouped by <em>food</em> and <em>svc</em>. Round the calculated values to two decimal places. Copy/paste the table in the deliverable document for this lab.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuY2FmZSA8LSByZWFkLmNzdignaHR0cHM6Ly9sYWJzLmJhc3YzMTYuY29tL2NhZmUuY3N2JylcbiIsInNhbXBsZSI6IiMgVXNpbmcgdGhlIGNhZmUgZGF0YSBmcmFtZSwgY3JlYXRlIGEgY2FsY3VsYXRlZCBjcm9zc3RhYiBvZiB0aGUgbWVhbiB0aXAgZm9yIGZvb2QgYW5kIHN2Yywgcm91bmRlZCB0byB0d28gZGVjaW1hbCBwbGFjZXMuXG5cblxuIn0=
+</div>
+<hr />
+</div>
+</div>
+<div id="deliverable-4" class="section level2">
+<h2><span class="header-section-number">5.9</span> Deliverable</h2>
+<p>Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and “Lab 5,” like “George Self Lab 5” and submit that document for grade.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualizing-descriptives.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualizing-frequency.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

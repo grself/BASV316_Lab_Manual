@@ -183,7 +183,7 @@ success_msg("Perfect! Correlations are one of the most important tools available
 ```
 
 
-### Activity: Pearson's r
+### Deliverable: Pearson's r
 
 Using the [cafe] data frame, determine the correlation between the _length_ of the meal and the _bill_ to see if longer meals tend to cost more. Because these are both ratio variables, use Pearson's _r_ as the correlation method. Record the correlation in the deliverable document for this lab.
 
@@ -315,7 +315,7 @@ success_msg("Perfect! Correlations are one of the most important tools available
 
 ```
 
-### Activity: Spearman's rho
+### Deliverable: Spearman's rho
 
 Using the [cafe] data frame, determine the correlation between _age_ and service (_svc_) to see if there is a relationship between a customer's age and their rating for the service. Because service contains ordered data, use Spearman's _rho_ as the correlation method. Record the correlation in the deliverable document for this lab.
 
@@ -400,7 +400,7 @@ success_msg("Perfect! Correlations are one of the most important tools available
 ```
 
 
-### Activity: Kendall's tau
+### Deliverable: Kendall's tau
 
 Using the [cafe] data frame, determine the correlation between the _meal_ eaten and distance driven (_miles_). Because meal is categorical but not ordered, use Kendall's _tau_ as the correlation method. Record the correlation in the deliverable document for this lab.
 
@@ -551,7 +551,7 @@ success_msg("Good job! With a p-value of less than 0.05, this correlation is sig
 ```
 
 
-### Activity: Significance
+### Deliverable: Significance
 
 Using the [cafe] data frame, calculate the p-value for the correlation between _age_ and _bill_. Since these are both continuous data, _pearson_ should be selected for the method. Record the p-value in the deliverable document for this lab.
 
@@ -711,7 +711,7 @@ success_msg("Perfect! So the predicted wind on an 80 degree day is 9.596533.")
 
 ```
 
-### Activity: Prediction by Regression
+### Deliverable: Prediction by Regression
 
 Using the [cafe] data frame, predict the tip from a customer who is 48 years old. Round the tip to the nearest penny. Record the prediction in the deliverable document for this lab.
 

@@ -90,7 +90,7 @@ success_msg("Perfect! Now you know how many items are in the 'critical' vector!"
 
 ```
 
-### Activity: N
+### Deliverable: N
 
 Using the [cafe] data, find the number of items in the _age_ vector and include that number in the deliverable document for this lab.
 
@@ -172,7 +172,7 @@ success_msg("Perfect! Now you know the mean for the 'critical' vector!")
 
 ```
 
-### Activity: Mean
+### Deliverable: Mean
 
 Using the [cafe] data frame, find the mean for _age_. Include that answer in the deliverable document for this lab.
 
@@ -273,7 +273,7 @@ success_msg("Perfect! You can calculate the trimmed mean of a vector!")
 
 ```
 
-### Activity: Trimmed Mean
+### Deliverable: Trimmed Mean
 
 Using the [cafe] data frame, find the mean for _miles_ with 15% trimmed. Include that answer in the deliverable document for this lab.
 
@@ -360,7 +360,7 @@ success_msg("Perfect! You can calculate the median of a vector!")
 
 ```
 
-### Activity: Median
+### Deliverable: Median
 
 Using the [cafe] data frame, find the median for _bill_. Include that answer in the deliverable document for this lab.
 

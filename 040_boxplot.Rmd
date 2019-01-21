@@ -168,7 +168,7 @@ success_msg("Good work! A boxplot is a foundational visualization!")
 
 ```
 
-### Activity: Boxplot
+### Deliverable: Boxplot
 
 Using the [cafe] data frame, generate a boxplot for _age_. Copy/paste the boxplot in the deliverable document for this lab.
 
@@ -255,7 +255,7 @@ success_msg("Perfect! Did you notice the four outlier values?")
 
 ```
 
-### Activity: Outliers
+### Deliverable: Outliers
 
 Using the [cafe] data frame, find the outliers for _miles_. Record those outliers in the deliverable document for this lab.
 
@@ -375,7 +375,7 @@ success_msg("Great Job! Colorful boxplots are very useful!")
 
 ```
 
-### Activity: Grouped Boxplot With Color
+### Deliverable: Grouped Boxplot With Color
 
 Using the [cafe] data frame, generate a boxplot of _length_ when grouped by _meal_ to see if there is any difference in the length of the meal by the type of meal eaten (breakfast, lunch, dinner, other). The boxplot should meet these specifications: 
 

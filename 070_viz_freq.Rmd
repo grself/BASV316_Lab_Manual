@@ -138,7 +138,7 @@ success_msg("Perfect! A bar plot like this makes frequency analysis easier.")
 
 ```
 
-### Activity: Bar Plot
+### Deliverable: Bar Plot
 
 Using the [cafe] data frame, create a bar plot for _meal_.  The plot should meet these specifications:
 
@@ -308,7 +308,7 @@ success_msg("Perfect! A clustered bar plot is useful for comparing variables.")
 ```
 
 
-### Activity: Clustered Bar Plot
+### Deliverable: Clustered Bar Plot
 
 Using the [cafe] data frame, create a clustered bar plot that shows the number of people who ate a given _meal_ by _sex_. The plot should have three clusters (male, female, other) and each of those three clusters should have four meals (breakfast, lunch, dinner, other). The plot should meet these specifications: 
 
@@ -462,7 +462,7 @@ success_msg("Good Job! A stacked bar plot is useful for comparing variables.")
 
 ```
 
-### Activity: Stacked Bar Plot
+### Deliverable: Stacked Bar Plot
 
 Using the [cafe] data frame, create a stacked bar chart that shows the number of people who ate a given _meal_ by _sex_. The chart should have three columns (male, female, other) and each of those three columns should have four meals (breakfast, lunch, dinner, other). The chart should meet these specifications:
 
@@ -585,7 +585,7 @@ success_msg("Perfect! Pie charts are very popular.")
 
 ```
 
-### Activity: Pie Chart
+### Deliverable: Pie Chart
 
 Using the [cafe] data frame, create a pie chart that shows the number of people who ate a given _meal_ (breakfast, lunch, dinner, other). The chart should meet these specifications:
 
@@ -791,7 +791,7 @@ success_msg("Good Job! Heat maps display a lot of data in a compact way.")
 
 ```
 
-### Activity: Heat Map
+### Deliverable: Heat Map
 
 Using the [cafe] dataset, create a heat map that compares the number of people dining at each _meal_ (breakfast, lunch, dinner, other) for each _day_ (Monday, Tuesday, etc.). The goal is to find the most/least popular meal for each day of the week. (Tip: _day_ is column 3 and _meal_ is column 4 in the data frame.) The chart should meet these specifications:
 
@@ -919,7 +919,7 @@ success_msg("Perfect! Mosaic plots are not too common but may be useful in some 
 
 ```
 
-### Activity: Mosaic Plot
+### Deliverable: Mosaic Plot
 
 Using the [cafe] dataset, create a mosaic plot that compares the number of people dining at each _meal_ (breakfast, lunch, dinner, other) to the rating for service (_svc_). The plot should meet these specifications:
 

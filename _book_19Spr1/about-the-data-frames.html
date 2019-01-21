@@ -1,0 +1,2796 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>BASV 316 R Lab Manual</title>
+  <meta name="description" content="This is the lab manual for the University of Arizona South BASV 316 class.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="BASV 316 R Lab Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the lab manual for the University of Arizona South BASV 316 class." />
+  <meta name="github-repo" content="grself/BASV316_Lab_Manual" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="BASV 316 R Lab Manual" />
+  
+  <meta name="twitter:description" content="This is the lab manual for the University of Arizona South BASV 316 class." />
+  
+
+<meta name="author" content="George Self">
+
+
+<meta name="date" content="2019-01-03">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="about-colors.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src=https://cdn.datacamp.com/datacamp-light-latest.min.js></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="fontawesome.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BASV 316 R Lab Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="1" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#types-of-data"><i class="fa fa-check"></i><b>1.1</b> Types of Data</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-r-command-line"><i class="fa fa-check"></i><b>1.2</b> The R Command Line</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#demonstration-the-r-command-line"><i class="fa fa-check"></i><b>1.2.1</b> Demonstration: The R Command Line</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#guided-practice-the-r-command-line"><i class="fa fa-check"></i><b>1.2.2</b> Guided Practice: The R Command Line</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#activity-the-r-command-line"><i class="fa fa-check"></i><b>1.2.3</b> Activity: The R Command Line</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-frames"><i class="fa fa-check"></i><b>1.3</b> Data Frames</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#demonstration-data-frames"><i class="fa fa-check"></i><b>1.3.1</b> Demonstration: Data Frames</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#guided-practice-data-frames"><i class="fa fa-check"></i><b>1.3.2</b> Guided Practice: Data Frames</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#activity-data-frames"><i class="fa fa-check"></i><b>1.3.3</b> Activity: Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#deliverable"><i class="fa fa-check"></i><b>1.4</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>II Descriptive Statistics</b></span></li>
+<li class="chapter" data-level="2" data-path="central-measures.html"><a href="central-measures.html"><i class="fa fa-check"></i><b>2</b> Central Measures</a><ul>
+<li class="chapter" data-level="2.1" data-path="central-measures.html"><a href="central-measures.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="central-measures.html"><a href="central-measures.html#n"><i class="fa fa-check"></i><b>2.2</b> N</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-n"><i class="fa fa-check"></i><b>2.2.1</b> Demonstration: N</a></li>
+<li class="chapter" data-level="2.2.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-n"><i class="fa fa-check"></i><b>2.2.2</b> Guided Practice: N</a></li>
+<li class="chapter" data-level="2.2.3" data-path="central-measures.html"><a href="central-measures.html#activity-n"><i class="fa fa-check"></i><b>2.2.3</b> Activity: N</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="central-measures.html"><a href="central-measures.html#mean"><i class="fa fa-check"></i><b>2.3</b> Mean</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-mean"><i class="fa fa-check"></i><b>2.3.1</b> Demonstration: Mean</a></li>
+<li class="chapter" data-level="2.3.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-mean"><i class="fa fa-check"></i><b>2.3.2</b> Guided Practice: Mean</a></li>
+<li class="chapter" data-level="2.3.3" data-path="central-measures.html"><a href="central-measures.html#activity-mean"><i class="fa fa-check"></i><b>2.3.3</b> Activity: Mean</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="central-measures.html"><a href="central-measures.html#trimmed-mean"><i class="fa fa-check"></i><b>2.4</b> Trimmed Mean</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-trimmed-mean"><i class="fa fa-check"></i><b>2.4.1</b> Demonstration: Trimmed Mean</a></li>
+<li class="chapter" data-level="2.4.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-trimmed-mean"><i class="fa fa-check"></i><b>2.4.2</b> Guided Practice: Trimmed Mean</a></li>
+<li class="chapter" data-level="2.4.3" data-path="central-measures.html"><a href="central-measures.html#activity-trimmed-mean"><i class="fa fa-check"></i><b>2.4.3</b> Activity: Trimmed Mean</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="central-measures.html"><a href="central-measures.html#median"><i class="fa fa-check"></i><b>2.5</b> Median</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-median"><i class="fa fa-check"></i><b>2.5.1</b> Demonstration: Median</a></li>
+<li class="chapter" data-level="2.5.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-median"><i class="fa fa-check"></i><b>2.5.2</b> Guided Practice: Median</a></li>
+<li class="chapter" data-level="2.5.3" data-path="central-measures.html"><a href="central-measures.html#activity-median"><i class="fa fa-check"></i><b>2.5.3</b> Activity: Median</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="central-measures.html"><a href="central-measures.html#mode"><i class="fa fa-check"></i><b>2.6</b> Mode</a></li>
+<li class="chapter" data-level="2.7" data-path="central-measures.html"><a href="central-measures.html#deliverable-1"><i class="fa fa-check"></i><b>2.7</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dispersion.html"><a href="dispersion.html"><i class="fa fa-check"></i><b>3</b> Dispersion</a><ul>
+<li class="chapter" data-level="3.1" data-path="dispersion.html"><a href="dispersion.html#introduction-1"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="dispersion.html"><a href="dispersion.html#range"><i class="fa fa-check"></i><b>3.2</b> Range</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-range"><i class="fa fa-check"></i><b>3.2.1</b> Demonstration: Range</a></li>
+<li class="chapter" data-level="3.2.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-range"><i class="fa fa-check"></i><b>3.2.2</b> Guided Practice: Range</a></li>
+<li class="chapter" data-level="3.2.3" data-path="dispersion.html"><a href="dispersion.html#activity-range"><i class="fa fa-check"></i><b>3.2.3</b> Activity: Range</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="dispersion.html"><a href="dispersion.html#quartiles"><i class="fa fa-check"></i><b>3.3</b> Quartiles</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-quartiles"><i class="fa fa-check"></i><b>3.3.1</b> Demonstration: Quartiles</a></li>
+<li class="chapter" data-level="3.3.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-quartiles"><i class="fa fa-check"></i><b>3.3.2</b> Guided Practice: Quartiles</a></li>
+<li class="chapter" data-level="3.3.3" data-path="dispersion.html"><a href="dispersion.html#activity-quartiles"><i class="fa fa-check"></i><b>3.3.3</b> Activity: Quartiles</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="dispersion.html"><a href="dispersion.html#iqr-inter-quartile-range"><i class="fa fa-check"></i><b>3.4</b> IQR (Inter-Quartile Range)</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-iqr-inter-quartile-range"><i class="fa fa-check"></i><b>3.4.1</b> Demonstration: IQR (Inter-Quartile Range)</a></li>
+<li class="chapter" data-level="3.4.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-iqr-inter-quartile-range"><i class="fa fa-check"></i><b>3.4.2</b> Guided Practice: IQR (Inter-Quartile Range)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="dispersion.html"><a href="dispersion.html#activity-inter-quartile-range-iqr"><i class="fa fa-check"></i><b>3.4.3</b> Activity: Inter-Quartile Range (IQR)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="dispersion.html"><a href="dispersion.html#standard-deviation"><i class="fa fa-check"></i><b>3.5</b> Standard Deviation</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-standard-deviation"><i class="fa fa-check"></i><b>3.5.1</b> Demonstration: Standard Deviation</a></li>
+<li class="chapter" data-level="3.5.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-standard-deviation"><i class="fa fa-check"></i><b>3.5.2</b> Guided Practice: Standard Deviation</a></li>
+<li class="chapter" data-level="3.5.3" data-path="dispersion.html"><a href="dispersion.html#activity-standard-deviation"><i class="fa fa-check"></i><b>3.5.3</b> Activity: Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="dispersion.html"><a href="dispersion.html#deliverable-2"><i class="fa fa-check"></i><b>3.6</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html"><i class="fa fa-check"></i><b>4</b> Visualizing Descriptives</a><ul>
+<li class="chapter" data-level="4.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#introduction-2"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#about-visualizations"><i class="fa fa-check"></i><b>4.2</b> About Visualizations</a></li>
+<li class="chapter" data-level="4.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#boxplots"><i class="fa fa-check"></i><b>4.3</b> Boxplots</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#demonstration-boxplots"><i class="fa fa-check"></i><b>4.3.1</b> Demonstration: Boxplots</a></li>
+<li class="chapter" data-level="4.3.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#guided-practice-boxplot"><i class="fa fa-check"></i><b>4.3.2</b> Guided Practice: Boxplot</a></li>
+<li class="chapter" data-level="4.3.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#activity-boxplot"><i class="fa fa-check"></i><b>4.3.3</b> Activity: Boxplot</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#outliers"><i class="fa fa-check"></i><b>4.4</b> Outliers</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#demonstration-outliers"><i class="fa fa-check"></i><b>4.4.1</b> Demonstration: Outliers</a></li>
+<li class="chapter" data-level="4.4.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#guided-practice-outliers"><i class="fa fa-check"></i><b>4.4.2</b> Guided Practice: Outliers</a></li>
+<li class="chapter" data-level="4.4.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#activity-outliers"><i class="fa fa-check"></i><b>4.4.3</b> Activity: Outliers</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#grouped-boxplots"><i class="fa fa-check"></i><b>4.5</b> Grouped Boxplots</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#demonstration-grouped-boxplots-with-color"><i class="fa fa-check"></i><b>4.5.1</b> Demonstration: Grouped Boxplots With Color</a></li>
+<li class="chapter" data-level="4.5.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#guided-practice-grouped-boxplot-with-color"><i class="fa fa-check"></i><b>4.5.2</b> Guided Practice: Grouped Boxplot With Color</a></li>
+<li class="chapter" data-level="4.5.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#activity-grouped-boxplot-with-color"><i class="fa fa-check"></i><b>4.5.3</b> Activity: Grouped Boxplot With Color</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#deliverable-3"><i class="fa fa-check"></i><b>4.6</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>III Counting</b></span></li>
+<li class="chapter" data-level="5" data-path="frequency-table.html"><a href="frequency-table.html"><i class="fa fa-check"></i><b>5</b> Frequency Table</a><ul>
+<li class="chapter" data-level="5.1" data-path="frequency-table.html"><a href="frequency-table.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="frequency-table.html"><a href="frequency-table.html#frequency-table-1"><i class="fa fa-check"></i><b>5.2</b> Frequency Table</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-frequency-table"><i class="fa fa-check"></i><b>5.2.1</b> Demonstration: Frequency Table</a></li>
+<li class="chapter" data-level="5.2.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-frequency-table"><i class="fa fa-check"></i><b>5.2.2</b> Guided Practice: Frequency Table</a></li>
+<li class="chapter" data-level="5.2.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-frequency-table"><i class="fa fa-check"></i><b>5.2.3</b> Activity: Frequency Table</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="frequency-table.html"><a href="frequency-table.html#margins"><i class="fa fa-check"></i><b>5.3</b> Margins</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-margins"><i class="fa fa-check"></i><b>5.3.1</b> Demonstration: Margins</a></li>
+<li class="chapter" data-level="5.3.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-margins"><i class="fa fa-check"></i><b>5.3.2</b> Guided Practice: Margins</a></li>
+<li class="chapter" data-level="5.3.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-margins"><i class="fa fa-check"></i><b>5.3.3</b> Activity: Margins</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="frequency-table.html"><a href="frequency-table.html#proportion-table-proptable"><i class="fa fa-check"></i><b>5.4</b> Proportion Table (Proptable)</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-proportion-table-proptable"><i class="fa fa-check"></i><b>5.4.1</b> Demonstration: Proportion Table (Proptable)</a></li>
+<li class="chapter" data-level="5.4.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-proportion-table-proptable"><i class="fa fa-check"></i><b>5.4.2</b> Guided Practice: Proportion Table (Proptable)</a></li>
+<li class="chapter" data-level="5.4.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-proportion-table-proptable"><i class="fa fa-check"></i><b>5.4.3</b> Activity: Proportion Table (Proptable)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="frequency-table.html"><a href="frequency-table.html#crosstab"><i class="fa fa-check"></i><b>5.5</b> Crosstab</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-crosstab"><i class="fa fa-check"></i><b>5.5.1</b> Demonstration: Crosstab</a></li>
+<li class="chapter" data-level="5.5.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-crosstab"><i class="fa fa-check"></i><b>5.5.2</b> Guided Practice: Crosstab</a></li>
+<li class="chapter" data-level="5.5.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-crosstab"><i class="fa fa-check"></i><b>5.5.3</b> Activity: Crosstab</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="frequency-table.html"><a href="frequency-table.html#multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6</b> Multi-Dimensional Crosstab</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6.1</b> Demonstration: Multi-dimensional Crosstab</a></li>
+<li class="chapter" data-level="5.6.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6.2</b> Guided Practice: Multi-dimensional Crosstab</a></li>
+<li class="chapter" data-level="5.6.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6.3</b> Activity: Multi-dimensional Crosstab</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="frequency-table.html"><a href="frequency-table.html#calculated-crosstab"><i class="fa fa-check"></i><b>5.7</b> Calculated Crosstab</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-calculated-crosstab"><i class="fa fa-check"></i><b>5.7.1</b> Demonstration: Calculated Crosstab</a></li>
+<li class="chapter" data-level="5.7.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-calculated-crosstab"><i class="fa fa-check"></i><b>5.7.2</b> Guided Practice: Calculated Crosstab</a></li>
+<li class="chapter" data-level="5.7.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-calculated-crosstab"><i class="fa fa-check"></i><b>5.7.3</b> Activity: Calculated Crosstab</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="frequency-table.html"><a href="frequency-table.html#rounding"><i class="fa fa-check"></i><b>5.8</b> Rounding</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstrate-rounding"><i class="fa fa-check"></i><b>5.8.1</b> Demonstrate: Rounding</a></li>
+<li class="chapter" data-level="5.8.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-rounding"><i class="fa fa-check"></i><b>5.8.2</b> Guided Practice: Rounding</a></li>
+<li class="chapter" data-level="5.8.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-rounding"><i class="fa fa-check"></i><b>5.8.3</b> Activity: Rounding</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="frequency-table.html"><a href="frequency-table.html#deliverable-4"><i class="fa fa-check"></i><b>5.9</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html"><i class="fa fa-check"></i><b>6</b> Visualizing Frequency</a><ul>
+<li class="chapter" data-level="6.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#introduction-4"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#bar-plot"><i class="fa fa-check"></i><b>6.2</b> Bar Plot</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-bar-plot"><i class="fa fa-check"></i><b>6.2.1</b> Demonstration: Bar Plot</a></li>
+<li class="chapter" data-level="6.2.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-bar-plot"><i class="fa fa-check"></i><b>6.2.2</b> Guided Practice: Bar Plot</a></li>
+<li class="chapter" data-level="6.2.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-bar-plot"><i class="fa fa-check"></i><b>6.2.3</b> Activity: Bar Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#clustered-bar-plot"><i class="fa fa-check"></i><b>6.3</b> Clustered Bar Plot</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-clustered-bar-plot"><i class="fa fa-check"></i><b>6.3.1</b> Demonstration: Clustered Bar Plot</a></li>
+<li class="chapter" data-level="6.3.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-clustered-bar-plot"><i class="fa fa-check"></i><b>6.3.2</b> Guided Practice: Clustered Bar Plot</a></li>
+<li class="chapter" data-level="6.3.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-clustered-bar-plot"><i class="fa fa-check"></i><b>6.3.3</b> Activity: Clustered Bar Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#stacked-bar-plot"><i class="fa fa-check"></i><b>6.4</b> Stacked Bar Plot</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-stacked-bar-plot"><i class="fa fa-check"></i><b>6.4.1</b> Demonstration: Stacked Bar Plot</a></li>
+<li class="chapter" data-level="6.4.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-stacked-bar-plot"><i class="fa fa-check"></i><b>6.4.2</b> Guided Practice: Stacked Bar Plot</a></li>
+<li class="chapter" data-level="6.4.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-stacked-bar-plot"><i class="fa fa-check"></i><b>6.4.3</b> Activity: Stacked Bar Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#pie-chart"><i class="fa fa-check"></i><b>6.5</b> Pie Chart</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-pie-chart"><i class="fa fa-check"></i><b>6.5.1</b> Demonstration: Pie Chart</a></li>
+<li class="chapter" data-level="6.5.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-pie-chart"><i class="fa fa-check"></i><b>6.5.2</b> Guided Practice: Pie Chart</a></li>
+<li class="chapter" data-level="6.5.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-pie-chart"><i class="fa fa-check"></i><b>6.5.3</b> Activity: Pie Chart</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#heat-map"><i class="fa fa-check"></i><b>6.6</b> Heat Map</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-heat-map"><i class="fa fa-check"></i><b>6.6.1</b> Demonstration: Heat Map</a></li>
+<li class="chapter" data-level="6.6.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-heat-map"><i class="fa fa-check"></i><b>6.6.2</b> Guided Practice: Heat Map</a></li>
+<li class="chapter" data-level="6.6.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-heat-map"><i class="fa fa-check"></i><b>6.6.3</b> Activity: Heat Map</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#mosiac-plot"><i class="fa fa-check"></i><b>6.7</b> Mosiac Plot</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-mosaic-plot"><i class="fa fa-check"></i><b>6.7.1</b> Demonstration: Mosaic Plot</a></li>
+<li class="chapter" data-level="6.7.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-mosaic-plot"><i class="fa fa-check"></i><b>6.7.2</b> Guided Practice: Mosaic Plot</a></li>
+<li class="chapter" data-level="6.7.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-mosaic-plot"><i class="fa fa-check"></i><b>6.7.3</b> Activity: Mosaic Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#deliverable-5"><i class="fa fa-check"></i><b>6.8</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>IV Relationships</b></span></li>
+<li class="chapter" data-level="7" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>7</b> Correlation and Regression</a><ul>
+<li class="chapter" data-level="7.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#introduction-5"><i class="fa fa-check"></i><b>7.1</b> Introduction</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#causation"><i class="fa fa-check"></i><b>7.1.1</b> Causation</a></li>
+<li class="chapter" data-level="7.1.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#definition"><i class="fa fa-check"></i><b>7.1.2</b> Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#pearsons-r"><i class="fa fa-check"></i><b>7.2</b> Pearson’s r</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-pearsons-r"><i class="fa fa-check"></i><b>7.2.1</b> Demonstration: Pearson’s r</a></li>
+<li class="chapter" data-level="7.2.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-pearsons-r"><i class="fa fa-check"></i><b>7.2.2</b> Guided Practice: Pearson’s r</a></li>
+<li class="chapter" data-level="7.2.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-pearsons-r"><i class="fa fa-check"></i><b>7.2.3</b> Activity: Pearson’s r</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#categorical-data"><i class="fa fa-check"></i><b>7.3</b> Categorical Data</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-spearmans-rho"><i class="fa fa-check"></i><b>7.3.1</b> Demonstration: Spearman’s rho</a></li>
+<li class="chapter" data-level="7.3.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-spearmans-rho"><i class="fa fa-check"></i><b>7.3.2</b> Guided Practice: Spearman’s rho</a></li>
+<li class="chapter" data-level="7.3.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-spearmans-rho"><i class="fa fa-check"></i><b>7.3.3</b> Activity: Spearman’s rho</a></li>
+<li class="chapter" data-level="7.3.4" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-kendalls-tau"><i class="fa fa-check"></i><b>7.3.4</b> Demonstration: Kendall’s tau</a></li>
+<li class="chapter" data-level="7.3.5" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-kendalls-tau"><i class="fa fa-check"></i><b>7.3.5</b> Guided Practice: Kendall’s tau</a></li>
+<li class="chapter" data-level="7.3.6" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-kendalls-tau"><i class="fa fa-check"></i><b>7.3.6</b> Activity: Kendall’s tau</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#selecting-a-correlation-test"><i class="fa fa-check"></i><b>7.4</b> Selecting a Correlation Test</a></li>
+<li class="chapter" data-level="7.5" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#significance"><i class="fa fa-check"></i><b>7.5</b> Significance</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-significance"><i class="fa fa-check"></i><b>7.5.1</b> Demonstration: Significance</a></li>
+<li class="chapter" data-level="7.5.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-significance"><i class="fa fa-check"></i><b>7.5.2</b> Guided Practice: Significance</a></li>
+<li class="chapter" data-level="7.5.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-significance"><i class="fa fa-check"></i><b>7.5.3</b> Activity: Significance</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#prediction-by-regression"><i class="fa fa-check"></i><b>7.6</b> Prediction by Regression</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-prediction-by-regression"><i class="fa fa-check"></i><b>7.6.1</b> Demonstration: Prediction by Regression</a></li>
+<li class="chapter" data-level="7.6.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-prediction-by-regression"><i class="fa fa-check"></i><b>7.6.2</b> Guided Practice: Prediction by Regression</a></li>
+<li class="chapter" data-level="7.6.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-prediction-by-regression"><i class="fa fa-check"></i><b>7.6.3</b> Activity: Prediction by Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#deliverable-6"><i class="fa fa-check"></i><b>7.7</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>8</b> Visualizing Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="visualizing-data.html"><a href="visualizing-data.html#introduction-6"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="visualizing-data.html"><a href="visualizing-data.html#histogram"><i class="fa fa-check"></i><b>8.2</b> Histogram</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-histogram"><i class="fa fa-check"></i><b>8.2.1</b> Demonstration: Histogram</a></li>
+<li class="chapter" data-level="8.2.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-histogram"><i class="fa fa-check"></i><b>8.2.2</b> Guided Practice: Histogram</a></li>
+<li class="chapter" data-level="8.2.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-histogram"><i class="fa fa-check"></i><b>8.2.3</b> Activity: Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="visualizing-data.html"><a href="visualizing-data.html#density-plot"><i class="fa fa-check"></i><b>8.3</b> Density Plot</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-density-plot"><i class="fa fa-check"></i><b>8.3.1</b> Demonstration: Density Plot</a></li>
+<li class="chapter" data-level="8.3.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-density-plot"><i class="fa fa-check"></i><b>8.3.2</b> Guided Practice: Density Plot</a></li>
+<li class="chapter" data-level="8.3.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-8.2-density-plot"><i class="fa fa-check"></i><b>8.3.3</b> Activity 8.2: Density Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="visualizing-data.html"><a href="visualizing-data.html#line-graph"><i class="fa fa-check"></i><b>8.4</b> Line Graph</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-line-graph"><i class="fa fa-check"></i><b>8.4.1</b> Demonstration: Line Graph</a></li>
+<li class="chapter" data-level="8.4.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-line-graph"><i class="fa fa-check"></i><b>8.4.2</b> Guided Practice: Line Graph</a></li>
+<li class="chapter" data-level="8.4.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-line-graph"><i class="fa fa-check"></i><b>8.4.3</b> Activity: Line Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="visualizing-data.html"><a href="visualizing-data.html#plot"><i class="fa fa-check"></i><b>8.5</b> Plot</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="visualizing-data.html"><a href="visualizing-data.html#plot-point-types"><i class="fa fa-check"></i><b>8.5.1</b> Plot Point Types</a></li>
+<li class="chapter" data-level="8.5.2" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-plot"><i class="fa fa-check"></i><b>8.5.2</b> Demonstration: Plot</a></li>
+<li class="chapter" data-level="8.5.3" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-plot"><i class="fa fa-check"></i><b>8.5.3</b> Guided Practice: Plot</a></li>
+<li class="chapter" data-level="8.5.4" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-line-of-best-fit"><i class="fa fa-check"></i><b>8.5.4</b> Activity: Line of Best Fit</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="visualizing-data.html"><a href="visualizing-data.html#q-q-plot"><i class="fa fa-check"></i><b>8.6</b> Q-Q Plot</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-q-q-plot"><i class="fa fa-check"></i><b>8.6.1</b> Demonstration: Q-Q Plot</a></li>
+<li class="chapter" data-level="8.6.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-q-q-plot"><i class="fa fa-check"></i><b>8.6.2</b> Guided Practice: Q-Q Plot</a></li>
+<li class="chapter" data-level="8.6.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-q-q-plot"><i class="fa fa-check"></i><b>8.6.3</b> Activity: Q-Q Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="visualizing-data.html"><a href="visualizing-data.html#deliverable-7"><i class="fa fa-check"></i><b>8.7</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>V Hypothesis Testing</b></span></li>
+<li class="chapter" data-level="9" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html"><i class="fa fa-check"></i><b>9</b> Parametric Hypothesis Testing</a><ul>
+<li class="chapter" data-level="9.1" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#introduction-7"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#hypothesis"><i class="fa fa-check"></i><b>9.2</b> Hypothesis</a></li>
+<li class="chapter" data-level="9.3" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#anova"><i class="fa fa-check"></i><b>9.3</b> ANOVA</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#demonstration-anova"><i class="fa fa-check"></i><b>9.3.1</b> Demonstration: ANOVA</a></li>
+<li class="chapter" data-level="9.3.2" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#guided-practice-anova"><i class="fa fa-check"></i><b>9.3.2</b> Guided Practice: ANOVA</a></li>
+<li class="chapter" data-level="9.3.3" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#activity-anova"><i class="fa fa-check"></i><b>9.3.3</b> Activity: ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#t-test"><i class="fa fa-check"></i><b>9.4</b> T-test</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#demonstration-t-test"><i class="fa fa-check"></i><b>9.4.1</b> Demonstration: T-test</a></li>
+<li class="chapter" data-level="9.4.2" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#guided-practice-t-test"><i class="fa fa-check"></i><b>9.4.2</b> Guided Practice: T-test</a></li>
+<li class="chapter" data-level="9.4.3" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#activity-t-test"><i class="fa fa-check"></i><b>9.4.3</b> Activity: T-test</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#deliverable-8"><i class="fa fa-check"></i><b>9.5</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html"><i class="fa fa-check"></i><b>10</b> Non-Parametric Hypothesis Testing</a><ul>
+<li class="chapter" data-level="10.1" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#introduction-8"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
+<li class="chapter" data-level="10.2" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2</b> Kruskal-Wallis H</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#demonstration-kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2.1</b> Demonstration: Kruskal-Wallis H</a></li>
+<li class="chapter" data-level="10.2.2" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#guided-practice-kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2.2</b> Guided Practice: Kruskal-Wallis H</a></li>
+<li class="chapter" data-level="10.2.3" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#activity-kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2.3</b> Activity: Kruskal-Wallis H</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#mann-whitney-u"><i class="fa fa-check"></i><b>10.3</b> Mann-Whitney U</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#demonstration-mann-whitney-u"><i class="fa fa-check"></i><b>10.3.1</b> Demonstration: Mann-Whitney U</a></li>
+<li class="chapter" data-level="10.3.2" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#guided-practice-mann-whitney-u"><i class="fa fa-check"></i><b>10.3.2</b> Guided Practice: Mann-Whitney U</a></li>
+<li class="chapter" data-level="10.3.3" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#activity-mann-whitney-u"><i class="fa fa-check"></i><b>10.3.3</b> Activity: Mann-Whitney U</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#deliverable-9"><i class="fa fa-check"></i><b>10.4</b> Deliverable</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="about-colors.html"><a href="about-colors.html"><i class="fa fa-check"></i><b>A</b> About Colors</a><ul>
+<li class="chapter" data-level="A.1" data-path="about-colors.html"><a href="about-colors.html#basic-colors"><i class="fa fa-check"></i><b>A.1</b> Basic Colors</a></li>
+<li class="chapter" data-level="A.2" data-path="about-colors.html"><a href="about-colors.html#color-palette"><i class="fa fa-check"></i><b>A.2</b> Color Palette</a></li>
+<li class="chapter" data-level="A.3" data-path="about-colors.html"><a href="about-colors.html#custom-palette"><i class="fa fa-check"></i><b>A.3</b> Custom Palette</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html"><i class="fa fa-check"></i><b>B</b> About The Data Frames</a><ul>
+<li class="chapter" data-level="B.1" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#airmiles"><i class="fa fa-check"></i><b>B.1</b> airmiles</a></li>
+<li class="chapter" data-level="B.2" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#airquality"><i class="fa fa-check"></i><b>B.2</b> airquality</a></li>
+<li class="chapter" data-level="B.3" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#attenu"><i class="fa fa-check"></i><b>B.3</b> attenu</a></li>
+<li class="chapter" data-level="B.4" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#attitude"><i class="fa fa-check"></i><b>B.4</b> attitude</a></li>
+<li class="chapter" data-level="B.5" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#beaver"><i class="fa fa-check"></i><b>B.5</b> beaver</a></li>
+<li class="chapter" data-level="B.6" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#cafe"><i class="fa fa-check"></i><b>B.6</b> cafe</a></li>
+<li class="chapter" data-level="B.7" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#cars"><i class="fa fa-check"></i><b>B.7</b> cars</a></li>
+<li class="chapter" data-level="B.8" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#chickweight"><i class="fa fa-check"></i><b>B.8</b> ChickWeight</a></li>
+<li class="chapter" data-level="B.9" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#chickwts"><i class="fa fa-check"></i><b>B.9</b> chickwts</a></li>
+<li class="chapter" data-level="B.10" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#co2"><i class="fa fa-check"></i><b>B.10</b> CO2</a></li>
+<li class="chapter" data-level="B.11" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#esoph"><i class="fa fa-check"></i><b>B.11</b> esoph</a></li>
+<li class="chapter" data-level="B.12" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#faithful"><i class="fa fa-check"></i><b>B.12</b> faithful</a></li>
+<li class="chapter" data-level="B.13" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#infert"><i class="fa fa-check"></i><b>B.13</b> infert</a></li>
+<li class="chapter" data-level="B.14" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#iris"><i class="fa fa-check"></i><b>B.14</b> iris</a></li>
+<li class="chapter" data-level="B.15" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#lakehuron"><i class="fa fa-check"></i><b>B.15</b> LakeHuron</a></li>
+<li class="chapter" data-level="B.16" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#ldeaths"><i class="fa fa-check"></i><b>B.16</b> ldeaths</a></li>
+<li class="chapter" data-level="B.17" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#longley"><i class="fa fa-check"></i><b>B.17</b> longley</a></li>
+<li class="chapter" data-level="B.18" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#lynx"><i class="fa fa-check"></i><b>B.18</b> lynx</a></li>
+<li class="chapter" data-level="B.19" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#morley"><i class="fa fa-check"></i><b>B.19</b> morley</a></li>
+<li class="chapter" data-level="B.20" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#mtcars"><i class="fa fa-check"></i><b>B.20</b> mtcars</a></li>
+<li class="chapter" data-level="B.21" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#npk"><i class="fa fa-check"></i><b>B.21</b> npk</a></li>
+<li class="chapter" data-level="B.22" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#plantgrowth"><i class="fa fa-check"></i><b>B.22</b> PlantGrowth</a></li>
+<li class="chapter" data-level="B.23" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#presidents"><i class="fa fa-check"></i><b>B.23</b> presidents</a></li>
+<li class="chapter" data-level="B.24" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#rivers"><i class="fa fa-check"></i><b>B.24</b> rivers</a></li>
+<li class="chapter" data-level="B.25" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#rock"><i class="fa fa-check"></i><b>B.25</b> rock</a></li>
+<li class="chapter" data-level="B.26" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#sleep"><i class="fa fa-check"></i><b>B.26</b> sleep</a></li>
+<li class="chapter" data-level="B.27" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#stackloss"><i class="fa fa-check"></i><b>B.27</b> stackloss</a></li>
+<li class="chapter" data-level="B.28" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#state.division"><i class="fa fa-check"></i><b>B.28</b> state.division</a></li>
+<li class="chapter" data-level="B.29" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#sunspots"><i class="fa fa-check"></i><b>B.29</b> sunspots</a></li>
+<li class="chapter" data-level="B.30" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#swiss"><i class="fa fa-check"></i><b>B.30</b> swiss</a></li>
+<li class="chapter" data-level="B.31" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#titanic"><i class="fa fa-check"></i><b>B.31</b> Titanic</a></li>
+<li class="chapter" data-level="B.32" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#trees"><i class="fa fa-check"></i><b>B.32</b> trees</a></li>
+<li class="chapter" data-level="B.33" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#ucb-admissions"><i class="fa fa-check"></i><b>B.33</b> UCB Admissions</a></li>
+<li class="chapter" data-level="B.34" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#ukgas"><i class="fa fa-check"></i><b>B.34</b> UKgas</a></li>
+<li class="chapter" data-level="B.35" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#usaccdeaths"><i class="fa fa-check"></i><b>B.35</b> USAccDeaths</a></li>
+<li class="chapter" data-level="B.36" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#usarrests"><i class="fa fa-check"></i><b>B.36</b> USArrests</a></li>
+<li class="chapter" data-level="B.37" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#usjudgeratings"><i class="fa fa-check"></i><b>B.37</b> USJudgeRatings</a></li>
+<li class="chapter" data-level="B.38" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#warpbreaks"><i class="fa fa-check"></i><b>B.38</b> warpbreaks</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BASV 316 R Lab Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="about-the-data-frames" class="section level1">
+<h1><span class="header-section-number">B</span> About The Data Frames</h1>
+<p>There are a number of data frames used in the lab exercises in this book and this appendix lists basic information about those data frames.</p>
+<div id="airmiles" class="section level2">
+<h2><span class="header-section-number">B.1</span> airmiles</h2>
+<p><strong>Passenger Miles on Commercial US Airlines, 1937-1960</strong>. The revenue passenger miles flown by commercial airlines in the United States for each year from 1937 to 1960. This is a time series of length 24; annually, 1937-1960 (from the FAA Statistical Handbook of Aviation).</p>
+</div>
+<div id="airquality" class="section level2">
+<h2><span class="header-section-number">B.2</span> airquality</h2>
+<p><strong>New York Air Quality Measurements</strong>. Daily air quality measurements in New York, May to September 1973. This is a data frame with 154 observations on 6 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-13">Table B.1: </span>Air Quality
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Ozone
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+Ozone (ppb)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Solar.R
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+Solar R (lang)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Wind
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Wind (mpg)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Temp
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Temperature (degrees F)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Month
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Month (1-12)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Day
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Day of month (1-31)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="attenu" class="section level2">
+<h2><span class="header-section-number">B.3</span> attenu</h2>
+<p><strong>The Joyner-Boore Attenuation Data</strong>. This data gives peak accelerations measured at various observation stations for 23 earthquakes in California. The data have been used by various workers to estimate the attenuating affect of distance on ground acceleration. This is a data frame with 182 observations on 5 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-14">Table B.2: </span>Joyner-Boore Attenuation Data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+event
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Event number
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mag
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Moment magnitude
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+station
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Station number (117 levels)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dist
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Station-hypocenter distance (km)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+accel
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Peak acceleration
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="attitude" class="section level2">
+<h2><span class="header-section-number">B.4</span> attitude</h2>
+<p><strong>The Chatterjee-Price Attitude Data</strong>. From a survey of the clerical employees of a large financial organization, the data are aggregated from the questionnaires of the approximately 35 employees for each of 30 (randomly selected) departments. The numbers give the percent proportion of favourable responses to seven questions in each department. This is a data frame with 30 observations on 7 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-15">Table B.3: </span>Chatterjee-Price Attitude Data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ratings
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Overall rating
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+complaints
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Handling of employee complaints
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+privileges
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Does not allow special privileges
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+learning
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Opportunity to learn
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+raises
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Raises based on performance
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+critical
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Too critical
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+advance
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Advancement
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="beaver" class="section level2">
+<h2><span class="header-section-number">B.5</span> beaver</h2>
+<p><strong>Body Temperature Series of Two Beavers</strong>. Reynolds (1994) describes a small part of a study of the long-term temperature dynamics of beaver Castor canadensis in north-central Wisconsin. Body temperature was measured by telemetry every 10 minutes for four females, but data from a one period of less than a day for each of two animals is used there. There are two data frames: beaver1 has 114 rows and 4 columns on body temperature measurements at 10 minute intervals and beaver2 has 100 rows and 4 columns on body temperature measurements at 10 minute intervals.</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-16">Table B.4: </span>Body Temperature Series of Two Beavers
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+day
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Day of observation (days since 1990)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+time
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Time of observation (0330 for 3:30 am)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+temp
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Measured body temperature (Celsius)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+activ
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Activity outside the retreat (0, 1)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="cafe" class="section level2">
+<h2><span class="header-section-number">B.6</span> cafe</h2>
+<p><em>This is simulated data.</em> Customers of the Main Street Cafe completed surveys over a one week period. This is a data frame with observations on 13 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-17">Table B.5: </span>Cafe Data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+sex
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Sex (3 levels: male, female, other)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+age
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+Age
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+day
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Day (7 levels: Monday, Tuesday, etc.)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+meal
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Meal (4 levels: breakfast, lunch, dinner, other)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+length
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+Length of meal (minutes)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+miles
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+Miles driven to cafe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pref
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Seating preference (2 levels: booth, table)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ptysize
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+Number of people in party
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+food
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+Rating for food (ord levels: 1-5 ‘stars’)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+svc
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+Rating for service (ord levels: 1-5 ‘stars’)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+recmd
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Would recommend to a friend (2 levels: yes, no)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bill
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Bill (dollars and cents)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tip
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+Amount of tip (whole dollars)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="cars" class="section level2">
+<h2><span class="header-section-number">B.7</span> cars</h2>
+<p><strong>Speed and Stopping Distances of Cars</strong>. The data give the speed of cars and the distances taken to stop. Note that the data were recorded in the 1920s. This is a data frame with 50 observations on 2 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-18">Table B.6: </span>Speed and Stopping Distances
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+speed
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Speed (mpg)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dist
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Stopping distance (ft)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="chickweight" class="section level2">
+<h2><span class="header-section-number">B.8</span> ChickWeight</h2>
+<p><strong>Weight Versus Age of Chicks on Different Diets</strong>. The ChickWeight data frame was generated from an experiment on the effect of diet on early growth of chicks. This is a data frame with 578 observations on 4 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-19">Table B.7: </span>Chick Weights
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+weight
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Weight (grams)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Time
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Time (days since birth)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chick
+</td>
+<td style="text-align:left;">
+ord
+</td>
+<td style="text-align:left;">
+A uniqe identifier for each chick
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Diet
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+A factor of 1-4 indicating the diet
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="chickwts" class="section level2">
+<h2><span class="header-section-number">B.9</span> chickwts</h2>
+<p><strong>Chicken Weights by Feed Type</strong>. An experiment was conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens. This is a data frame with 71 observations on 2 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-20">Table B.8: </span>Chicken Weights
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+weight
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Weight (unk units)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+feed
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Feed type
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="co2" class="section level2">
+<h2><span class="header-section-number">B.10</span> CO2</h2>
+<p><strong>Carbon Dioxide Uptake in Grass Plants</strong>. This data set is from an experiment on the cold tolerance of the grass species <em>Echinochloa crusgalli</em>. This is a data frame with 84 observations on 5 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-21">Table B.9: </span>Carbon Dioxide Uptake in Grass Plants
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Plant
+</td>
+<td style="text-align:left;">
+ordered
+</td>
+<td style="text-align:left;">
+Unique identifier of each plant (12 levels)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Type
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Origin of the plant (Quebec, Mississippi)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Treatment
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Type of treatment (nonchilled, chilled)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+conc
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Ambient CO2 concentratino (mL/L)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+uptake
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+CO2 uptake rate (umol/sq meter/sec)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="esoph" class="section level2">
+<h2><span class="header-section-number">B.11</span> esoph</h2>
+<p><strong>Smoking, Alcohol and (O)esophageal Cancer</strong> . Data from a case-control study of (o)esophageal cancer in Ille-et-Vilaine, France. This is a data frame with 88 observations on 5 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-22">Table B.10: </span>Smoking, Alcohol and (O)esophageal Cancer
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+agegp
+</td>
+<td style="text-align:left;">
+ordered
+</td>
+<td style="text-align:left;">
+Age group (6 levels)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+alcgp
+</td>
+<td style="text-align:left;">
+ordered
+</td>
+<td style="text-align:left;">
+Alcohol consumption (4 levels)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tobgp
+</td>
+<td style="text-align:left;">
+ordered
+</td>
+<td style="text-align:left;">
+Tobacco consumption (4 levels)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ncases
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Number of cases
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ncontrols
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Number of controls
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="faithful" class="section level2">
+<h2><span class="header-section-number">B.12</span> faithful</h2>
+<p><strong>Old Faithful Geyser Data</strong>. Waiting time between eruptions and the duration of the eruption for the Old Faithful geyser in Yellowstone National Park, Wyoming, USA. This is a data frame with 272 observations on 2 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-23">Table B.11: </span>Old Faithful Geyser Data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+eruptions
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Eruption time (minutes)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+waiting
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Waiting time to next eruption (minutes)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="infert" class="section level2">
+<h2><span class="header-section-number">B.13</span> infert</h2>
+<p><strong>Infertility Study</strong>. This is a matched case-control study. This is a data frame with 248 observations on 8 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-24">Table B.12: </span>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+education
+</td>
+<td style="text-align:left;">
+factor
+</td>
+<td style="text-align:left;">
+Education (0=0-5yrs, 1=6-11yrs, 2=12+yrs)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+age
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Age in years
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+parity
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Parity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+induced
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+number of prior induced abortions (0=0, 1=1, 2= 2+)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+case
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Status (0=control, 1=case)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spontaneous
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+number of prior spontaneous abortions (0=0, 1=1, 2= 2+)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stratum
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Matched Set Number 1-83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pooled.stratum
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Stratum Number 1-63
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="iris" class="section level2">
+<h2><span class="header-section-number">B.14</span> iris</h2>
+<p><strong>Edgar Anderson’s Iris Data</strong>. This famous (Fisher’s or Anderson’s) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris: Iris setosa, versicolor, and virginica. This is a data frame with 150 observations on 5 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-25">Table B.13: </span>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Sepal.Length
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Length (cm)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sepal.Width
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Width (cm)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Petal.Length
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Length (cm)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Petal.Width
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Width (cm)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Species
+</td>
+<td style="text-align:left;">
+factor
+</td>
+<td style="text-align:left;">
+Species (3 levels)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="lakehuron" class="section level2">
+<h2><span class="header-section-number">B.15</span> LakeHuron</h2>
+<p><strong>Level of Lake Huron 1875-1972</strong>. Annual measurements of the level, in feet, of Lake Huron 1875-1972. This is a time series of length 98.</p>
+</div>
+<div id="ldeaths" class="section level2">
+<h2><span class="header-section-number">B.16</span> ldeaths</h2>
+<p><strong>Monthly Deaths from Lung Diseases in the UK</strong>. Monthly deaths recorded from bronchitis, emphysema and asthma in the UK. This is a time series of length 72, 1974-1979.</p>
+</div>
+<div id="longley" class="section level2">
+<h2><span class="header-section-number">B.17</span> longley</h2>
+<p><strong>Longley’s Economic Regression Data</strong>. This data set is a macroeconomic data set which provides a well-known example for a highly collinear regression. This is a data frame with 7 variables observed annually from 1947 to 1962 (n = 16):</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-26">Table B.14: </span>Longley’s Economic Regression Data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+GNP.deflator
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+GNP implicit price deflator (1954=100)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GNP
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Gross National Product
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Unemployed
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Number employed
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Armed.Forces
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Number in armed forces
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Population
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Population &gt; 14 years of age
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Year
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Year
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Employed
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Number employed
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="lynx" class="section level2">
+<h2><span class="header-section-number">B.18</span> lynx</h2>
+<p><strong>Annual numbers of lynx trappings for 1821–1934 in Canada</strong>. This is a time series of length 114, 1821-1934.</p>
+</div>
+<div id="morley" class="section level2">
+<h2><span class="header-section-number">B.19</span> morley</h2>
+<p><strong>Michelson Speed of Light Data</strong>. A classical data of Michelson (but not this one with Morley) on measurements done in 1879 on the speed of light. The data consists of five experiments, each consisting of 20 consecutive “runs”. The response is the speed of light measurement, suitably coded (km/sec, with 299,000 subtracted). This is a data frame with 100 observations on 3 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-27">Table B.15: </span>Speed of Light
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Expt
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+The experiment number, from 1 to 5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Run
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+The run number within each experiment
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Speed
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+Speed-of-light measurement
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mtcars" class="section level2">
+<h2><span class="header-section-number">B.20</span> mtcars</h2>
+<p><strong>Motor Trend Car Road Tests</strong>. The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models). This is a data frame with 32 observations on 11 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-28">Table B.16: </span>Motor Trend Car Road Tests
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+mpg
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Miles/(US) gallon
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cyl
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Number of cylinders
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+disp
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Displacement (cu. in.)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hp
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Gross horsepower
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+drat
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Rear axle ratio
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+wt
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Weight (1000 lbs)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+qsec
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Quarter-mile time
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vs
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+V8 (0) or straight (1) engine
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+am
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Automatic (0) or manual (1) transmission
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gear
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Number of forward gears
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+carb
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Number of carburetors
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="npk" class="section level2">
+<h2><span class="header-section-number">B.21</span> npk</h2>
+<p><strong>Classical N, P, K Factorial Experiment</strong>. A classical N, P, K (nitrogen, phosphate, potassium) factorial experiment on the growth of peas conducted on 6 blocks. Each half of a fractional factorial design confounding the NPK interaction was used on 3 of the plots. This is a data frame with 24 observations on 5 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-29">Table B.17: </span>N, P, K Experiment
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+block
+</td>
+<td style="text-align:left;">
+factor
+</td>
+<td style="text-align:left;">
+Which block (6 levels)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+N
+</td>
+<td style="text-align:left;">
+factor
+</td>
+<td style="text-align:left;">
+Indicator for nitrogen (No, Yes)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+P
+</td>
+<td style="text-align:left;">
+factor
+</td>
+<td style="text-align:left;">
+Indicator for phosphate (No, Yes)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+K
+</td>
+<td style="text-align:left;">
+factor
+</td>
+<td style="text-align:left;">
+Indicator for potassium (No, Yes)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+yield
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Yield of peas (pounds/plot)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="plantgrowth" class="section level2">
+<h2><span class="header-section-number">B.22</span> PlantGrowth</h2>
+<p><strong>Results from an Experiment on Plant Growth</strong>. Results from an experiment to compare yields (as measured by dried weight of plants) obtained under a control and two different treatment conditions. This is a data frame with 30 observations on 2 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-30">Table B.18: </span>Plant Growth
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+weight
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Weight of yield (in)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+group
+</td>
+<td style="text-align:left;">
+factor
+</td>
+<td style="text-align:left;">
+Treatment group (3 levels)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="presidents" class="section level2">
+<h2><span class="header-section-number">B.23</span> presidents</h2>
+<p><strong>Quarterly Approval Ratings of US Presidents</strong>. The (approximate) quarterly approval rating for the President of the United States from the first quarter of 1945 to the last quarter of 1974. This is a time series of length 120.</p>
+</div>
+<div id="rivers" class="section level2">
+<h2><span class="header-section-number">B.24</span> rivers</h2>
+<p><strong>Lengths of Major North American Rivers</strong>. This data set gives the lengths (in miles) of 141 “major” rivers in North America, as compiled by the US Geological Survey. This is a vector with 141 observations.</p>
+</div>
+<div id="rock" class="section level2">
+<h2><span class="header-section-number">B.25</span> rock</h2>
+<p><strong>Measurements on Petroleum Rock Samples</strong>. This data set contains measurements on 48 rock samples from a petroleum reservoir. This is a data frame with 48 observations on 4 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-31">Table B.19: </span>Petroleum Rock Samples
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+area
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+Area of pores (pixels in 256 X 256)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+peri
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Perimeter in pixels
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+shape
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+perimeter/square root of area
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+perm
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Permeability in mili-Darcies
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sleep" class="section level2">
+<h2><span class="header-section-number">B.26</span> sleep</h2>
+<p><strong>Student’s Sleep Data</strong>. Data which show the effect of two soporific drugs (increase in hours of sleep compared to control) on 10 patients. This is a data frame with 20 observations on 3 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-32">Table B.20: </span>Sleep Data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+extra
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Increase in hours of sleep
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+group
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Drug given (2 levels)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ID
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Patient ID (10 levels)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="stackloss" class="section level2">
+<h2><span class="header-section-number">B.27</span> stackloss</h2>
+<p><strong>Brownlee’s Stack Loss Plant Data</strong>. Operational data of a plant for the oxidation of ammonia to nitric acid. This is a data frame with 21 observations on 4 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-33">Table B.21: </span>Sleep Data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Air Flow
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Flow of cooling air
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Water Temp
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Cooling water inlet temperature
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Acid Conc
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Concentration of acid [per 1000, minus 500]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stack.loss
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Stack loss
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="state.division" class="section level2">
+<h2><span class="header-section-number">B.28</span> state.division</h2>
+<p><strong>US State Facts and Figures</strong>. Data sets related to the 50 states of the United States of America. This is a factor giving the state division (New England, Middle Atlantic, South Atlantic, East North Central, East South Central, West North Central, West South Central, Mountain, Pacific).</p>
+</div>
+<div id="sunspots" class="section level2">
+<h2><span class="header-section-number">B.29</span> sunspots</h2>
+<p><strong>Monthly Sunspot Numbers, 1749-1983</strong>. Monthly mean sunspot numbers from 1749 to 1983. Collected at Swiss Federal Observatory, Zurich until 1960, then Tokyo Astronomical Observatory. This is a time series of length 2820.</p>
+</div>
+<div id="swiss" class="section level2">
+<h2><span class="header-section-number">B.30</span> swiss</h2>
+<p><strong>Swiss Fertility and Socioeconomic Indicators (1888) Data</strong>. Standardized fertility measure and socio-economic indicators for each of 47 French-speaking provinces of Switzerland at about 1888. This is a data frame with 47 observations on 6 variables, each of which is in percent (0-100):</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-34">Table B.22: </span>Swiss Socioeconomic Indicators (1888)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Fertility
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Common fertility measure
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Agriculture
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+% males involved in agriculture
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Examination
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+% receiving high mark on army exam
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Education
+</td>
+<td style="text-align:left;">
+int
+</td>
+<td style="text-align:left;">
+% education beyond primary school
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Catholic
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+% catholic (as opposed to protestant)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Infant.Mortality
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Live births who live less than 1 year
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="titanic" class="section level2">
+<h2><span class="header-section-number">B.31</span> Titanic</h2>
+<p><strong>Survival of passengers on the Titanic</strong>. This data set provides information on the fate of passengers on the fatal maiden voyage of the ocean liner “Titanic,” summarized according to economic status (class), sex, age and survival. This is a 4-dimensional array resulting from cross-tabulating 2201 observations on 4 variables. The variables and their levels are as follows:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-35">Table B.23: </span>Titanic
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Num
+</th>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Levels
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+Class
+</td>
+<td style="text-align:left;">
+1st, 2nd, 3rd, Crew
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+Sex
+</td>
+<td style="text-align:left;">
+Male, Female
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+Age
+</td>
+<td style="text-align:left;">
+Child, Adult
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+Survived
+</td>
+<td style="text-align:left;">
+No, Yes
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="trees" class="section level2">
+<h2><span class="header-section-number">B.32</span> trees</h2>
+<p><strong>Girth, Height and Volume for Black Cherry Trees</strong>. This data set provides measurements of the girth, height and volume of timber in 31 felled black cherry trees. Note that girth is the diameter of the tree (in inches) measured at 4 ft 6 in above the ground. This is a data frame with 31 observations on 3 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-36">Table B.24: </span>Black Cherry Tree Data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Girth
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Tree diameter (inches)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Height
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Tree height (feet)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Volume
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Volume of timber (cubic ft)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ucb-admissions" class="section level2">
+<h2><span class="header-section-number">B.33</span> UCB Admissions</h2>
+<p><strong>Student Admissions at UC Berkeley</strong>. Aggregate data on applicants to graduate school at Berkeley for the six largest departments in 1973 classified by admission and sex. This is a 3-dimensional array resulting from cross-tabulating 4526 observations on 3 variables. The variables and their levels are as follows:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-37">Table B.25: </span>Admissions at UC Berkeley
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Num
+</th>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Levels
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+Admit
+</td>
+<td style="text-align:left;">
+Admitted, Rejected
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+Gender
+</td>
+<td style="text-align:left;">
+Male, Female
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+Dept
+</td>
+<td style="text-align:left;">
+A, B, C, D, E, F
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ukgas" class="section level2">
+<h2><span class="header-section-number">B.34</span> UKgas</h2>
+<p><strong>UK Quarterly Gas Consumption</strong>. Quarterly UK gas consumption from 1960Q1 to 1986Q4, in millions of therms. This is a time series of length 108.</p>
+</div>
+<div id="usaccdeaths" class="section level2">
+<h2><span class="header-section-number">B.35</span> USAccDeaths</h2>
+<p><strong>Accidental Deaths in the US 1973-1978</strong>. The monthly totals of accidental deaths in the USA. This is a time series of length 72.</p>
+</div>
+<div id="usarrests" class="section level2">
+<h2><span class="header-section-number">B.36</span> USArrests</h2>
+<p><strong>Violent Crime Rates by US State</strong>. This data set contains statistics about the arrests per 100,000 residents for assault, murder, and rape in each of the 50 US states in 1973. Also given is the percent of the population living in urban areas. This is a data frame with 50 observations on 4 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-38">Table B.26: </span>US Arrests
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Definition
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Murder
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Murder arrests per 100,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Assault
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Assault arrests per 100,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UrbanPop
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Percent urban population
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rape
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Rape arrests per 100,000
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="usjudgeratings" class="section level2">
+<h2><span class="header-section-number">B.37</span> USJudgeRatings</h2>
+<p><strong>Lawyers’ Ratings of State Judges in the US Superior Court</strong>. This contains lawyers’ ratings of state judges in the US Superior Court. This is a data frame with 43 observations on 12 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-39">Table B.27: </span>Judge Ratings
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Definition
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+CONT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Number of contacts of lawyer with judge
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTG
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Judicial integrity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DMNR
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Demeanor
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DILG
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Diligence
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CFMG
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Case flow managing
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DECI
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Prompt decisions
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PREP
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Preparation for trial
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FAMI
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Familiarity with law
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ORAL
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Sound oral rulings
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WRIT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Sound written rulings
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PHYS
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Physical ability
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RTEN
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Worthy of retention
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="warpbreaks" class="section level2">
+<h2><span class="header-section-number">B.38</span> warpbreaks</h2>
+<p><strong>The Number of Breaks in Yarn During Weaving</strong>. This data set gives the number of warp breaks per loom, where a loom corresponds to a fixed length of yarn. This is a data frame with 54 observations on 3 variables:</p>
+<table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-40">Table B.28: </span>Breaks in Yarn During Weaving
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+breaks
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Number of breaks
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+wool
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Type of wool (levels A, B)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tension
+</td>
+<td style="text-align:left;">
+fac
+</td>
+<td style="text-align:left;">
+Tension on wool (levels L, M, H)
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="about-colors.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

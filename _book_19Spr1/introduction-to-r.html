@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>BASV 316 R Lab Manual</title>
+  <meta name="description" content="This is the lab manual for the University of Arizona South BASV 316 class.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="BASV 316 R Lab Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the lab manual for the University of Arizona South BASV 316 class." />
+  <meta name="github-repo" content="grself/BASV316_Lab_Manual" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="BASV 316 R Lab Manual" />
+  
+  <meta name="twitter:description" content="This is the lab manual for the University of Arizona South BASV 316 class." />
+  
+
+<meta name="author" content="George Self">
+
+
+<meta name="date" content="2019-01-03">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="central-measures.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src=https://cdn.datacamp.com/datacamp-light-latest.min.js></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="fontawesome.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">BASV 316 R Lab Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="1" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Introduction to R</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#types-of-data"><i class="fa fa-check"></i><b>1.1</b> Types of Data</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-r-command-line"><i class="fa fa-check"></i><b>1.2</b> The R Command Line</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#demonstration-the-r-command-line"><i class="fa fa-check"></i><b>1.2.1</b> Demonstration: The R Command Line</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#guided-practice-the-r-command-line"><i class="fa fa-check"></i><b>1.2.2</b> Guided Practice: The R Command Line</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#activity-the-r-command-line"><i class="fa fa-check"></i><b>1.2.3</b> Activity: The R Command Line</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-frames"><i class="fa fa-check"></i><b>1.3</b> Data Frames</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#demonstration-data-frames"><i class="fa fa-check"></i><b>1.3.1</b> Demonstration: Data Frames</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#guided-practice-data-frames"><i class="fa fa-check"></i><b>1.3.2</b> Guided Practice: Data Frames</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#activity-data-frames"><i class="fa fa-check"></i><b>1.3.3</b> Activity: Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#deliverable"><i class="fa fa-check"></i><b>1.4</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>II Descriptive Statistics</b></span></li>
+<li class="chapter" data-level="2" data-path="central-measures.html"><a href="central-measures.html"><i class="fa fa-check"></i><b>2</b> Central Measures</a><ul>
+<li class="chapter" data-level="2.1" data-path="central-measures.html"><a href="central-measures.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="central-measures.html"><a href="central-measures.html#n"><i class="fa fa-check"></i><b>2.2</b> N</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-n"><i class="fa fa-check"></i><b>2.2.1</b> Demonstration: N</a></li>
+<li class="chapter" data-level="2.2.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-n"><i class="fa fa-check"></i><b>2.2.2</b> Guided Practice: N</a></li>
+<li class="chapter" data-level="2.2.3" data-path="central-measures.html"><a href="central-measures.html#activity-n"><i class="fa fa-check"></i><b>2.2.3</b> Activity: N</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="central-measures.html"><a href="central-measures.html#mean"><i class="fa fa-check"></i><b>2.3</b> Mean</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-mean"><i class="fa fa-check"></i><b>2.3.1</b> Demonstration: Mean</a></li>
+<li class="chapter" data-level="2.3.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-mean"><i class="fa fa-check"></i><b>2.3.2</b> Guided Practice: Mean</a></li>
+<li class="chapter" data-level="2.3.3" data-path="central-measures.html"><a href="central-measures.html#activity-mean"><i class="fa fa-check"></i><b>2.3.3</b> Activity: Mean</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="central-measures.html"><a href="central-measures.html#trimmed-mean"><i class="fa fa-check"></i><b>2.4</b> Trimmed Mean</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-trimmed-mean"><i class="fa fa-check"></i><b>2.4.1</b> Demonstration: Trimmed Mean</a></li>
+<li class="chapter" data-level="2.4.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-trimmed-mean"><i class="fa fa-check"></i><b>2.4.2</b> Guided Practice: Trimmed Mean</a></li>
+<li class="chapter" data-level="2.4.3" data-path="central-measures.html"><a href="central-measures.html#activity-trimmed-mean"><i class="fa fa-check"></i><b>2.4.3</b> Activity: Trimmed Mean</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="central-measures.html"><a href="central-measures.html#median"><i class="fa fa-check"></i><b>2.5</b> Median</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="central-measures.html"><a href="central-measures.html#demonstration-median"><i class="fa fa-check"></i><b>2.5.1</b> Demonstration: Median</a></li>
+<li class="chapter" data-level="2.5.2" data-path="central-measures.html"><a href="central-measures.html#guided-practice-median"><i class="fa fa-check"></i><b>2.5.2</b> Guided Practice: Median</a></li>
+<li class="chapter" data-level="2.5.3" data-path="central-measures.html"><a href="central-measures.html#activity-median"><i class="fa fa-check"></i><b>2.5.3</b> Activity: Median</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="central-measures.html"><a href="central-measures.html#mode"><i class="fa fa-check"></i><b>2.6</b> Mode</a></li>
+<li class="chapter" data-level="2.7" data-path="central-measures.html"><a href="central-measures.html#deliverable-1"><i class="fa fa-check"></i><b>2.7</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dispersion.html"><a href="dispersion.html"><i class="fa fa-check"></i><b>3</b> Dispersion</a><ul>
+<li class="chapter" data-level="3.1" data-path="dispersion.html"><a href="dispersion.html#introduction-1"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="dispersion.html"><a href="dispersion.html#range"><i class="fa fa-check"></i><b>3.2</b> Range</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-range"><i class="fa fa-check"></i><b>3.2.1</b> Demonstration: Range</a></li>
+<li class="chapter" data-level="3.2.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-range"><i class="fa fa-check"></i><b>3.2.2</b> Guided Practice: Range</a></li>
+<li class="chapter" data-level="3.2.3" data-path="dispersion.html"><a href="dispersion.html#activity-range"><i class="fa fa-check"></i><b>3.2.3</b> Activity: Range</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="dispersion.html"><a href="dispersion.html#quartiles"><i class="fa fa-check"></i><b>3.3</b> Quartiles</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-quartiles"><i class="fa fa-check"></i><b>3.3.1</b> Demonstration: Quartiles</a></li>
+<li class="chapter" data-level="3.3.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-quartiles"><i class="fa fa-check"></i><b>3.3.2</b> Guided Practice: Quartiles</a></li>
+<li class="chapter" data-level="3.3.3" data-path="dispersion.html"><a href="dispersion.html#activity-quartiles"><i class="fa fa-check"></i><b>3.3.3</b> Activity: Quartiles</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="dispersion.html"><a href="dispersion.html#iqr-inter-quartile-range"><i class="fa fa-check"></i><b>3.4</b> IQR (Inter-Quartile Range)</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-iqr-inter-quartile-range"><i class="fa fa-check"></i><b>3.4.1</b> Demonstration: IQR (Inter-Quartile Range)</a></li>
+<li class="chapter" data-level="3.4.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-iqr-inter-quartile-range"><i class="fa fa-check"></i><b>3.4.2</b> Guided Practice: IQR (Inter-Quartile Range)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="dispersion.html"><a href="dispersion.html#activity-inter-quartile-range-iqr"><i class="fa fa-check"></i><b>3.4.3</b> Activity: Inter-Quartile Range (IQR)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="dispersion.html"><a href="dispersion.html#standard-deviation"><i class="fa fa-check"></i><b>3.5</b> Standard Deviation</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="dispersion.html"><a href="dispersion.html#demonstration-standard-deviation"><i class="fa fa-check"></i><b>3.5.1</b> Demonstration: Standard Deviation</a></li>
+<li class="chapter" data-level="3.5.2" data-path="dispersion.html"><a href="dispersion.html#guided-practice-standard-deviation"><i class="fa fa-check"></i><b>3.5.2</b> Guided Practice: Standard Deviation</a></li>
+<li class="chapter" data-level="3.5.3" data-path="dispersion.html"><a href="dispersion.html#activity-standard-deviation"><i class="fa fa-check"></i><b>3.5.3</b> Activity: Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="dispersion.html"><a href="dispersion.html#deliverable-2"><i class="fa fa-check"></i><b>3.6</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html"><i class="fa fa-check"></i><b>4</b> Visualizing Descriptives</a><ul>
+<li class="chapter" data-level="4.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#introduction-2"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#about-visualizations"><i class="fa fa-check"></i><b>4.2</b> About Visualizations</a></li>
+<li class="chapter" data-level="4.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#boxplots"><i class="fa fa-check"></i><b>4.3</b> Boxplots</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#demonstration-boxplots"><i class="fa fa-check"></i><b>4.3.1</b> Demonstration: Boxplots</a></li>
+<li class="chapter" data-level="4.3.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#guided-practice-boxplot"><i class="fa fa-check"></i><b>4.3.2</b> Guided Practice: Boxplot</a></li>
+<li class="chapter" data-level="4.3.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#activity-boxplot"><i class="fa fa-check"></i><b>4.3.3</b> Activity: Boxplot</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#outliers"><i class="fa fa-check"></i><b>4.4</b> Outliers</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#demonstration-outliers"><i class="fa fa-check"></i><b>4.4.1</b> Demonstration: Outliers</a></li>
+<li class="chapter" data-level="4.4.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#guided-practice-outliers"><i class="fa fa-check"></i><b>4.4.2</b> Guided Practice: Outliers</a></li>
+<li class="chapter" data-level="4.4.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#activity-outliers"><i class="fa fa-check"></i><b>4.4.3</b> Activity: Outliers</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#grouped-boxplots"><i class="fa fa-check"></i><b>4.5</b> Grouped Boxplots</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#demonstration-grouped-boxplots-with-color"><i class="fa fa-check"></i><b>4.5.1</b> Demonstration: Grouped Boxplots With Color</a></li>
+<li class="chapter" data-level="4.5.2" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#guided-practice-grouped-boxplot-with-color"><i class="fa fa-check"></i><b>4.5.2</b> Guided Practice: Grouped Boxplot With Color</a></li>
+<li class="chapter" data-level="4.5.3" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#activity-grouped-boxplot-with-color"><i class="fa fa-check"></i><b>4.5.3</b> Activity: Grouped Boxplot With Color</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="visualizing-descriptives.html"><a href="visualizing-descriptives.html#deliverable-3"><i class="fa fa-check"></i><b>4.6</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>III Counting</b></span></li>
+<li class="chapter" data-level="5" data-path="frequency-table.html"><a href="frequency-table.html"><i class="fa fa-check"></i><b>5</b> Frequency Table</a><ul>
+<li class="chapter" data-level="5.1" data-path="frequency-table.html"><a href="frequency-table.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="frequency-table.html"><a href="frequency-table.html#frequency-table-1"><i class="fa fa-check"></i><b>5.2</b> Frequency Table</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-frequency-table"><i class="fa fa-check"></i><b>5.2.1</b> Demonstration: Frequency Table</a></li>
+<li class="chapter" data-level="5.2.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-frequency-table"><i class="fa fa-check"></i><b>5.2.2</b> Guided Practice: Frequency Table</a></li>
+<li class="chapter" data-level="5.2.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-frequency-table"><i class="fa fa-check"></i><b>5.2.3</b> Activity: Frequency Table</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="frequency-table.html"><a href="frequency-table.html#margins"><i class="fa fa-check"></i><b>5.3</b> Margins</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-margins"><i class="fa fa-check"></i><b>5.3.1</b> Demonstration: Margins</a></li>
+<li class="chapter" data-level="5.3.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-margins"><i class="fa fa-check"></i><b>5.3.2</b> Guided Practice: Margins</a></li>
+<li class="chapter" data-level="5.3.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-margins"><i class="fa fa-check"></i><b>5.3.3</b> Activity: Margins</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="frequency-table.html"><a href="frequency-table.html#proportion-table-proptable"><i class="fa fa-check"></i><b>5.4</b> Proportion Table (Proptable)</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-proportion-table-proptable"><i class="fa fa-check"></i><b>5.4.1</b> Demonstration: Proportion Table (Proptable)</a></li>
+<li class="chapter" data-level="5.4.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-proportion-table-proptable"><i class="fa fa-check"></i><b>5.4.2</b> Guided Practice: Proportion Table (Proptable)</a></li>
+<li class="chapter" data-level="5.4.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-proportion-table-proptable"><i class="fa fa-check"></i><b>5.4.3</b> Activity: Proportion Table (Proptable)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="frequency-table.html"><a href="frequency-table.html#crosstab"><i class="fa fa-check"></i><b>5.5</b> Crosstab</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-crosstab"><i class="fa fa-check"></i><b>5.5.1</b> Demonstration: Crosstab</a></li>
+<li class="chapter" data-level="5.5.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-crosstab"><i class="fa fa-check"></i><b>5.5.2</b> Guided Practice: Crosstab</a></li>
+<li class="chapter" data-level="5.5.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-crosstab"><i class="fa fa-check"></i><b>5.5.3</b> Activity: Crosstab</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="frequency-table.html"><a href="frequency-table.html#multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6</b> Multi-Dimensional Crosstab</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6.1</b> Demonstration: Multi-dimensional Crosstab</a></li>
+<li class="chapter" data-level="5.6.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6.2</b> Guided Practice: Multi-dimensional Crosstab</a></li>
+<li class="chapter" data-level="5.6.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-multi-dimensional-crosstab"><i class="fa fa-check"></i><b>5.6.3</b> Activity: Multi-dimensional Crosstab</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="frequency-table.html"><a href="frequency-table.html#calculated-crosstab"><i class="fa fa-check"></i><b>5.7</b> Calculated Crosstab</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstration-calculated-crosstab"><i class="fa fa-check"></i><b>5.7.1</b> Demonstration: Calculated Crosstab</a></li>
+<li class="chapter" data-level="5.7.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-calculated-crosstab"><i class="fa fa-check"></i><b>5.7.2</b> Guided Practice: Calculated Crosstab</a></li>
+<li class="chapter" data-level="5.7.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-calculated-crosstab"><i class="fa fa-check"></i><b>5.7.3</b> Activity: Calculated Crosstab</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="frequency-table.html"><a href="frequency-table.html#rounding"><i class="fa fa-check"></i><b>5.8</b> Rounding</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="frequency-table.html"><a href="frequency-table.html#demonstrate-rounding"><i class="fa fa-check"></i><b>5.8.1</b> Demonstrate: Rounding</a></li>
+<li class="chapter" data-level="5.8.2" data-path="frequency-table.html"><a href="frequency-table.html#guided-practice-rounding"><i class="fa fa-check"></i><b>5.8.2</b> Guided Practice: Rounding</a></li>
+<li class="chapter" data-level="5.8.3" data-path="frequency-table.html"><a href="frequency-table.html#activity-rounding"><i class="fa fa-check"></i><b>5.8.3</b> Activity: Rounding</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="frequency-table.html"><a href="frequency-table.html#deliverable-4"><i class="fa fa-check"></i><b>5.9</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html"><i class="fa fa-check"></i><b>6</b> Visualizing Frequency</a><ul>
+<li class="chapter" data-level="6.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#introduction-4"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#bar-plot"><i class="fa fa-check"></i><b>6.2</b> Bar Plot</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-bar-plot"><i class="fa fa-check"></i><b>6.2.1</b> Demonstration: Bar Plot</a></li>
+<li class="chapter" data-level="6.2.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-bar-plot"><i class="fa fa-check"></i><b>6.2.2</b> Guided Practice: Bar Plot</a></li>
+<li class="chapter" data-level="6.2.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-bar-plot"><i class="fa fa-check"></i><b>6.2.3</b> Activity: Bar Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#clustered-bar-plot"><i class="fa fa-check"></i><b>6.3</b> Clustered Bar Plot</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-clustered-bar-plot"><i class="fa fa-check"></i><b>6.3.1</b> Demonstration: Clustered Bar Plot</a></li>
+<li class="chapter" data-level="6.3.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-clustered-bar-plot"><i class="fa fa-check"></i><b>6.3.2</b> Guided Practice: Clustered Bar Plot</a></li>
+<li class="chapter" data-level="6.3.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-clustered-bar-plot"><i class="fa fa-check"></i><b>6.3.3</b> Activity: Clustered Bar Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#stacked-bar-plot"><i class="fa fa-check"></i><b>6.4</b> Stacked Bar Plot</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-stacked-bar-plot"><i class="fa fa-check"></i><b>6.4.1</b> Demonstration: Stacked Bar Plot</a></li>
+<li class="chapter" data-level="6.4.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-stacked-bar-plot"><i class="fa fa-check"></i><b>6.4.2</b> Guided Practice: Stacked Bar Plot</a></li>
+<li class="chapter" data-level="6.4.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-stacked-bar-plot"><i class="fa fa-check"></i><b>6.4.3</b> Activity: Stacked Bar Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#pie-chart"><i class="fa fa-check"></i><b>6.5</b> Pie Chart</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-pie-chart"><i class="fa fa-check"></i><b>6.5.1</b> Demonstration: Pie Chart</a></li>
+<li class="chapter" data-level="6.5.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-pie-chart"><i class="fa fa-check"></i><b>6.5.2</b> Guided Practice: Pie Chart</a></li>
+<li class="chapter" data-level="6.5.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-pie-chart"><i class="fa fa-check"></i><b>6.5.3</b> Activity: Pie Chart</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#heat-map"><i class="fa fa-check"></i><b>6.6</b> Heat Map</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-heat-map"><i class="fa fa-check"></i><b>6.6.1</b> Demonstration: Heat Map</a></li>
+<li class="chapter" data-level="6.6.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-heat-map"><i class="fa fa-check"></i><b>6.6.2</b> Guided Practice: Heat Map</a></li>
+<li class="chapter" data-level="6.6.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-heat-map"><i class="fa fa-check"></i><b>6.6.3</b> Activity: Heat Map</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#mosiac-plot"><i class="fa fa-check"></i><b>6.7</b> Mosiac Plot</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#demonstration-mosaic-plot"><i class="fa fa-check"></i><b>6.7.1</b> Demonstration: Mosaic Plot</a></li>
+<li class="chapter" data-level="6.7.2" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#guided-practice-mosaic-plot"><i class="fa fa-check"></i><b>6.7.2</b> Guided Practice: Mosaic Plot</a></li>
+<li class="chapter" data-level="6.7.3" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#activity-mosaic-plot"><i class="fa fa-check"></i><b>6.7.3</b> Activity: Mosaic Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="visualizing-frequency.html"><a href="visualizing-frequency.html#deliverable-5"><i class="fa fa-check"></i><b>6.8</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>IV Relationships</b></span></li>
+<li class="chapter" data-level="7" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>7</b> Correlation and Regression</a><ul>
+<li class="chapter" data-level="7.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#introduction-5"><i class="fa fa-check"></i><b>7.1</b> Introduction</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#causation"><i class="fa fa-check"></i><b>7.1.1</b> Causation</a></li>
+<li class="chapter" data-level="7.1.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#definition"><i class="fa fa-check"></i><b>7.1.2</b> Definition</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#pearsons-r"><i class="fa fa-check"></i><b>7.2</b> Pearson’s r</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-pearsons-r"><i class="fa fa-check"></i><b>7.2.1</b> Demonstration: Pearson’s r</a></li>
+<li class="chapter" data-level="7.2.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-pearsons-r"><i class="fa fa-check"></i><b>7.2.2</b> Guided Practice: Pearson’s r</a></li>
+<li class="chapter" data-level="7.2.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-pearsons-r"><i class="fa fa-check"></i><b>7.2.3</b> Activity: Pearson’s r</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#categorical-data"><i class="fa fa-check"></i><b>7.3</b> Categorical Data</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-spearmans-rho"><i class="fa fa-check"></i><b>7.3.1</b> Demonstration: Spearman’s rho</a></li>
+<li class="chapter" data-level="7.3.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-spearmans-rho"><i class="fa fa-check"></i><b>7.3.2</b> Guided Practice: Spearman’s rho</a></li>
+<li class="chapter" data-level="7.3.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-spearmans-rho"><i class="fa fa-check"></i><b>7.3.3</b> Activity: Spearman’s rho</a></li>
+<li class="chapter" data-level="7.3.4" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-kendalls-tau"><i class="fa fa-check"></i><b>7.3.4</b> Demonstration: Kendall’s tau</a></li>
+<li class="chapter" data-level="7.3.5" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-kendalls-tau"><i class="fa fa-check"></i><b>7.3.5</b> Guided Practice: Kendall’s tau</a></li>
+<li class="chapter" data-level="7.3.6" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-kendalls-tau"><i class="fa fa-check"></i><b>7.3.6</b> Activity: Kendall’s tau</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#selecting-a-correlation-test"><i class="fa fa-check"></i><b>7.4</b> Selecting a Correlation Test</a></li>
+<li class="chapter" data-level="7.5" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#significance"><i class="fa fa-check"></i><b>7.5</b> Significance</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-significance"><i class="fa fa-check"></i><b>7.5.1</b> Demonstration: Significance</a></li>
+<li class="chapter" data-level="7.5.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-significance"><i class="fa fa-check"></i><b>7.5.2</b> Guided Practice: Significance</a></li>
+<li class="chapter" data-level="7.5.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-significance"><i class="fa fa-check"></i><b>7.5.3</b> Activity: Significance</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#prediction-by-regression"><i class="fa fa-check"></i><b>7.6</b> Prediction by Regression</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#demonstration-prediction-by-regression"><i class="fa fa-check"></i><b>7.6.1</b> Demonstration: Prediction by Regression</a></li>
+<li class="chapter" data-level="7.6.2" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#guided-practice-prediction-by-regression"><i class="fa fa-check"></i><b>7.6.2</b> Guided Practice: Prediction by Regression</a></li>
+<li class="chapter" data-level="7.6.3" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#activity-prediction-by-regression"><i class="fa fa-check"></i><b>7.6.3</b> Activity: Prediction by Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html#deliverable-6"><i class="fa fa-check"></i><b>7.7</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i><b>8</b> Visualizing Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="visualizing-data.html"><a href="visualizing-data.html#introduction-6"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="visualizing-data.html"><a href="visualizing-data.html#histogram"><i class="fa fa-check"></i><b>8.2</b> Histogram</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-histogram"><i class="fa fa-check"></i><b>8.2.1</b> Demonstration: Histogram</a></li>
+<li class="chapter" data-level="8.2.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-histogram"><i class="fa fa-check"></i><b>8.2.2</b> Guided Practice: Histogram</a></li>
+<li class="chapter" data-level="8.2.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-histogram"><i class="fa fa-check"></i><b>8.2.3</b> Activity: Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="visualizing-data.html"><a href="visualizing-data.html#density-plot"><i class="fa fa-check"></i><b>8.3</b> Density Plot</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-density-plot"><i class="fa fa-check"></i><b>8.3.1</b> Demonstration: Density Plot</a></li>
+<li class="chapter" data-level="8.3.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-density-plot"><i class="fa fa-check"></i><b>8.3.2</b> Guided Practice: Density Plot</a></li>
+<li class="chapter" data-level="8.3.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-8.2-density-plot"><i class="fa fa-check"></i><b>8.3.3</b> Activity 8.2: Density Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="visualizing-data.html"><a href="visualizing-data.html#line-graph"><i class="fa fa-check"></i><b>8.4</b> Line Graph</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-line-graph"><i class="fa fa-check"></i><b>8.4.1</b> Demonstration: Line Graph</a></li>
+<li class="chapter" data-level="8.4.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-line-graph"><i class="fa fa-check"></i><b>8.4.2</b> Guided Practice: Line Graph</a></li>
+<li class="chapter" data-level="8.4.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-line-graph"><i class="fa fa-check"></i><b>8.4.3</b> Activity: Line Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="visualizing-data.html"><a href="visualizing-data.html#plot"><i class="fa fa-check"></i><b>8.5</b> Plot</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="visualizing-data.html"><a href="visualizing-data.html#plot-point-types"><i class="fa fa-check"></i><b>8.5.1</b> Plot Point Types</a></li>
+<li class="chapter" data-level="8.5.2" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-plot"><i class="fa fa-check"></i><b>8.5.2</b> Demonstration: Plot</a></li>
+<li class="chapter" data-level="8.5.3" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-plot"><i class="fa fa-check"></i><b>8.5.3</b> Guided Practice: Plot</a></li>
+<li class="chapter" data-level="8.5.4" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-line-of-best-fit"><i class="fa fa-check"></i><b>8.5.4</b> Activity: Line of Best Fit</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="visualizing-data.html"><a href="visualizing-data.html#q-q-plot"><i class="fa fa-check"></i><b>8.6</b> Q-Q Plot</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="visualizing-data.html"><a href="visualizing-data.html#demonstration-q-q-plot"><i class="fa fa-check"></i><b>8.6.1</b> Demonstration: Q-Q Plot</a></li>
+<li class="chapter" data-level="8.6.2" data-path="visualizing-data.html"><a href="visualizing-data.html#guided-practice-q-q-plot"><i class="fa fa-check"></i><b>8.6.2</b> Guided Practice: Q-Q Plot</a></li>
+<li class="chapter" data-level="8.6.3" data-path="visualizing-data.html"><a href="visualizing-data.html#activity-q-q-plot"><i class="fa fa-check"></i><b>8.6.3</b> Activity: Q-Q Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="visualizing-data.html"><a href="visualizing-data.html#deliverable-7"><i class="fa fa-check"></i><b>8.7</b> Deliverable</a></li>
+</ul></li>
+<li class="part"><span><b>V Hypothesis Testing</b></span></li>
+<li class="chapter" data-level="9" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html"><i class="fa fa-check"></i><b>9</b> Parametric Hypothesis Testing</a><ul>
+<li class="chapter" data-level="9.1" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#introduction-7"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#hypothesis"><i class="fa fa-check"></i><b>9.2</b> Hypothesis</a></li>
+<li class="chapter" data-level="9.3" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#anova"><i class="fa fa-check"></i><b>9.3</b> ANOVA</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#demonstration-anova"><i class="fa fa-check"></i><b>9.3.1</b> Demonstration: ANOVA</a></li>
+<li class="chapter" data-level="9.3.2" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#guided-practice-anova"><i class="fa fa-check"></i><b>9.3.2</b> Guided Practice: ANOVA</a></li>
+<li class="chapter" data-level="9.3.3" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#activity-anova"><i class="fa fa-check"></i><b>9.3.3</b> Activity: ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#t-test"><i class="fa fa-check"></i><b>9.4</b> T-test</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#demonstration-t-test"><i class="fa fa-check"></i><b>9.4.1</b> Demonstration: T-test</a></li>
+<li class="chapter" data-level="9.4.2" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#guided-practice-t-test"><i class="fa fa-check"></i><b>9.4.2</b> Guided Practice: T-test</a></li>
+<li class="chapter" data-level="9.4.3" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#activity-t-test"><i class="fa fa-check"></i><b>9.4.3</b> Activity: T-test</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="parametric-hypothesis-testing.html"><a href="parametric-hypothesis-testing.html#deliverable-8"><i class="fa fa-check"></i><b>9.5</b> Deliverable</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html"><i class="fa fa-check"></i><b>10</b> Non-Parametric Hypothesis Testing</a><ul>
+<li class="chapter" data-level="10.1" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#introduction-8"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
+<li class="chapter" data-level="10.2" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2</b> Kruskal-Wallis H</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#demonstration-kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2.1</b> Demonstration: Kruskal-Wallis H</a></li>
+<li class="chapter" data-level="10.2.2" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#guided-practice-kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2.2</b> Guided Practice: Kruskal-Wallis H</a></li>
+<li class="chapter" data-level="10.2.3" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#activity-kruskal-wallis-h"><i class="fa fa-check"></i><b>10.2.3</b> Activity: Kruskal-Wallis H</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#mann-whitney-u"><i class="fa fa-check"></i><b>10.3</b> Mann-Whitney U</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#demonstration-mann-whitney-u"><i class="fa fa-check"></i><b>10.3.1</b> Demonstration: Mann-Whitney U</a></li>
+<li class="chapter" data-level="10.3.2" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#guided-practice-mann-whitney-u"><i class="fa fa-check"></i><b>10.3.2</b> Guided Practice: Mann-Whitney U</a></li>
+<li class="chapter" data-level="10.3.3" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#activity-mann-whitney-u"><i class="fa fa-check"></i><b>10.3.3</b> Activity: Mann-Whitney U</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="non-parametric-hypothesis-testing.html"><a href="non-parametric-hypothesis-testing.html#deliverable-9"><i class="fa fa-check"></i><b>10.4</b> Deliverable</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="about-colors.html"><a href="about-colors.html"><i class="fa fa-check"></i><b>A</b> About Colors</a><ul>
+<li class="chapter" data-level="A.1" data-path="about-colors.html"><a href="about-colors.html#basic-colors"><i class="fa fa-check"></i><b>A.1</b> Basic Colors</a></li>
+<li class="chapter" data-level="A.2" data-path="about-colors.html"><a href="about-colors.html#color-palette"><i class="fa fa-check"></i><b>A.2</b> Color Palette</a></li>
+<li class="chapter" data-level="A.3" data-path="about-colors.html"><a href="about-colors.html#custom-palette"><i class="fa fa-check"></i><b>A.3</b> Custom Palette</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html"><i class="fa fa-check"></i><b>B</b> About The Data Frames</a><ul>
+<li class="chapter" data-level="B.1" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#airmiles"><i class="fa fa-check"></i><b>B.1</b> airmiles</a></li>
+<li class="chapter" data-level="B.2" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#airquality"><i class="fa fa-check"></i><b>B.2</b> airquality</a></li>
+<li class="chapter" data-level="B.3" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#attenu"><i class="fa fa-check"></i><b>B.3</b> attenu</a></li>
+<li class="chapter" data-level="B.4" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#attitude"><i class="fa fa-check"></i><b>B.4</b> attitude</a></li>
+<li class="chapter" data-level="B.5" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#beaver"><i class="fa fa-check"></i><b>B.5</b> beaver</a></li>
+<li class="chapter" data-level="B.6" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#cafe"><i class="fa fa-check"></i><b>B.6</b> cafe</a></li>
+<li class="chapter" data-level="B.7" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#cars"><i class="fa fa-check"></i><b>B.7</b> cars</a></li>
+<li class="chapter" data-level="B.8" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#chickweight"><i class="fa fa-check"></i><b>B.8</b> ChickWeight</a></li>
+<li class="chapter" data-level="B.9" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#chickwts"><i class="fa fa-check"></i><b>B.9</b> chickwts</a></li>
+<li class="chapter" data-level="B.10" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#co2"><i class="fa fa-check"></i><b>B.10</b> CO2</a></li>
+<li class="chapter" data-level="B.11" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#esoph"><i class="fa fa-check"></i><b>B.11</b> esoph</a></li>
+<li class="chapter" data-level="B.12" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#faithful"><i class="fa fa-check"></i><b>B.12</b> faithful</a></li>
+<li class="chapter" data-level="B.13" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#infert"><i class="fa fa-check"></i><b>B.13</b> infert</a></li>
+<li class="chapter" data-level="B.14" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#iris"><i class="fa fa-check"></i><b>B.14</b> iris</a></li>
+<li class="chapter" data-level="B.15" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#lakehuron"><i class="fa fa-check"></i><b>B.15</b> LakeHuron</a></li>
+<li class="chapter" data-level="B.16" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#ldeaths"><i class="fa fa-check"></i><b>B.16</b> ldeaths</a></li>
+<li class="chapter" data-level="B.17" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#longley"><i class="fa fa-check"></i><b>B.17</b> longley</a></li>
+<li class="chapter" data-level="B.18" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#lynx"><i class="fa fa-check"></i><b>B.18</b> lynx</a></li>
+<li class="chapter" data-level="B.19" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#morley"><i class="fa fa-check"></i><b>B.19</b> morley</a></li>
+<li class="chapter" data-level="B.20" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#mtcars"><i class="fa fa-check"></i><b>B.20</b> mtcars</a></li>
+<li class="chapter" data-level="B.21" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#npk"><i class="fa fa-check"></i><b>B.21</b> npk</a></li>
+<li class="chapter" data-level="B.22" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#plantgrowth"><i class="fa fa-check"></i><b>B.22</b> PlantGrowth</a></li>
+<li class="chapter" data-level="B.23" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#presidents"><i class="fa fa-check"></i><b>B.23</b> presidents</a></li>
+<li class="chapter" data-level="B.24" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#rivers"><i class="fa fa-check"></i><b>B.24</b> rivers</a></li>
+<li class="chapter" data-level="B.25" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#rock"><i class="fa fa-check"></i><b>B.25</b> rock</a></li>
+<li class="chapter" data-level="B.26" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#sleep"><i class="fa fa-check"></i><b>B.26</b> sleep</a></li>
+<li class="chapter" data-level="B.27" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#stackloss"><i class="fa fa-check"></i><b>B.27</b> stackloss</a></li>
+<li class="chapter" data-level="B.28" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#state.division"><i class="fa fa-check"></i><b>B.28</b> state.division</a></li>
+<li class="chapter" data-level="B.29" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#sunspots"><i class="fa fa-check"></i><b>B.29</b> sunspots</a></li>
+<li class="chapter" data-level="B.30" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#swiss"><i class="fa fa-check"></i><b>B.30</b> swiss</a></li>
+<li class="chapter" data-level="B.31" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#titanic"><i class="fa fa-check"></i><b>B.31</b> Titanic</a></li>
+<li class="chapter" data-level="B.32" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#trees"><i class="fa fa-check"></i><b>B.32</b> trees</a></li>
+<li class="chapter" data-level="B.33" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#ucb-admissions"><i class="fa fa-check"></i><b>B.33</b> UCB Admissions</a></li>
+<li class="chapter" data-level="B.34" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#ukgas"><i class="fa fa-check"></i><b>B.34</b> UKgas</a></li>
+<li class="chapter" data-level="B.35" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#usaccdeaths"><i class="fa fa-check"></i><b>B.35</b> USAccDeaths</a></li>
+<li class="chapter" data-level="B.36" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#usarrests"><i class="fa fa-check"></i><b>B.36</b> USArrests</a></li>
+<li class="chapter" data-level="B.37" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#usjudgeratings"><i class="fa fa-check"></i><b>B.37</b> USJudgeRatings</a></li>
+<li class="chapter" data-level="B.38" data-path="about-the-data-frames.html"><a href="about-the-data-frames.html#warpbreaks"><i class="fa fa-check"></i><b>B.38</b> warpbreaks</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BASV 316 R Lab Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-r" class="section level1">
+<h1><span class="header-section-number">Lab 1</span> Introduction to R</h1>
+<p>Statistical analysis is the core for nearly all research projects and researchers have a wide variety of statistical tools that they can use, like <em>SPSS</em> and <em>SAS</em>. Unfortunately, these analysis tools are expensive or difficult to master so this lab manual introduces <em>R</em>, a powerful, open source statistical analysis program that is available free of charge. But before diving into a statistics package there is one important background fundamental that must be covered: data.</p>
+<hr />
+<div id="types-of-data" class="section level2">
+<h2><span class="header-section-number">1.1</span> Types of Data</h2>
+<p>There are two main types of data and it is important to understand the difference between them since that determines appropriate analytical tests.</p>
+<ul>
+<li><p>Continuous data are integer or decimal numbers and are typically used for counts or measures – like a person’s weight, a tree’s height, or a car’s speed. Continuous data are measured with scales that have equal divisions so the difference between any two values can be calculated. Because continuous data include characteristics like means and standard deviations, they are analyzed using parametric tests.</p></li>
+<li><p>Categorical data group observations into a limited number of categories; for example, type of pet (cat, dog, bird, etc.) or place of residence (Arizona, California, etc.). One common type of categorical data is generated with an “agree-disagree” type of scale, like “I enjoy reading: Strongly Agree : Agree : Neutral : Disagree : Strongly Disagree.” Because categorical data do not have characteristics like means or standard deviations, they are analyzed using nonparametric tests.</p></li>
+</ul>
+<hr />
+</div>
+<div id="the-r-command-line" class="section level2">
+<h2><span class="header-section-number">1.2</span> The R Command Line</h2>
+<p>All <em>R</em> commands are entered from a “Command Line” environment. Many students find this a bit challenging at first but once they learn some foundational concepts the command line becomes easy and fast to use. This is an explanation for the <em>R</em> script in the box below.</p>
+<div id="demonstration-the-r-command-line" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Demonstration: The R Command Line</h3>
+<ul>
+<li><p>Line 1: This is a comment that is used to record notes in a script. In <em>R</em>, all comments start with a hash-mark (#) and everything after that symbol is ignored. Comments are used frequently in scripts presented in this manual in order to explain what the script is doing. Good programmers comment liberally so team members can easily figure out what they did.</p></li>
+<li><p>Line 2: Calculate the value of 3+5.</p></li>
+<li><p>Line 3: Calculate the value of “5 + 8 * 2”.</p></li>
+<li><p>Lines 6-7: These lines create two variables, <code>MaxScore</code> and <code>MinScore</code>, and then assign values to the variables. You should note two important things about these lines. First, the “assignment” operator is a less than sign followed by a hyphen, making a leftpointing arrow like <code>&lt;-</code>. That tells <em>R</em> to store the number on the right side of the arrow operator into the variable named on the left side of the line. Also, keep in mind that capitalization matters with <em>R</em>. Thus, the variable named <code>MaxScore</code> would be different than a variable named <code>maxscore</code>. These lines only store values in variables and nothing gets printed to the screen.</p></li>
+</ul>
+<div class="grsnote">
+A <em>variable</em> is nothing more than a place in memory to store temporary data. Think of it as a “box” that is used to store something until it is needed later.
+</div>
+<ul>
+<li><p>Line 8: The variable <code>Range</code> is filled with the result of subtracting <code>MaxScore</code> minus <code>MinScore</code>.</p></li>
+<li><p>Line 9: Entering a variable name, like <code>Range</code>, on a line by itself causes the value stored in that variable to be displayed.</p></li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFNvbWUgYmFzaWMgY2FsY3VsYXRpb25zXG4zICsgNVxuNSArIDggKiAyXG5cbiMgVXNpbmcgdmFyaWFibGVzXG5NYXhTY29yZSA8LSA1N1xuTWluU2NvcmUgPC0gMjJcblJhbmdlIDwtIE1heFNjb3JlIC0gTWluU2NvcmVcblJhbmdlXG5cbiJ9
+</div>
+<div class="grsnote">
+The <em>DataCamp</em> blocks found throughout this lab manual are designed to “try out” <em>R</em> commands. Click the yellow “Run” button in the lower left corner to execute the entire script and see the results. There are two panels available in the box. Clicking <em>script.R</em> in the top of the box displays the <em>R</em> script and clicking <em>R Console</em> displays the results of executing the script. The commands in the script can be modified and rerun in order to “play around” with <em>R</em>. Also, <em>R</em> commands can be entered directly in the <em>R Console</em> and executed by tapping the <code>ENTER</code> key.
+</div>
+</div>
+<div id="guided-practice-the-r-command-line" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Guided Practice: The R Command Line</h3>
+<p>Now is a time to try some of the command line skills demonstrated above. In the following <em>R</em> codebox, calculate these values.</p>
+<ul>
+<li><p>Set the variable M equal to 15 + ( 37 * 2 )</p></li>
+<li><p>Print the value of M</p></li>
+<li><p>Set the variable N equal to 24 + ( 6 / 2 )</p></li>
+<li><p>Print the value of N</p></li>
+<li><p>Set the variable P equal to 15 / ( 3 + 2 )</p></li>
+<li><p>Print the value of P</p></li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuIyBObyBwcmUtZXhlcmNpc2UgY29kZSBmb3IgdGhpcyBleGVyY2lzZVxuIiwic2FtcGxlIjoiIyBTZXQgTSB0byAxNSArICggMzcgKiAyIClcblxuXG4jIFByaW50IHRoZSB2YWx1ZSBvZiBNXG5cblxuIyBTZXQgTiB0byAyNCArICggNiAvIDIgKVxuXG5cbiMgUHJpbnQgdGhlIHZhbHVlIG9mIE5cblxuXG4jIFNldCBQIHRvIDE1IC8gKCAzICsgMiApXG5cblxuIyBQcmludCB0aGUgdmFsdWUgb2YgUFxuXG5cbiIsInNvbHV0aW9uIjoiXG5NIDwtIDE1ICsgKCAzNyAqIDIgKVxuXG5NXG5cbk4gPC0gMjQgKyAoIDYgLyAyIClcblxuTlxuXG5QIDwtIDE1IC8gKCAzICsgMiApXG5cblBcblxuIiwic2N0IjoiXG5leDAxLjAxLjAxbmVxIDwtIFwiQ2hlY2sgeW91ciBpbnB1dCBmb3IgTS4gSXQgc2hvdWxkIGJlIDE1ICsgKCAzNyAqIDIgKS5cIlxuZXgwMS4wMS4wMm5lcSA8LSBcIkNoZWNrIHlvdXIgaW5wdXQgZm9yIE4uIEl0IHNob3VsZCBiZSAyNCArICggNiAvIDIgKS5cIlxuZXgwMS4wMS4wM25lcSA8LSBcIkNoZWNrIHlvdXIgaW5wdXQgZm9yIFAuIEl0IHNob3VsZCBiZSAxNSAvICggMyArIDIgKS5cIlxuXG5leCgpICU+JSBjaGVja19vYmplY3QoXCJNXCIpICU+JSBcbiAgY2hlY2tfZXF1YWwoaW5jb3JyZWN0X21zZyA9IGV4MDEuMDEuMDFuZXEpXG5cbmV4KCkgJT4lIGNoZWNrX29iamVjdChcIk5cIikgJT4lIFxuICBjaGVja19lcXVhbChpbmNvcnJlY3RfbXNnID0gZXgwMS4wMS4wMm5lcSlcblxuZXgoKSAlPiUgY2hlY2tfb2JqZWN0KFwiUFwiKSAlPiUgXG4gIGNoZWNrX2VxdWFsKGluY29ycmVjdF9tc2cgPSBleDAxLjAxLjAzbmVxKVxuXG5zdWNjZXNzX21zZyhcIkdvb2QgV29yayEgTm93IHlvdSBjYW4gdXNlIFIgdG8gY2FsY3VsYXRlIG1hdGggcHJvYmxlbXMhXCIpXG4ifQ==
+</div>
+</div>
+<div id="activity-the-r-command-line" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Activity: The R Command Line</h3>
+<p>Calculate the following problems:</p>
+<ul>
+<li>5 + 8 * 3</li>
+<li>10 * 2/4</li>
+<li>5 * 3 + 3 - 20</li>
+</ul>
+<p>Include the answers to these three problems in the deliverable document for this lab.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuIyBObyBwcmUtZXhlcmNpc2UgY29kZSBmb3IgdGhpcyBleGVyY2lzZVxuIiwic2FtcGxlIjoiIyBGaW5kIHRoZSB2YWx1ZSBvZiA1ICsgOCAqIDNcblxuIyBGaW5kIHRoZSB2YWx1ZSBvZiAxMCAqIDIvNFxuXG4jIEZpbmQgdGhlIHZhbHVlIG9mIDUgKiAzICsgMyAtIDIwXG5cblxuIn0=
+</div>
+<hr />
+</div>
+</div>
+<div id="data-frames" class="section level2">
+<h2><span class="header-section-number">1.3</span> Data Frames</h2>
+<p>A <em>data frame</em> is a collection of data generated during a research project. An example data frame that is easy to understand would be a spreadsheet that contains the times recorded for a race. <em>R</em> comes configured with a 103 built-in data frames used for training and the <em>R</em> script below is an introduction to one of the data frames used in several of the labs in this manual: <a href="about-the-data-frames.html#stackloss">stackloss</a>.</p>
+<div id="demonstration-data-frames" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Demonstration: Data Frames</h3>
+<ul>
+<li><p>Line 1: Any line in <em>R</em> that starts with a hash tag is a comment and will be ignored by <em>R</em>.</p></li>
+<li><p>Line 2: Entering the name of the data frame, <a href="about-the-data-frames.html#stackloss">stackloss</a>, on a line by itself causes <em>R</em> to print the contents of the entire the data frame to the screen. Since <a href="about-the-data-frames.html#stackloss">stackloss</a> is rather small it is fine to print it to the screen, but some data frames have hundreds of lines and that may cause the screen to “scroll” for some time before the end of the data frame is reached.</p></li>
+<li><p>Line 3: This prints the structure of the <a href="about-the-data-frames.html#stackloss">stackloss</a> data frame. The result shows that this is a <em>data.frame</em> and has 21 observations (that is how many lines are in the dataset) of 4 variables (things like <em>Air.Flow</em>). Also the structure command displays the type of data that are in the dataset. For example, all 4 variables are of the “number” type. The <code>str</code> function is frequently used to better understand a data frame. The structure for all of the data frames used in this book is contained in the appendix.</p></li>
+<li><p>Line 4: This line puts the maximum <em>Air.Flow</em> value for the <a href="about-the-data-frames.html#stackloss">stackloss</a> data frame into a variable named <em>MaxAirFlow</em>. Note that the specific vector in the data frame is indicated by both the data frame and vector names separated by a dollar sign, like <em>stackloss$Air.Flow</em> on this line.</p></li>
+<li><p>Line 5: Entering the name of a variable on a line by itself displays the value of that variable so this line displays the maximum value of <em>MaxAirFlow</em>.</p></li>
+</ul>
+<p><em>If some of the lines in the result are too long to fit on one row in the R Console they will wrap around.</em></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEV4cGxvcmluZyB0aGUgU3RhY2sgTG9zcyBEYXRhIEZyYW1lXG5zdGFja2xvc3NcbnN0cihzdGFja2xvc3MpXG5NYXhBaXJGbG93IDwtIG1heChzdGFja2xvc3MkQWlyLkZsb3cpXG5NYXhBaXJGbG93XG5cbiJ9
+</div>
+</div>
+<div id="guided-practice-data-frames" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Guided Practice: Data Frames</h3>
+<p>In the following <em>R</em> codebox, explore the <a href="about-the-data-frames.html#airquality">airquality</a> data frame.</p>
+<ul>
+<li><p>Look at the structure of the <em>airquality</em> data frame.</p></li>
+<li><p>Set <em>MaxWind</em> to the maximum value of <em>Wind</em> in the <em>airquality</em> data frame.</p></li>
+<li><p>Display the value of <em>MaxWind</em></p></li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuIyBObyBwcmUtZXhlcmNpc2UgY29kZSBmb3IgdGhpcyBleGVyY2lzZVxuIiwic2FtcGxlIjoiIyBWaWV3IHRoZSBzdHJ1Y3R1cmUgb2YgdGhlIGFpcnF1YWxpdHkgZGF0YSBmcmFtZVxuXG5cbiMgU2V0IE1heFdpbmQgdG8gdGhlIG1heGltdW0gdmFsdWUgb2YgV2luZFxuXG5cbiMgRGlzcGxheSB0aGUgdmFsdWUgb2YgTWF4V2luZFxuXG5cbiIsInNvbHV0aW9uIjoic3RyKGFpcnF1YWxpdHkpXG5cbk1heFdpbmQgPC0gbWF4KGFpcnF1YWxpdHkkV2luZClcblxuTWF4V2luZFxuXG4iLCJzY3QiOiJcbmV4MDEuMDIuMDFuZXEgPC0gXCJDaGVjayB0byBiZSBzdXJlIHlvdSBmb3VuZCB0aGUgc3RydWN0dXJlIGZvciBhaXJxdWFsaXR5LiBJdCBzaG91bGQgYmUgc3RyKGFpcnF1YWxpdHkpLlwiXG5leDAxLjAyLjAybmVxIDwtIFwiQ2hlY2sgeW91ciBpbnB1dCBmb3IgTWF4V2luZC4gSXQgc2hvdWxkIGJlIE1heFdpbmQgPC0gbWF4KGFpcnF1YWxpdHkkV2luZCkuXCJcbmV4MDEuMDIuMDNuZXEgPC0gXCJEaWQgeW91IHJlbWVtYmVyIHRvIHByaW50IHRoZSB2YWx1ZSBvZiBNYXhXaW5kPyBUbyBkbyB0aGF0IHB1dCAnTWF4V2luZCcgb24gYSBsaW5lIGJ5IGl0c2VsZi5cIlxuXG5leCgpICU+JSBcbiAgY2hlY2tfZnVuY3Rpb24oXCJzdHJcIikgJT4lIFxuICBjaGVja19hcmcoXCJvYmplY3RcIikgJT4lIFxuICBjaGVja19lcXVhbChpbmNvcnJlY3RfbXNnID0gZXgwMS4wMi4wMW5lcSlcblxuZXgoKSAlPiUgXG4gIGNoZWNrX29iamVjdChcIk1heFdpbmRcIikgJT4lIFxuICBjaGVja19lcXVhbChpbmNvcnJlY3RfbXNnID0gZXgwMS4wMi4wMm5lcSlcblxuZXgoKSAlPiVcbiAgY2hlY2tfb3V0cHV0X2V4cHIoLiwgTWF4V2luZCwgbWlzc2luZ19tc2c9ZXgwMS4wMi4wM25lcSlcblxuc3VjY2Vzc19tc2coXCJQZXJmZWN0ISBUaGFua3MgZm9yIGV4cGxvcmluZyB0aGlzIGJ1aWx0LWluIGRhdGEgZnJhbWUhXCIpXG4ifQ==
+</div>
+</div>
+<div id="activity-data-frames" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Activity: Data Frames</h3>
+<p>Using the <a href="about-the-data-frames.html#cafe">cafe</a> data, find the maximum values for <em>bill</em> and <em>age</em> and include those values in the deliverable document for this lab.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6IlxuY2FmZSA8LSByZWFkLmNzdignaHR0cHM6Ly9sYWJzLmJhc3YzMTYuY29tL2NhZmUuY3N2JylcbiIsInNhbXBsZSI6IiMgRmluZCB0aGUgbWF4aW11bSB2YWx1ZSBvZiBiaWxsLlxuXG5cbiMgRmluZCB0aGUgbWF4aW11bSB2YWx1ZSBvZiBhZ2UuXG5cbiJ9
+</div>
+<hr />
+</div>
+</div>
+<div id="deliverable" class="section level2">
+<h2><span class="header-section-number">1.4</span> Deliverable</h2>
+<p>Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and “Lab 1,” like “George Self Lab 1” and submit that document for grade.</p>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="central-measures.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

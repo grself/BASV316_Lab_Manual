@@ -213,7 +213,7 @@ success_msg("Good Job! Histograms are very important tools for data analysis.")
 
 ```
 
-### Activity: Histogram
+### Deliverable: Histogram
 
 Using the [cafe] data frame, create a histogram of _age_. The histogram should meet these specifications:
 
@@ -570,7 +570,7 @@ success_msg("Perfect! A line graph can reveal interesting trends over time.")
 ```
 
 
-### Activity: Line Graph
+### Deliverable: Line Graph
 
 Create a line graph of the [lynx] data frame. The plot should meet these specifications:
 
@@ -832,7 +832,7 @@ success_msg("Perfect! A scatterplot is one of the most common graphs used in res
 
 ```
 
-### Activity: Line of Best Fit
+### Deliverable: Line of Best Fit
 
 Using the [cafe] data frame, create a simple plot with _bill_ (y-axis) as a function of _length_ (x-axis), and a line of best fit to see if there is a relationship between the length of the meal and the bill. The plot should meet these specifications:
 
@@ -992,7 +992,7 @@ success_msg("Great Job! Using Q-Q Plot makes it easy to graphically determine if
 
 ```
 
-### Activity: Q-Q Plot
+### Deliverable: Q-Q Plot
 
 Using the [cafe] data frame, create a Q-Q plot of _age_. The plot should h ave a title of _Q-Q Plot_ and a _sienna4_ Q-Q line with a width of 2.
 

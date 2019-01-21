@@ -156,7 +156,7 @@ success_msg("Good Work! Now you can use R to calculate math problems!")
 ```
 
 
-### Activity: The R Command Line
+### Deliverable: The R Command Line
 Calculate the following problems:
 
 * 5 + 8 * 3
@@ -277,7 +277,7 @@ success_msg("Perfect! Thanks for exploring this built-in data frame!")
 ```
 
 
-### Activity: Data Frames
+### Deliverable: Data Frames
 
 Using the [cafe] data, find the maximum values for _bill_ and _age_ and include those values in the deliverable document for this lab.
 
