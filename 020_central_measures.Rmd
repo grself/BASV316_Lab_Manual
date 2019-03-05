@@ -405,6 +405,6 @@ There is no procedure for finding mode in this tutorial but the tutorial on [Fre
 
 -----
 
-## Deliverable
+## Submission
 
-Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 2," like "George Self Lab 2" and submit that document for grade.
+Complete the deliverables in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 2," like "George Self Lab 2" and submit that document for grade.

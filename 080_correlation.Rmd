@@ -317,7 +317,7 @@ success_msg("Perfect! Correlations are one of the most important tools available
 
 ### Deliverable: Spearman's rho
 
-Using the [cafe] data frame, determine the correlation between _age_ and service (_svc_) to see if there is a relationship between a customer's age and their rating for the service. Because service contains ordered data, use Spearman's _rho_ as the correlation method. Record the correlation in the deliverable document for this lab.
+Using the [cafe] data frame, determine the correlation between service (_svc_) and _age_ to see if there is a relationship between a customer's age and their rating for the service. Because service contains ordered data, use Spearman's _rho_ as the correlation method. Record the correlation in the deliverable document for this lab.
 
 ```{r 080.17, ex="act080.02", type="pre-exercise-code"}
 
@@ -326,7 +326,7 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 ```
 
 ```{r 080.18, ex="act080.02", type="sample-code"}
-# Using the cafe data frame, determine the correlation between age and service (svc).
+# Using the cafe data frame, determine the correlation between service (svc) and age.
 
 
 
@@ -730,6 +730,6 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 -----
 
-## Deliverable
+## Submission
 
-Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 7," like "George Self Lab 7" and submit that document for grade.
+Complete the deliverables in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 7," like "George Self Lab 7" and submit that document for grade.

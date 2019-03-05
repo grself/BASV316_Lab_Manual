@@ -945,6 +945,6 @@ cafe <- read.csv('https://labs.basv316.com/cafe.csv')
 
 -----
 
-## Deliverable
+## Submission
 
-Complete the activities in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 6," like "George Self Lab 6" and submit that document for grade.
+Complete the deliverables in this lab and consolidate the responses into a single document. Name the document with your name and "Lab 6," like "George Self Lab 6" and submit that document for grade.
